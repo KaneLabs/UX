@@ -9,7 +9,7 @@ module.exports = ({ config, mode }) => {
     rules: [
       {
         test: /\.(m|j)s$/,
-        exclude: /node_modules\/(?!(@react-native-community\/art|react-native\/Libraries\/StyleSheet)\/).*/,
+        exclude: /node_modules\/(?!(@react-native-community\/art)\/).*/,
         use: {
           loader: 'babel-loader',
         },

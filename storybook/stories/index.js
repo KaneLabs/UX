@@ -7,6 +7,9 @@ export { default as Hero } from 'eros-ui/components/Hero/Hero.stories.js';
 export { default as HeroSwiper } from 'eros-ui/components/HeroSwiper/HeroSwiper.stories.js';
 export { default as TextField } from 'eros-ui/components/TextField/TextField.stories.js';
 
+/* UX */
+export { default as AuthPhone } from 'eros-ui/containers/Auth/AuthPhone.stories.js';
+
 export { default as NeuButton } from 'eros-ui/components/Neu/NeuButton/NeuButton.stories.js';
 export { default as NeuView } from 'eros-ui/components/Neu/NeuView/NeuView.stories.js';
 export { default as NeuInput } from 'eros-ui/components/Neu/NeuInput.stories.js';
