@@ -37,7 +37,7 @@ const createHttpLink = ({ ssrMode = false }) => {
   const options = {
     ssrMode,
     uri: `${API_URI}`,
-    credentials: 'include', // eg. or credentials: 'omit', etc
+    // credentials: 'include', // eg. or credentials: 'omit', etc
     // fetch,
   };
   return createUploadLink(options);
@@ -58,18 +58,13 @@ const createWSLink = ({ ssrMode = false }) => new WebSocketLink({
       try {
         const token = await AsyncStorage.getItem('token');
 
-        return {
-          headers: {
-            Authorization: token || null,
-          },
-        };
+        if (token) {
+          return { Authorization: token };
+        }
+        return {};
       } catch (e) {
         console.log('wsLink error', e);
-        return {
-          headers: {
-            Authorization: null,
-          },
-        };
+        return {};
       }
     },
   },
@@ -111,16 +106,16 @@ const createAuthHeader = ({ ssrMode = false }) => {
     const context = operation.getContext();
     console.log('Me context in createAuthHeader', context);
 
-    const apolloToken = context?.cache?.data?.data?.['Me:0']?.token || null;
+    const apolloToken = context?.cache?.data?.data?.['Me:0']?.token || undefined;
     const cookieToken = (() => {
       try {
         const cookies = parseCookie(document.cookie);
 
         console.log('cookies', cookies);
-        return cookies?.token ?? null;
+        return cookies?.token ?? undefined;
       } catch (error) {
         console.error('authMiddleware error');
-        return null;
+        return undefined;
       }
     })();
     console.log('apolloToken', apolloToken);
@@ -130,7 +125,7 @@ const createAuthHeader = ({ ssrMode = false }) => {
     // const query = cache.readQuery({ query: ME, networkPolicy: 'cache' });
     operation.setContext(({ headers }) => ({
       headers: {
-        Authorization: apolloToken || cookieToken || null, // however you get your token
+        Authorization: apolloToken || cookieToken || undefined, // however you get your token
         ...headers,
       },
     }));

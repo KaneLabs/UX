@@ -23,6 +23,7 @@ import { backgroundColor as darkBackground } from 'eros-ui/theme/dark';
 // import { themes } from '@storybook/theming';
 import { create } from '@storybook/theming/create';
 import { addons } from '@storybook/addons';
+// import { MockedProvider } from '@apollo/client/testing';
 
 import './addons';
 
@@ -148,7 +149,7 @@ addDecorator(withThemeProvider);
 //   )
 // };
 
-// addDecorator((story, context) => withApolloClient(story(context)))
+// addDecorator(withApolloClient({ cache: createApolloClient({} )}))
 
 function loadStories() {
   require('../storybook/stories');
