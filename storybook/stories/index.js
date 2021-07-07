@@ -1,7 +1,7 @@
 export { default as Home } from './Home.stories.js';
 
 /* UI */
-export { default as ForaLogo } from 'eros-ui/components/ForaLogo/ForaLogo.stories.js';
+export { default as ForaLogo } from 'eros-ui/components/ForaLogo/ForaLogo.stories';
 export { default as Typography } from 'eros-ui/components/Typography/Typography.stories.js';
 export { default as Hero } from 'eros-ui/components/Hero/Hero.stories.js';
 export { default as HeroSwiper } from 'eros-ui/components/HeroSwiper/HeroSwiper.stories.js';

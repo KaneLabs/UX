@@ -23,6 +23,7 @@ import { backgroundColor as darkBackground } from 'eros-ui/theme/dark';
 // import { themes } from '@storybook/theming';
 import { create } from '@storybook/theming/create';
 import { addons } from '@storybook/addons';
+import withThemeProvider from './withThemeProvider';
 // import { MockedProvider } from '@apollo/client/testing';
 
 import './addons';
@@ -35,35 +36,6 @@ import './addons';
 // get channel to listen to event emitter
 const channel = addons.getChannel();
 
-// create a component that listens for the DARK_MODE event
-function ThemeWrapper(props) {
-  const [theme, toggleTheme] = useTheme();
-  
-  console.log({ currentTheme: theme });
-
-  // const state = useStorybookState();
-
-  // this example uses hook but you can also use class component as well
-  // const [isDark, setDark] = useState(false);
-
-  React.useEffect(() => {
-    // listen to DARK_MODE event
-    const handle = (nextBackground) => {
-      if (theme.mode !== nextBackground.name) {
-        toggleTheme();
-      }
-    }
-
-    channel.on('storybook/background/update', handle);
-    // return () => channel.off('storybook/background/update', toggleTheme);
-  }, []);
-
-  // render your custom theme provider
-  return (
-      props.children
-  );
-}
-
 const darkTheme = create({
   base: 'dark',
   brandTitle: 'fora',
@@ -73,7 +45,6 @@ const lightTheme = create({
   base: 'light',
   brandTitle: 'fora',
 });
-
 
 // Generate required css
 const materialIconFont = require('react-native-vector-icons/Fonts/MaterialIcons.ttf');
@@ -105,28 +76,6 @@ addParameters({
   // },
 });
 
-// const withThemeProvider = (story) => <ThemeProvider>{story()}</ThemeProvider>;
-
-const withThemeProvider = (story, context) => {
-  // const [state, setState] = useAddonState('storybook/background', { name: 'light', value: lightBackground, default: true });
-  // const state = useStorybookApi();
-  // console.log({ state })
-
-  // const [initialScheme, setInitialScheme] = React.useState('light');
-
-  // // const handle = (nextBackground) => {
-
-  // // }
-
-  // React.useEffect(() => {
-  //   // listen to DARK_MODE event
-  //   channel.on('setCurrentStory', console.log);
-  //   // return () => channel.off('DARK_MODE', setDark);
-  // }, []);
-
-// console.log('STORYYYYY', story)
-return <ThemeProvider initialScheme={'light'}><ThemeWrapper>{story(context)}</ThemeWrapper></ThemeProvider>;
-};
 // addDecorator(
 //   withTests({
 //     // results,

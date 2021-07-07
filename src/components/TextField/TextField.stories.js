@@ -2,10 +2,9 @@ import React from 'react';
 import { View } from 'react-native';
 import { withKnobs, text } from '@storybook/addon-knobs';
 
+import Container from 'eros-ui-storybook/components/Container';
+import { storiesOf } from 'eros-ui-storybook/helpers/storiesOf';
 import TextField from './TextField';
-
-import Container from '../../../storybook/components/Container';
-import { storiesOf } from '../../../storybook/helpers/storiesOf';
 
 export default storiesOf('Components|TextField', module)
   .addParameters({ jest: ['TextField'] })

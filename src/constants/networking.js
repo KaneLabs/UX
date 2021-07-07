@@ -1,5 +1,7 @@
 const { NODE_ENV } = process.env; // TODO:  hardcoded for temp code sharing
 
+export const LOCAL_IP = process.env.LOCAL_IP || '192.168.0.4';
+
 export const API_PROTOCOL_DEV = 'http';
 export const API_DOMAIN_DEV = '127.0.0.1';
 export const API_PORT_DEV = '4000';

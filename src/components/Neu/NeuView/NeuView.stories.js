@@ -1,10 +1,9 @@
 import React from 'react';
 
-import NeuView from '../NeuView';
-
 import { View } from 'react-native';
-import Container from '../../../../storybook/components/Container';
-import { storiesOf } from '../../../../storybook/helpers/storiesOf';
+import Container from 'eros-ui-storybook/components/Container';
+import { storiesOf } from 'eros-ui-storybook/helpers/storiesOf';
+import NeuView from '../NeuView';
 
 export default storiesOf('Experimental|Neumorphic', module)
   .addParameters({ jest: ['Neumorphic'] })

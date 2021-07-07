@@ -3,8 +3,8 @@ import React from 'react';
 import { View } from 'react-native';
 import NeuSwitch from './NeuSwitch';
 
-import Container from '../../../storybook/components/Container';
-import { storiesOf } from '../../../storybook/helpers/storiesOf';
+import Container from 'eros-ui-storybook/components/Container';
+import { storiesOf } from 'eros-ui-storybook/helpers/storiesOf';
 
 const SwitchStory = () => {
   const [isPressed, setIsPressed] = React.useState(true);

@@ -1,10 +1,9 @@
+console.log('USING BABEL in root');
 module.exports = {
   presets: [
-    ['@babel/preset-typescript', { isTSX: true, allExtensions: true }],
     'module:metro-react-native-babel-preset',
   ],
   plugins: [
-    'react-native-web',
     'react-native-reanimated/plugin',
     [
       'module-resolver',
@@ -12,6 +11,7 @@ module.exports = {
         root: ['./src'],
         alias: {
           'eros-ui': './src',
+          'eros-ui-storybook': './storybook'
         },
       },
     ],

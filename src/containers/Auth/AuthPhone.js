@@ -3,16 +3,16 @@ import React from 'react';
 import { View } from 'react-native';
 import gql from 'graphql-tag';
 
-import { useApolloClient, useMutation } from '@apollo/client';
+import { useMutation } from '@apollo/client';
 import Button from 'eros-ui/components/Buttons/Button';
 import TextField from 'eros-ui/components/TextField';
 
 // Make sure that both the query and the component are exported
 
 export const AUTH_PHONE = gql`
-    mutation {
-        AuthPhone(input:{ phone: "+14155353004" })
-    }
+  mutation AuthPhone($input: AuthPhoneInput!) {
+    AuthPhone(input: $input)
+  }
 `;
 
 const AuthPhone = () => {
@@ -28,7 +28,7 @@ const AuthPhone = () => {
   console.log({ state });
 
   const submit = () => {
-    authenticatePhone({ variables: { phone: '+14155353004' } });
+    authenticatePhone({ variables: { phone } });
   };
 
   // const client = useMutation();

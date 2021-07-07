@@ -5,8 +5,8 @@ import { withDocs } from '@storybook/addon-docs';
 
 import Typography from './Typography';
 
-import Container from '../../../storybook/components/Container';
-import { storiesOf } from '../../../storybook/helpers/storiesOf';
+import Container from 'eros-ui-storybook/components/Container';
+import { storiesOf } from 'eros-ui-storybook/helpers/storiesOf';
 
 const TypographyStories = () => {
   const Text = text('Text', 'The spectacle before us was indeed sublime.');

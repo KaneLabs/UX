@@ -1,10 +1,10 @@
 import React from 'react';
 import { View } from 'react-native';
-import { storiesOf } from '../../../storybook/helpers/storiesOf';
+import { storiesOf } from 'eros-ui-storybook/helpers/storiesOf';
 
 import ForaLogo from './ForaLogo';
-import Header from '../../../storybook/components/Header';
-import Container from '../../../storybook/components/Container';
+import Header from 'eros-ui-storybook/components/Header';
+import Container from 'eros-ui-storybook/components/Container';
 
 /* eslint-disable no-console */
 

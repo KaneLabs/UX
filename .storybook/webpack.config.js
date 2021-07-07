@@ -1,14 +1,16 @@
 const path = require('path');
 const webpack = require('webpack');
+// const babelConfig = require('./babel.config');
 
 // exclude: /node_modules\/(?!(@react-native-community\/art|next-package)\/).*/,
 // react-native-neomorph-shadows
 module.exports = ({ config, mode }) => {
+  console.log(config.module.rules);
   config.module = {
     ...config.module,
     rules: [
       {
-        test: /\.(m|j)s$/,
+        test: /\.(tsx?|mjs|jsx?)$/,
         exclude: /node_modules\/(?!(@react-native-community\/art)\/).*/,
         use: {
           loader: 'babel-loader',
@@ -25,6 +27,8 @@ module.exports = ({ config, mode }) => {
     ],
   };
 
+  console.log({ resolve: config.resolve });
+
   config.resolve = {
     ...config.resolve,
     extensions: [
@@ -32,6 +36,8 @@ module.exports = ({ config, mode }) => {
       '.web.jsx',
       '.web.ts',
       '.web.tsx',
+      '.ts',
+      '.tsx',
       ...config.resolve.extensions,
     ],
     alias: {
