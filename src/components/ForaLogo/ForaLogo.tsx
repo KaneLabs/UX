@@ -1,18 +1,19 @@
 import React, { FC } from 'react';
 import { Image, ImageStyle, StyleSheet } from 'react-native';
-import { makeStyles } from 'eros-ui/theme';
+import makeStyles from '../../theme/makeStyles';
 import ForaLogoTyrion from '../../assets/fora-logo-tyrion-96x96.png';
 
 type theme = {
   unit: number;
 };
 
+interface ForaLogoStyles {
+  logo: LogoStyles
+}
+
 interface LogoStyles {
   height: number;
   width: number
-}
-interface ForaLogoStyles {
-  logo: LogoStyles
 }
 
 const useStyles = makeStyles((theme: theme): ForaLogoStyles => ({

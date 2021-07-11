@@ -14,10 +14,10 @@ import {
 import { storiesOf } from 'eros-ui-storybook/helpers/storiesOf';
 import createApolloClient from 'eros-ui/apollo/createClient';
 
-const withApolloClient = (story) => {
+const withApolloClient = (story, context) => {
   return (
     <ApolloProvider client={createApolloClient({})}>
-      {story()}
+      {story(context)}
     </ApolloProvider>
   );
 };

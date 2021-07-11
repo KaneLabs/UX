@@ -128,7 +128,7 @@ exports[`Chip Renders 1`] = `
         "canvas3Opaque": "rgba(255,255,255,0.67)",
         "canvasOpaque": "rgba(255,255,255,0.67)",
         "gutter": 16,
-        "iconColor": "rgba(0,0,0,0.87)",
+        "iconColor": "rgba(0,0,0,0.54)",
         "iconPadding": 12,
         "iconSize": 24,
         "mode": "light",

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1621453853708" clover="3.2.0">
-  <project timestamp="1621453853708" name="All files">
-    <metrics statements="396" coveredstatements="189" conditionals="235" coveredconditionals="26" methods="84" coveredmethods="12" elements="715" coveredelements="227" complexity="0" loc="396" ncloc="396" packages="11" files="29" classes="29"/>
+<coverage generated="1626017560720" clover="3.2.0">
+  <project timestamp="1626017560721" name="All files">
+    <metrics statements="398" coveredstatements="189" conditionals="239" coveredconditionals="30" methods="84" coveredmethods="12" elements="721" coveredelements="231" complexity="0" loc="398" ncloc="398" packages="11" files="29" classes="29"/>
     <package name="components.Chip">
       <metrics statements="13" coveredstatements="3" conditionals="15" coveredconditionals="0" methods="6" coveredmethods="0"/>
       <file name="Chip.js" path="/Users/kane/Lab/Eros/src/components/Chip/Chip.js">
@@ -138,7 +138,7 @@
     </package>
     <package name="components.Paper">
       <metrics statements="6" coveredstatements="2" conditionals="10" coveredconditionals="0" methods="2" coveredmethods="0"/>
-      <file name="Paper.js" path="/Users/kane/Lab/Eros/src/components/Paper/Paper.js">
+      <file name="Paper.tsx" path="/Users/kane/Lab/Eros/src/components/Paper/Paper.tsx">
         <metrics statements="6" coveredstatements="2" conditionals="10" coveredconditionals="0" methods="2" coveredmethods="0"/>
         <line num="7" count="1" type="stmt"/>
         <line num="17" count="1" type="stmt"/>
@@ -147,7 +147,7 @@
         <line num="26" count="0" type="stmt"/>
         <line num="35" count="0" type="stmt"/>
       </file>
-      <file name="index.js" path="/Users/kane/Lab/Eros/src/components/Paper/index.js">
+      <file name="index.ts" path="/Users/kane/Lab/Eros/src/components/Paper/index.ts">
         <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       </file>
     </package>
@@ -261,7 +261,7 @@
     </package>
     <package name="components.TextField">
       <metrics statements="12" coveredstatements="2" conditionals="17" coveredconditionals="0" methods="6" coveredmethods="0"/>
-      <file name="TextField.js" path="/Users/kane/Lab/Eros/src/components/TextField/TextField.js">
+      <file name="TextField.tsx" path="/Users/kane/Lab/Eros/src/components/TextField/TextField.tsx">
         <metrics statements="12" coveredstatements="2" conditionals="17" coveredconditionals="0" methods="6" coveredmethods="0"/>
         <line num="6" count="1" type="stmt"/>
         <line num="11" count="0" type="stmt"/>
@@ -278,7 +278,7 @@
       </file>
     </package>
     <package name="components.Typography">
-      <metrics statements="51" coveredstatements="15" conditionals="67" coveredconditionals="0" methods="16" coveredmethods="0"/>
+      <metrics statements="52" coveredstatements="15" conditionals="67" coveredconditionals="0" methods="16" coveredmethods="0"/>
       <file name="BodyText.js" path="/Users/kane/Lab/Eros/src/components/Typography/BodyText.js">
         <metrics statements="9" coveredstatements="2" conditionals="13" coveredconditionals="0" methods="2" coveredmethods="0"/>
         <line num="5" count="1" type="stmt"/>
@@ -345,14 +345,15 @@
         <line num="26" count="1" type="stmt"/>
       </file>
       <file name="Typography.js" path="/Users/kane/Lab/Eros/src/components/Typography/Typography.js">
-        <metrics statements="7" coveredstatements="1" conditionals="9" coveredconditionals="0" methods="2" coveredmethods="0"/>
+        <metrics statements="8" coveredstatements="1" conditionals="9" coveredconditionals="0" methods="2" coveredmethods="0"/>
         <line num="5" count="1" type="stmt"/>
         <line num="13" count="0" type="stmt"/>
         <line num="15" count="0" type="stmt"/>
-        <line num="16" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="17" count="0" type="stmt"/>
-        <line num="18" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="20" count="0" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
+        <line num="17" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="18" count="0" type="stmt"/>
+        <line num="19" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="21" count="0" type="stmt"/>
       </file>
       <file name="index.js" path="/Users/kane/Lab/Eros/src/components/Typography/index.js">
         <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
@@ -389,19 +390,20 @@
       </file>
     </package>
     <package name="theme">
-      <metrics statements="109" coveredstatements="104" conditionals="12" coveredconditionals="5" methods="8" coveredmethods="3"/>
-      <file name="ThemeProvider.js" path="/Users/kane/Lab/Eros/src/theme/ThemeProvider.js">
-        <metrics statements="10" coveredstatements="10" conditionals="4" coveredconditionals="1" methods="4" coveredmethods="2"/>
-        <line num="8" count="2" type="stmt"/>
-        <line num="10" count="2" type="stmt"/>
-        <line num="11" count="2" type="stmt"/>
+      <metrics statements="110" coveredstatements="104" conditionals="16" coveredconditionals="9" methods="8" coveredmethods="3"/>
+      <file name="ThemeProvider.tsx" path="/Users/kane/Lab/Eros/src/theme/ThemeProvider.tsx">
+        <metrics statements="11" coveredstatements="10" conditionals="8" coveredconditionals="5" methods="4" coveredmethods="2"/>
         <line num="12" count="2" type="stmt"/>
-        <line num="13" count="2" type="stmt"/>
-        <line num="14" count="2" type="stmt"/>
-        <line num="15" count="2" type="cond" truecount="0" falsecount="2"/>
-        <line num="16" count="2" type="stmt"/>
-        <line num="17" count="2" type="cond" truecount="1" falsecount="1"/>
-        <line num="21" count="2" type="stmt"/>
+        <line num="27" count="2" type="stmt"/>
+        <line num="28" count="2" type="stmt"/>
+        <line num="29" count="2" type="stmt"/>
+        <line num="30" count="2" type="stmt"/>
+        <line num="35" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="36" count="2" type="stmt"/>
+        <line num="37" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="40" count="2" type="stmt"/>
+        <line num="41" count="2" type="cond" truecount="1" falsecount="1"/>
+        <line num="45" count="2" type="stmt"/>
       </file>
       <file name="dark.js" path="/Users/kane/Lab/Eros/src/theme/dark.js">
         <metrics statements="51" coveredstatements="51" conditionals="4" coveredconditionals="2" methods="0" coveredmethods="0"/>
@@ -422,21 +424,21 @@
         <line num="24" count="2" type="stmt"/>
         <line num="26" count="2" type="stmt"/>
         <line num="28" count="2" type="stmt"/>
-        <line num="29" count="2" type="stmt"/>
+        <line num="37" count="2" type="stmt"/>
         <line num="38" count="2" type="stmt"/>
         <line num="39" count="2" type="stmt"/>
         <line num="40" count="2" type="stmt"/>
-        <line num="41" count="2" type="stmt"/>
+        <line num="43" count="2" type="stmt"/>
         <line num="44" count="2" type="stmt"/>
-        <line num="45" count="2" type="stmt"/>
+        <line num="46" count="2" type="stmt"/>
         <line num="47" count="2" type="stmt"/>
         <line num="48" count="2" type="stmt"/>
         <line num="49" count="2" type="stmt"/>
-        <line num="50" count="2" type="stmt"/>
-        <line num="52" count="2" type="stmt"/>
+        <line num="51" count="2" type="stmt"/>
+        <line num="53" count="2" type="stmt"/>
         <line num="54" count="2" type="stmt"/>
         <line num="55" count="2" type="stmt"/>
-        <line num="56" count="2" type="stmt"/>
+        <line num="57" count="2" type="stmt"/>
         <line num="58" count="2" type="stmt"/>
         <line num="59" count="2" type="stmt"/>
         <line num="60" count="2" type="stmt"/>
@@ -452,15 +454,15 @@
         <line num="70" count="2" type="stmt"/>
         <line num="71" count="2" type="stmt"/>
         <line num="72" count="2" type="stmt"/>
-        <line num="73" count="2" type="stmt"/>
         <line num="74" count="2" type="cond" truecount="1" falsecount="1"/>
         <line num="75" count="2" type="cond" truecount="1" falsecount="1"/>
-        <line num="77" count="2" type="stmt"/>
+        <line num="76" count="2" type="stmt"/>
+        <line num="78" count="2" type="stmt"/>
       </file>
       <file name="index.js" path="/Users/kane/Lab/Eros/src/theme/index.js">
         <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       </file>
-      <file name="light.js" path="/Users/kane/Lab/Eros/src/theme/light.js">
+      <file name="light.ts" path="/Users/kane/Lab/Eros/src/theme/light.ts">
         <metrics statements="39" coveredstatements="39" conditionals="4" coveredconditionals="2" methods="0" coveredmethods="0"/>
         <line num="5" count="2" type="stmt"/>
         <line num="7" count="2" type="stmt"/>
@@ -477,7 +479,7 @@
         <line num="19" count="2" type="stmt"/>
         <line num="20" count="2" type="stmt"/>
         <line num="22" count="2" type="stmt"/>
-        <line num="24" count="2" type="stmt"/>
+        <line num="25" count="2" type="stmt"/>
         <line num="26" count="2" type="stmt"/>
         <line num="27" count="2" type="stmt"/>
         <line num="28" count="2" type="stmt"/>
@@ -493,16 +495,16 @@
         <line num="38" count="2" type="stmt"/>
         <line num="39" count="2" type="stmt"/>
         <line num="40" count="2" type="stmt"/>
-        <line num="41" count="2" type="stmt"/>
-        <line num="42" count="2" type="cond" truecount="1" falsecount="1"/>
-        <line num="43" count="2" type="cond" truecount="1" falsecount="1"/>
-        <line num="45" count="2" type="stmt"/>
-        <line num="54" count="2" type="stmt"/>
+        <line num="42" count="2" type="stmt"/>
+        <line num="51" count="2" type="cond" truecount="1" falsecount="1"/>
+        <line num="52" count="2" type="cond" truecount="1" falsecount="1"/>
+        <line num="53" count="2" type="stmt"/>
         <line num="55" count="2" type="stmt"/>
         <line num="56" count="2" type="stmt"/>
-        <line num="58" count="2" type="stmt"/>
+        <line num="57" count="2" type="stmt"/>
+        <line num="59" count="2" type="stmt"/>
       </file>
-      <file name="makeStyles.js" path="/Users/kane/Lab/Eros/src/theme/makeStyles.js">
+      <file name="makeStyles.ts" path="/Users/kane/Lab/Eros/src/theme/makeStyles.ts">
         <metrics statements="6" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="1"/>
         <line num="5" count="2" type="stmt"/>
         <line num="6" count="10" type="stmt"/>
@@ -511,7 +513,7 @@
         <line num="9" count="0" type="stmt"/>
         <line num="12" count="10" type="stmt"/>
       </file>
-      <file name="useTheme.js" path="/Users/kane/Lab/Eros/src/theme/useTheme.js">
+      <file name="useTheme.ts" path="/Users/kane/Lab/Eros/src/theme/useTheme.ts">
         <metrics statements="3" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="4" count="2" type="stmt"/>
         <line num="5" count="0" type="stmt"/>

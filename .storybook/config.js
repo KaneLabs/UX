@@ -6,14 +6,8 @@ import {
   addParameters,
 } from '@storybook/react';
 import { withTests } from '@storybook/addon-jest';
+import { withKnobs } from '@storybook/addon-knobs';
 import { withA11y } from '@storybook/addon-a11y';
-// import { withApolloClient } from 'storybook-addon-apollo-client';
-// import { withBackgrounds } from '@storybook/addon-backgrounds';
-
-// import { withKnobs } from '@storybook/addon-knobs';
-// import results from '../.jest-test-results.json';
-import ThemeProvider from 'eros-ui/theme/ThemeProvider';
-import useTheme from 'eros-ui/theme/useTheme';
 import { backgroundColor as lightBackground } from 'eros-ui/theme/light';
 import { backgroundColor as darkBackground } from 'eros-ui/theme/dark';
 // import createApolloClient from 'eros-ui/apollo/createClient';
@@ -27,6 +21,7 @@ import withThemeProvider from './withThemeProvider';
 // import { MockedProvider } from '@apollo/client/testing';
 
 import './addons';
+import results from '../coverage/.jest-test-results.json';
 
 // import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 
@@ -76,15 +71,18 @@ addParameters({
   // },
 });
 
-// addDecorator(
-//   withTests({
-//     // results,
-//   }),
-//   // withKnobs(),
-//   // withA11y,
-//   // withThemeProvider(),
-// );
+
+
+addDecorator(
+  withTests({
+    results,
+  }),
+  withKnobs,
+  // withA11y,
+);
 addDecorator(withThemeProvider);
+
+
 
 // const withApolloClient = (Component) => {
 //   const client = new ApolloClient({

@@ -7,25 +7,26 @@ import {
   addParameters,
   makeDecorator,
 } from '@storybook/react-native';
-import withThemeProvider from './withThemeProvider';
 import { themes } from '@storybook/theming';
-// import { name as appName } from '../app.json';
+import withThemeProvider from './withThemeProvider';
+import withApolloClient from './withApolloClient';
 import { LOCAL_IP } from '../src/constants';
 import './rn-addons.js';
 import { withBackgrounds } from '@storybook/addon-ondevice-backgrounds';
 
-addDecorator(withBackgrounds);
 // import stories
 configure(() => {
   require('./stories');
 }, module);
 
-// addDecorator(
-//   // withTests({
-//   //   results,
-//   // }),
-//   withThemeProvider,
-// );
+addDecorator(
+  // withTests({
+  //   results,
+  // }),
+  withBackgrounds,
+  withThemeProvider,
+  withApolloClient,
+);
 
 addParameters({
   // options: {

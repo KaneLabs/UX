@@ -1,0 +1,80 @@
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Code coverage report for lib/components/Chip/Chip.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../prettify.css" />
+    <link rel="stylesheet" href="../../../base.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="../../../favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+    
+<body>
+<div class='wrapper'>
+    <div class='pad1'>
+        <h1><a href="../../../index.html">All files</a> / <a href="index.html">lib/components/Chip</a> Chip.js</h1>
+        <div class='clearfix'>
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">36.54% </span>
+                <span class="quiet">Statements</span>
+                <span class='fraction'>19/52</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">0% </span>
+                <span class="quiet">Branches</span>
+                <span class='fraction'>0/20</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">0% </span>
+                <span class="quiet">Functions</span>
+                <span class='fraction'>0/6</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">100% </span>
+                <span class="quiet">Lines</span>
+                <span class='fraction'>1/1</span>
+            </div>
+        
+            
+        </div>
+        <p class="quiet">
+            Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
+        </p>
+    </div>
+    <div class='status-line low'></div>
+    <pre><table class="coverage">
+<tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span></td><td class="text"><pre class="prettyprint lang-js">var _interopRequireDefault=require("@babel/runtime/helpers/interopRequireDefault");var _interopRequireWildcard=require("@babel/runtime/helpers/interopRequireWildcard");Object.defineProperty(exports,"__esModule",{value:true});exports.default=void 0;var _extends2=_interopRequireDefault(require("@babel/runtime/helpers/extends"));var _slicedToArray2=_interopRequireDefault(require("@babel/runtime/helpers/slicedToArray"));var _objectWithoutProperties2=_interopRequireDefault(require("@babel/runtime/helpers/objectWithoutProperties"));var _react=_interopRequireWildcard(require("react"));var _Platform=_interopRequireDefault(require("react-native-web/dist/exports/Platform"));var _theme=require("../../theme");var _Paper=_interopRequireDefault(require("../Paper"));var _Typography=_interopRequireDefault(require("../Typography"));var _this=this,_jsxFileName="/Users/kane/Lab/Eros/src/components/Chip/Chip.js";var DEFAULT_CHIP_HEIGHT=32;var useStyles=(0,_theme.makeStyles)(<span class="fstat-no" title="function not covered" >fu</span>nction(theme){<span class="cstat-no" title="statement not covered" >return{default:_Platform.default.select({default:{height:DEFAULT_CHIP_HEIGHT,borderRadius:DEFAULT_CHIP_HEIGHT,borderColor:theme.borderColor,borderWidth:theme.borderWidth,paddingLeft:theme.padding,paddingRight:theme.padding,overflow:'hidden',justifyContent:'center'}}),flat:_Platform.default.select({web:{backgroundColor:theme.canvas2Opaque,borderWidth:0,outlineWidth:0},default:{backgroundColor:theme.canvas2Opaque,borderWidth:0}})};}</span>);var Chip=function <span class="fstat-no" title="function not covered" >Chip(</span>_ref){var _ref$text=<span class="cstat-no" title="statement not covered" >_ref.text,</span>text=<span class="cstat-no" title="statement not covered" >_ref$text===void 0?null:_ref$text,</span>_ref$flat=<span class="cstat-no" title="statement not covered" >_ref.flat,</span>flat=<span class="cstat-no" title="statement not covered" >_ref$flat===void 0?false:_ref$flat,</span>_ref$style=<span class="cstat-no" title="statement not covered" >_ref.style,</span>style=<span class="cstat-no" title="statement not covered" >_ref$style===void 0?null:_ref$style,</span>_ref$hoverStyle=<span class="cstat-no" title="statement not covered" >_ref.hoverStyle,</span>hoverStyle=<span class="cstat-no" title="statement not covered" >_ref$hoverStyle===void 0?null:_ref$hoverStyle,</span>_ref$focusStyle=<span class="cstat-no" title="statement not covered" >_ref.focusStyle,</span>focusStyle=<span class="cstat-no" title="statement not covered" >_ref$focusStyle===void 0?null:_ref$focusStyle,</span>children=<span class="cstat-no" title="statement not covered" >_ref.children,</span>rest=<span class="cstat-no" title="statement not covered" >(0,_objectWithoutProperties2.default)(_ref,["text","flat","style","hoverStyle","focusStyle","children"]);</span>var _useTheme=<span class="cstat-no" title="statement not covered" >(0,_theme.useTheme)(),</span>_useTheme2=<span class="cstat-no" title="statement not covered" >(0,_slicedToArray2.default)(_useTheme,1),</span>_useTheme2$=<span class="cstat-no" title="statement not covered" >_useTheme2[0],</span>textColor=<span class="cstat-no" title="statement not covered" >_useTheme2$.textColor,</span>canvas2Opaque=<span class="cstat-no" title="statement not covered" >_useTheme2$.canvas2Opaque;</span>var _useState=<span class="cstat-no" title="statement not covered" >(0,_react.useState)(false),</span>_useState2=<span class="cstat-no" title="statement not covered" >(0,_slicedToArray2.default)(_useState,2),</span>focus=<span class="cstat-no" title="statement not covered" >_useState2[0],</span>setFocus=<span class="cstat-no" title="statement not covered" >_useState2[1];</span>var _useState3=<span class="cstat-no" title="statement not covered" >(0,_react.useState)(false),</span>_useState4=<span class="cstat-no" title="statement not covered" >(0,_slicedToArray2.default)(_useState3,2),</span>hover=<span class="cstat-no" title="statement not covered" >_useState4[0],</span>setHover=<span class="cstat-no" title="statement not covered" >_useState4[1];</span>var styles=<span class="cstat-no" title="statement not covered" >useStyles();</span>var ChipStyle=<span class="cstat-no" title="statement not covered" >[styles.default,hover&amp;&amp;(0,_extends2.default)({borderColor:textColor.disabled,color:textColor.secondary},(0,_theme.shadow)(8),{backgroundColor:canvas2Opaque},hoverStyle),flat&amp;&amp;styles.flat,_Platform.default.OS==='web'&amp;&amp;{outlineWidth:0},style];<span class="cstat-no" title="statement not covered" ></span>return _react.default.createElement(_Paper.default,(0,_extends2.default)({style:ChipStyle,onFocus:function <span class="fstat-no" title="function not covered" >onFocus(</span>){<span class="cstat-no" title="statement not covered" >return setFocus(true);}</span>,onBlur:function <span class="fstat-no" title="function not covered" >onBlur(</span>){<span class="cstat-no" title="statement not covered" >return setFocus(false);}</span>,onMouseEnter:function <span class="fstat-no" title="function not covered" >onMouseEnter(</span>){<span class="cstat-no" title="statement not covered" >return setHover(true);}</span>,onMouseLeave:function <span class="fstat-no" title="function not covered" >onMouseLeave(</span>){<span class="cstat-no" title="statement not covered" >return setHover(false);}</span>},rest,{__self:_this,__source:{fileName:_jsxFileName,lineNumber:62,columnNumber:5}}),text&amp;&amp;_react.default.createElement(_Typography.default,{type:"body2",__self:_this,__source:{fileName:_jsxFileName,lineNumber:70,columnNumber:18}},text)||children||null);}</span>;var _default=Chip;exports.default=_default;</pre></td></tr></table></pre>
+
+                <div class='push'></div><!-- for sticky footer -->
+            </div><!-- /wrapper -->
+            <div class='footer quiet pad2 space-top1 center small'>
+                Code coverage generated by
+                <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
+                at Sun Jul 11 2021 09:12:08 GMT-0600 (Mountain Daylight Time)
+            </div>
+        </div>
+        <script src="../../../prettify.js"></script>
+        <script>
+            window.onload = function () {
+                prettyPrint();
+            };
+        </script>
+        <script src="../../../sorter.js"></script>
+        <script src="../../../block-navigation.js"></script>
+    </body>
+</html>
+    

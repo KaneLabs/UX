@@ -52,13 +52,13 @@ const styles = StyleSheet.create({
 export default storiesOf('Docs|Start Here', module).add('Home', () => (
   <Container>
     <View style={styles.center}>
-      <Typography type="h1">Eros</Typography>
       <Image source={ClassicalWaveImage} style={styles.logo} />
-      <Typography type="h4">Elite Experiences</Typography>
     </View>
 
     <View style={styles.center}>
-      <Typography type="h2" style={styles.header}>
+      <Typography type="h1" gutterBottom>Eros</Typography>
+      <Typography type="h3" gutterBottom>Elite Experiences</Typography>
+      <Typography type="h4" style={styles.header}>
         Cross Platform
       </Typography>
       <Typography>

@@ -1,0 +1,80 @@
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Code coverage report for lib/components/Menu/ModalMenu/index.native.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../base.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="../../../../favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+    
+<body>
+<div class='wrapper'>
+    <div class='pad1'>
+        <h1><a href="../../../../index.html">All files</a> / <a href="index.html">lib/components/Menu/ModalMenu</a> index.native.js</h1>
+        <div class='clearfix'>
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">57.63% </span>
+                <span class="quiet">Statements</span>
+                <span class='fraction'>34/59</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">50% </span>
+                <span class="quiet">Branches</span>
+                <span class='fraction'>5/10</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">42.86% </span>
+                <span class="quiet">Functions</span>
+                <span class='fraction'>3/7</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">100% </span>
+                <span class="quiet">Lines</span>
+                <span class='fraction'>1/1</span>
+            </div>
+        
+            
+        </div>
+        <p class="quiet">
+            Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
+        </p>
+    </div>
+    <div class='status-line medium'></div>
+    <pre><table class="coverage">
+<tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span></td><td class="text"><pre class="prettyprint lang-js">var _interopRequireDefault=require("@babel/runtime/helpers/interopRequireDefault");var _interopRequireWildcard=require("@babel/runtime/helpers/interopRequireWildcard");Object.defineProperty(exports,"__esModule",{value:true});exports.default=void 0;var _extends2=_interopRequireDefault(require("@babel/runtime/helpers/extends"));var _classCallCheck2=_interopRequireDefault(require("@babel/runtime/helpers/classCallCheck"));var _createClass2=_interopRequireDefault(require("@babel/runtime/helpers/createClass"));var _inherits2=_interopRequireDefault(require("@babel/runtime/helpers/inherits"));var _possibleConstructorReturn2=_interopRequireDefault(require("@babel/runtime/helpers/possibleConstructorReturn"));var _getPrototypeOf2=_interopRequireDefault(require("@babel/runtime/helpers/getPrototypeOf"));var _react=_interopRequireWildcard(require("react"));var _View=_interopRequireDefault(require("react-native-web/dist/exports/View"));var _TouchableWithoutFeedback=_interopRequireDefault(require("react-native-web/dist/exports/TouchableWithoutFeedback"));var _Dimensions=_interopRequireDefault(require("react-native-web/dist/exports/Dimensions"));var _Animated=_interopRequireDefault(require("react-native-web/dist/exports/Animated"));var _Modal=_interopRequireDefault(require("react-native-web/dist/exports/Modal"));var _propTypes=_interopRequireDefault(require("prop-types"));var _ModalMenuNative=_interopRequireDefault(require("./ModalMenu.native.styles"));var _jsxFileName="/Users/kane/Lab/Eros/src/components/Menu/ModalMenu/index.native.js";function _createSuper(Derived){var hasNativeReflectConstruct=_isNativeReflectConstruct();return function <span class="fstat-no" title="function not covered" >_createSuperInternal(</span>){var Super=<span class="cstat-no" title="statement not covered" >(0,_getPrototypeOf2.default)(Derived),</span>result;<span class="cstat-no" title="statement not covered" >if(hasNativeReflectConstruct){var NewTarget=<span class="cstat-no" title="statement not covered" >(0,_getPrototypeOf2.default)(this).constructor;<span class="cstat-no" title="statement not covered" ></span>result=Reflect.construct(Super,arguments,NewTarget);}</span>else{<span class="cstat-no" title="statement not covered" >result=Super.apply(this,arguments);}<span class="cstat-no" title="statement not covered" ></span>r</span>eturn(0,_possibleConstructorReturn2.default)(this,result);}</span>;}function _isNativeReflectConstruct(){<span class="missing-if-branch" title="if path not taken" >I</span>if(typeof Reflect==="undefined"||!Reflect.construct)<span class="cstat-no" title="statement not covered" >return false;<span class="missing-if-branch" title="if path not taken" >I</span>i</span>f(Reflect.construct.sham)<span class="cstat-no" title="statement not covered" >return false;<span class="missing-if-branch" title="else path not taken" >E</span>i</span>f(typeof Proxy==="function")return true;<span class="cstat-no" title="statement not covered" >try{<span class="cstat-no" title="statement not covered" >Boolean.prototype.valueOf.call(Reflect.construct(Boolean,[],<span class="fstat-no" title="function not covered" >fu</span>nction(){}));<span class="cstat-no" title="statement not covered" >r</span>eturn true;}</span>catch(e){<span class="cstat-no" title="statement not covered" >return false;}</span>}</span>var Modal=function(_Component){(0,_inherits2.default)(Modal,_Component);var _super=_createSuper(Modal);function <span class="fstat-no" title="function not covered" >Modal(</span>){<span class="cstat-no" title="statement not covered" >(0,_classCallCheck2.default)(this,Modal);<span class="cstat-no" title="statement not covered" >r</span>eturn _super.apply(this,arguments);}</span>(0,_createClass2.default)(Modal,[{key:"render",value:function <span class="fstat-no" title="function not covered" >render(</span>){var _this$props=<span class="cstat-no" title="statement not covered" >this.props,</span>onRequestClose=<span class="cstat-no" title="statement not covered" >_this$props.onRequestClose,</span>onShow=<span class="cstat-no" title="statement not covered" >_this$props.onShow,</span>onBackdropPress=<span class="cstat-no" title="statement not covered" >_this$props.onBackdropPress,</span>containerStyle=<span class="cstat-no" title="statement not covered" >_this$props.containerStyle,</span>children=<span class="cstat-no" title="statement not covered" >_this$props.children,</span>NativeModalProps=<span class="cstat-no" title="statement not covered" >_this$props.NativeModalProps,</span>visible=<span class="cstat-no" title="statement not covered" >_this$props.visible;</span>var deviceWidth=<span class="cstat-no" title="statement not covered" >_Dimensions.default.get('window').width;</span>var deviceHeight=<span class="cstat-no" title="statement not covered" >_Dimensions.default.get('window').height;<span class="cstat-no" title="statement not covered" ></span>return _react.default.createElement(_Modal.default,(0,_extends2.default)({animationType:"none",transparent:true,visible:visible,onRequestClose:onRequestClose,onShow:onShow},NativeModalProps,{__self:this,__source:{fileName:_jsxFileName,lineNumber:46,columnNumber:7}}),_react.default.createElement(_View.default,{style:[_ModalMenuNative.default.container,containerStyle],__self:this,__source:{fileName:_jsxFileName,lineNumber:54,columnNumber:9}},_react.default.createElement(_TouchableWithoutFeedback.default,{onPress:onBackdropPress,__self:this,__source:{fileName:_jsxFileName,lineNumber:55,columnNumber:11}},_react.default.createElement(_Animated.default.View,{useNativeDriver:false,style:{width:deviceWidth,height:deviceHeight,position:'absolute',padding:24},__self:this,__source:{fileName:_jsxFileName,lineNumber:56,columnNumber:13}})),children));}</span>}]);return Modal;}(_react.Component);Modal.propTypes={buttons:_propTypes.default.element,visible:_propTypes.default.bool,onRequestClose:_propTypes.default.func,onShow:_propTypes.default.func,onBackdropPress:_propTypes.default.func,containerStyle:_propTypes.default.oneOfType([_propTypes.default.object,_propTypes.default.array]),NativeModalProps:_propTypes.default.shape(),children:_propTypes.default.node};Modal.defaultProps={visible:false};var _default=Modal;exports.default=_default;</pre></td></tr></table></pre>
+
+                <div class='push'></div><!-- for sticky footer -->
+            </div><!-- /wrapper -->
+            <div class='footer quiet pad2 space-top1 center small'>
+                Code coverage generated by
+                <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
+                at Sun Jul 11 2021 09:12:08 GMT-0600 (Mountain Daylight Time)
+            </div>
+        </div>
+        <script src="../../../../prettify.js"></script>
+        <script>
+            window.onload = function () {
+                prettyPrint();
+            };
+        </script>
+        <script src="../../../../sorter.js"></script>
+        <script src="../../../../block-navigation.js"></script>
+    </body>
+</html>
+    
