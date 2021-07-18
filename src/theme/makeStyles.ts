@@ -1,11 +1,16 @@
 import { useMemo } from 'react';
-import { StyleSheet } from 'react-native';
+import { StyleSheet, StyleSheetProperties } from 'react-native';
 import useTheme from './useTheme';
+import Theme from './Theme';
 
-const makeStyles = (themeFn) => {
+type ThemeFunction = (theme: Theme) => any;
+
+const makeStyles: Function = (themeFn: ThemeFunction) => {
   const useStyles = () => {
-    const [currTheme] = useTheme();
-    const styles = useMemo(() => StyleSheet.create(themeFn(currTheme)), [currTheme.mode]);
+    const [currTheme, toggleTheme] = useTheme();
+    const styles = useMemo(() => StyleSheet.create(themeFn(currTheme)), [
+      currTheme.mode,
+    ]);
     return styles;
   };
 

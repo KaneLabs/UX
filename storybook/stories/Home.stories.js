@@ -57,8 +57,8 @@ export default storiesOf('Docs|Start Here', module).add('Home', () => (
 
     <View style={styles.center}>
       <Typography type="h1" gutterBottom>Eros</Typography>
-      <Typography type="h3" gutterBottom>Elite Experiences</Typography>
-      <Typography type="h4" style={styles.header}>
+      <Typography type="h4" gutterBottom>Elite Experiences</Typography>
+      <Typography type="h5" style={styles.header}>
         Cross Platform
       </Typography>
       <Typography>

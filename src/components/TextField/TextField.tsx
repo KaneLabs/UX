@@ -1,55 +1,61 @@
-import React, { useState } from 'react';
-import { StyleSheet, TextInput, Platform } from 'react-native';
+import * as React from 'react';
+import {
+  StyleSheet,
+  TextInput,
+  Platform,
+  TextInputProps,
+  ViewStyle,
+} from 'react-native';
 
-import { useTheme, makeStyles, shadow } from 'eros-ui/theme';
+import { useTheme, makeStyles, Theme, ThemeModes } from 'eros-ui/theme';
 
-const TextField = React.forwardRef(({
-  autoFocus = false, style = null, flat = false, hoverStyle = null, focusStyle = null, ...rest
-}, ref) => {
-  const [{
-    textColor, mode, canvas2Opaque,
-  }] = useTheme();
-  const [focus, setFocus] = useState(autoFocus);
-  const [hover, setHover] = useState(false);
+interface TextFieldProps extends TextInputProps {
+  flat?: boolean;
+  hoverStyle?: ViewStyle;
+  focusStyle?: ViewStyle;
+  children?: React.ReactNode;
+}
+
+const TextField = React.forwardRef<TextInput, TextFieldProps>((props, ref) => {
+  const {
+    autoFocus = false,
+    style = null,
+    flat = false,
+    hoverStyle,
+    focusStyle,
+    ...rest
+  }: TextFieldProps = props;
+  const [theme] = useTheme();
+  const [focus, setFocus] = React.useState(autoFocus);
+  const [hover, setHover] = React.useState(false);
   const styles = useStyles();
 
-  const textFieldStyle = ([
+  const textFieldStyle = StyleSheet.flatten([
     styles.default,
-    hover && {
-      borderColor: textColor.disabled,
-      color: textColor.secondary,
-      ...shadow(8),
-      backgroundColor: canvas2Opaque,
-      ...hoverStyle,
-    },
-    focus && {
-      borderColor: textColor.secondary,
-      color: textColor.primary,
-      ...shadow(8),
-      backgroundColor: canvas2Opaque,
-      ...focusStyle,
-    },
+    hover && StyleSheet.compose(styles.hover, hoverStyle),
+    focus && StyleSheet.compose(styles.focus, focusStyle),
     flat && styles.flat,
-    Platform.OS === 'web' && ({ outlineWidth: 0 }), // needed for Web
+    Platform.OS === 'web' && { outlineWidth: 0 }, // needed for Web
     style,
   ]);
 
+  const keyboardAppearance = theme.mode === ThemeModes.light ? 'light' : 'dark';
   return (
     <TextInput
       ref={ref}
       style={textFieldStyle}
       onFocus={() => setFocus(true)}
       onBlur={() => setFocus(false)}
-      onMouseEnter={() => setHover(true)}
-      onMouseLeave={() => setHover(false)}
-      keyboardAppearance={mode}
-      placeholderTextColor={focus || hover ? textColor.secondary : textColor.disabled}
+      keyboardAppearance={keyboardAppearance}
+      placeholderTextColor={
+        focus || hover ? theme.textColor.secondary : theme.textColor.disabled
+      }
       {...rest}
     />
   );
 });
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles((theme: Theme) => ({
   default: Platform.select({
     default: {
       fontSize: 16,
@@ -66,9 +72,21 @@ const useStyles = makeStyles((theme) => ({
     },
   }),
   flat: Platform.select({
-    web: ({ borderWidth: 0, outlineWidth: 0 }),
-    default: ({ borderWidth: 0 }),
+    web: { borderWidth: 0, outlineWidth: 0 },
+    default: { borderWidth: 0 },
   }),
+  hover: {
+    borderColor: theme.textColor.disabled,
+    color: theme.textColor.secondary,
+    ...theme.shadow(8),
+    backgroundColor: theme.canvas2Opaque,
+  },
+  focus: {
+    borderColor: theme.textColor.disabled,
+    color: theme.textColor.secondary,
+    ...theme.shadow(8),
+    backgroundColor: theme.canvas2Opaque,
+  },
 }));
 
 export default TextField;

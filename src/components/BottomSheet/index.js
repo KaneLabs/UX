@@ -26,7 +26,6 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const BottomSheet = () => {
-  console.log('BottomSheet');
   const styles = useStyles();
   //   const { width, height } = useWindowDimensions();
   const x = useSharedValue(0);
@@ -41,7 +40,7 @@ const BottomSheet = () => {
     onActive: (event, ctx) => {
       x.value = ctx.startX + event.translationX;
     },
-    onEnd: (_) => {
+    onEnd: _ => {
       console.log('END');
       x.value = withSpring(0);
     },

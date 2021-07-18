@@ -1,155 +1,29 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`TextField Renders 1`] = `
-<Context.Provider
-  value={
-    Array [
-      Object {
-        "ASIDE_WIDTH": 300,
-        "AVATAR_SIZE": 40,
-        "CHAT_WIDTH": 192,
-        "DEFAULT_AVATAR_URL": "https://art.fora.co/default-avatar.png",
-        "DESKTOP_BREAKPOINT": 900,
-        "DRAWER_WIDTH": 192,
-        "FEED_WIDTH": 600,
-        "FEED_WIDTH_DENSE": 420,
-        "NAV_HEIGHT": 48,
-        "PROFILE_AVATAR_SIZE": 90,
-        "TABBAR_HEIGHT": 56,
-        "TOOLBAR_WIDTH_CLOSED": 64,
-        "TOOLBAR_WIDTH_OPEN": 192,
-        "Typography": Object {
-          "body1": Object {
-            "color": "rgba(0,0,0,0.87)",
-            "fontSize": 16,
-            "fontWeight": "300",
-            "letterSpacing": 0.5,
-            "lineHeight": 19,
-          },
-          "body2": Object {
-            "color": "rgba(0,0,0,0.87)",
-            "fontSize": 14,
-            "fontWeight": "300",
-            "letterSpacing": 0.25,
-            "lineHeight": 17,
-          },
-          "button": Object {
-            "color": "rgba(0,0,0,0.87)",
-            "fontSize": 16,
-            "fontWeight": "400",
-            "letterSpacing": 1.25,
-            "lineHeight": 18,
-          },
-          "caption": Object {
-            "color": "rgba(0,0,0,0.54)",
-            "fontSize": 12,
-            "letterSpacing": 0.4,
-            "lineHeight": 12,
-          },
-          "h1": Object {
-            "color": "rgba(0,0,0,0.87)",
-            "fontSize": 96,
-            "fontWeight": "200",
-            "letterSpacing": -1.5,
-            "lineHeight": 116,
-          },
-          "h2": Object {
-            "color": "rgba(0,0,0,0.87)",
-            "fontSize": 60,
-            "fontWeight": "200",
-            "letterSpacing": -0.5,
-            "lineHeight": 72,
-          },
-          "h3": Object {
-            "color": "rgba(0,0,0,0.87)",
-            "fontSize": 40,
-            "fontWeight": "300",
-            "letterSpacing": 0,
-            "lineHeight": 48,
-          },
-          "h4": Object {
-            "color": "rgba(0,0,0,0.87)",
-            "fontSize": 28,
-            "fontWeight": "300",
-            "letterSpacing": 0.25,
-            "lineHeight": 34,
-          },
-          "h5": Object {
-            "color": "rgba(0,0,0,0.87)",
-            "fontSize": 24,
-            "fontWeight": "300",
-            "letterSpacing": 0,
-            "lineHeight": 29,
-          },
-          "h6": Object {
-            "color": "rgba(0,0,0,0.87)",
-            "fontSize": 20,
-            "fontWeight": "500",
-            "letterSpacing": 0.15,
-            "lineHeight": 24,
-          },
-          "overline": Object {
-            "color": "rgba(0,0,0,0.87)",
-            "fontSize": 10,
-            "fontWeight": "300",
-            "letterSpacing": 1.5,
-            "lineHeight": 12,
-          },
-          "subtitle1": Object {
-            "color": "rgba(0,0,0,0.87)",
-            "fontSize": 16,
-            "fontWeight": "300",
-            "letterSpacing": 0.15,
-            "lineHeight": 20,
-          },
-          "subtitle2": Object {
-            "color": "rgba(0,0,0,0.87)",
-            "fontSize": 14,
-            "fontWeight": "500",
-            "letterSpacing": 0.1,
-            "lineHeight": 17,
-          },
-        },
-        "appBackgroundColor": "rgba(240,240,240,1)",
-        "background": "rgba(240,240,240,1)",
-        "backgroundColor": "rgba(240,240,240,1)",
-        "backgroundColorOpaque": "rgba(240,240,240,0.67)",
-        "backgroundColorUltraOpaque": "rgba(240,240,240,0.05)",
-        "borderColor": "rgba(0,0,0,0.12)",
-        "borderColorHover": "rgba(0,0,0,0.87)",
-        "borderRadius": 3,
-        "borderWidth": 0.5,
-        "canvas": "rgba(255,255,255, 1)",
-        "canvas1": "rgba(255,255,255, 1)",
-        "canvas1Opaque": "rgba(255,255,255,0.67)",
-        "canvas2": "rgba(255,255,255, 1)",
-        "canvas2Opaque": "rgba(255,255,255,0.67)",
-        "canvas3": "rgba(255,255,255, 1)",
-        "canvas3Opaque": "rgba(255,255,255,0.67)",
-        "canvasOpaque": "rgba(255,255,255,0.67)",
-        "gutter": 16,
-        "iconColor": "rgba(0,0,0,0.54)",
-        "iconPadding": 12,
-        "iconSize": 24,
-        "mode": "light",
-        "padding": 12,
-        "shadow": [Function],
-        "textColor": Object {
-          "disabled": "rgba(0,0,0,0.38)",
-          "faint": "rgba(0,0,0,0.12)",
-          "hint": "rgba(0,0,0,0.38)",
-          "inactive": "rgba(0,0,0,0.38)",
-          "primary": "rgba(0,0,0,0.87)",
-          "secondary": "rgba(0,0,0,0.54)",
-        },
-        "unit": 8,
-      },
-      [Function],
-    ]
+<TextInput
+  allowFontScaling={true}
+  keyboardAppearance="light"
+  onBlur={[Function]}
+  onFocus={[Function]}
+  placeholder="Text Field"
+  placeholderTextColor="rgba(0,0,0,0.38)"
+  rejectResponderTermination={true}
+  style={
+    Object {
+      "alignItems": "center",
+      "borderColor": "rgba(0,0,0,0.12)",
+      "borderRadius": 8,
+      "borderWidth": 0.5,
+      "color": "rgba(0,0,0,0.54)",
+      "fontSize": 16,
+      "lineHeight": 19,
+      "paddingBottom": 4,
+      "paddingLeft": 8,
+      "paddingRight": 8,
+      "paddingTop": 4,
+    }
   }
->
-  <ForwardRef
-    placeholder="Text Field"
-  />
-</Context.Provider>
+  underlineColorAndroid="transparent"
+/>
 `;

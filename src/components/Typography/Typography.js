@@ -12,8 +12,10 @@ const Typography = ({
 }) => {
   const [theme] = useTheme();
 
-  const selectedStyles = useMemo(() => theme.Typography[type], [theme.mode, type]);
-  console.log({ theme, selectedStyles });
+  const selectedStyles = useMemo(() => theme.Typography[type], [
+    theme.mode,
+    type,
+  ]);
   const gutterStyles = { marginBottom: gutter ? 10 : 0 };
   const overrideableStyle = [selectedStyles, gutterStyles, style];
   const content = text || children;

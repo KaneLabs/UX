@@ -1,4 +1,4 @@
-import react, { FC, ComponentType } from 'react';
+import React, { FC, ComponentType } from 'react';
 import ThemeProvider from './ThemeProvider';
 
 const withThemeProvider: FC<ComponentType> = (Component: ComponentType) => (

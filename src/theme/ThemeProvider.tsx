@@ -1,47 +1,60 @@
-import React, {
-  useState,
-  useMemo,
-  createContext,
-  useCallback,
-  ReactNode,
-} from 'react';
+import * as React from 'react';
 import { useColorScheme } from 'react-native';
 import * as light from './light';
 import * as dark from './dark';
+import Theme from './Theme';
+import makeTheme, { ThemeModes } from './makeTheme';
 
-export const ThemeContext = createContext(null);
+const defaultTheme: Theme = makeTheme({ mode: ThemeModes.light });
+const defaultContext: ThemeContextType = [defaultTheme, () => null];
+export const ThemeContext = React.createContext(defaultContext);
 
-interface ThemeProviderProps {
-  initialScheme?: string;
-  children: ReactNode;
+export interface ThemeOverrideProps {
+  primaryColor?: string;
+  secondaryColor?: string;
 }
 
-interface ThemeType {}
+export interface ThemeProviderProps {
+  children: React.ReactNode;
+  initialScheme?: ThemeModes;
+  theme?: ThemeOverrideProps;
+}
 
-export type ThemeContextType = unknown | [ThemeType, Function];
+export type ThemeContextType = [Theme, () => any];
 
 export type ThemeProvider<ThemeProviderProps> = (
   props: ThemeProviderProps,
 ) => React.ContextType<any>;
 
 export const ThemeProvider = (props: ThemeProviderProps) => {
-  const { children, initialScheme } = props;
+  const { children, initialScheme, theme = {} } = props;
   const colorScheme = useColorScheme();
   console.log(
     `Detected device color scheme: ${colorScheme}`,
     `initial color scheme: ${initialScheme || colorScheme}`,
   );
 
-  const [themeMode, setThemeMode] = useState(initialScheme || colorScheme);
-  const toggleTheme = useCallback(
-    () => setThemeMode(mode => (mode === 'light' ? 'dark' : 'light')),
-    [themeMode],
+  const [themeMode, setThemeMode] = React.useState(
+    initialScheme || colorScheme,
   );
-  const value = useMemo(
-    () => (themeMode === 'light' ? [light, toggleTheme] : [dark, toggleTheme]),
+
+  const toggleTheme = React.useCallback(
+    (): any =>
+      setThemeMode(mode =>
+        mode === ThemeModes.light ? ThemeModes.dark : ThemeModes.light,
+      ),
     [themeMode],
   );
 
+  const nextTheme = React.useMemo(() => {
+    const nextTheme =
+      themeMode === ThemeModes.light
+        ? makeTheme({ mode: ThemeModes.light, ...theme })
+        : makeTheme({ mode: ThemeModes.dark, ...theme });
+    return nextTheme;
+  }, [themeMode]);
+
+  const value = [nextTheme, toggleTheme] as ThemeContextType;
   return (
     <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>
   );

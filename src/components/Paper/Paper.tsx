@@ -1,10 +1,43 @@
-import React, { forwardRef } from 'react';
-import { View, TouchableWithoutFeedback } from 'react-native';
-import { makeStyles } from 'eros-ui/theme';
+import React, { forwardRef, ReactNode } from 'react';
+import { View, ViewProps, ViewStyle } from 'react-native';
+import { makeStyles, Theme } from 'eros-ui/theme';
 
 import { shadow as shadowStyles } from '../Shadow';
 
-const useStyles = makeStyles((theme) => ({
+interface PaperProps extends ViewProps {
+  children?: ReactNode;
+  style?: ViewStyle;
+  shadow?: number;
+  onPress?: () => void;
+  fullWidth?: boolean;
+}
+
+const Paper = forwardRef<View, PaperProps>((props: PaperProps, ref) => {
+  const {
+    children,
+    style,
+    shadow = 4,
+    onPress,
+    fullWidth = false,
+    ...rest
+  } = props;
+  const styles = useStyles();
+
+  return (
+    <View
+      ref={ref}
+      style={[
+        styles.paper,
+        shadowStyles(shadow),
+        fullWidth && { width: '100%' },
+        style,
+      ]}
+      {...rest}
+    />
+  );
+});
+
+const useStyles = makeStyles((theme: Theme) => ({
   paper: {
     backgroundColor: theme.canvas,
     borderWidth: theme.borderWidth,
@@ -13,30 +46,5 @@ const useStyles = makeStyles((theme) => ({
     overflow: 'hidden',
   },
 }));
-
-const Paper = forwardRef((
-  {
-    children, style = null, shadow = 4, onPress = null, fullWidth = false, ...rest
-  },
-  ref,
-) => {
-  const styles = useStyles();
-
-  if (onPress) {
-    return (
-      <TouchableWithoutFeedback ref={ref} onPress={onPress} {...rest}>
-        <View style={[styles.paper, shadowStyles(shadow), fullWidth && { width: '100%' }, style]}>
-          {children}
-        </View>
-      </TouchableWithoutFeedback>
-    );
-  }
-
-  return (
-    <View style={[styles.paper, fullWidth && { width: '100%' }, style]} ref={ref} {...rest}>
-      {children}
-    </View>
-  );
-});
 
 export default Paper;
