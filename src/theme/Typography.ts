@@ -1,3 +1,5 @@
+import { StyleProp, TextStyle } from 'react-native';
+
 export enum TextColorLightTheme {
   primary = 'rgba(0,0,0,0.87)',
   secondary = 'rgba(0,0,0,0.54)',
@@ -7,7 +9,7 @@ export enum TextColorLightTheme {
   faint = 'rgba(0,0,0,0.12)',
 }
 
-interface TextColor {
+export interface TextColor {
   primary: string;
   secondary: string;
   inactive: string;
@@ -49,6 +51,22 @@ export type TypographyType = {
   lineHeight: number;
   letterSpacing: number;
   color: TextColorLightTheme;
+} & TextStyle;
+
+export type ThemeTypographyType = {
+  [TypographyTypes.h1]: TypographyType;
+  [TypographyTypes.h2]: TypographyType;
+  [TypographyTypes.h3]: TypographyType;
+  [TypographyTypes.h4]: TypographyType;
+  [TypographyTypes.h5]: TypographyType;
+  [TypographyTypes.h6]: TypographyType;
+  [TypographyTypes.subtitle1]: TypographyType;
+  [TypographyTypes.subtitle2]: TypographyType;
+  [TypographyTypes.body1]: TypographyType;
+  [TypographyTypes.body2]: TypographyType;
+  [TypographyTypes.button]: TypographyType;
+  [TypographyTypes.caption]: TypographyType;
+  [TypographyTypes.overline]: TypographyType;
 };
 
 export const Typography = {
@@ -135,7 +153,7 @@ export const Typography = {
     lineHeight: 12,
     letterSpacing: 0.4,
   },
-  [TypographyTypes.caption]: {
+  [TypographyTypes.overline]: {
     color: TextColorLightTheme.primary,
     fontSize: 10,
     fontWeight: '300',

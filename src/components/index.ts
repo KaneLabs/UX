@@ -5,6 +5,7 @@ export * from './Backdrop';
 export { default as BottomSheet } from './DrawerLockButton';
 export * from './Buttons';
 export * from './Card';
+export { default as Chip } from './Chip';
 export * from './Content';
 export * from './CountryCodeMenu';
 export { default as DrawerLockButton } from './DrawerLockButton';

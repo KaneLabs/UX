@@ -1,10 +1,11 @@
-import { TextColor } from './Typography';
+import { TextColor, ThemeTypographyType } from './Typography';
 
 type Theme = {
   unit: number;
   mode: string;
   borderWidth: number;
   borderColor: string;
+  borderRadius: number;
   padding: number;
   textColor: TextColor;
   shadow: (number) => any;
@@ -13,6 +14,7 @@ type Theme = {
   canvas2Opaque: string; // secondary paper color with opacity
   primaryColor: string;
   secondaryColor: string;
+  Typography: ThemeTypographyType;
 };
 
 export default Theme;

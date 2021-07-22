@@ -1,6 +1,6 @@
-import { Platform } from 'react-native';
+import { Platform, ShadowStyleIOS } from 'react-native';
 
-const shadowConversion = [
+const shadowConversion: Array<ShadowStyleIOS> = [
   {
     shadowColor: '#000',
     shadowOffset: {
@@ -228,6 +228,7 @@ const shadowConversion = [
   },
 ];
 
-export const shadow = (elevation) => (Platform.OS !== 'android' ? shadowConversion[elevation] : { elevation });
+export const shadow = (elevation: number) =>
+  Platform.OS !== 'android' ? shadowConversion[elevation] : { elevation };
 
 export default shadow;

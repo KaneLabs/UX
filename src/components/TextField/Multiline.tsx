@@ -1,25 +1,25 @@
 import React, { useState } from 'react';
-import { StyleSheet, TextInput } from 'react-native';
+import { TextInput, StyleProp } from 'react-native';
 // import { AccountAvatar } from 'eros-ui/components';
-import { makeStyles } from 'eros-ui/theme';
+import { makeStyles, Theme } from 'eros-ui/theme';
 
 const Multiline = ({
   mobile = false,
   flat = false,
   style,
   autoFocus = false,
-  onChangeText = () => null,
+  onChangeText = (text: string) => null,
   ...props
 }) => {
   const [height, setHeight] = useState('auto');
   const [focused, setFocused] = useState(autoFocus);
 
-  const onContentSizeChange = (event) => {
+  const onContentSizeChange = (event: any) => {
     const { height } = event.nativeEvent.contentSize;
     setHeight(height);
   };
 
-  const onChange = (nextText) => {
+  const onChange = (nextText: string) => {
     if (nextText.length === 0) {
       setHeight('auto');
     }
@@ -49,20 +49,20 @@ const Multiline = ({
   );
 };
 
-const styles = makeStyles((theme) => ({
+const styles = makeStyles((theme: Theme) => ({
   multiline: {
     width: '100%',
-    padding: unit,
-    color: textColor.primary,
-    borderRadius,
+    padding: theme.unit,
+    color: theme.textColor.primary,
+    borderRadius: theme.borderRadius,
     borderColor: 'transparent',
-    borderWidth,
+    borderWidth: theme.borderWidth,
   },
   flat: {
     borderWidth: 0,
   },
   focused: {
-    borderColor: primaryColorOpaque,
+    borderColor: theme.primaryColorOpaque,
   },
   mobile: {
     fontSize: 18,

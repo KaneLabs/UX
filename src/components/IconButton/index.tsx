@@ -4,7 +4,7 @@ import Icon from 'react-native-vector-icons/dist/Ionicons';
 import { useTheme, makeStyles } from 'eros-ui/theme';
 import shadow from '../Shadow';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(theme => ({
   core: {
     alignItems: 'center',
     justifyContent: 'center',
@@ -35,7 +35,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const IconButton = (props) => {
+const IconButton = props => {
   const [{ iconSize, iconPadding, iconColor }] = useTheme();
   const {
     padding = iconPadding,
@@ -51,7 +51,10 @@ const IconButton = (props) => {
   const [hover, setHover] = useState(false);
   const height = size + padding * 2;
   const sizeStyles = {
-    height, width: height, borderRadius: height, padding,
+    height,
+    width: height,
+    borderRadius: height,
+    padding,
   };
   const iconButtonStyles = [
     styles.core,
@@ -69,8 +72,7 @@ const IconButton = (props) => {
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
       style={iconButtonStyles}
-      {...rest}
-    >
+      {...rest}>
       <Icon name={name} color={color} size={size} />
     </TouchableOpacity>
   );

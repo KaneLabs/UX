@@ -8,7 +8,7 @@ const ListSubtitle = ({ text, dense = false }) => (
   </View>
 );
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(theme => ({
   listSubtitle: {
     paddingHorizontal: theme.unit * 1.5,
     paddingVertical: theme.unit * 1.5,

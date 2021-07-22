@@ -7,7 +7,7 @@ import Typography from 'eros-ui/components/Typography';
 
 const DEFAULT_CHIP_HEIGHT = 32;
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(theme => ({
   default: Platform.select({
     default: {
       height: DEFAULT_CHIP_HEIGHT,
@@ -22,22 +22,30 @@ const useStyles = makeStyles((theme) => ({
     },
   }),
   flat: Platform.select({
-    web: ({ backgroundColor: theme.canvas2Opaque, borderWidth: 0, outlineWidth: 0 }),
-    default: ({ backgroundColor: theme.canvas2Opaque, borderWidth: 0 }),
+    web: {
+      backgroundColor: theme.canvas2Opaque,
+      borderWidth: 0,
+      outlineWidth: 0,
+    },
+    default: { backgroundColor: theme.canvas2Opaque, borderWidth: 0 },
   }),
 }));
 
 const Chip = ({
-  text = null, flat = false, style = null, hoverStyle = null, focusStyle = null, children, ...rest
+  text = null,
+  flat = false,
+  style = null,
+  hoverStyle = null,
+  focusStyle = null,
+  children,
+  ...rest
 }) => {
-  const [{
-    textColor, canvas2Opaque,
-  }] = useTheme();
+  const [{ textColor, canvas2Opaque }] = useTheme();
   const [focus, setFocus] = useState(false);
   const [hover, setHover] = useState(false);
   const styles = useStyles();
 
-  const ChipStyle = ([
+  const ChipStyle = [
     styles.default,
     hover && {
       borderColor: textColor.disabled,
@@ -54,9 +62,9 @@ const Chip = ({
     //   ...focusStyle,
     // },
     flat && styles.flat,
-    Platform.OS === 'web' && ({ outlineWidth: 0 }), // needed for Web
+    Platform.OS === 'web' && { outlineWidth: 0 }, // needed for Web
     style,
-  ]);
+  ];
 
   return (
     <Paper
@@ -65,9 +73,10 @@ const Chip = ({
       onBlur={() => setFocus(false)}
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
-      {...rest}
-    >
-      {(text && (<Typography type="body2">{text}</Typography>)) || children || null}
+      {...rest}>
+      {(text && <Typography type="body2">{text}</Typography>) ||
+        children ||
+        null}
     </Paper>
   );
 };

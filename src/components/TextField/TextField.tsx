@@ -48,7 +48,7 @@ const TextField = React.forwardRef<TextInput, TextFieldProps>((props, ref) => {
       onBlur={() => setFocus(false)}
       keyboardAppearance={keyboardAppearance}
       placeholderTextColor={
-        focus || hover ? theme.textColor.secondary : theme.textColor.disabled
+        focus || hover ? theme.textColor.primary : theme.textColor.secondary
       }
       {...rest}
     />

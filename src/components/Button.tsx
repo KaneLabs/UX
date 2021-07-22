@@ -21,7 +21,7 @@ export interface ButtonProps extends ViewProps {
   onPress?: () => any;
 }
 
-const Button = forwardRef<TouchableOpacity>((props, ref) => {
+const Button = forwardRef<TouchableOpacity, ButtonProps>((props, ref) => {
   const {
     children,
     text,
