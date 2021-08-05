@@ -195,7 +195,7 @@ BRF:42
 BRH:8
 end_of_record
 TN:
-SF:src/components/Menu/MenuItem/MenuItem.styles.js
+SF:src/components/Menu/MenuItem/MenuItem.styles.ts
 FNF:0
 FNH:0
 DA:1,1

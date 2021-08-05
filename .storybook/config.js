@@ -21,7 +21,7 @@ import withThemeProvider from './withThemeProvider';
 // import { MockedProvider } from '@apollo/client/testing';
 
 import './addons';
-import results from '../coverage/.jest-test-results.json';
+import results from '../coverage/coverage-final.json';
 
 // import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 

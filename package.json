@@ -23,7 +23,7 @@
     "reset": "yarn clean && yarn && yarn build && yarn dev",
     "compile:commonjs": "cross-env BABEL_ENV=commonjs babel src --out-dir dist/cjs --ignore \"**/__tests__\"",
     "compile:es": "babel src --out-dir dist --ignore \"**/*.test.*\"",
-    "test": "cross-env NODE_ENV=test jest --coverage  --json --outputFile=./coverage/.jest-test-results.json",
+    "test": "cross-env NODE_ENV=test jest --coverage",
     "test:ci": "cross-env NODE_ENV=test jest --coverage --ci -u",
     "test:watch": "cross-env NODE_ENV=test jest --watch",
     "test:integration": "echo \"No Integration Tests\"",
@@ -145,6 +145,7 @@
   "jest": {
     "preset": "react-native",
     "coverageDirectory": "./coverage/",
+    "collectCoverage": true,
     "transformIgnorePatterns": [
       "node_modules/(?!(jest-)?react-native|react-clone-referenced-element|@react-native-community|expo(nent)?|@expo(nent)?/.*|react-navigation|@react-navigation/.*|@unimodules/.*|unimodules|sentry-expo|native-base)"
     ],
