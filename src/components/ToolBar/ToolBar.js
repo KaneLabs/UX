@@ -17,9 +17,7 @@ export const ToolBar = ({ children, align = null, style = {} }) => {
   const justifyContent = alignReducer(align);
 
   return (
-    <View style={[styles.toolbar, style, { justifyContent }]}>
-      {children}
-    </View>
+    <View style={[styles.toolbar, style, { justifyContent }]}>{children}</View>
   );
 };
 

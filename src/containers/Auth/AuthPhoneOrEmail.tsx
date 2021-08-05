@@ -1,19 +1,8 @@
 import React, { useState } from 'react';
-import {
-  View,
-} from 'react-native';
-import {
-  useMutation, useApolloClient, useQuery,
-} from '@apollo/react-hooks';
-import {
-  PHONE,
-  SET_PHONE,
-  ME,
-  AUTH_PHONE_OR_EMAIL,
-} from 'eros-ui/queries';
-import {
-  makeStyles,
-} from 'eros-ui/theme';
+import { View } from 'react-native';
+import { useMutation, useApolloClient, useQuery } from '@apollo/react-hooks';
+import { PHONE, SET_PHONE, ME, AUTH_PHONE_OR_EMAIL } from 'eros-ui/queries';
+import { makeStyles } from 'eros-ui/theme';
 import { AsYouType } from 'libphonenumber-js';
 
 import {
@@ -84,22 +73,25 @@ const AuthPhoneOrEmail = ({
   console.log('cachedMe', cachedMe);
   const [phoneOrEmail, setPhoneOrEmail] = useState('');
   const client = useApolloClient();
-  const [authPhoneOrEmail, { data, error, loading }] = useMutation(AUTH_PHONE_OR_EMAIL, {
-    // update(cache, { data }) {
-    //   cache.writeQuery({
-    //     query: ME,
-    //     data: {
+  const [authPhoneOrEmail, { data, error, loading }] = useMutation(
+    AUTH_PHONE_OR_EMAIL,
+    {
+      // update(cache, { data }) {
+      //   cache.writeQuery({
+      //     query: ME,
+      //     data: {
 
-    //     },
-    //   });
-    // },
-    onCompleted({ AuthPhoneOrEmail }) {
-      console.log('onCompleted', AuthPhoneOrEmail);
-      // client.writeQuery({ query: ME, data: { Phone: { ...phone } } });
-      return AuthPhoneOrEmail && onSuccess && onSuccess(AuthPhoneOrEmail);
-      // client.writeQuery({ query: PHONE, data: { Phone: { ...phone } } });
+      //     },
+      //   });
+      // },
+      onCompleted({ AuthPhoneOrEmail }) {
+        console.log('onCompleted', AuthPhoneOrEmail);
+        // client.writeQuery({ query: ME, data: { Phone: { ...phone } } });
+        return AuthPhoneOrEmail && onSuccess && onSuccess(AuthPhoneOrEmail);
+        // client.writeQuery({ query: PHONE, data: { Phone: { ...phone } } });
+      },
     },
-  });
+  );
 
   // const [setPhone, { data, error, loading }] = useSetPhoneMutation();
 
@@ -123,7 +115,9 @@ const AuthPhoneOrEmail = ({
   const submit = async () => {
     try {
       // const input = { countryCode: state.countryCode, number: state.phoneNumber };
-      const { data, error } = await authPhoneOrEmail({ variables: { phoneOrEmail } });
+      const { data, error } = await authPhoneOrEmail({
+        variables: { phoneOrEmail },
+      });
       console.log({ data, error });
 
       // if (data && data.AuthPhoneOrEmail) {
@@ -154,7 +148,7 @@ const AuthPhoneOrEmail = ({
         </View>
       </Row>
       {error && error.message && (
-      <Subtitle testID="AuthPhoneOrEmailError" text={error.message} gutter />
+        <Subtitle testID="AuthPhoneOrEmailError" text={error.message} gutter />
       )}
       {loading && <ActivityIndicator />}
       <OutlinedButton onPress={submit} />

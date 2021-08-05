@@ -48,7 +48,12 @@ const useStyles = makeStyles((theme) => ({
 export const ToolsDrawer = () => {
   const account = useAccount();
   const styles = useStyles();
-  const { data: { Drawer: { open, lock } }, client } = useQuery(DRAWER);
+  const {
+    data: {
+      Drawer: { open, lock },
+    },
+    client,
+  } = useQuery(DRAWER);
   console.log({ open, lock });
 
   const setDrawerOpen = (open) => {
@@ -91,8 +96,7 @@ export const ToolsDrawer = () => {
       testID="ToolsDrawer"
       onMouseEnter={openDrawer}
       onMouseLeave={closeDrawer}
-      style={[styles.toolbarVertical, open ? styles.open : styles.closed]}
-    >
+      style={[styles.toolbarVertical, open ? styles.open : styles.closed]}>
       <View style={styles.drawerLogo}>
         <NavLogo />
       </View>

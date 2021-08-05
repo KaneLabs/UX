@@ -1,7 +1,10 @@
-export function closestAspectRatio({ width, height }: {
-    width: any;
-    height: any;
+export function closestAspectRatio({
+  width,
+  height,
+}: {
+  width: any;
+  height: any;
 }): {
-    aspectRatio: number;
-    mustCrop: boolean;
+  aspectRatio: number;
+  mustCrop: boolean;
 };

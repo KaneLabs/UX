@@ -1,1 +1,1 @@
-export const LATEST: import("graphql").DocumentNode;
+export const LATEST: import('graphql').DocumentNode;

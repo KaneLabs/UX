@@ -1,17 +1,25 @@
 import React from 'react';
 import {
-  TouchableWithoutFeedback, View, StyleSheet, Platform,
+  TouchableWithoutFeedback,
+  View,
+  StyleSheet,
+  Platform,
 } from 'react-native';
 import { makeStyles } from 'eros-ui/theme';
 
 export const Backdrop = ({
-  open = false, darken = true, blur = true, onPress,
+  open = false,
+  darken = true,
+  blur = true,
+  onPress,
 }) => {
   if (!open) return null;
   const styles = useStyles();
   return (
     <TouchableWithoutFeedback onPress={onPress}>
-      <View style={[styles.backdrop, darken && styles.darken, blur && styles.blur]} />
+      <View
+        style={[styles.backdrop, darken && styles.darken, blur && styles.blur]}
+      />
     </TouchableWithoutFeedback>
   );
 };

@@ -2,7 +2,7 @@ import * as React from 'react';
 import { View, ViewProps } from 'react-native';
 import { makeStyles, Theme } from 'eros-ui/theme';
 
-const Divider: React.FC<ViewProps> = props => {
+const Divider: React.FC<ViewProps> = (props) => {
   const styles = useStyles();
   return <View style={styles.Divider} {...props} />;
 };

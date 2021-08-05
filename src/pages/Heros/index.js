@@ -6,9 +6,15 @@ import { useRouter } from 'next/router';
 
 import CreatorOwned from 'eros-ui/components/Heros/CreatorOwned';
 
-const FreeTrade = dynamic(() => import('ui/components/Heros/FreeTrade'), { ssr: true });
-const FreeSpeech = dynamic(() => import('ui/components/Heros/FreeSpeech'), { ssr: false });
-const Distributed = dynamic(() => import('ui/components/Heros/Distributed'), { ssr: false });
+const FreeTrade = dynamic(() => import('ui/components/Heros/FreeTrade'), {
+  ssr: true,
+});
+const FreeSpeech = dynamic(() => import('ui/components/Heros/FreeSpeech'), {
+  ssr: false,
+});
+const Distributed = dynamic(() => import('ui/components/Heros/Distributed'), {
+  ssr: false,
+});
 
 const HerosPage = () => {
   const router = useRouter();

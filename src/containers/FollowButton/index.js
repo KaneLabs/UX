@@ -6,21 +6,33 @@ import { FOLLOW, UNFOLLOW, PERSONA } from 'eros-ui/queries';
 export const FollowButton = ({ handle, following }) => {
   const [follow] = useMutation(FOLLOW, {
     update: (cache) => {
-      const { Persona } = cache.readQuery({ query: PERSONA, variables: { handle } });
+      const { Persona } = cache.readQuery({
+        query: PERSONA,
+        variables: { handle },
+      });
       cache.writeQuery({
         query: PERSONA,
         variables: { handle },
-        data: { Persona: { ...Persona, followers: Persona.followers + 1 }, Following: true },
+        data: {
+          Persona: { ...Persona, followers: Persona.followers + 1 },
+          Following: true,
+        },
       });
     },
   });
   const [unfollow] = useMutation(UNFOLLOW, {
     update: (cache) => {
-      const { Persona } = cache.readQuery({ query: PERSONA, variables: { handle } });
+      const { Persona } = cache.readQuery({
+        query: PERSONA,
+        variables: { handle },
+      });
       cache.writeQuery({
         query: PERSONA,
         variables: { handle },
-        data: { Persona: { ...Persona, followers: Persona.followers - 1 }, Following: false },
+        data: {
+          Persona: { ...Persona, followers: Persona.followers - 1 },
+          Following: false,
+        },
       });
     },
   });
@@ -31,7 +43,13 @@ export const FollowButton = ({ handle, following }) => {
     }
     return follow(options);
   };
-  return <Button primary onPress={onPress} text={following ? 'UNFOLLOW' : 'FOLLOW'} />;
+  return (
+    <Button
+      primary
+      onPress={onPress}
+      text={following ? 'UNFOLLOW' : 'FOLLOW'}
+    />
+  );
 };
 
 export default FollowButton;

@@ -31,7 +31,12 @@ export const PersonaHeader = (props) => {
   };
 
   return (
-    <View style={[styles.header, { width: sizeStyles.width }, desktop && { flex: 1 }]}>
+    <View
+      style={[
+        styles.header,
+        { width: sizeStyles.width },
+        desktop && { flex: 1 },
+      ]}>
       {bannerUrl ? (
         <Banner uri={bannerUrl} />
       ) : (

@@ -7,5 +7,12 @@ import modals from './modals';
 import nav from './nav';
 import socialDrawer from './socialDrawer';
 
-export const resolvers = merge(account, nav, device, modals, drawer, socialDrawer);
+export const resolvers = merge(
+  account,
+  nav,
+  device,
+  modals,
+  drawer,
+  socialDrawer,
+);
 export default resolvers;

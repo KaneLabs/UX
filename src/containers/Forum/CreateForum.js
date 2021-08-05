@@ -36,14 +36,19 @@ const reducer = (state, action) => {
 };
 
 export const CreateForum = ({ url: initialUrl, onSuccess = () => null }) => {
-  const [state, dispatch] = useReducer(reducer, { ...INITIAL_STATE, url: initialUrl });
+  const [state, dispatch] = useReducer(reducer, {
+    ...INITIAL_STATE,
+    url: initialUrl,
+  });
   const [createForum, { error, loading }] = useMutation(CREATE_FORUM);
   const styles = useStyles();
 
   useEffect(() => () => dispatch({ type: RESET }), []);
 
-  const onChangeUrl = (nextUrl) => dispatch({ type: SET_URL, payload: nextUrl });
-  const onChangeTitle = (nextTitle) => dispatch({ type: SET_TITLE, payload: nextTitle });
+  const onChangeUrl = (nextUrl) =>
+    dispatch({ type: SET_URL, payload: nextUrl });
+  const onChangeTitle = (nextTitle) =>
+    dispatch({ type: SET_TITLE, payload: nextTitle });
 
   const onSubmit = async () => {
     try {
@@ -68,9 +73,17 @@ export const CreateForum = ({ url: initialUrl, onSuccess = () => null }) => {
         {loading && <ActivityIndicator />}
 
         <Subtitle gutter>Name</Subtitle>
-        <TextField value={url} onChangeText={onChangeUrl} style={styles.textField} />
+        <TextField
+          value={url}
+          onChangeText={onChangeUrl}
+          style={styles.textField}
+        />
         <Subtitle gutter>Title</Subtitle>
-        <TextField value={title} onChangeText={onChangeTitle} style={styles.textField} />
+        <TextField
+          value={title}
+          onChangeText={onChangeTitle}
+          style={styles.textField}
+        />
 
         <OutlinedButton onPress={onSubmit} text="SUBMIT" />
       </Paper>

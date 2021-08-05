@@ -6,7 +6,12 @@ import { useQuery } from '@apollo/react-hooks';
 import { useTheme } from 'eros-ui/theme';
 
 export const DrawerToggleButton = () => {
-  const { data: { Drawer: { open } }, client } = useQuery(DRAWER);
+  const {
+    data: {
+      Drawer: { open },
+    },
+    client,
+  } = useQuery(DRAWER);
   const [{ iconColor }] = useTheme();
 
   return (

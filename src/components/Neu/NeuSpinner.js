@@ -4,7 +4,7 @@ import { runInfinite } from './utils/animation/presets';
 import NeuView from './NeuView';
 import PropTypes from 'prop-types';
 
-const NeuSpinner = props => {
+const NeuSpinner = (props) => {
   const { Clock, concat } = Animated;
 
   const {
@@ -12,7 +12,7 @@ const NeuSpinner = props => {
     indicatorColor = '#000',
     duration = 1000,
     size = 50,
-    easingType = Easing.linear
+    easingType = Easing.linear,
   } = props;
 
   const rotation = runInfinite(new Clock(), 0, 360, duration, easingType);
@@ -26,14 +26,12 @@ const NeuSpinner = props => {
       width={defaultSize}
       height={defaultSize}
       borderRadius={1000}
-      inset
-    >
+      inset>
       <NeuView
         color={color}
         width={innerSize}
         height={innerSize}
-        borderRadius={1000}
-      >
+        borderRadius={1000}>
         <Animated.View
           style={{
             borderLeftColor: indicatorColor,
@@ -44,7 +42,7 @@ const NeuSpinner = props => {
             transform: [{ rotate: concat(rotation, 'deg') }],
             borderRadius: 100,
             width: defaultSize,
-            height: defaultSize
+            height: defaultSize,
           }}
         />
       </NeuView>
@@ -58,7 +56,7 @@ NeuSpinner.propTypes = {
   duration: PropTypes.number,
   size: PropTypes.number.isRequired,
   easingType: PropTypes.func,
-  ...NeuView.propTypes
+  ...NeuView.propTypes,
 };
 
 export default NeuSpinner;

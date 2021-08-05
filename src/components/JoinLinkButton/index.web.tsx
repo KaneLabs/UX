@@ -10,7 +10,12 @@ const JoinLinkButton = () => {
   return (
     <Link passHref href="/join">
       <a>
-        <Button style={styles.button} testID="JoinLinkButton" text="JOIN" primary />
+        <Button
+          style={styles.button}
+          testID="JoinLinkButton"
+          text="JOIN"
+          primary
+        />
       </a>
     </Link>
   );

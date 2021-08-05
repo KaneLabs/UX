@@ -1,1 +1,1 @@
-export { default as FullPage } from "./FullPage";
+export { default as FullPage } from './FullPage';

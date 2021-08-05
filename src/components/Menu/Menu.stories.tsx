@@ -2,9 +2,7 @@ import React from 'react';
 import { View } from 'react-native';
 
 import { State, Store } from '@sambego/storybook-state';
-import {
-  Menu, MenuItem, Button, IconButton, Heading,
-} from '../..';
+import { Menu, MenuItem, Button, IconButton, Heading } from '../..';
 import Header from 'eros-ui-storybook/components/Header';
 import Container from 'eros-ui-storybook/components/Container';
 import { storiesOf } from 'eros-ui-storybook/helpers/storiesOf';
@@ -32,7 +30,7 @@ export default storiesOf('Components|Menu', module)
               onBackdropPress={() => {
                 store.set({ visibleOne: false });
               }}
-              button={(
+              button={
                 <Button
                   text="Show menu"
                   onPress={() => {
@@ -40,16 +38,24 @@ export default storiesOf('Components|Menu', module)
                   }}
                   type="contained"
                 />
-              )}
-            >
-              <MenuItem text="Menu Item 1" onPress={() => store.set({ visibleOne: false })} />
-              <MenuItem text="Menu Item 2" onPress={() => store.set({ visibleOne: false })} />
+              }>
+              <MenuItem
+                text="Menu Item 1"
+                onPress={() => store.set({ visibleOne: false })}
+              />
+              <MenuItem
+                text="Menu Item 2"
+                onPress={() => store.set({ visibleOne: false })}
+              />
               <MenuItem
                 text="Menu Item 3"
                 disabled
                 onPress={() => store.set({ visibleOne: false })}
               />
-              <MenuItem text="Menu Item 4" onPress={() => store.set({ visibleOne: false })} />
+              <MenuItem
+                text="Menu Item 4"
+                onPress={() => store.set({ visibleOne: false })}
+              />
             </Menu>
           </View>
         )}
@@ -63,7 +69,7 @@ export default storiesOf('Components|Menu', module)
               onBackdropPress={() => {
                 store.set({ visibleTwo: false });
               }}
-              button={(
+              button={
                 <IconButton
                   name="more-vert"
                   onPress={() => {
@@ -71,21 +77,30 @@ export default storiesOf('Components|Menu', module)
                   }}
                   size={24}
                 />
-              )}
-            >
-              <MenuItem text="Menu Item 1" onPress={() => store.set({ visibleTwo: false })} />
-              <MenuItem text="Menu Item 2" onPress={() => store.set({ visibleTwo: false })} />
+              }>
+              <MenuItem
+                text="Menu Item 1"
+                onPress={() => store.set({ visibleTwo: false })}
+              />
+              <MenuItem
+                text="Menu Item 2"
+                onPress={() => store.set({ visibleTwo: false })}
+              />
               <MenuItem
                 text="Menu Item 3"
                 disabled
                 onPress={() => store.set({ visibleTwo: false })}
               />
-              <MenuItem text="Menu Item 4" onPress={() => store.set({ visibleTwo: false })} />
+              <MenuItem
+                text="Menu Item 4"
+                onPress={() => store.set({ visibleTwo: false })}
+              />
             </Menu>
           </View>
         )}
       </State>
-      <Heading style={{ marginBottom: 10, marginTop: 50, alignSelf: 'flex-end' }}>
+      <Heading
+        style={{ marginBottom: 10, marginTop: 50, alignSelf: 'flex-end' }}>
         On the Right
       </Heading>
       <State store={store} style={{ flex: 1 }}>
@@ -97,7 +112,7 @@ export default storiesOf('Components|Menu', module)
                 store.set({ visibleThree: false });
               }}
               sameWidth
-              button={(
+              button={
                 <Button
                   text="Show menu"
                   onPress={() => {
@@ -105,8 +120,7 @@ export default storiesOf('Components|Menu', module)
                   }}
                   type="contained"
                 />
-              )}
-            >
+              }>
               <MenuItem
                 text="Menu Item 1"
                 style={{ paddingHorizontal: '12%' }}
@@ -140,7 +154,7 @@ export default storiesOf('Components|Menu', module)
               onBackdropPress={() => {
                 store.set({ visibleFour: false });
               }}
-              button={(
+              button={
                 <IconButton
                   name="more-vert"
                   onPress={() => {
@@ -148,16 +162,24 @@ export default storiesOf('Components|Menu', module)
                   }}
                   size={24}
                 />
-              )}
-            >
-              <MenuItem text="Menu Item 1" onPress={() => store.set({ visibleFour: false })} />
-              <MenuItem text="Menu Item 2" onPress={() => store.set({ visibleFour: false })} />
+              }>
+              <MenuItem
+                text="Menu Item 1"
+                onPress={() => store.set({ visibleFour: false })}
+              />
+              <MenuItem
+                text="Menu Item 2"
+                onPress={() => store.set({ visibleFour: false })}
+              />
               <MenuItem
                 text="Menu Item 3"
                 disabled
                 onPress={() => store.set({ visibleFour: false })}
               />
-              <MenuItem text="Menu Item 4" onPress={() => store.set({ visibleFour: false })} />
+              <MenuItem
+                text="Menu Item 4"
+                onPress={() => store.set({ visibleFour: false })}
+              />
             </Menu>
           </View>
         )}
@@ -177,7 +199,7 @@ export default storiesOf('Components|Menu', module)
               onBackdropPress={() => {
                 store.set({ visibleFive: false });
               }}
-              button={(
+              button={
                 <Button
                   text="Show menu"
                   onPress={() => {
@@ -185,24 +207,41 @@ export default storiesOf('Components|Menu', module)
                   }}
                   type="contained"
                 />
-              )}
-            >
-              <MenuItem text="Menu Item 1" onPress={() => store.set({ visibleFive: false })} />
-              <MenuItem text="Menu Item 2" onPress={() => store.set({ visibleFive: false })} />
+              }>
+              <MenuItem
+                text="Menu Item 1"
+                onPress={() => store.set({ visibleFive: false })}
+              />
+              <MenuItem
+                text="Menu Item 2"
+                onPress={() => store.set({ visibleFive: false })}
+              />
               <MenuItem
                 text="Menu Item 3"
                 disabled
                 onPress={() => store.set({ visibleFive: false })}
               />
-              <MenuItem text="Menu Item 4" onPress={() => store.set({ visibleFive: false })} />
-              <MenuItem text="Menu Item 5" onPress={() => store.set({ visibleFive: false })} />
-              <MenuItem text="Menu Item 6" onPress={() => store.set({ visibleFive: false })} />
+              <MenuItem
+                text="Menu Item 4"
+                onPress={() => store.set({ visibleFive: false })}
+              />
+              <MenuItem
+                text="Menu Item 5"
+                onPress={() => store.set({ visibleFive: false })}
+              />
+              <MenuItem
+                text="Menu Item 6"
+                onPress={() => store.set({ visibleFive: false })}
+              />
               <MenuItem
                 text="Menu Item 7"
                 disabled
                 onPress={() => store.set({ visibleFive: false })}
               />
-              <MenuItem text="Menu Item 8" onPress={() => store.set({ visibleFive: false })} />
+              <MenuItem
+                text="Menu Item 8"
+                onPress={() => store.set({ visibleFive: false })}
+              />
             </Menu>
           </View>
         )}

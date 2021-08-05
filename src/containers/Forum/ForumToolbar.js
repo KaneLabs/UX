@@ -11,13 +11,22 @@ export const ForumToolbar = ({ open }) => {
   const router = useRouter();
   const styles = useStyles();
   return (
-    <View onMouseEnter={toggleDrawer} onMouseLeave={toggleDrawer} style={styles.toolbarVertical}>
+    <View
+      onMouseEnter={toggleDrawer}
+      onMouseLeave={toggleDrawer}
+      style={styles.toolbarVertical}>
       <View style={styles.main}>
         <AccountButton size={32} />
-        <IconButton name="ios-chatbubbles-outline" onPress={() => router.push('/fora')} />
+        <IconButton
+          name="ios-chatbubbles-outline"
+          onPress={() => router.push('/fora')}
+        />
         <IconButton name="ios-more-outline" onPress={toggleDrawer} />
       </View>
-      <IconButton name={open ? 'ios-arrow-back' : 'ios-arrow-forward'} onPress={toggleDrawer} />
+      <IconButton
+        name={open ? 'ios-arrow-back' : 'ios-arrow-forward'}
+        onPress={toggleDrawer}
+      />
     </View>
   );
 };

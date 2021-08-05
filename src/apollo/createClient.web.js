@@ -19,17 +19,17 @@ import resolvers from './resolvers';
 import { API_URI, WS_API_URI } from '../constants';
 
 const createErrorLink = () => {
-  const errorLink = onError(({
-    graphQLErrors, networkError, response, operation, forward,
-  }) => {
-    if (graphQLErrors) {
-      graphQLErrors.forEach(({ message }) => {
-        console.log(message);
-      });
-    }
+  const errorLink = onError(
+    ({ graphQLErrors, networkError, response, operation, forward }) => {
+      if (graphQLErrors) {
+        graphQLErrors.forEach(({ message }) => {
+          console.log(message);
+        });
+      }
 
-    // console.log('response', response);
-  });
+      // console.log('response', response);
+    },
+  );
   return errorLink;
 };
 
@@ -46,29 +46,30 @@ const createHttpLink = ({ ssrMode = false }) => {
   // return httpLink;
 };
 
-const createWSLink = ({ ssrMode = false }) => new WebSocketLink({
-  ssrMode,
-  // webSocketImpl: ssrMode ? ws : undefined,
-  uri: `${WS_API_URI}`,
-  options: {
-    lazy: true,
-    reconnect: true,
-    connectionParams: async () => {
-      // failsafe for ssr
-      try {
-        const token = await AsyncStorage.getItem('token');
+const createWSLink = ({ ssrMode = false }) =>
+  new WebSocketLink({
+    ssrMode,
+    // webSocketImpl: ssrMode ? ws : undefined,
+    uri: `${WS_API_URI}`,
+    options: {
+      lazy: true,
+      reconnect: true,
+      connectionParams: async () => {
+        // failsafe for ssr
+        try {
+          const token = await AsyncStorage.getItem('token');
 
-        if (token) {
-          return { Authorization: token };
+          if (token) {
+            return { Authorization: token };
+          }
+          return {};
+        } catch (e) {
+          console.log('wsLink error', e);
+          return {};
         }
-        return {};
-      } catch (e) {
-        console.log('wsLink error', e);
-        return {};
-      }
+      },
     },
-  },
-});
+  });
 
 const createNetworkLink = ({ ssrMode = false }) => {
   if (ssrMode) {
@@ -106,7 +107,8 @@ const createAuthHeader = ({ ssrMode = false }) => {
     const context = operation.getContext();
     console.log('Me context in createAuthHeader', context);
 
-    const apolloToken = context?.cache?.data?.data?.['Me:0']?.token || undefined;
+    const apolloToken =
+      context?.cache?.data?.data?.['Me:0']?.token || undefined;
     const cookieToken = (() => {
       try {
         const cookies = parseCookie(document.cookie);
@@ -196,7 +198,10 @@ export const createClient = ({
 }) => {
   try {
     const cache = createCache({
-      initialState, ssrMode, account, deviceType,
+      initialState,
+      ssrMode,
+      account,
+      deviceType,
     });
     const localStateLink = withClientState({ cache, ...resolvers });
     const authHeader = createAuthHeader({ ssrMode });
@@ -224,7 +229,6 @@ export const createClient = ({
       //   },
       //   context: { saveOffline: true }
       // });
-
       // const query = client.readQuery({ query: ME });
       // console.log('client.readQuery({ query: ME })', query)
     } else if (ssrMode) {

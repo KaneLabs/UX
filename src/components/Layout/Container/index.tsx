@@ -17,7 +17,5 @@ const useStyles = makeStyles((theme) => ({
 export const Container = ({ style = null, center = null, ...rest }) => {
   const styles = useStyles();
   const containerStyles = [styles.container, center && styles.center, style];
-  return (
-    <View style={containerStyles} {...rest} />
-  );
+  return <View style={containerStyles} {...rest} />;
 };

@@ -20,7 +20,8 @@ export const makeFriendlyUrl = (text) => {
     .toLowerCase();
 };
 
-export const formatCreatedAt = (createdAt) => formatDistanceStrict(parseInt(createdAt, 10), new Date());
+export const formatCreatedAt = (createdAt) =>
+  formatDistanceStrict(parseInt(createdAt, 10), new Date());
 
 export const arrayifyStyle = (type) => {
   if (typeof type === 'object') {
@@ -50,15 +51,17 @@ export const isValidHandle = (handle) => {
   return alphaNumericRegex.test(handle);
 };
 
-export const parseCookie = (str) => str
-  .split(';')
-  .map((v) => v.split('='))
-  .reduce((acc, v) => {
-    acc[decodeURIComponent(v[0].trim())] = decodeURIComponent(v[1].trim());
-    return acc;
-  }, {});
+export const parseCookie = (str) =>
+  str
+    .split(';')
+    .map((v) => v.split('='))
+    .reduce((acc, v) => {
+      acc[decodeURIComponent(v[0].trim())] = decodeURIComponent(v[1].trim());
+      return acc;
+    }, {});
 
-export const selectCookieStringFromContext = (ctx) => ctx?.req?.headers?.cookie ?? null;
+export const selectCookieStringFromContext = (ctx) =>
+  ctx?.req?.headers?.cookie ?? null;
 
 export const selectTokenFromContext = (ctx) => {
   try {

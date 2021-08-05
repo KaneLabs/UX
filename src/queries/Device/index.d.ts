@@ -1,1 +1,1 @@
-export const DEVICE: import("graphql").DocumentNode;
+export const DEVICE: import('graphql').DocumentNode;

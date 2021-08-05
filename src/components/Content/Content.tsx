@@ -7,7 +7,11 @@ export const Content = ({ content = [], mobile }) => (
   <View style={styles.content}>
     {content.map((contentBlock, i) => (
       // eslint-disable-next-line react/no-array-index-key
-      <ContentBlockText mobile={mobile} key={`ContentBlock-${i}`} {...contentBlock} />
+      <ContentBlockText
+        mobile={mobile}
+        key={`ContentBlock-${i}`}
+        {...contentBlock}
+      />
     ))}
   </View>
 );

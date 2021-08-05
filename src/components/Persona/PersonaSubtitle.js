@@ -4,7 +4,13 @@ import { makeStyles } from 'eros-ui/theme';
 
 export const PersonaSubtitle = ({ text, mobile, ...rest }) => {
   const styles = useStyles();
-  return <Subtitle text={text} style={mobile ? styles.mobile : styles.desktop} {...rest} />;
+  return (
+    <Subtitle
+      text={text}
+      style={mobile ? styles.mobile : styles.desktop}
+      {...rest}
+    />
+  );
 };
 
 const useStyles = makeStyles((theme) => ({

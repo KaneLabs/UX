@@ -17,11 +17,13 @@ export const allCountryData: Country[] = Object.entries(countries).map(
 
 export const whitelistedCountries = ['US', 'CA', 'MX'];
 
-export const whiteListedCountryData = allCountryData.filter(country =>
+export const whiteListedCountryData = allCountryData.filter((country) =>
   whitelistedCountries.includes(country.key),
 );
 
 export const selectWhitelistedCountries = (whitelistedCountries: string[]) =>
-  allCountryData.filter(country => whitelistedCountries.includes(country.key));
+  allCountryData.filter((country) =>
+    whitelistedCountries.includes(country.key),
+  );
 
 export default allCountryData;

@@ -14,7 +14,11 @@ export const Subtitle = ({
   const textStyle = type === 1 ? styles.subtitle1 : styles.subtitle2;
 
   const overrideableStyle = [textStyle, style, gutter && styles.gutter];
-  return <Text style={overrideableStyle} {...rest}>{text || children}</Text>;
+  return (
+    <Text style={overrideableStyle} {...rest}>
+      {text || children}
+    </Text>
+  );
 };
 
 const useStyles = makeStyles((theme) => ({

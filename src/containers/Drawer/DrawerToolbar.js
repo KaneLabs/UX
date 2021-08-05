@@ -50,8 +50,7 @@ export const DrawerToolbar = () => {
       testID="DrawerToolbarLeft"
       onMouseEnter={openDrawer}
       onMouseLeave={closeDrawer}
-      style={[styles.toolbarVertical, open ? styles.open : styles.closed]}
-    >
+      style={[styles.toolbarVertical, open ? styles.open : styles.closed]}>
       <View style={styles.main}>
         <View style={styles.drawerLogo}>
           <NavLogo />

@@ -77,7 +77,10 @@ const useStyles = makeStyles((theme) => {
       paddingLeft: 0,
       paddingRight: 0,
     },
-    imagePreviewContainer: { alignItems: 'flex-end', paddingRight: theme.unit * 2 },
+    imagePreviewContainer: {
+      alignItems: 'flex-end',
+      paddingRight: theme.unit * 2,
+    },
     imagePreview: {
       height: imageHeight,
       width: innerWidth,
@@ -86,7 +89,10 @@ const useStyles = makeStyles((theme) => {
       alignItems: 'flex-end',
     },
     closeButton: { backgroundColor: 'rgba(0,0,0,0.85)', margin: theme.unit },
-    closeButtonHover: { backgroundColor: 'rgba(0,0,0,0.75)', margin: theme.unit },
+    closeButtonHover: {
+      backgroundColor: 'rgba(0,0,0,0.75)',
+      margin: theme.unit,
+    },
     header: { flexDirection: 'row', marginBottom: theme.unit * 2 },
   };
 });

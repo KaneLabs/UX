@@ -1,1 +1,1 @@
-export * from "./NavPlaceholder";
+export * from './NavPlaceholder';

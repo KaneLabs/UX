@@ -17,8 +17,7 @@ export const Banner = ({ uri, children }) => {
       accessibilityRole="img"
       resizeMode="cover"
       style={[styles.banner, sizeStyles]}
-      source={{ uri }}
-    >
+      source={{ uri }}>
       {children}
     </ImageBackground>
   );

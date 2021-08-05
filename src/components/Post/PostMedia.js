@@ -6,7 +6,12 @@ const gutter = unit * 2;
 
 const Carousel = ({ media = [], sizeStyles }) => (
   <View style={styles.carousel}>
-    {media.map((mediaFile) => <Image source={{ uri: mediaFile.uri }} style={[styles.image, sizeStyles]} />)}
+    {media.map((mediaFile) => (
+      <Image
+        source={{ uri: mediaFile.uri }}
+        style={[styles.image, sizeStyles]}
+      />
+    ))}
   </View>
 );
 
@@ -18,7 +23,12 @@ export const PostMedia = ({ media = [], width, mobile = false }) => {
   const sizeStyles = { width: imageWidth, height: imageHeight };
 
   if (media.length === 1) {
-    return <Image source={{ uri: media[0].uri }} style={[styles.image, sizeStyles]} />;
+    return (
+      <Image
+        source={{ uri: media[0].uri }}
+        style={[styles.image, sizeStyles]}
+      />
+    );
   }
   return <Carousel media={media} sizeStyles={sizeStyles} />;
 };

@@ -8,7 +8,9 @@ export const PostButtons = ({ postId, likes = 0, liked = false }) => {
     <Row style={styles.row}>
       <View style={styles.rowItem}>
         <LikeButton liked={liked} postId={postId} />
-        {likes > 0 && <BodyText style={styles.rowItemText} type={2} text={likes} />}
+        {likes > 0 && (
+          <BodyText style={styles.rowItemText} type={2} text={likes} />
+        )}
       </View>
     </Row>
   );

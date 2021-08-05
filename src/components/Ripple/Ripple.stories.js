@@ -23,8 +23,7 @@ export default storiesOf('Components|Ripple', module)
             borderWidth: 1,
             borderColor: 'black',
             borderRadius: 5,
-          }}
-        >
+          }}>
           <Text>Click Me</Text>
         </Ripple>
         <Ripple style={{ width: 200, height: 200, marginLeft: 40 }}>
@@ -35,8 +34,7 @@ export default storiesOf('Components|Ripple', module)
               height: 200,
               justifyContent: 'center',
               alignItems: 'center',
-            }}
-          >
+            }}>
             <Text>Click Me</Text>
           </Card>
         </Ripple>
@@ -50,8 +48,7 @@ export default storiesOf('Components|Ripple', module)
             height: 100,
             justifyContent: 'center',
             alignItems: 'center',
-          }}
-        >
+          }}>
           <Avatar
             type="icon"
             content="add"
@@ -69,8 +66,7 @@ export default storiesOf('Components|Ripple', module)
             justifyContent: 'center',
             alignItems: 'center',
           }}
-          rippleContainerBorderRadius={100}
-        >
+          rippleContainerBorderRadius={100}>
           <Text>Massive Button</Text>
         </Ripple>
       </View>
@@ -91,14 +87,12 @@ export default storiesOf('Components|Ripple', module)
             borderWidth: 1,
             borderColor: 'black',
             borderRadius: 5,
-          }}
-        >
+          }}>
           <Text>Click Me</Text>
         </Ripple>
         <Ripple
           rippleCentered
-          style={{ width: 200, height: 200, marginLeft: 40 }}
-        >
+          style={{ width: 200, height: 200, marginLeft: 40 }}>
           <Card
             shadow={4}
             style={{
@@ -106,8 +100,7 @@ export default storiesOf('Components|Ripple', module)
               height: 200,
               justifyContent: 'center',
               alignItems: 'center',
-            }}
-          >
+            }}>
             <Text>Click Me</Text>
           </Card>
         </Ripple>
@@ -132,15 +125,13 @@ export default storiesOf('Components|Ripple', module)
             borderWidth: 1,
             borderColor: 'black',
             borderRadius: 5,
-          }}
-        >
+          }}>
           <Text>Click Me</Text>
         </Ripple>
         <Ripple
           rippleCentered
           rippleSequential
-          style={{ width: 200, height: 200, marginLeft: 40 }}
-        >
+          style={{ width: 200, height: 200, marginLeft: 40 }}>
           <Card
             shadow={4}
             style={{
@@ -148,8 +139,7 @@ export default storiesOf('Components|Ripple', module)
               height: 200,
               justifyContent: 'center',
               alignItems: 'center',
-            }}
-          >
+            }}>
             <Text>Click Me</Text>
           </Card>
         </Ripple>
@@ -172,15 +162,13 @@ export default storiesOf('Components|Ripple', module)
             borderWidth: 1,
             borderColor: 'black',
             borderRadius: 5,
-          }}
-        >
+          }}>
           <Text>Really fast</Text>
         </Ripple>
         <Ripple
           rippleCentered
           rippleDuration={1000}
-          style={{ width: 200, height: 200, marginLeft: 40 }}
-        >
+          style={{ width: 200, height: 200, marginLeft: 40 }}>
           <Card
             shadow={4}
             style={{
@@ -188,8 +176,7 @@ export default storiesOf('Components|Ripple', module)
               height: 200,
               justifyContent: 'center',
               alignItems: 'center',
-            }}
-          >
+            }}>
             <Text>Really Slow</Text>
           </Card>
         </Ripple>

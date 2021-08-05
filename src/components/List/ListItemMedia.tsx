@@ -12,7 +12,9 @@ export const ListItemMedia = ({
 }) => {
   const styles = makeStyles();
   return (
-    <View style={[dense ? styles.dense : styles.mediaContainer, style]} {...rest}>
+    <View
+      style={[dense ? styles.dense : styles.mediaContainer, style]}
+      {...rest}>
       {media || children}
     </View>
   );

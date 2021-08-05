@@ -5,7 +5,10 @@ import PersonaHeaderAvatar from './PersonaHeaderAvatar';
 import PersonaDescription from './PersonaDescription';
 
 export const PersonaHeaderMain = ({
-  avatarUrl, display, handle, mobile = false,
+  avatarUrl,
+  display,
+  handle,
+  mobile = false,
 }) => {
   const styles = useStyles();
   return (

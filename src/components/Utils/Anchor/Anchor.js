@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import {
-  View, Linking, Platform, TouchableWithoutFeedback,
+  View,
+  Linking,
+  Platform,
+  TouchableWithoutFeedback,
 } from 'react-native';
 
 export default class Anchor extends Component {
@@ -17,9 +20,7 @@ export default class Anchor extends Component {
   };
 
   render() {
-    const {
-      url, children, target, testID,
-    } = this.props;
+    const { url, children, target, testID } = this.props;
 
     if (Platform.OS === 'web') {
       return (
@@ -27,15 +28,16 @@ export default class Anchor extends Component {
           href={url}
           accessibilityRole="link"
           target={target || '_self'}
-          testID={testID}
-        >
+          testID={testID}>
           <View>{children}</View>
         </TouchableWithoutFeedback>
       );
     }
 
     return (
-      <TouchableWithoutFeedback onPress={this.handlePress}>{children}</TouchableWithoutFeedback>
+      <TouchableWithoutFeedback onPress={this.handlePress}>
+        {children}
+      </TouchableWithoutFeedback>
     );
   }
 }

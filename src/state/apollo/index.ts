@@ -1,12 +1,5 @@
 import { useQuery } from '@apollo/react-hooks';
-import {
-  ME,
-  DRAWER,
-  SOCIAL_DRAWER,
-  NAV,
-  PERSONA,
-  POST,
-} from 'eros-ui/queries';
+import { ME, DRAWER, SOCIAL_DRAWER, NAV, PERSONA, POST } from 'eros-ui/queries';
 
 export const useAccount = () => {
   const { data } = useQuery(ME);

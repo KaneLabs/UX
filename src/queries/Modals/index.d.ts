@@ -1,3 +1,3 @@
-export * from "./AuthModal";
-export * from "./ComposeModal";
-export * from "./TipModal";
+export * from './AuthModal';
+export * from './ComposeModal';
+export * from './TipModal';

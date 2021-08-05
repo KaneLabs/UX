@@ -26,8 +26,11 @@ export const AccountAvatar = (props) => {
       <View
         onMouseEnter={onMouseEnter}
         onMouseLeave={onMouseLeave}
-        style={[sizeStyles, styles.avatarPaper, hover && styles.avatarPaperHover]}
-      >
+        style={[
+          sizeStyles,
+          styles.avatarPaper,
+          hover && styles.avatarPaperHover,
+        ]}>
         <Avatar source={{ uri: avatarUrl }} size={size} />
       </View>
     </Link>

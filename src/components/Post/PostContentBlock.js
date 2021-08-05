@@ -7,7 +7,10 @@ const PostContentBlockImage = ({ uri, aspectRatio, width }) => {
   const [{ gutter, FEED_WIDTH }] = useTheme();
   const styles = useStyles();
 
-  const imageWidth = width - gutter * 2 >= FEED_WIDTH ? FEED_WIDTH - gutter * 2 : width - gutter * 2;
+  const imageWidth =
+    width - gutter * 2 >= FEED_WIDTH
+      ? FEED_WIDTH - gutter * 2
+      : width - gutter * 2;
   const imageHeight = Math.floor(imageWidth / (16 / 9));
   const sizeStyles = { width: imageWidth, height: imageHeight };
 
@@ -19,13 +22,19 @@ const PostContentBlockImage = ({ uri, aspectRatio, width }) => {
 };
 
 export const PostContentBlock = ({
-  width, type, text, uri, mobile = false,
+  width,
+  type,
+  text,
+  uri,
+  mobile = false,
 }) => {
   if (type === 'Image') {
     return <PostContentBlockImage uri={uri} width={width} />;
   }
   if (type === 'Video') {
-    return <Video controls src={uri} style={{ height: 'auto', width: '100%' }} />;
+    return (
+      <Video controls src={uri} style={{ height: 'auto', width: '100%' }} />
+    );
   }
 
   return (

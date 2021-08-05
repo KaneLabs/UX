@@ -6,9 +6,10 @@ import PostContent from './PostContent';
 import PostButtons from './PostButtons';
 
 export const Post = React.forwardRef(
-  ({
-    id, content, persona, createdAt, style = null, mobile = false, ...rest
-  }, ref) => {
+  (
+    { id, content, persona, createdAt, style = null, mobile = false, ...rest },
+    ref,
+  ) => {
     const styles = useStyles();
     return (
       <Paper ref={ref} {...rest} style={[styles.post, style]}>

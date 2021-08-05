@@ -12,11 +12,7 @@ import {
 } from 'eros-ui/components';
 
 import { useQuery, useMutation, useLazyQuery } from '@apollo/react-hooks';
-import {
-  UPDATE_ACCOUNT,
-  ACCOUNT,
-  HANDLE_IS_AVAILABLE,
-} from 'eros-ui/queries';
+import { UPDATE_ACCOUNT, ACCOUNT, HANDLE_IS_AVAILABLE } from 'eros-ui/queries';
 import { isValidHandle } from 'eros-ui/fns';
 import { makeStyles } from 'eros-ui/theme';
 
@@ -26,14 +22,18 @@ export const PhoneAuthClaimHandle = ({ onSuccess }) => {
   const account = accountData && accountData.account;
   const [updateAccount, updateResponse] = useMutation(UPDATE_ACCOUNT);
   const { loading: updateLoading } = updateResponse;
-  const [checkHandleIsAvailable, { data, error, loading }] = useLazyQuery(HANDLE_IS_AVAILABLE);
+  const [checkHandleIsAvailable, { data, error, loading }] =
+    useLazyQuery(HANDLE_IS_AVAILABLE);
   const handleIsAvailable = data && data.handleIsAvailable;
-  const initialHandle = (account && account.handle && `@${account.handle}`) || '';
+  const initialHandle =
+    (account && account.handle && `@${account.handle}`) || '';
   const [handle, setHandle] = useState(initialHandle);
 
   useEffect(() => {
     if (isValidHandle(handle.slice(1))) {
-      checkHandleIsAvailable({ variables: { handle: handle.slice(1), display: handle.slice(1) } });
+      checkHandleIsAvailable({
+        variables: { handle: handle.slice(1), display: handle.slice(1) },
+      });
     }
   }, [handle, checkHandleIsAvailable]);
 
@@ -48,14 +48,16 @@ export const PhoneAuthClaimHandle = ({ onSuccess }) => {
   const onHandle = (text) => {
     if (text === '@') {
       return setHandle('');
-    } if (text && text[0] !== '@') {
+    }
+    if (text && text[0] !== '@') {
       return setHandle(`@${text}`);
     }
     return setHandle(text);
   };
 
   const handleIsValid = isValidHandle(handle && handle.slice(1));
-  const handleIsMe = account && (account.handle === (handle && handle.slice(1))) || false;
+  const handleIsMe =
+    (account && account.handle === (handle && handle.slice(1))) || false;
 
   return (
     <Container style={styles.container} testID="UpdateAccount">

@@ -1,7 +1,11 @@
 import PropTypes from 'prop-types';
 import React, { PureComponent } from 'react';
 import {
-  View, Animated, Easing, TouchableWithoutFeedback, Platform,
+  View,
+  Animated,
+  Easing,
+  TouchableWithoutFeedback,
+  Platform,
 } from 'react-native';
 import styles, { radius } from './Ripple.styles';
 
@@ -58,7 +62,8 @@ export default class Ripple extends PureComponent {
     this.unique = 0;
     this.mounted = false;
 
-    this.rippleFades = this.props.rippleFades && !this.props.displayUntilPressOut;
+    this.rippleFades =
+      this.props.rippleFades && !this.props.displayUntilPressOut;
     this.isPressingIn = false;
     this.animationWaitingForEnd = false;
 
@@ -168,9 +173,8 @@ export default class Ripple extends PureComponent {
 
   startRipple(event) {
     const { width, height } = this.state;
-    const {
-      rippleDuration, rippleCentered, rippleSize, onRippleAnimation,
-    } = this.props;
+    const { rippleDuration, rippleCentered, rippleSize, onRippleAnimation } =
+      this.props;
 
     const w2 = 0.5 * width;
     const h2 = 0.5 * height;
@@ -188,9 +192,10 @@ export default class Ripple extends PureComponent {
     const offsetX = Math.abs(w2 - locationX);
     const offsetY = Math.abs(h2 - locationY);
 
-    const R = rippleSize > 0
-      ? 0.5 * rippleSize
-      : Math.sqrt(Math.pow(w2 + offsetX, 2) + Math.pow(h2 + offsetY, 2));
+    const R =
+      rippleSize > 0
+        ? 0.5 * rippleSize
+        : Math.sqrt(Math.pow(w2 + offsetX, 2) + Math.pow(h2 + offsetY, 2));
 
     const ripple = {
       unique: this.unique++,
@@ -212,9 +217,7 @@ export default class Ripple extends PureComponent {
     this.setState(({ ripples }) => ({ ripples: ripples.concat(ripple) }));
   }
 
-  renderRipple({
-    unique, progress, locationX, locationY, R,
-  }) {
+  renderRipple({ unique, progress, locationX, locationY, R }) {
     const { rippleColor, rippleOpacity } = this.props;
     const { rippleFades } = this;
 
@@ -234,22 +237,24 @@ export default class Ripple extends PureComponent {
 
       opacity: rippleFades
         ? progress.interpolate({
-          inputRange: [0, 1],
-          outputRange: [rippleOpacity, 0],
-        })
+            inputRange: [0, 1],
+            outputRange: [rippleOpacity, 0],
+          })
         : rippleOpacity,
     };
 
     return (
-      <Animated.View style={[styles.ripple, rippleStyle]} key={unique} useNativeDriver={false} />
+      <Animated.View
+        style={[styles.ripple, rippleStyle]}
+        key={unique}
+        useNativeDriver={false}
+      />
     );
   }
 
   render() {
     const { ripples } = this.state;
-    const {
-      onPress, onPressIn, onPressOut, onLongPress, onLayout,
-    } = this;
+    const { onPress, onPressIn, onPressOut, onLongPress, onLayout } = this;
     const {
       delayLongPress,
       delayPressIn,
@@ -290,7 +295,10 @@ export default class Ripple extends PureComponent {
     };
 
     return (
-      <TouchableWithoutFeedback {...touchableProps} {...panResponder} testID={testID}>
+      <TouchableWithoutFeedback
+        {...touchableProps}
+        {...panResponder}
+        testID={testID}>
         <Animated.View useNativeDriver={false} {...props}>
           {children}
           <View style={[styles.container, containerStyle]} pointerEvents="none">

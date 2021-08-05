@@ -11,7 +11,10 @@ import { StyleSheet, Animated } from 'react-native';
 import { usePrevious } from 'eros-ui/state';
 
 export const DrawerSheet = ({
-  open = false, mobile = false, children, from = 'left',
+  open = false,
+  mobile = false,
+  children,
+  from = 'left',
 }) => {
   const [animatedValue] = useState(new Animated.Value(0));
   const prevOpen = usePrevious(open);
@@ -47,10 +50,12 @@ export const DrawerSheet = ({
     outputRange: [TOOLBAR_WIDTH, from === 'left' ? DRAWER_WIDTH : CHAT_WIDTH],
   });
 
-  const sideStyle = from === 'left'
-    ? { left: 0, borderRightWidth: borderWidth }
-    : { right: 0, borderLeftWidth: borderWidth };
-  const sideStyleOpen = from === 'left' ? { left: -TOOLBAR_WIDTH } : { right: TOOLBAR_WIDTH };
+  const sideStyle =
+    from === 'left'
+      ? { left: 0, borderRightWidth: borderWidth }
+      : { right: 0, borderLeftWidth: borderWidth };
+  const sideStyleOpen =
+    from === 'left' ? { left: -TOOLBAR_WIDTH } : { right: TOOLBAR_WIDTH };
 
   return (
     <Animated.View
@@ -59,8 +64,7 @@ export const DrawerSheet = ({
         { width, opacity: animatedValue },
         sideStyle,
         !open && mobile && sideStyleOpen, // hides offscreen when mobile view
-      ]}
-    >
+      ]}>
       {children}
     </Animated.View>
   );

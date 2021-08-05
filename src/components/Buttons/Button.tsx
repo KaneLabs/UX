@@ -23,11 +23,15 @@ export const Button = forwardRef(
     return (
       <TouchableOpacity
         ref={ref}
-        style={[styles.default, style, backgroundColor && ({ backgroundColor })]}
-        {...rest}
-      >
+        style={[styles.default, style, backgroundColor && { backgroundColor }]}
+        {...rest}>
         <View>
-          <ButtonText style={[primary && styles.primary, secondary && styles.secondary, fontStyle]}>
+          <ButtonText
+            style={[
+              primary && styles.primary,
+              secondary && styles.secondary,
+              fontStyle,
+            ]}>
             {children || text || title}
           </ButtonText>
         </View>

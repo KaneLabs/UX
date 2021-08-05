@@ -5,7 +5,10 @@ import { makeStyles } from 'eros-ui/theme';
 // import { useDimensions } from 'eros-ui/state';
 import ImagePreview from './ImagePreview';
 
-export const FilePreviews = ({ files = [], onRemove = () => alert('Remove File') }) => {
+export const FilePreviews = ({
+  files = [],
+  onRemove = () => alert('Remove File'),
+}) => {
   // const { width } = useDimensions();
   // const imageWidth = width - gutter * 2;
   // const imageHeight = (imageWidth * 9) / 16;
@@ -13,7 +16,9 @@ export const FilePreviews = ({ files = [], onRemove = () => alert('Remove File')
   const styles = useStyles();
   return (
     <View style={styles.container}>
-      {files.map((file, fileIndex) => <ImagePreview uri={file.uri} onRemove={() => onRemove(fileIndex)} />)}
+      {files.map((file, fileIndex) => (
+        <ImagePreview uri={file.uri} onRemove={() => onRemove(fileIndex)} />
+      ))}
     </View>
   );
 };

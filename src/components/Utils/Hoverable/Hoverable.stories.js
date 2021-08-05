@@ -23,8 +23,7 @@ export default storiesOf('Utils|Hoverable', module)
           <View style={{ flexDirection: 'row' }}>
             <Hoverable
               onHoverIn={() => store.set({ color: '#009688' })}
-              onHoverOut={() => store.set({ color: '#00BCD4' })}
-            >
+              onHoverOut={() => store.set({ color: '#00BCD4' })}>
               <View
                 style={{
                   width: 200,
@@ -56,8 +55,7 @@ export default storiesOf('Utils|Hoverable', module)
                   toValue: 0,
                   duration: 500,
                 }).start();
-              }}
-            >
+              }}>
               <Animated.View
                 useNativeDriver={false}
                 style={{

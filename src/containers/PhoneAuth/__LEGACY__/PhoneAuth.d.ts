@@ -1,5 +1,8 @@
 export default PhoneAuth;
-declare function PhoneAuth({ onSuccess, handle }: {
-    onSuccess: any;
-    handle: any;
+declare function PhoneAuth({
+  onSuccess,
+  handle,
+}: {
+  onSuccess: any;
+  handle: any;
 }): JSX.Element;

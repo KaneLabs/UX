@@ -1,9 +1,4 @@
-import {
-  COMPOSE_MODAL,
-  TIP_MODAL,
-  DRAWER,
-  AUTH_MODAL,
-} from 'eros-ui/queries';
+import { COMPOSE_MODAL, TIP_MODAL, DRAWER, AUTH_MODAL } from 'eros-ui/queries';
 
 const modals = {
   defaults: {
@@ -63,7 +58,10 @@ const modals = {
 
         cache.writeData({
           data: {
-            ComposeModal: { open: !ComposeModal.open, __typename: 'ComposeModal' },
+            ComposeModal: {
+              open: !ComposeModal.open,
+              __typename: 'ComposeModal',
+            },
           },
         });
 

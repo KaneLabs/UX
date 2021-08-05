@@ -21,7 +21,6 @@ export const canvas3Opaque = 'rgba(225,225,225,0.67)';
 
 export const borderColor = 'rgba(0,0,0,0.12)';
 
-
 export const unit = 8;
 export const gutter = 16;
 export const padding = 12;
@@ -64,7 +63,6 @@ export const secondaryColorOpaqueUltralight = 'rgba(209,159,78,0.2)';
 
 export const green = '#02662c';
 
-
 export const iconSize = Platform.OS === 'web' ? 24 : 24;
 export const iconPadding = Platform.OS === 'web' ? 12 : 12;
 export const iconColor = textColor.secondary;
@@ -90,96 +88,96 @@ export enum TypographyTypes {
 }
 
 export const Typography = {
-         [TypographyTypes.h1]: {
-           fontWeight: '200',
-           fontSize: 96,
-           lineHeight: 116,
-           letterSpacing: -1.5,
-           color: textColor.primary,
-         },
-         [TypographyTypes.h2]: {
-           fontWeight: '200',
-           fontSize: 60,
-           lineHeight: 72,
-           letterSpacing: -0.5,
-           color: textColor.primary,
-         },
-         [TypographyTypes.h3]: {
-           fontWeight: '300',
-           fontSize: 40,
-           lineHeight: 48,
-           letterSpacing: 0,
-           color: textColor.primary,
-         },
-         [TypographyTypes.h4]: {
-           fontWeight: '300',
-           fontSize: 28,
-           lineHeight: 34,
-           letterSpacing: 0.25,
-           color: textColor.primary,
-         },
-         [TypographyTypes.h5]: {
-           fontWeight: '300',
-           fontSize: 24,
-           lineHeight: 29,
-           letterSpacing: 0,
-           color: textColor.primary,
-         },
-         [TypographyTypes.h6]: {
-           fontWeight: '500',
-           fontSize: 20,
-           lineHeight: 24,
-           letterSpacing: 0.15,
-           color: textColor.primary,
-         },
-         [TypographyTypes.subtitle1]: {
-           fontSize: 16,
-           lineHeight: 20,
-           fontWeight: '300',
-           letterSpacing: 0.15,
-           color: textColor.primary,
-         },
-         [TypographyTypes.subtitle2]: {
-           fontSize: 14,
-           lineHeight: 17,
-           fontWeight: '500',
-           letterSpacing: 0.1,
-           color: textColor.primary,
-         },
-         [TypographyTypes.body1]: {
-           fontSize: 16,
-           lineHeight: 19,
-           fontWeight: '300',
-           letterSpacing: 0.5,
-           color: textColor.primary,
-         },
-         [TypographyTypes.body2]: {
-           fontSize: 14,
-           lineHeight: 17,
-           fontWeight: '300',
-           letterSpacing: 0.25,
-           color: textColor.primary,
-         },
-         [TypographyTypes.button]: {
-           color: textColor.primary,
-           fontSize: 16,
-           lineHeight: 18,
-           fontWeight: '700',
-           letterSpacing: 1.25,
-         },
-         [TypographyTypes.caption]: {
-           color: textColor.secondary,
-           fontSize: 12,
-           lineHeight: 12,
-           letterSpacing: 0.4,
-         },
-         [TypographyTypes.caption]: {
-           color: textColor.primary,
-           fontSize: 10,
-           fontWeight: '300',
-           lineHeight: 12,
-           letterSpacing: 1.5,
-         },
-       };
+  [TypographyTypes.h1]: {
+    fontWeight: '200',
+    fontSize: 96,
+    lineHeight: 116,
+    letterSpacing: -1.5,
+    color: textColor.primary,
+  },
+  [TypographyTypes.h2]: {
+    fontWeight: '200',
+    fontSize: 60,
+    lineHeight: 72,
+    letterSpacing: -0.5,
+    color: textColor.primary,
+  },
+  [TypographyTypes.h3]: {
+    fontWeight: '300',
+    fontSize: 40,
+    lineHeight: 48,
+    letterSpacing: 0,
+    color: textColor.primary,
+  },
+  [TypographyTypes.h4]: {
+    fontWeight: '300',
+    fontSize: 28,
+    lineHeight: 34,
+    letterSpacing: 0.25,
+    color: textColor.primary,
+  },
+  [TypographyTypes.h5]: {
+    fontWeight: '300',
+    fontSize: 24,
+    lineHeight: 29,
+    letterSpacing: 0,
+    color: textColor.primary,
+  },
+  [TypographyTypes.h6]: {
+    fontWeight: '500',
+    fontSize: 20,
+    lineHeight: 24,
+    letterSpacing: 0.15,
+    color: textColor.primary,
+  },
+  [TypographyTypes.subtitle1]: {
+    fontSize: 16,
+    lineHeight: 20,
+    fontWeight: '300',
+    letterSpacing: 0.15,
+    color: textColor.primary,
+  },
+  [TypographyTypes.subtitle2]: {
+    fontSize: 14,
+    lineHeight: 17,
+    fontWeight: '500',
+    letterSpacing: 0.1,
+    color: textColor.primary,
+  },
+  [TypographyTypes.body1]: {
+    fontSize: 16,
+    lineHeight: 19,
+    fontWeight: '300',
+    letterSpacing: 0.5,
+    color: textColor.primary,
+  },
+  [TypographyTypes.body2]: {
+    fontSize: 14,
+    lineHeight: 17,
+    fontWeight: '300',
+    letterSpacing: 0.25,
+    color: textColor.primary,
+  },
+  [TypographyTypes.button]: {
+    color: textColor.primary,
+    fontSize: 16,
+    lineHeight: 18,
+    fontWeight: '700',
+    letterSpacing: 1.25,
+  },
+  [TypographyTypes.caption]: {
+    color: textColor.secondary,
+    fontSize: 12,
+    lineHeight: 12,
+    letterSpacing: 0.4,
+  },
+  [TypographyTypes.caption]: {
+    color: textColor.primary,
+    fontSize: 10,
+    fontWeight: '300',
+    lineHeight: 12,
+    letterSpacing: 1.5,
+  },
+};
 
 // export default {* as LightTheme};

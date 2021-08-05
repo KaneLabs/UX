@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import {
-  SafeAreaView, ImageBackground, Platform, StyleSheet,
+  SafeAreaView,
+  ImageBackground,
+  Platform,
+  StyleSheet,
 } from 'react-native';
 import { Title, View, KeyboardAwareContainer } from 'eros-ui/components';
 import { ACCOUNT, SET_ACCOUNT } from 'eros-ui/queries';
@@ -71,7 +74,9 @@ export const PhoneAuth = ({ onSuccess, handle = null }) => {
   });
 
   return (
-    <ImageBackground source={SaintGeorge} style={[styles.imageBackground, sizeStyles]}>
+    <ImageBackground
+      source={SaintGeorge}
+      style={[styles.imageBackground, sizeStyles]}>
       <SafeAreaView style={styles.safeAreaView}>
         <KeyboardAwareContainer style={styles.container}>
           {handle && (

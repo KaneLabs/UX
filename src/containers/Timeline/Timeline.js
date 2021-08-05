@@ -43,7 +43,13 @@ export const Timeline = ({
     <FlatList
       data={posts}
       renderItem={({ item }) => (
-        <Post {...item} persona={persona} style={style} mobile={mobile} width={width} />
+        <Post
+          {...item}
+          persona={persona}
+          style={style}
+          mobile={mobile}
+          width={width}
+        />
       )}
       onScroll={onScroll}
       onScrollEventThrottle={16}

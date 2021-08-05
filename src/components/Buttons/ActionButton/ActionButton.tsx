@@ -5,9 +5,9 @@ import { useTheme, makeStyles } from 'eros-ui/theme';
 import ButtonText from '../../Typography/ButtonText';
 
 export const ActionButton = (props) => {
-  const [{
-    unit, borderWidth, borderRadius, primaryColor, primaryColorOpaqueLight,
-  }] = useTheme();
+  const [
+    { unit, borderWidth, borderRadius, primaryColor, primaryColorOpaqueLight },
+  ] = useTheme();
   const {
     children,
     onPress,
@@ -20,14 +20,15 @@ export const ActionButton = (props) => {
     ...rest
   } = props;
 
-  const content = children || <ButtonText style={fontStyle}>{text || title}</ButtonText>;
+  const content = children || (
+    <ButtonText style={fontStyle}>{text || title}</ButtonText>
+  );
   return (
     <TouchableOpacity
       underlayColor={underlayColor}
       style={[styles.ActionButton, style]}
       onPress={onPress}
-      {...rest}
-    >
+      {...rest}>
       <View>{content}</View>
     </TouchableOpacity>
   );

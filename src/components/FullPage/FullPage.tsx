@@ -8,12 +8,18 @@ const { height, width } = Dimensions.get('window');
 const fullPageStyle = { height: '100%', width: '100%' };
 
 const FullPage = ({
-  children, center = false, padding = 16, hero, style = {},
+  children,
+  center = false,
+  padding = 16,
+  hero,
+  style = {},
 }) => {
-  const centeredStyle = center ? {
-    alignItems: 'center',
-    justifyContent: 'center',
-  } : {};
+  const centeredStyle = center
+    ? {
+        alignItems: 'center',
+        justifyContent: 'center',
+      }
+    : {};
 
   const paddingStyle = {
     padding: hero ? 0 : padding,

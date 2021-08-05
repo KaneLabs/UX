@@ -26,6 +26,6 @@ const AuthStack: React.FC<AuthStackProps> = ({ heroUrl }) => {
       <Auth.Screen name="CountryCode" component={CountryCodeScreen} />
     </Auth.Navigator>
   );
-}
+};
 
 export default AuthStack;

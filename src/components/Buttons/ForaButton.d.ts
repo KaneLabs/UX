@@ -1,3 +1,1 @@
-export function ForaButton({ onPress }: {
-    onPress: any;
-}): JSX.Element;
+export function ForaButton({ onPress }: { onPress: any }): JSX.Element;

@@ -40,7 +40,7 @@ export const ThemeProvider = (props: ThemeProviderProps) => {
 
   const toggleTheme = React.useCallback(
     (): any =>
-      setThemeMode(mode =>
+      setThemeMode((mode) =>
         mode === ThemeModes.light ? ThemeModes.dark : ThemeModes.light,
       ),
     [themeMode],

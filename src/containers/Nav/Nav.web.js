@@ -81,17 +81,16 @@ const Nav = (props) => {
         nav && nav.docked ? styles.docked : styles.undocked,
         mobile ? styles.mobile : styles.desktop,
         // isFlat && styles.flat,
-      ]}
-    >
-      <View style={{ flex: 1, alignItems: 'center' }}>{showSearch && <SearchInput />}</View>
+      ]}>
+      <View style={{ flex: 1, alignItems: 'center' }}>
+        {showSearch && <SearchInput />}
+      </View>
       <AccountMenuButton />
     </View>
   );
 };
 
-const NavMobileBack = ({
-  nav, account, router, mobile,
-}) => {
+const NavMobileBack = ({ nav, account, router, mobile }) => {
   const styles = useStyles();
 
   return (
@@ -100,9 +99,13 @@ const NavMobileBack = ({
         styles.core,
         nav && nav.docked ? styles.docked : styles.undocked,
         mobile ? styles.mobile : styles.desktop,
-      ]}
-    >
-      <IconButton onPress={router.back} name="ios-arrow-round-back" size={32} padding={8} />
+      ]}>
+      <IconButton
+        onPress={router.back}
+        name="ios-arrow-round-back"
+        size={32}
+        padding={8}
+      />
 
       <Title type={6} numberOfLines={1} text={router.asPath.slice(1)} />
 

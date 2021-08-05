@@ -62,14 +62,18 @@ const Nav = ({ children, mobile, openDrawer }) => {
         styles.core,
         nav && nav.docked ? styles.docked : styles.undocked,
         mobile ? styles.mobile : styles.desktop,
-      ]}
-    >
+      ]}>
       <NavLogo />
 
       {account && account.handle ? (
         <AccountButton size={32} />
       ) : (
-        <Button style={{ width: 48 }} testID="NavJoinLink" text="JOIN" primary />
+        <Button
+          style={{ width: 48 }}
+          testID="NavJoinLink"
+          text="JOIN"
+          primary
+        />
       )}
     </View>
   );

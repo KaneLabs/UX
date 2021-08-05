@@ -6,11 +6,7 @@ import Latest from 'eros-ui/containers/Latest';
 import MasonryList from 'eros-ui/containers/MasonryList';
 import PictureInPicture from 'eros-ui/containers/PictureInPicture';
 
-import {
-  useDimensions,
-  useDrawer,
-  useSocialDrawer,
-} from 'eros-ui/state';
+import { useDimensions, useDrawer, useSocialDrawer } from 'eros-ui/state';
 
 const useStyles = makeStyles((theme) => ({
   container: {
@@ -61,7 +57,12 @@ const MainMobile = (props) => {
 
   return (
     <Container style={{ flexDirection: 'row' }}>
-      <View style={{ width: deviceWidth, backgroundColor: canvasOpaque, ...shadow(4) }}>
+      <View
+        style={{
+          width: deviceWidth,
+          backgroundColor: canvasOpaque,
+          ...shadow(4),
+        }}>
         <Latest width={deviceWidth} mobile={mobile} />
       </View>
     </Container>

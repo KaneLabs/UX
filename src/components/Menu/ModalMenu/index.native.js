@@ -49,8 +49,7 @@ class Modal extends Component {
         visible={visible}
         onRequestClose={onRequestClose}
         onShow={onShow}
-        {...NativeModalProps}
-      >
+        {...NativeModalProps}>
         <View style={[styles.container, containerStyle]}>
           <TouchableWithoutFeedback onPress={onBackdropPress}>
             <Animated.View

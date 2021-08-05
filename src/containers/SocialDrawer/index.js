@@ -42,7 +42,12 @@ const SocialDrawer = () => {
   const account = useAccount();
   const styles = useStyles();
 
-  const { data: { SocialDrawer: { open, lock } }, client } = useQuery(SOCIAL_DRAWER);
+  const {
+    data: {
+      SocialDrawer: { open, lock },
+    },
+    client,
+  } = useQuery(SOCIAL_DRAWER);
 
   console.log({ open, lock });
   // const [openDrawer] = useMutation(OPEN_SOCIAL_DRAWER);
@@ -86,8 +91,7 @@ const SocialDrawer = () => {
       testID="SocialDrawer"
       onMouseEnter={openDrawer}
       onMouseLeave={closeDrawer}
-      style={[styles.toolbarVertical, open ? styles.open : styles.closed]}
-    >
+      style={[styles.toolbarVertical, open ? styles.open : styles.closed]}>
       <View style={{ height: 56, width: '100%', justifyContent: 'center' }}>
         <AccountButton />
       </View>

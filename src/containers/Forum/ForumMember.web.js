@@ -12,7 +12,12 @@ import { makeStyles } from 'eros-ui/theme';
 import Link from 'next/link';
 
 export const ForumMember = ({
-  id, avatarUrl, display, handle, role = null, joinedAt = null,
+  id,
+  avatarUrl,
+  display,
+  handle,
+  role = null,
+  joinedAt = null,
 }) => (
   <View style={styles.container}>
     <View>

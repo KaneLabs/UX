@@ -3,7 +3,10 @@ import { buildFileSelector } from 'eros-ui/fns';
 import IconButton from '../../IconButton';
 
 const ImageUploadButton = ({
-  onFiles, renderPreviews, iconName = null, ...rest
+  onFiles,
+  renderPreviews,
+  iconName = null,
+  ...rest
 }) => {
   const fileSelectorRef = useRef(null);
 
@@ -65,7 +68,9 @@ const ImageUploadButton = ({
     // return data.getPresignedUrl;
   };
 
-  return <IconButton name={iconName || 'ios-image'} onPress={onPress} {...rest} />;
+  return (
+    <IconButton name={iconName || 'ios-image'} onPress={onPress} {...rest} />
+  );
 };
 
 export default ImageUploadButton;

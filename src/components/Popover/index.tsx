@@ -6,7 +6,11 @@ export const Popover = ({ children }) => {
     alert(e.nativeEvent);
   };
 
-  return <TouchableWithoutFeedback onPress={onPress}>{children}</TouchableWithoutFeedback>;
+  return (
+    <TouchableWithoutFeedback onPress={onPress}>
+      {children}
+    </TouchableWithoutFeedback>
+  );
 };
 
 export default Popover;

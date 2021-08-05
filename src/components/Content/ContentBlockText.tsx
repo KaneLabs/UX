@@ -2,7 +2,9 @@ import React from 'react';
 import { gutter } from 'eros-ui/theme';
 import { BodyText } from '../Typography';
 
-const ContentBlockText = ({ text, mobile = false }) => <BodyText text={text} style={mobile ? styles.mobile : styles.desktop} />;
+const ContentBlockText = ({ text, mobile = false }) => (
+  <BodyText text={text} style={mobile ? styles.mobile : styles.desktop} />
+);
 
 const styles = {
   desktop: {

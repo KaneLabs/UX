@@ -11,7 +11,7 @@ export interface ListItemProps extends TouchableOpacityProps {
   dense?: boolean;
 }
 
-const ListItem: React.FC<ListItemProps> = props => {
+const ListItem: React.FC<ListItemProps> = (props) => {
   const { children, onPress, dense = false, style, ...rest } = props;
   const [focused, setFocused] = useState(false);
   const styles = useStyles();

@@ -1,6 +1,4 @@
-import React, {
-  createContext, useState, useContext, useEffect,
-} from 'react';
+import React, { createContext, useState, useContext, useEffect } from 'react';
 // import { useQuery } from '@apollo/react-hooks';
 // import { DEVICE } from 'eros-ui/queries';
 import { Dimensions } from 'react-native';
@@ -12,7 +10,10 @@ export const DimensionsProvider = ({ children, initialLayout = 'mobile' }) => {
   const initialMobile = initialLayout === 'mobile';
   const initialDesktop = initialLayout === 'desktop';
   const initalState = {
-    height: null, width: null, mobile: initialMobile, desktop: initialDesktop,
+    height: null,
+    width: null,
+    mobile: initialMobile,
+    desktop: initialDesktop,
   };
   const [dimensions, setDimensions] = useState(initalState);
 
@@ -20,19 +21,29 @@ export const DimensionsProvider = ({ children, initialLayout = 'mobile' }) => {
     const initialDimensions = Dimensions.get('window');
     const isMobile = initialDimensions.width < DESKTOP_BREAKPOINT;
     const isDesktop = initialDimensions.width >= DESKTOP_BREAKPOINT;
-    setDimensions({ ...initialDimensions, mobile: isMobile, desktop: isDesktop });
+    setDimensions({
+      ...initialDimensions,
+      mobile: isMobile,
+      desktop: isDesktop,
+    });
 
     Dimensions.addEventListener('change', ({ window: windowDimensions }) => {
       const nextIsMobile = windowDimensions.width < DESKTOP_BREAKPOINT;
       const nextIsDesktop = windowDimensions.width >= DESKTOP_BREAKPOINT;
-      setDimensions({ ...windowDimensions, mobile: nextIsMobile, desktop: nextIsDesktop });
+      setDimensions({
+        ...windowDimensions,
+        mobile: nextIsMobile,
+        desktop: nextIsDesktop,
+      });
     });
 
     return () => Dimensions.removeEventListener('change');
   }, [setDimensions]);
 
   return (
-    <DimensionsContext.Provider value={{ ...dimensions }}>{children}</DimensionsContext.Provider>
+    <DimensionsContext.Provider value={{ ...dimensions }}>
+      {children}
+    </DimensionsContext.Provider>
   );
 };
 

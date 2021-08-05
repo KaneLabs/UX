@@ -72,9 +72,7 @@ export default class Modal extends Component {
   }
 
   handleShow() {
-    const {
-      animationType, onShow, ariaHideApp, appElement,
-    } = this.props;
+    const { animationType, onShow, ariaHideApp, appElement } = this.props;
 
     if (ariaHideApp) {
       ariaHiddenInstances += 1;
@@ -91,9 +89,7 @@ export default class Modal extends Component {
   }
 
   handleClose() {
-    const {
-      animationType, onDismiss, ariaHideApp, appElement,
-    } = this.props;
+    const { animationType, onDismiss, ariaHideApp, appElement } = this.props;
 
     if (animationType === 'slide') {
       this.animateSlideOut(onDismiss);
@@ -156,7 +152,9 @@ export default class Modal extends Component {
       },
       () => {
         requestAnimationFrame(() => {
-          this.setState({ styleFade: { display: 'flex' } }, () => this.state.animationFade.start(callback));
+          this.setState({ styleFade: { display: 'flex' } }, () =>
+            this.state.animationFade.start(callback),
+          );
         });
       },
     );
@@ -210,7 +208,9 @@ export default class Modal extends Component {
       },
       () => {
         requestAnimationFrame(() => {
-          this.setState({ styleFade: { display: 'flex' } }, () => this.state.animationSlide.start(callback));
+          this.setState({ styleFade: { display: 'flex' } }, () =>
+            this.state.animationSlide.start(callback),
+          );
         });
       },
     );
@@ -249,7 +249,12 @@ export default class Modal extends Component {
 
   render() {
     const {
-      containerStyle, onBackdropPress, children, visible, onLayout, noBackDrop,
+      containerStyle,
+      onBackdropPress,
+      children,
+      visible,
+      onLayout,
+      noBackDrop,
     } = this.props;
     return (
       <ModalPortal visible={visible}>
@@ -265,8 +270,7 @@ export default class Modal extends Component {
               zIndex: visible ? 10 : -10,
             },
             containerStyle,
-          ]}
-        >
+          ]}>
           {noBackDrop ? null : (
             <TouchableWithoutFeedback onPress={onBackdropPress}>
               <View

@@ -1,1 +1,1 @@
-export const FORUM_TIMELINE: import("graphql").DocumentNode;
+export const FORUM_TIMELINE: import('graphql').DocumentNode;

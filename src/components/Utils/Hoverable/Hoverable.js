@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import {
-  Platform, Dimensions, TouchableWithoutFeedback, View,
+  Platform,
+  Dimensions,
+  TouchableWithoutFeedback,
+  View,
 } from 'react-native';
 import PropTypes from 'prop-types';
 
@@ -49,7 +52,10 @@ class Hoverable extends Component {
   render() {
     const { children, testID } = this.props;
 
-    const child = typeof children === 'function' ? children(this.state.isHovered) : children;
+    const child =
+      typeof children === 'function'
+        ? children(this.state.isHovered)
+        : children;
 
     if (Platform.OS === 'web') {
       return React.cloneElement(React.Children.only(child), {

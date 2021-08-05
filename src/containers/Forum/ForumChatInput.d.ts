@@ -1,8 +1,9 @@
-export function ForumChatInputButtons({ onSend, loading }: {
-    onSend: any;
-    loading?: boolean | undefined;
+export function ForumChatInputButtons({
+  onSend,
+  loading,
+}: {
+  onSend: any;
+  loading?: boolean | undefined;
 }): JSX.Element;
-export function ForumChatInput({ forumId }: {
-    forumId: any;
-}): JSX.Element;
+export function ForumChatInput({ forumId }: { forumId: any }): JSX.Element;
 export default ForumChatInput;

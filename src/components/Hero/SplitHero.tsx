@@ -21,12 +21,19 @@ export const SplitHero = ({
       <View style={[styles.verticalContainer]}>
         <ImageBackground style={styles.heroImageFull} source={source}>
           <View style={styles.textContainer}>
-            <Title type={3} style={styles.heroTitleMobile} accessibilityRole="header">
+            <Title
+              type={3}
+              style={styles.heroTitleMobile}
+              accessibilityRole="header">
               {title}
             </Title>
 
             {SubtitleComponent || (
-              <Subtitle style={styles.heroSubtitleMobile} accessibilityRole="header" aria-level="2" gutter>
+              <Subtitle
+                style={styles.heroSubtitleMobile}
+                accessibilityRole="header"
+                aria-level="2"
+                gutter>
                 {subtitle}
               </Subtitle>
             )}
@@ -38,8 +45,14 @@ export const SplitHero = ({
   }
 
   return (
-    <View style={[styles.horizontalContainer, backgroundColor && { backgroundColor }]}>
-      {imageSide === 'left' && <ImageBackground style={styles.heroImageSplit} source={source} />}
+    <View
+      style={[
+        styles.horizontalContainer,
+        backgroundColor && { backgroundColor },
+      ]}>
+      {imageSide === 'left' && (
+        <ImageBackground style={styles.heroImageSplit} source={source} />
+      )}
 
       <View style={[styles.container]}>
         <View style={styles.textContainer}>
@@ -47,7 +60,11 @@ export const SplitHero = ({
             {title}
           </Title>
           {SubtitleComponent || (
-            <Subtitle style={styles.heroSubtitle} accessibilityRole="header" aria-level="2" gutter>
+            <Subtitle
+              style={styles.heroSubtitle}
+              accessibilityRole="header"
+              aria-level="2"
+              gutter>
               {subtitle}
             </Subtitle>
           )}
@@ -55,7 +72,9 @@ export const SplitHero = ({
         </View>
       </View>
 
-      {imageSide === 'right' && <ImageBackground style={styles.heroImageSplit} source={source} />}
+      {imageSide === 'right' && (
+        <ImageBackground style={styles.heroImageSplit} source={source} />
+      )}
     </View>
   );
 };
@@ -106,7 +125,10 @@ const useStyles = makeStyles((theme) => ({
   },
   heroTitle: { textAlign: 'center', marginBottom: theme.gutter },
   heroTitleMobile: {
-    textAlign: 'center', fontWeight: 'bold', color: '#FFF', marginBottom: theme.gutter,
+    textAlign: 'center',
+    fontWeight: 'bold',
+    color: '#FFF',
+    marginBottom: theme.gutter,
   },
   heroSubtitle: { textAlign: 'center', fontSize: 20, color: '#FFF' },
   heroSubtitleMobile: { textAlign: 'center', fontSize: 20, color: '#FFF' },

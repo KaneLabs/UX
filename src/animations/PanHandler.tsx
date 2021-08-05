@@ -8,7 +8,6 @@ import Animated, {
 import {
   PanGestureHandler,
   PanGestureHandlerProps,
-  GestureEvent,
   PanGestureHandlerGestureEvent,
 } from 'react-native-gesture-handler';
 

@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import {
-  Animated, View, Easing, Platform, ScrollView,
-} from 'react-native';
+import { Animated, View, Easing, Platform, ScrollView } from 'react-native';
 // import withTheme from '../../Theme/withTheme';
 import styles from './Menu.styles';
 import ModelMenu from './ModalMenu';
@@ -18,7 +16,10 @@ class Menu extends Component {
     sameWidth: PropTypes.bool,
     onBackdropPress: PropTypes.func,
     modalMenuStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
-    contentContainerStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
+    contentContainerStyle: PropTypes.oneOfType([
+      PropTypes.object,
+      PropTypes.array,
+    ]),
     noBackDrop: PropTypes.bool,
     tooltip: PropTypes.bool,
     tooltipPosition: PropTypes.string,
@@ -62,8 +63,8 @@ class Menu extends Component {
   onButtonLayout = (e) => {
     const { width, height } = e.nativeEvent.layout;
 
-    let locationX; let
-      locationY;
+    let locationX;
+    let locationY;
 
     if (Platform.OS === 'web') {
       locationX = e.nativeEvent.target.getBoundingClientRect().x;
@@ -99,7 +100,11 @@ class Menu extends Component {
 
   toggle() {
     const {
-      initialHeight, initialWidth, easing, animationDuration, buttonWidth,
+      initialHeight,
+      initialWidth,
+      easing,
+      animationDuration,
+      buttonWidth,
     } = this.state;
 
     if (!initialHeight || !initialWidth) {
@@ -177,7 +182,8 @@ class Menu extends Component {
 
     if (modalMenuWidth > 0) {
       if (buttonPositionX > modalMenuWidth / 2) {
-        menuContainerStyle.right = modalMenuWidth - buttonPositionX - buttonWidth;
+        menuContainerStyle.right =
+          modalMenuWidth - buttonPositionX - buttonWidth;
       } else {
         menuContainerStyle.left = buttonPositionX - 10;
       }
@@ -185,20 +191,27 @@ class Menu extends Component {
 
     if (tooltip) {
       menuContainerStyle.top = buttonPositionY - initialHeight - 12;
-      menuContainerStyle.left = buttonPositionX - 8 + buttonWidth / 2 - initialWidth / 2;
+      menuContainerStyle.left =
+        buttonPositionX - 8 + buttonWidth / 2 - initialWidth / 2;
 
       if (tooltipPosition === 'bottom') {
-        menuContainerStyle.top = buttonPositionY + initialHeight + (Platform.OS === 'web' ? 4 : -4);
+        menuContainerStyle.top =
+          buttonPositionY + initialHeight + (Platform.OS === 'web' ? 4 : -4);
       } else if (tooltipPosition === 'right') {
-        menuContainerStyle.top = buttonPositionY - (Platform.OS === 'web' ? 4 : 8);
+        menuContainerStyle.top =
+          buttonPositionY - (Platform.OS === 'web' ? 4 : 8);
         menuContainerStyle.left = buttonPositionX - 8 + buttonWidth;
       } else if (tooltipPosition === 'left') {
-        menuContainerStyle.top = buttonPositionY - (Platform.OS === 'web' ? 4 : 8);
+        menuContainerStyle.top =
+          buttonPositionY - (Platform.OS === 'web' ? 4 : 8);
         menuContainerStyle.left = buttonPositionX - 12 - initialWidth;
       }
     }
 
-    if (Number.isNaN(menuContainerStyle.top) || Number.isNaN(menuContainerStyle.left)) {
+    if (
+      Number.isNaN(menuContainerStyle.top) ||
+      Number.isNaN(menuContainerStyle.left)
+    ) {
       menuContainerStyle.top = 0;
       menuContainerStyle.left = 0;
     }
@@ -213,8 +226,7 @@ class Menu extends Component {
           style={{
             alignSelf: 'flex-start',
             width: fullWidth ? '100%' : 'auto',
-          }}
-        >
+          }}>
           {button}
         </View>
         <ModelMenu
@@ -223,17 +235,22 @@ class Menu extends Component {
           visible={visible}
           onBackdropPress={onBackdropPress}
           noBackDrop={noBackDrop}
-          transparent
-        >
+          transparent>
           <Animated.View
             useNativeDriver={false}
-            style={[styles.menuContainer, menuContainerStyle, modalMenuStyle]}
-          >
+            style={[styles.menuContainer, menuContainerStyle, modalMenuStyle]}>
             <View
-              style={[styles.menu, { width: sameWidth ? buttonWidth : 'auto' }, menuStyle]}
-              onLayout={this.onMenuLayout}
-            >
-              <ScrollView contentContainerStyle={[{ paddingVertical: 8 }, contentContainerStyle]}>
+              style={[
+                styles.menu,
+                { width: sameWidth ? buttonWidth : 'auto' },
+                menuStyle,
+              ]}
+              onLayout={this.onMenuLayout}>
+              <ScrollView
+                contentContainerStyle={[
+                  { paddingVertical: 8 },
+                  contentContainerStyle,
+                ]}>
                 {children}
               </ScrollView>
             </View>

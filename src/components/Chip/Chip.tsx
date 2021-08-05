@@ -17,7 +17,7 @@ export interface ChipProps extends PaperProps {
   onPress?: () => void;
 }
 
-const Chip: React.FC<ChipProps> = props => {
+const Chip: React.FC<ChipProps> = (props) => {
   const {
     text,
     flat = false,

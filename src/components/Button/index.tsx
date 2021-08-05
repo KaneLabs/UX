@@ -3,7 +3,6 @@ import {
   View,
   TouchableOpacity,
   ViewStyle,
-  ViewProps,
   ButtonProps as RNButtonProps,
   StyleSheet,
 } from 'react-native';

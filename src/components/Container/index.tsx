@@ -18,7 +18,7 @@ export interface ContainerProps extends ViewProps {
   center?: boolean;
 }
 
-const Container: React.FC<ContainerProps> = props => {
+const Container: React.FC<ContainerProps> = (props) => {
   const { style, center = false, ...rest } = props;
   const styles = useStyles();
   const containerStyles = StyleSheet.flatten([

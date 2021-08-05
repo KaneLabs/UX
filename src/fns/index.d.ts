@@ -1,10 +1,10 @@
-export * from "./content";
-export * from "./images";
-export * from "./files";
-export * from "./greatestCommonDivisor";
-export * from "./removeToken";
-export * from "./saveToken";
-export * from "./validPhoneNumber";
+export * from './content';
+export * from './images';
+export * from './files';
+export * from './greatestCommonDivisor';
+export * from './removeToken';
+export * from './saveToken';
+export * from './validPhoneNumber';
 export function makeFriendlyUrl(text: any): string;
 export function formatCreatedAt(createdAt: any): string;
 export function arrayifyStyle(type: any): any[];

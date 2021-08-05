@@ -16,17 +16,17 @@ import resolvers from './resolvers';
 import { API_URI, WS_API_URI } from '../constants';
 
 const createErrorLink = () => {
-  const errorLink = onError(({
-    graphQLErrors, networkError, response, operation, forward,
-  }) => {
-    if (graphQLErrors) {
-      graphQLErrors.forEach(({ message }) => {
-        console.log(message);
-      });
-    }
+  const errorLink = onError(
+    ({ graphQLErrors, networkError, response, operation, forward }) => {
+      if (graphQLErrors) {
+        graphQLErrors.forEach(({ message }) => {
+          console.log(message);
+        });
+      }
 
-    // console.log('response', response);
-  });
+      // console.log('response', response);
+    },
+  );
   return errorLink;
 };
 
@@ -43,34 +43,35 @@ const createHttpLink = ({ ssrMode = false }) => {
   // return httpLink;
 };
 
-const createWSLink = ({ ssrMode = false }) => new WebSocketLink({
-  ssrMode,
-  // webSocketImpl: ssrMode ? ws : undefined,
-  uri: 'ws://172.19.131.127:5000/graphql',
-  options: {
-    lazy: true,
-    reconnect: true,
-    connectionParams: async () => {
-      // failsafe for ssr
-      try {
-        const token = await AsyncStorage.getItem('token');
+const createWSLink = ({ ssrMode = false }) =>
+  new WebSocketLink({
+    ssrMode,
+    // webSocketImpl: ssrMode ? ws : undefined,
+    uri: 'ws://172.19.131.127:5000/graphql',
+    options: {
+      lazy: true,
+      reconnect: true,
+      connectionParams: async () => {
+        // failsafe for ssr
+        try {
+          const token = await AsyncStorage.getItem('token');
 
-        return {
-          headers: {
-            Authorization: token || '',
-          },
-        };
-      } catch (e) {
-        console.log('wsLink error', e);
-        return {
-          headers: {
-            Authorization: '',
-          },
-        };
-      }
+          return {
+            headers: {
+              Authorization: token || '',
+            },
+          };
+        } catch (e) {
+          console.log('wsLink error', e);
+          return {
+            headers: {
+              Authorization: '',
+            },
+          };
+        }
+      },
     },
-  },
-});
+  });
 
 const createNetworkLink = ({ ssrMode = false }) => {
   if (ssrMode) {
@@ -141,7 +142,10 @@ export const createClient = ({
 }) => {
   try {
     const cache = createCache({
-      initialState, ssrMode, account, deviceType,
+      initialState,
+      ssrMode,
+      account,
+      deviceType,
     });
     const localStateLink = withClientState({ cache, ...resolvers });
 

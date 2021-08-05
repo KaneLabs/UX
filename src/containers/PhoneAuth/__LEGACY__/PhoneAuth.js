@@ -103,7 +103,9 @@ const PhoneAuth = ({ onSuccess, handle }) => {
             <Button
               fontStyle={{ fontSize: 22, lineHeight: 24 }}
               text={`${state.emoji} ${state.countryCode.toString()} `}
-              onPress={() => setState((state) => ({ ...state, countryCodeMenuOpen: true }))}
+              onPress={() =>
+                setState((state) => ({ ...state, countryCodeMenuOpen: true }))
+              }
             />
 
             <View style={styles.textFieldContainer}>
@@ -129,7 +131,9 @@ const PhoneAuth = ({ onSuccess, handle }) => {
                   countryCodeMenuOpen: false,
                 }));
               }}
-              close={() => setState((state) => ({ ...state, countryCodeMenuOpen: false }))}
+              close={() =>
+                setState((state) => ({ ...state, countryCodeMenuOpen: false }))
+              }
             />
           )}
         </>

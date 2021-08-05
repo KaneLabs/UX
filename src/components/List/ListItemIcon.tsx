@@ -6,7 +6,11 @@ import Icon from '../Icon/Icon';
 export const ListItemIcon = (props) => {
   const [{ iconSize, unit }] = useTheme();
   const {
-    name = null, size = iconSize, iconStyle = null, style, ...rest
+    name = null,
+    size = iconSize,
+    iconStyle = null,
+    style,
+    ...rest
   } = props;
   return (
     <View style={[{ padding: unit }, style]} {...rest}>

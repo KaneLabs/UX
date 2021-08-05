@@ -1,1 +1,1 @@
-export const TIMELINE: import("graphql").DocumentNode;
+export const TIMELINE: import('graphql').DocumentNode;

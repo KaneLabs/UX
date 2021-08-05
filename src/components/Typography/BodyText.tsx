@@ -13,9 +13,10 @@ export const BodyText = ({
   const [theme, setTheme] = useTheme();
   const styles = useStyles();
   const textStyle = type === 1 ? styles.body : styles.body2;
-  const colorStyle = type === 1
-    ? { color: theme.textColor.primary }
-    : { color: theme.textColor.secondary };
+  const colorStyle =
+    type === 1
+      ? { color: theme.textColor.primary }
+      : { color: theme.textColor.secondary };
 
   const overrideableStyle = [
     textStyle,

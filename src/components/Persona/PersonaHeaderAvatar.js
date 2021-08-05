@@ -7,13 +7,11 @@ export const PersonaHeaderAvatar = (props) => {
   const { avatarUrl, avatarSize = AVATAR_SIZE, mobile = false } = props;
   const styles = useStyles();
   return (
-    <View
-      style={[
-        styles.container,
-        mobile ? styles.mobile : styles.desktop,
-      ]}
-    >
-      <Avatar avatarUrl={avatarUrl} size={mobile ? AVATAR_SIZE : AVATAR_SIZE_DESKTOP} />
+    <View style={[styles.container, mobile ? styles.mobile : styles.desktop]}>
+      <Avatar
+        avatarUrl={avatarUrl}
+        size={mobile ? AVATAR_SIZE : AVATAR_SIZE_DESKTOP}
+      />
     </View>
   );
 };

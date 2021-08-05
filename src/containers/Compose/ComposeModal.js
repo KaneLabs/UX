@@ -10,7 +10,11 @@ import {
 import { Modal } from '../..';
 import ComposeToolbar from './ComposeToolbar';
 import ComposeBody from './ComposeBody';
-import { formatContentForGraph, signFile, convertFilesToBase64 } from '../../fns';
+import {
+  formatContentForGraph,
+  signFile,
+  convertFilesToBase64,
+} from '../../fns';
 
 const uploadImage = async (file) => {
   try {

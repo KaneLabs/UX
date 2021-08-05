@@ -34,7 +34,7 @@ const BottomSheet = () => {
     onActive: (event, ctx) => {
       x.value = ctx.startX + event.translationX;
     },
-    onEnd: _ => {
+    onEnd: (_) => {
       console.log('END');
       x.value = withSpring(0);
     },

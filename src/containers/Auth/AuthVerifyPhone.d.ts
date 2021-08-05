@@ -1,4 +1,6 @@
 export default AuthVerifyPhone;
-declare function AuthVerifyPhone({ onSuccess }: {
-    onSuccess: any;
+declare function AuthVerifyPhone({
+  onSuccess,
+}: {
+  onSuccess: any;
 }): JSX.Element;

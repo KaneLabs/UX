@@ -6,7 +6,11 @@ export const Avatar = (props) => {
   const styles = useStyles();
   const { PROFILE_AVATAR_SIZE } = useTheme();
   const {
-    source, avatarUrl, size = PROFILE_AVATAR_SIZE, style = null, ...rest
+    source,
+    avatarUrl,
+    size = PROFILE_AVATAR_SIZE,
+    style = null,
+    ...rest
   } = props;
 
   const sizeStyles = {

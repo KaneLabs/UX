@@ -7,7 +7,7 @@ interface ScreenProps extends ContainerProps {
   padded?: boolean;
 }
 
-const Screen: React.FC<ScreenProps> = props => {
+const Screen: React.FC<ScreenProps> = (props) => {
   const styles = useStyles();
 
   return (

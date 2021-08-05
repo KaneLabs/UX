@@ -8,9 +8,7 @@ export const AccountAvatarContainer = (props) => {
   const { data: accountData } = useQuery(ACCOUNT);
   const account = accountData && accountData.account;
 
-  return (
-    <Avatar avatarUrl={account.avatarUrl} {...props} />
-  );
+  return <Avatar avatarUrl={account.avatarUrl} {...props} />;
 };
 
 export default AccountAvatarContainer;

@@ -17,7 +17,10 @@ export const buildVideoFileSelector = () => {
 };
 
 export const VideoUploadButton = ({
-  onFiles, renderPreviews, iconName = null, ...rest
+  onFiles,
+  renderPreviews,
+  iconName = null,
+  ...rest
 }) => <IconButton name={iconName || 'ios-videocam-outline'} {...rest} />;
 
 // const fileSelectorRef = useRef(null);

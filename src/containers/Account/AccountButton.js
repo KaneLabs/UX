@@ -11,9 +11,7 @@ export const AccountButton = ({ size = 32, style = null, ...rest }) => {
   const styles = useStyles();
 
   if (!account) {
-    return (
-      <Button style={[styles.joinButton, style]} text="JOIN" {...rest} />
-    );
+    return <Button style={[styles.joinButton, style]} text="JOIN" {...rest} />;
   }
 
   return (
@@ -23,9 +21,7 @@ export const AccountButton = ({ size = 32, style = null, ...rest }) => {
   );
 };
 
-const useStyles = makeStyles(({
-  unit, padding, borderColor, borderWidth,
-}) => ({
+const useStyles = makeStyles(({ unit, padding, borderColor, borderWidth }) => ({
   accountButton: { padding: unit },
   joinButton: {
     // padding,

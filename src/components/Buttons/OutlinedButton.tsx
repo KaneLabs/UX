@@ -1,10 +1,7 @@
 import React, { forwardRef } from 'react';
 import { View, TouchableHighlight, StyleSheet } from 'react-native';
 
-import {
-  unit,
-  makeStyles,
-} from 'eros-ui/theme';
+import { unit, makeStyles } from 'eros-ui/theme';
 import Icon from '../Icon';
 import ButtonText from '../Typography/ButtonText';
 
@@ -26,8 +23,7 @@ export const OutlinedButton = forwardRef((props, ref) => {
       ref={ref}
       style={[styles.default, style, disabled && styles.disabled]}
       onPress={disabled ? null : onPress}
-      {...rest}
-    >
+      {...rest}>
       <View style={styles.iconContainer}>
         {icon && <Icon name={icon} style={styles.icon} />}
         <ButtonText>{children || text || title}</ButtonText>

@@ -15,9 +15,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export const Overline = ({
-  text = null, style = {}, children, gutter,
-}) => {
+export const Overline = ({ text = null, style = {}, children, gutter }) => {
   const content = (text || children).toUpperCase();
   const styles = useStyles();
   return (

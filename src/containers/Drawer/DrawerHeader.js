@@ -7,7 +7,10 @@ export const DrawerHeader = ({ avatarUrl, display, handle }) => (
     <Row>
       <View style={{ alignItems: 'center' }}>
         <View style={{ padding: Platform.OS === 'web' ? 0 : 8 }}>
-          <Avatar avatarUrl={avatarUrl} size={Platform.OS === 'web' ? 32 : 48} />
+          <Avatar
+            avatarUrl={avatarUrl}
+            size={Platform.OS === 'web' ? 32 : 48}
+          />
         </View>
         <Caption text={`@${handle}`} />
       </View>

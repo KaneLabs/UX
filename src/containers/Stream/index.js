@@ -1,7 +1,10 @@
 import React from 'react';
 import { Button } from 'react-native';
 
-import { NodePlayerView, NodeCameraView } from '@fora/react-native-stream-client';
+import {
+  NodePlayerView,
+  NodeCameraView,
+} from '@fora/react-native-stream-client';
 
 // const TWITCH_RTMP = 'rtmp://live.twitch.tv/app/live_467231577_KRbBJwOjAF7Rsqf4JHwhSutbHJZjew';
 const LOCALHOST_RTMP = 'rtmp://192.168.1.13:1935/live/stream';
@@ -67,10 +70,16 @@ export default class Stream extends React.Component {
         <Button
           onPress={() => {
             if (this.state.isPublish) {
-              this.setState({ publishBtnTitle: 'Start Publish', isPublish: false });
+              this.setState({
+                publishBtnTitle: 'Start Publish',
+                isPublish: false,
+              });
               this.vb.stop();
             } else {
-              this.setState({ publishBtnTitle: 'Stop Publish', isPublish: true });
+              this.setState({
+                publishBtnTitle: 'Stop Publish',
+                isPublish: true,
+              });
               this.vb.start();
             }
           }}

@@ -7,7 +7,7 @@ export const List = ({ dense = false, ...rest }) => {
   return <View style={[dense ? styles.dense : styles.list]} {...rest} />;
 };
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   list: {
     width: '100%',
     paddingVertical: theme.padding,

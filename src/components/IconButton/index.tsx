@@ -1,5 +1,9 @@
 import React, { useState } from 'react';
-import { TouchableOpacity, TouchableOpacityProps, StyleSheet } from 'react-native';
+import {
+  TouchableOpacity,
+  TouchableOpacityProps,
+  StyleSheet,
+} from 'react-native';
 import Icon from 'react-native-vector-icons/dist/Ionicons';
 import { useTheme, makeStyles, Theme } from 'eros-ui/theme';
 import shadow from '../Shadow';
@@ -35,7 +39,7 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
 }));
 
-const IconButton: React.FC<TouchableOpacityProps> = props => {
+const IconButton: React.FC<TouchableOpacityProps> = (props) => {
   const [{ iconSize, iconPadding, iconColor }] = useTheme<Theme>();
   const {
     padding = iconPadding,
@@ -51,7 +55,7 @@ const IconButton: React.FC<TouchableOpacityProps> = props => {
   const [hover, setHover] = useState(false);
 
   const overrideableStyle = React.useMemo(() => {
-    const height = size + (padding * 2);
+    const height = size + padding * 2;
     const sizeStyles = {
       height,
       width: height,

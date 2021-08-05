@@ -1,11 +1,17 @@
-import React, { useState } from 'react';
-import { View, Image, StyleSheet } from 'react-native';
+import React from 'react';
+import { Image } from 'react-native';
 import {
-  makeStyles, DEFAULT_AVATAR_URL, AVATAR_SIZE, canvas, unit, borderRadius, borderColor,
+  makeStyles,
+  DEFAULT_AVATAR_URL,
+  AVATAR_SIZE,
+  Theme,
 } from 'eros-ui/theme';
 
 export const Avatar = ({
-  source = null, avatarUrl = null, size = AVATAR_SIZE, style = null,
+  source = null,
+  avatarUrl = null,
+  size = AVATAR_SIZE,
+  style = null,
 }) => {
   const sizeStyles = {
     height: size,
@@ -19,12 +25,12 @@ export const Avatar = ({
   return <Image source={imageSource} style={avatarStyles} />;
 };
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles((theme: Theme) => ({
   avatarPaper: {
     overflow: 'hidden',
     borderWidth: 1,
-    borderColor,
-    backgroundColor: canvas,
+    borderColor: theme.borderColor,
+    backgroundColor: theme.canvas,
     alignItems: 'center',
   },
 }));

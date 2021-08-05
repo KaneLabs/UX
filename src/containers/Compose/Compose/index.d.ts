@@ -1,4 +1,6 @@
-export function Compose({ onSuccess }: {
-    onSuccess?: (() => null) | undefined;
+export function Compose({
+  onSuccess,
+}: {
+  onSuccess?: (() => null) | undefined;
 }): JSX.Element;
 export default Compose;

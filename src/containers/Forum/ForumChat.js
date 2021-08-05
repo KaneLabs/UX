@@ -39,9 +39,14 @@ export const ForumChat = ({ forumId }) => {
   const [chatList, setChatList] = useState([]);
   const [index, setIndex] = useState(0);
   const [selectedMember, setSelectedMember] = useState(null);
-  const onSubscriptionData = ({ subscriptionData }) => setChatList((state) => [...state, subscriptionData.data.ForumChat]);
+  const onSubscriptionData = ({ subscriptionData }) =>
+    setChatList((state) => [...state, subscriptionData.data.ForumChat]);
 
-  const options = { variables: { forumId }, shouldResubscribe: true, onSubscriptionData };
+  const options = {
+    variables: { forumId },
+    shouldResubscribe: true,
+    onSubscriptionData,
+  };
   useSubscription(FORUM_CHAT, options);
 
   const onPressMember = (member) => {
@@ -55,7 +60,9 @@ export const ForumChat = ({ forumId }) => {
       case 0:
         return <ChatList data={chatList} />;
       case 1:
-        return <ForumMembersList forumId={forumId} onPressMember={onPressMember} />;
+        return (
+          <ForumMembersList forumId={forumId} onPressMember={onPressMember} />
+        );
       case 2:
         return <ForumMember {...selectedMember} />;
       default:

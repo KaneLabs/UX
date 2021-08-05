@@ -1,3 +1,1 @@
-export function UpdateAccount({ onSuccess }: {
-    onSuccess: any;
-}): JSX.Element;
+export function UpdateAccount({ onSuccess }: { onSuccess: any }): JSX.Element;

@@ -37,7 +37,10 @@ const reducer = (state, action) => {
     case SET_CONTENT:
       return {
         ...state,
-        content: { ...state.content, ...{ [action.payload.index]: action.payload.data } },
+        content: {
+          ...state.content,
+          ...{ [action.payload.index]: action.payload.data },
+        },
       };
     case SET_INDEX:
       return { ...state, activeIndex: action.payload };

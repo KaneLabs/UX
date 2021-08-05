@@ -10,7 +10,10 @@ export const ForaButton = ({ onPress }) => (
 
 const styles = {
   foraButton: {
-    paddingLeft: 4, paddingBottom: 0, paddingTop: 8, paddingRight: 8,
+    paddingLeft: 4,
+    paddingBottom: 0,
+    paddingTop: 8,
+    paddingRight: 8,
   },
   foraButtonLogo: { height: 32, width: 32 },
 };

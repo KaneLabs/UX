@@ -30,9 +30,13 @@ const AccountMenuButton = (props) => {
     <Menu
       visible={open}
       onBackdropPress={() => setOpen(false)}
-      button={<AccountButton onPress={() => setOpen((last) => !last)} size={32} />}
-    >
-      <AccountLinkMenuItem handle={account?.handle} onPress={() => setOpen(false)} />
+      button={
+        <AccountButton onPress={() => setOpen((last) => !last)} size={32} />
+      }>
+      <AccountLinkMenuItem
+        handle={account?.handle}
+        onPress={() => setOpen(false)}
+      />
       <MenuItem text="Logout" onPress={onLogout} />
     </Menu>
   );

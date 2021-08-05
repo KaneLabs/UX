@@ -1,7 +1,5 @@
 import React from 'react';
-import {
-  View, StyleSheet, Platform, Dimensions,
-} from 'react-native';
+import { View, StyleSheet, Platform, Dimensions } from 'react-native';
 
 import { shadow } from '../..';
 
@@ -9,7 +7,8 @@ import Header from '../../storybook/components/Header';
 import Container from '../../storybook/components/Container';
 import { storiesOf } from 'eros-ui-storybook/helpers/storiesOf';
 
-const pageWidth = Platform.OS == 'web' ? window.innerWidth : Dimensions.get('window').width;
+const pageWidth =
+  Platform.OS == 'web' ? window.innerWidth : Dimensions.get('window').width;
 
 const shadowTypeNum = 24;
 const maxItemPerRow = shadowTypeNum / 4;

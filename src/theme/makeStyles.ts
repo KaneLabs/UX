@@ -8,9 +8,10 @@ type ThemeFunction = (theme: Theme) => any;
 const makeStyles: Function = (themeFn: ThemeFunction) => {
   const useStyles = () => {
     const [currTheme, toggleTheme] = useTheme();
-    const styles = useMemo(() => StyleSheet.create(themeFn(currTheme)), [
-      currTheme.mode,
-    ]);
+    const styles = useMemo(
+      () => StyleSheet.create(themeFn(currTheme)),
+      [currTheme.mode],
+    );
     return styles;
   };
 

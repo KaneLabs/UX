@@ -61,14 +61,8 @@ class MenuItem extends Component {
   }
 
   render() {
-    const {
-      children,
-      disabled,
-      onPress,
-      style,
-      icon,
-      keyboardCommand,
-    } = this.props;
+    const { children, disabled, onPress, style, icon, keyboardCommand } =
+      this.props;
     const { stateBackgroundColor } = this.state;
 
     return (

@@ -41,11 +41,13 @@ export const SetProfilePic = ({ onSuccess }) => {
   const { loading: updateLoading } = updateResponse;
   const [updatePersonaAvatar] = useMutation(UPDATE_PERSONA_AVATAR);
   const [updatePersonaBanner] = useMutation(UPDATE_PERSONA_BANNER);
-  const [checkHandleIsAvailable, { data, error, loading }] = useLazyQuery(HANDLE_IS_AVAILABLE);
+  const [checkHandleIsAvailable, { data, error, loading }] =
+    useLazyQuery(HANDLE_IS_AVAILABLE);
   const handleIsAvailable = data && data.handleIsAvailable;
   const initialDisplay = (account && account.display) || '';
   const [display, setDisplay] = useState(initialDisplay);
-  const initialHandle = (account && account.handle && `@${account.handle}`) || '';
+  const initialHandle =
+    (account && account.handle && `@${account.handle}`) || '';
   const [handle, setHandle] = useState(initialHandle);
 
   const onAvatarFiles = async (images) => {
@@ -78,7 +80,8 @@ export const SetProfilePic = ({ onSuccess }) => {
 
   const handleIsValid = isValidHandle(handle && handle.slice(1));
   const handleIsMe = account.handle === (handle && handle.slice(1));
-  const handleIsAvailableAndValid = handleIsAvailable && handleIsValid && display.length > 1;
+  const handleIsAvailableAndValid =
+    handleIsAvailable && handleIsValid && display.length > 1;
 
   const isValid = handleIsAvailableAndValid || handleIsMe;
 
@@ -101,8 +104,7 @@ export const SetProfilePic = ({ onSuccess }) => {
             marginRight: 16,
             alignItems: 'center',
             justifyContent: 'center',
-          }}
-        >
+          }}>
           <ImageUploadButton
             style={{ backgroundColor: canvasOpaque }}
             hoverStyle={{ backgroundColor: canvas3Opaque }}

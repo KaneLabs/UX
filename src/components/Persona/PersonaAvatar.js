@@ -26,8 +26,11 @@ export const PersonaAvatar = (props) => {
     <View
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
-      style={[sizeStyles, styles.avatarPaper, hover && styles.avatarPaperHover]}
-    >
+      style={[
+        sizeStyles,
+        styles.avatarPaper,
+        hover && styles.avatarPaperHover,
+      ]}>
       <Image source={imageSource} style={[sizeStyles]} />
     </View>
   );

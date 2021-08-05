@@ -1,1 +1,1 @@
-export * from "./CountryCodeMenu";
+export * from './CountryCodeMenu';

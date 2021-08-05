@@ -16,9 +16,9 @@
 import PropTypes from 'prop-types';
 
 export const canUseDOM = !!(
-  typeof window !== 'undefined'
-  && window.document
-  && window.document.createElement
+  typeof window !== 'undefined' &&
+  window.document &&
+  window.document.createElement
 );
 
 export const SafeHTMLElement = canUseDOM ? HTMLElement : PropTypes.any;

@@ -19,8 +19,7 @@ export const NavMutatingScroll = ({ children, ...rest }) => {
     <Animated.ScrollView
       scrollEventThrottle={16} // <-- Use 1 here to make sure no events are ever missed
       onScroll={onScroll}
-      {...rest}
-    >
+      {...rest}>
       {children}
     </Animated.ScrollView>
   );

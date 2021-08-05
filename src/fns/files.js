@@ -30,46 +30,45 @@ export const buildVideoFileSelector = () => {
   }
 };
 
-export const analyzeFile = (file) => new Promise((resolve, reject) => {
-  try {
-    const fileReader = new FileReader();
+export const analyzeFile = (file) =>
+  new Promise((resolve, reject) => {
+    try {
+      const fileReader = new FileReader();
 
-    fileReader.onload = (e) => {
-      const image = new Image();
-      image.onload = () => {
-        // const greatestCommonDivisor = gcd(image.width,image.height);
+      fileReader.onload = (e) => {
+        const image = new Image();
+        image.onload = () => {
+          // const greatestCommonDivisor = gcd(image.width,image.height);
 
-        // const { aspectRatio, mustCrop } = closestAspectRatio({
-        //   width: image.width,
-        //   height: image.height,
-        // });
+          // const { aspectRatio, mustCrop } = closestAspectRatio({
+          //   width: image.width,
+          //   height: image.height,
+          // });
 
-        resolve({
-          height: image.height,
-          width: image.width,
-          uri: e.target.result,
-          aspectRatio: image.width / image.height,
-          // closestAspectRatio: aspectRatio,
-          // mustCrop,
-        });
+          resolve({
+            height: image.height,
+            width: image.width,
+            uri: e.target.result,
+            aspectRatio: image.width / image.height,
+            // closestAspectRatio: aspectRatio,
+            // mustCrop,
+          });
+        };
+
+        image.src = e.target.result;
       };
 
-      image.src = e.target.result;
-    };
-
-    fileReader.readAsDataURL(file);
-  } catch (e) {
-    reject(e);
-  }
-});
+      fileReader.readAsDataURL(file);
+    } catch (e) {
+      reject(e);
+    }
+  });
 
 export const convertFilesToBase64 = async (files) => {
   // const filesWithPresignedUrls = await getPresignedUrlsForFiles(files);
   const filesWithBase64URI = await Promise.all(
     files.map(async (file) => {
-      const {
-        uri, height, width, aspectRatio,
-      } = await analyzeFile(file);
+      const { uri, height, width, aspectRatio } = await analyzeFile(file);
       // TODO: update this eventuallu uri can be confusing
       file.uri = uri;
       file.height = height;

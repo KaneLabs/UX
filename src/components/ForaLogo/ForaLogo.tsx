@@ -8,26 +8,28 @@ type theme = {
 };
 
 interface ForaLogoStyles {
-  logo: LogoStyles
+  logo: LogoStyles;
 }
 
 interface LogoStyles {
   height: number;
-  width: number
+  width: number;
 }
 
-const useStyles = makeStyles((theme: theme): ForaLogoStyles => ({
-  logo: {
-    height: theme.unit * 3,
-    width: theme.unit * 3,
-  },
-}));
+const useStyles = makeStyles(
+  (theme: theme): ForaLogoStyles => ({
+    logo: {
+      height: theme.unit * 3,
+      width: theme.unit * 3,
+    },
+  }),
+);
 
 interface ForaLogoProps {
   style?: ImageStyle;
 }
 
-const ForaLogo: FC<ForaLogoProps> = props => {
+const ForaLogo: FC<ForaLogoProps> = (props) => {
   const styles = useStyles();
   const style = StyleSheet.compose(styles.logo, props?.style);
   return <Image style={style} source={ForaLogoTyrion} {...props} />;

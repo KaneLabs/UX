@@ -6,16 +6,18 @@ import { useTheme, makeStyles } from 'eros-ui/theme';
 import { useDimensions } from 'eros-ui/state';
 
 export const Modal = (props) => {
-  const [{
-    FEED_WIDTH, borderRadius, borderColor, borderWidth,
-  }] = useTheme();
+  const [{ FEED_WIDTH, borderRadius, borderColor, borderWidth }] = useTheme();
 
   const {
-    children, open = false, onClose, fullHeight = false, Header, Footer, Body,
+    children,
+    open = false,
+    onClose,
+    fullHeight = false,
+    Header,
+    Footer,
+    Body,
   } = props;
-  const {
-    width, height, mobile, desktop,
-  } = useDimensions();
+  const { width, height, mobile, desktop } = useDimensions();
 
   if (!open) {
     return null;
@@ -23,7 +25,11 @@ export const Modal = (props) => {
 
   const modalWidth = desktop ? FEED_WIDTH : width;
   const gutterHorizontal = desktop ? (width - FEED_WIDTH) / 2 : 0;
-  const gutterVertical = desktop ? (fullHeight ? 0 : Math.ceil(height * 0.1)) : 0;
+  const gutterVertical = desktop
+    ? fullHeight
+      ? 0
+      : Math.ceil(height * 0.1)
+    : 0;
   const sizeStyles = {
     width: modalWidth,
     left: gutterHorizontal,
@@ -37,7 +43,9 @@ export const Modal = (props) => {
     <>
       <View style={[styles.contentContainer, sizeStyles]}>
         {Header && Header}
-        <ScrollView style={styles.scrollView} contentContainer={styles.scrollViewContent}>
+        <ScrollView
+          style={styles.scrollView}
+          contentContainer={styles.scrollViewContent}>
           {Body || children}
         </ScrollView>
         {Footer && Footer}

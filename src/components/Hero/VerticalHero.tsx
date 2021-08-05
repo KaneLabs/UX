@@ -5,19 +5,27 @@ import { makeStyles } from 'eros-ui/theme';
 import { Subtitle, Title } from '../Typography';
 
 export const VerticalHero = ({
-  title, subtitle, SubtitleComponent = null, ...rest
+  title,
+  subtitle,
+  SubtitleComponent = null,
+  ...rest
 }) => {
   const { width, height } = useDimensions();
   const styles = useStyles();
 
   return (
-    <ImageBackground style={[styles.imageBackground, { width, height }]} {...rest}>
+    <ImageBackground
+      style={[styles.imageBackground, { width, height }]}
+      {...rest}>
       <SafeAreaView style={styles.textContainer}>
-        {title && <Title text={title} type={4} style={styles.heroTitle} gutter />}
+        {title && (
+          <Title text={title} type={4} style={styles.heroTitle} gutter />
+        )}
 
-        {SubtitleComponent || (subtitle
-          ? <Subtitle text={subtitle} style={styles.heroSubtitle} />
-          : null)}
+        {SubtitleComponent ||
+          (subtitle ? (
+            <Subtitle text={subtitle} style={styles.heroSubtitle} />
+          ) : null)}
       </SafeAreaView>
     </ImageBackground>
   );

@@ -1,15 +1,7 @@
-import Animated, {Easing} from 'react-native-reanimated';
+import Animated, { Easing } from 'react-native-reanimated';
 
-const {
-  Value,
-  block,
-  cond,
-  set,
-  startClock,
-  clockRunning,
-  timing,
-  stopClock,
-} = Animated;
+const { Value, block, cond, set, startClock, clockRunning, timing, stopClock } =
+  Animated;
 
 export const runInfinite = (clock, value, endValue, duration, easingType) => {
   const state = {

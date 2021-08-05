@@ -1,13 +1,17 @@
 import React from 'react';
 import { AccountButton } from 'eros-ui/containers';
-// import { useStyles } from 'eros-ui/theme';
 import Link from 'next/link';
 
-const AccountLinkButton = (props) => {
-  const { handle } = props;
+interface AccountLinkButtonProps {
+  handle: string;
+  onHover?: () => void;
+}
+
+const AccountLinkButton: React.FC<AccountLinkButtonProps> = props => {
+  const { handle, onHover } = props;
   return (
     <Link passHref href="/[creator]" as={`/@${handle}`}>
-      <AccountButton onHover={(event) => console.log('hover')} size={32} />
+      <AccountButton onHover={onHover} size={32} />
     </Link>
   );
 };

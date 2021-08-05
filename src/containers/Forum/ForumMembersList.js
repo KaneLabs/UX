@@ -17,12 +17,10 @@ export const ForumMembersList = ({ forumId, onPressMember }) => {
   const members = data && data.ForumMembers;
   return (
     <List dense>
-      {data
-        && data.ForumMembers
-        && data.ForumMembers.map((member) => {
-          const {
-            id, avatarUrl, handle, display,
-          } = member;
+      {data &&
+        data.ForumMembers &&
+        data.ForumMembers.map((member) => {
+          const { id, avatarUrl, handle, display } = member;
           return (
             <ListItem onPress={() => onPressMember(member)} dense key={id}>
               <ListItemMedia dense>

@@ -9,7 +9,9 @@ const useStyles = makeStyles(() => ({
 export const PersonaTitle = ({ text, mobile }) => {
   const styles = useStyles();
   const paddingBottom = mobile ? unit / 2 : unit;
-  return <Title text={text} type={4} style={[styles.title, { paddingBottom }]} />;
+  return (
+    <Title text={text} type={4} style={[styles.title, { paddingBottom }]} />
+  );
 };
 
 export default PersonaTitle;

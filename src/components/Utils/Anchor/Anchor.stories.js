@@ -1,9 +1,7 @@
 import React from 'react';
 import { View } from 'react-native';
 
-import {
-  Anchor, Button, Heading, IconButton,
-} from '../..';
+import { Anchor, Button, Heading, IconButton } from '../..';
 
 import Header from '../../storybook/components/Header';
 import Container from '../../storybook/components/Container';
@@ -28,8 +26,7 @@ export default storiesOf('Utils|Anchor', module)
 
         <Anchor
           url="https://github.com/codypearce/material-bread"
-          target="_parent"
-        >
+          target="_parent">
           <Button
             text="Github"
             type="outlined"

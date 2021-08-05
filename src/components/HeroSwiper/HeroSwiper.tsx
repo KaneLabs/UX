@@ -21,15 +21,15 @@ export const HerosSwiper = (props) => (
         <TouchableOpacity
           {...rest}
           style={
-              isActive
-                ? {
+            isActive
+              ? {
                   borderRadius: 14,
                   margin: unit,
                   backgroundColor: 'rgba(255,255,255,0.8)',
                   height: 28,
                   width: 28,
                 }
-                : {
+              : {
                   borderRadius: 14,
                   margin: unit,
                   backgroundColor: 'rgba(255,255,255,0.0)',
@@ -38,15 +38,14 @@ export const HerosSwiper = (props) => (
                   height: 28,
                   width: 28,
                 }
-            }
+          }
         />
       ),
       // PrevComponent: () => null,
       // NextComponent: () => null,
     }}
     testID="HerosSwiper"
-    {...props}
-  >
+    {...props}>
     <CreatorOwned />
     <Distributed />
     <FreeTrade />

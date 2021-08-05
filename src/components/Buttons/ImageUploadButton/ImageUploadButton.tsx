@@ -14,9 +14,9 @@ class ImageUploadButton extends React.Component {
 
     const filesWithPreviews = await Promise.all(
       filesWithPresignedUrls.map(async (file) => {
-        const {
-          uri, height, width, aspectRatio,
-        } = await this.analyzeFile(file);
+        const { uri, height, width, aspectRatio } = await this.analyzeFile(
+          file,
+        );
         file.uri = uri;
         file.height = height;
         file.width = width;
@@ -32,19 +32,22 @@ class ImageUploadButton extends React.Component {
     // console.log('uploadFiles: ', uploadFiles);
   };
 
-  getPresignedUrlsForFiles = async (files) => Promise.all(
-    files.map(async (file) => {
-      const { signedUrl, name } = await this.getPresignedUrl(file);
+  getPresignedUrlsForFiles = async (files) =>
+    Promise.all(
+      files.map(async (file) => {
+        const { signedUrl, name } = await this.getPresignedUrl(file);
 
-      file.signedUrl = signedUrl;
-      file.s3Name = name;
+        file.signedUrl = signedUrl;
+        file.s3Name = name;
 
-      return file;
-    }),
-  );
+        return file;
+      }),
+    );
 
   getPresignedUrl = async (file) => {
-    const { data } = await this.props.mutate({ variables: { type: file.type, size: file.size } });
+    const { data } = await this.props.mutate({
+      variables: { type: file.type, size: file.size },
+    });
 
     return data.getPresignedUrl;
   };
@@ -59,38 +62,39 @@ class ImageUploadButton extends React.Component {
   //   req.send(formData);
   // }
 
-  analyzeFile = (file) => new Promise((resolve, reject) => {
-    try {
-      const fileReader = new FileReader();
+  analyzeFile = (file) =>
+    new Promise((resolve, reject) => {
+      try {
+        const fileReader = new FileReader();
 
-      fileReader.onload = (e) => {
-        const image = new Image();
-        image.onload = () => {
-          // const greatestCommonDivisor = gcd(image.width,image.height);
+        fileReader.onload = (e) => {
+          const image = new Image();
+          image.onload = () => {
+            // const greatestCommonDivisor = gcd(image.width,image.height);
 
-          const { aspectRatio, mustCrop } = closestAspectRatio({
-            width: image.width,
-            height: image.height,
-          });
+            const { aspectRatio, mustCrop } = closestAspectRatio({
+              width: image.width,
+              height: image.height,
+            });
 
-          resolve({
-            height: image.height,
-            width: image.width,
-            uri: e.target.result,
-            aspectRatio: image.width / image.height,
-            closestAspectRatio: aspectRatio,
-            mustCrop,
-          });
+            resolve({
+              height: image.height,
+              width: image.width,
+              uri: e.target.result,
+              aspectRatio: image.width / image.height,
+              closestAspectRatio: aspectRatio,
+              mustCrop,
+            });
+          };
+
+          image.src = e.target.result;
         };
 
-        image.src = e.target.result;
-      };
-
-      fileReader.readAsDataURL(file);
-    } catch (e) {
-      reject(e);
-    }
-  });
+        fileReader.readAsDataURL(file);
+      } catch (e) {
+        reject(e);
+      }
+    });
 
   render() {
     return <IconButton name="ios-image" />;

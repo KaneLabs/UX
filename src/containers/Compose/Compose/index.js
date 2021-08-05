@@ -16,9 +16,7 @@ import ComposeToolbar from '../ComposeToolbar';
 import ComposeBody from '../ComposeBody';
 import ComposeTitle from '../ComposeTitle';
 
-const {
-  SET_TYPE, SET_INDEX, SET_CONTENT, SET_TITLE, RESET,
-} = ComposeActions;
+const { SET_TYPE, SET_INDEX, SET_CONTENT, SET_TITLE, RESET } = ComposeActions;
 
 const filterEmptyContent = (contentBlock) => {
   if (contentBlock.type === 'Text' && contentBlock.text === '') {
@@ -33,7 +31,11 @@ const formatContentForGraph = (content) => {
       if (contentBlock.type === 'Image') {
         return [
           ...acc,
-          { index: parseInt(index, 10), type: contentBlock.type, files: contentBlock.files },
+          {
+            index: parseInt(index, 10),
+            type: contentBlock.type,
+            files: contentBlock.files,
+          },
         ];
       }
       return [...acc, { index: parseInt(index, 10), ...contentBlock }];
@@ -49,7 +51,8 @@ export const Compose = ({ onSuccess = () => null }) => {
   const [createPost, { error, loading }] = useMutation(CREATE_POST);
   const [createPresignedUrl] = useMutation(CREATE_PRESIGNED_URL);
 
-  const signFiles = (files) => Promise.all(files.map((file) => signFile(file)(createPresignedUrl)));
+  const signFiles = (files) =>
+    Promise.all(files.map((file) => signFile(file)(createPresignedUrl)));
 
   const onFiles = async (nextFiles) => {
     dispatch({ type: SET_TYPE, payload: 'Image' });
@@ -121,10 +124,17 @@ export const Compose = ({ onSuccess = () => null }) => {
 
 const useStyles = makeStyles((theme) => ({
   container: {
-    width: '100%', height: '100%', alignItems: 'center', paddingBottom: 48, flex: 1,
+    width: '100%',
+    height: '100%',
+    alignItems: 'center',
+    paddingBottom: 48,
+    flex: 1,
   },
   contentContainer: {
-    maxWidth: theme.FEED_WIDTH, width: '100%', height: '100%', flex: 1,
+    maxWidth: theme.FEED_WIDTH,
+    width: '100%',
+    height: '100%',
+    flex: 1,
   },
 }));
 

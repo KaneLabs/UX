@@ -75,7 +75,10 @@ export const PhoneAuthSet = ({
   const handlePhone = (nextNumber) => {
     const nextPhoneNumber = nextNumber.replace(/\D/g, '');
     if (nextPhoneNumber.length === 3 && state.phoneNumber.length === 3) {
-      return dispatch({ type: 'SET_PHONE_NUMBER', payload: nextPhoneNumber.slice(0, 2) });
+      return dispatch({
+        type: 'SET_PHONE_NUMBER',
+        payload: nextPhoneNumber.slice(0, 2),
+      });
     }
     return dispatch({ type: 'SET_PHONE_NUMBER', payload: nextPhoneNumber });
   };
@@ -90,7 +93,10 @@ export const PhoneAuthSet = ({
 
   const submitPhone = async () => {
     try {
-      const input = { countryCode: state.countryCode, number: state.phoneNumber };
+      const input = {
+        countryCode: state.countryCode,
+        number: state.phoneNumber,
+      };
       const { data } = await setPhone({ variables: { input } });
 
       if (data && data.SetPhone) {

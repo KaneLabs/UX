@@ -13,26 +13,29 @@ import { useMutation } from '@apollo/react-hooks';
 const AuthVerifyPhone = ({ onSuccess }) => {
   const [phone, setPhone] = React.useState('');
   const [verificationCode, setVerificationCode] = React.useState('');
-  const [verifyPhone, { data, error, loading }] = useMutation(AUTH_VERIFY_PHONE, {
-    async update(cache, { data: { AuthVerifyPhone: NextMe } }) {
-      const { Me } = cache.readQuery({ query: ME });
-      cache.writeQuery({
-        query: ME,
-        data: {
-          Me: {
-            ...Me,
-            ...NextMe,
+  const [verifyPhone, { data, error, loading }] = useMutation(
+    AUTH_VERIFY_PHONE,
+    {
+      async update(cache, { data: { AuthVerifyPhone: NextMe } }) {
+        const { Me } = cache.readQuery({ query: ME });
+        cache.writeQuery({
+          query: ME,
+          data: {
+            Me: {
+              ...Me,
+              ...NextMe,
+            },
           },
-        },
-      });
-      if (window) {
-        document.cookie = `token=${NextMe.token}`;
-      }
-      const { Me: NewMe } = cache.readQuery({ query: ME });
-      console.log({ NewMe });
-      onSuccess(NewMe);
+        });
+        if (window) {
+          document.cookie = `token=${NextMe.token}`;
+        }
+        const { Me: NewMe } = cache.readQuery({ query: ME });
+        console.log({ NewMe });
+        onSuccess(NewMe);
+      },
     },
-  });
+  );
 
   const submit = async () => {
     const input = { verificationCode, phone };
@@ -45,7 +48,12 @@ const AuthVerifyPhone = ({ onSuccess }) => {
     <Container>
       <Typography type="h2" text="Enter your verification code." />
       {error && error.message && (
-        <Typography type="subtitle1" testID="AuthVerifyPhoneError" text={error.message} gutter />
+        <Typography
+          type="subtitle1"
+          testID="AuthVerifyPhoneError"
+          text={error.message}
+          gutter
+        />
       )}
       <TextField value={verificationCode} onChangeText={setVerificationCode} />
       <TextField value={phone} onChangeText={setPhone} />

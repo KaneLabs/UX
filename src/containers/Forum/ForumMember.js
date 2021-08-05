@@ -11,7 +11,12 @@ import { StyleSheet } from 'react-native';
 import { makeStyles } from 'eros-ui/theme';
 
 export const ForumMember = ({
-  id, avatarUrl, display, handle, role = null, joinedAt = null,
+  id,
+  avatarUrl,
+  display,
+  handle,
+  role = null,
+  joinedAt = null,
 }) => (
   <View style={styles.container}>
     <View>

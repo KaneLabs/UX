@@ -229,7 +229,9 @@ const shadowConversion = [
 ];
 
 function shadow(elevation) {
-  return Platform.OS !== 'android' ? shadowConversion[elevation] : { elevation };
+  return Platform.OS !== 'android'
+    ? shadowConversion[elevation]
+    : { elevation };
 }
 
 export default shadow;

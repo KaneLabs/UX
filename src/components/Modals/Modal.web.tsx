@@ -24,7 +24,11 @@ export const Modal = (props) => {
 
   const modalWidth = desktop ? FEED_WIDTH : width;
   const gutterHorizontal = desktop ? (width - FEED_WIDTH) / 2 : 0;
-  const gutterVertical = desktop ? (fullHeight ? 0 : Math.ceil(height * 0.1)) : 0;
+  const gutterVertical = desktop
+    ? fullHeight
+      ? 0
+      : Math.ceil(height * 0.1)
+    : 0;
   const sizeStyles = {
     width: modalWidth,
     left: gutterHorizontal,
@@ -40,7 +44,9 @@ export const Modal = (props) => {
         {Header}
         {Body}
         {children && (
-          <ScrollView style={styles.scrollView} contentContainer={styles.scrollViewContent}>
+          <ScrollView
+            style={styles.scrollView}
+            contentContainer={styles.scrollViewContent}>
             {children}
           </ScrollView>
         )}

@@ -15,7 +15,11 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export const Caption = ({
-  text = null, style = null, children, gutter, ...rest
+  text = null,
+  style = null,
+  children,
+  gutter,
+  ...rest
 }) => {
   const styles = useStyles();
   return (

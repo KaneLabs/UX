@@ -5,7 +5,9 @@ import { Button } from 'eros-ui/components';
 export const BackButton = ({ style = {}, size = 32, ...rest }) => {
   const iconStyles = [styles.default, ...arrayifyStyle(style)];
   return (
-    <Button style={iconStyles} size={size} {...rest}>BACK</Button>
+    <Button style={iconStyles} size={size} {...rest}>
+      BACK
+    </Button>
   );
 };
 

@@ -46,8 +46,7 @@ export const Post = ({
       <View
         onMouseEnter={onMouseEnter}
         onMouseLeave={onMouseLeave}
-        style={[styles.post, { width }, hovered && styles.hovered]}
-      >
+        style={[styles.post, { width }, hovered && styles.hovered]}>
         <PostHeader {...persona} createdAt={createdAt} mobile={mobile} />
         <PostContent content={content} width={width} mobile={mobile} />
         <PostButtons postId={id} likes={likes} liked={liked} mobile={mobile} />

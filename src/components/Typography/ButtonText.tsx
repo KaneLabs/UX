@@ -19,12 +19,22 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export const ButtonText = ({
-  text = '', style = {}, children, gutter, hovered,
+  text = '',
+  style = {},
+  children,
+  gutter,
+  hovered,
 }) => {
   const styles = useStyles();
   const content = children || text;
   return (
-    <Text style={[styles.buttonText, style, gutter && styles.gutter, hovered && styles.hovered]}>
+    <Text
+      style={[
+        styles.buttonText,
+        style,
+        gutter && styles.gutter,
+        hovered && styles.hovered,
+      ]}>
       {content.toUpperCase()}
     </Text>
   );
