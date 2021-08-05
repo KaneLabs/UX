@@ -1,2 +1,1 @@
-export * from './FadeIn';
-export * from './SlideIn';
+export { default as PanHandler } from './PanHandler';

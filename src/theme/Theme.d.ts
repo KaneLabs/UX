@@ -19,6 +19,10 @@ type Theme = {
   secondaryColor: string;
   Typography: ThemeTypographyType;
   Screen: ScreenThemeType;
+  iconColor: string;
+  iconPadding: number;
+  iconSize: number;
+  NAV_HEIGHT: number;
 };
 
 export default Theme;

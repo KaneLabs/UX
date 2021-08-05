@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { TouchableOpacity, StyleSheet } from 'react-native';
+import { TouchableOpacity, TouchableOpacityProps, StyleSheet } from 'react-native';
 import Icon from 'react-native-vector-icons/dist/Ionicons';
 import { useTheme, makeStyles, Theme } from 'eros-ui/theme';
 import shadow from '../Shadow';
@@ -35,8 +35,8 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
 }));
 
-const IconButton = props => {
-  const [{ iconSize, iconPadding, iconColor }: Theme] = useTheme();
+const IconButton: React.FC<TouchableOpacityProps> = props => {
+  const [{ iconSize, iconPadding, iconColor }] = useTheme<Theme>();
   const {
     padding = iconPadding,
     color = iconColor,
