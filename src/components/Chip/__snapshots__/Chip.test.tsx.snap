@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Chip 1`] = `
+<View
+  accessible={true}
+  focusable={false}
+  onBlur={[Function]}
+  onClick={[Function]}
+  onFocus={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "backgroundColor": "rgba(255,255,255, 1)",
+      "borderColor": "rgba(0,0,0,0.12)",
+      "borderRadius": 32,
+      "borderWidth": 0.5,
+      "height": 32,
+      "justifyContent": "center",
+      "overflow": "hidden",
+      "paddingLeft": 12,
+      "paddingRight": 12,
+      "shadowColor": "#000",
+      "shadowOffset": Object {
+        "height": 2,
+        "width": 0,
+      },
+      "shadowOpacity": 0.23,
+      "shadowRadius": 2.62,
+    }
+  }
+>
+  <Text
+    style={
+      Object {
+        "color": "rgba(0,0,0,0.87)",
+        "fontSize": 14,
+        "fontWeight": "300",
+        "letterSpacing": 0.25,
+        "lineHeight": 17,
+        "marginBottom": 0,
+      }
+    }
+  >
+    Default
+  </Text>
+</View>
+`;

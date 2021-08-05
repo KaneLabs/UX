@@ -1,6 +1,6 @@
-export * from './List';
-export * from './ListItem';
+export { default } from './List';
+export { default as ListItem } from './ListItem';
+export { default as ListItemText } from './ListItemText';
 export * from './ListItemIcon';
 export * from './ListItemMedia';
-export * from './ListItemText';
 export { default as ListSubtitle } from './ListSubtitle';

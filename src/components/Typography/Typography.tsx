@@ -6,7 +6,7 @@ import {
   StyleProp,
   TextStyle,
 } from 'react-native';
-import { useTheme, TypographyTypes } from 'eros-ui/theme';
+import { useTheme } from 'eros-ui/theme';
 
 export interface TypographyProps extends TextProps {
   text?: string;
@@ -14,6 +14,22 @@ export interface TypographyProps extends TextProps {
   children?: React.ReactNode;
   gutter?: boolean;
   style?: StyleProp<TextStyle>;
+}
+
+export enum TypographyTypes {
+  h1 = 'h1',
+  h2 = 'h2',
+  h3 = 'h3',
+  h4 = 'h4',
+  h5 = 'h5',
+  h6 = 'h6',
+  subtitle1 = 'subtitle1',
+  subtitle2 = 'subtitle2',
+  body1 = 'body1',
+  body2 = 'body2',
+  button = 'button',
+  caption = 'caption',
+  overline = 'overline',
 }
 
 const Typography = (props: TypographyProps) => {

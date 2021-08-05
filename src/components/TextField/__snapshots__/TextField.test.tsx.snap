@@ -7,7 +7,7 @@ exports[`TextField Renders 1`] = `
   onBlur={[Function]}
   onFocus={[Function]}
   placeholder="Text Field"
-  placeholderTextColor="rgba(0,0,0,0.38)"
+  placeholderTextColor="rgba(0,0,0,0.54)"
   rejectResponderTermination={true}
   style={
     Object {

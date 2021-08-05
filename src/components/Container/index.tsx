@@ -1,5 +1,5 @@
-import React from 'react';
-import { View } from 'react-native';
+import React, { FC } from 'react';
+import { View, StyleSheet, ViewProps } from 'react-native';
 import { makeStyles } from 'eros-ui/theme';
 
 const useStyles = makeStyles(() => ({
@@ -14,9 +14,18 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
-const Container = ({ style = null, center = null, ...rest }) => {
+export interface ContainerProps extends ViewProps {
+  center?: boolean;
+}
+
+const Container: React.FC<ContainerProps> = props => {
+  const { style, center = false, ...rest } = props;
   const styles = useStyles();
-  const containerStyles = [styles.container, center && styles.center, style];
+  const containerStyles = StyleSheet.flatten([
+    styles.container,
+    center && styles.center,
+    style,
+  ]);
   return <View style={containerStyles} {...rest} />;
 };
 

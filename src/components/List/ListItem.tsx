@@ -1,32 +1,32 @@
 import React, { useState } from 'react';
-import { TouchableOpacity, View } from 'react-native';
-import { makeStyles } from 'eros-ui/theme';
+import {
+  TouchableOpacity,
+  View,
+  TouchableOpacityProps,
+  StyleSheet,
+} from 'react-native';
+import { makeStyles, Theme } from 'eros-ui/theme';
 
-export const ListItem = ({
-  children,
-  onPress = null,
-  dense = false,
-  style = null,
-  ...rest
-}) => {
+export interface ListItemProps extends TouchableOpacityProps {
+  dense?: boolean;
+}
+
+const ListItem: React.FC<ListItemProps> = props => {
+  const { children, onPress, dense = false, style, ...rest } = props;
   const [focused, setFocused] = useState(false);
   const styles = useStyles();
 
-  const combinedStyles = [
+  const combinedStyles = StyleSheet.flatten([
     styles.core,
     dense ? styles.listItemDense : styles.listItem,
     focused && styles.focused,
     style,
-  ];
+  ]);
 
   if (onPress) {
     return (
       <TouchableOpacity onPress={onPress}>
-        <View
-          onMouseEnter={() => setFocused(true)}
-          onMouseLeave={() => setFocused(false)}
-          style={combinedStyles}
-          {...rest}>
+        <View style={combinedStyles} {...rest}>
           {children}
         </View>
       </TouchableOpacity>
@@ -40,7 +40,7 @@ export const ListItem = ({
   );
 };
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme: Theme) => ({
   core: {
     width: '100%',
     flexDirection: 'row',
@@ -48,10 +48,15 @@ const useStyles = makeStyles(theme => ({
     backgroundColor: 'rgba(255,255,255,0)',
   },
   listItem: {
+    height: theme.unit * 6,
     paddingVertical: theme.unit,
     paddingHorizontal: theme.unit * 1.5,
   },
-  listItemDense: { paddingVertical: theme.unit, paddingHorizontal: theme.unit },
+  listItemDense: {
+    height: theme.unit * 4.5,
+    paddingVertical: theme.unit,
+    paddingHorizontal: theme.unit,
+  },
   focused: {
     backgroundColor: 'rgba(255,255,255,0.05)',
     // backgroundColor: textColor.faint,

@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import { TouchableOpacity } from 'react-native';
+import { TouchableOpacity, StyleSheet } from 'react-native';
 import Icon from 'react-native-vector-icons/dist/Ionicons';
-import { useTheme, makeStyles } from 'eros-ui/theme';
+import { useTheme, makeStyles, Theme } from 'eros-ui/theme';
 import shadow from '../Shadow';
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme: Theme) => ({
   core: {
     alignItems: 'center',
     justifyContent: 'center',
@@ -36,7 +36,7 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const IconButton = props => {
-  const [{ iconSize, iconPadding, iconColor }] = useTheme();
+  const [{ iconSize, iconPadding, iconColor }: Theme] = useTheme();
   const {
     padding = iconPadding,
     color = iconColor,
@@ -49,29 +49,33 @@ const IconButton = props => {
   } = props;
   const styles = useStyles();
   const [hover, setHover] = useState(false);
-  const height = size + padding * 2;
-  const sizeStyles = {
-    height,
-    width: height,
-    borderRadius: height,
-    padding,
-  };
-  const iconButtonStyles = [
-    styles.core,
-    hover ? styles.iconButtonHover : styles.iconButton,
-    sizeStyles,
-    style,
-    hover && hoverStyle,
-    fab && styles.fab,
-    fab && shadow(8),
-    hover && fab && styles.fabHover,
-    hover && fab && shadow(12),
-  ];
+
+  const overrideableStyle = React.useMemo(() => {
+    const height = size + (padding * 2);
+    const sizeStyles = {
+      height,
+      width: height,
+      borderRadius: height,
+      padding,
+    };
+    return StyleSheet.flatten([
+      styles.core,
+      hover ? styles.iconButtonHover : styles.iconButton,
+      sizeStyles,
+      style,
+      hover && hoverStyle,
+      fab && styles.fab,
+      fab && shadow(8),
+      hover && fab && styles.fabHover,
+      hover && fab && shadow(12),
+    ]);
+  }, [hover, fab, style, styles]);
+
   return (
     <TouchableOpacity
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
-      style={iconButtonStyles}
+      style={overrideableStyle}
       {...rest}>
       <Icon name={name} color={color} size={size} />
     </TouchableOpacity>

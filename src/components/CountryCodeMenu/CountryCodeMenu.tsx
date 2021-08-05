@@ -1,26 +1,42 @@
-import React from 'react';
+import * as React from 'react';
 import { View, TouchableWithoutFeedback } from 'react-native';
-import { makeStyles } from 'eros-ui/theme';
+import { makeStyles, Theme } from 'eros-ui/theme';
 import Menu from '../Menu';
-import BodyText from '../Typography/BodyText';
-import { countryData } from './country-data';
+import Typography from '../Typography';
+import countries, { Country } from './country-data';
 
-export const CountryCodeMenu = ({ setCountryCode, close }) => {
+export interface CountryCodeMenuProps {
+  setCountryCode: (country: Country) => void;
+  open: () => void;
+  close: () => void;
+}
+
+const CountryCodeMenu: React.FC<CountryCodeMenuProps> = ({
+  setCountryCode,
+  close,
+}) => {
   const styles = useStyles();
-
   return (
     <Menu visible onBackdropPress={close} style={styles.menu}>
-      {countryData.map((country) => (
+      {countries.map((country: Country) => (
         <TouchableWithoutFeedback
           key={country.key}
-          onPress={() => setCountryCode(country.phone)}
-        >
+          onPress={() => setCountryCode(country)}>
           <View style={styles.row}>
-            <View style={{ flexDirection: 'row', justifyContent: 'flex-end', paddingRight: 4 }}>
-              <BodyText style={styles.text}>{`${country.emoji}`}</BodyText>
+            <View
+              style={{
+                flexDirection: 'row',
+                justifyContent: 'flex-end',
+                paddingRight: 4,
+              }}>
+              <Typography style={styles.text}>{`${country.emoji}`}</Typography>
             </View>
             <View style={{ flex: 1 }}>
-              <BodyText style={[styles.text, { paddingLeft: 12 }]}>{`${country.name}`}</BodyText>
+              <Typography
+                style={[
+                  styles.text,
+                  { paddingLeft: 12 },
+                ]}>{`${country.name}`}</Typography>
             </View>
           </View>
         </TouchableWithoutFeedback>
@@ -29,7 +45,7 @@ export const CountryCodeMenu = ({ setCountryCode, close }) => {
   );
 };
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles((theme: Theme) => ({
   menu: {
     width: '100%',
     backgroundColor: theme.canvas,
@@ -44,3 +60,5 @@ const useStyles = makeStyles((theme) => ({
     lineHeight: 22,
   },
 }));
+
+export default CountryCodeMenu;

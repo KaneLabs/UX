@@ -1,6 +1,10 @@
 import React from 'react';
-import { BodyText } from '../Typography';
+import Typography from '../Typography';
+import { TypographyTypes } from 'eros-ui/theme';
+import { TextProps } from 'react-native';
 
-export const ListItemText = props => <BodyText type={2} {...props} />;
+const ListItemText: React.FC<TextProps> = props => (
+  <Typography type={TypographyTypes.body1} {...props} />
+);
 
 export default ListItemText;

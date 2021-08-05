@@ -1,1 +1,1 @@
-export { default } from './ForaLogo';
+export { default, default as ForaLogo } from './ForaLogo';

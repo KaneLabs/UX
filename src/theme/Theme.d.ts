@@ -1,4 +1,5 @@
 import { TextColor, ThemeTypographyType } from './Typography';
+import { ScreenThemeType } from './Screen';
 
 type Theme = {
   unit: number;
@@ -9,12 +10,15 @@ type Theme = {
   padding: number;
   textColor: TextColor;
   shadow: (number) => any;
+  backgroundColor: string;
   canvas: string; // main paper color
   canvas2: string; // secondary paper color
+  canvas3: string;
   canvas2Opaque: string; // secondary paper color with opacity
   primaryColor: string;
   secondaryColor: string;
   Typography: ThemeTypographyType;
+  Screen: ScreenThemeType;
 };
 
 export default Theme;

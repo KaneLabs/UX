@@ -11,6 +11,7 @@ import { useTheme, makeStyles, Theme, ThemeModes } from 'eros-ui/theme';
 
 interface TextFieldProps extends TextInputProps {
   flat?: boolean;
+  fullWidth?: boolean;
   hoverStyle?: ViewStyle;
   focusStyle?: ViewStyle;
   children?: React.ReactNode;
@@ -21,6 +22,7 @@ const TextField = React.forwardRef<TextInput, TextFieldProps>((props, ref) => {
     autoFocus = false,
     style = null,
     flat = false,
+    fullWidth = false,
     hoverStyle,
     focusStyle,
     ...rest
@@ -30,14 +32,19 @@ const TextField = React.forwardRef<TextInput, TextFieldProps>((props, ref) => {
   const [hover, setHover] = React.useState(false);
   const styles = useStyles();
 
-  const textFieldStyle = StyleSheet.flatten([
-    styles.default,
-    hover && StyleSheet.compose(styles.hover, hoverStyle),
-    focus && StyleSheet.compose(styles.focus, focusStyle),
-    flat && styles.flat,
-    Platform.OS === 'web' && { outlineWidth: 0 }, // needed for Web
-    style,
-  ]);
+  const textFieldStyle = React.useMemo(
+    () =>
+      StyleSheet.flatten([
+        styles.default,
+        hover && StyleSheet.compose(styles.hover, hoverStyle),
+        focus && StyleSheet.compose(styles.focus, focusStyle),
+        flat && styles.flat,
+        fullWidth && styles.fullWidth,
+        Platform.OS === 'web' && { outlineWidth: 0 }, // needed for Web
+        style,
+      ]),
+    [hover, focus, hoverStyle, focusStyle, fullWidth, style],
+  );
 
   const keyboardAppearance = theme.mode === ThemeModes.light ? 'light' : 'dark';
   return (
@@ -70,6 +77,20 @@ const useStyles = makeStyles((theme: Theme) => ({
       paddingTop: theme.unit / 2,
       paddingBottom: theme.unit / 2,
     },
+    web: {
+      fontSize: 16,
+      lineHeight: 19,
+      borderRadius: theme.unit,
+      borderColor: theme.borderColor,
+      borderWidth: theme.borderWidth,
+      color: theme.textColor.secondary,
+      alignItems: 'center',
+      paddingLeft: theme.unit,
+      paddingRight: theme.unit,
+      paddingTop: theme.unit / 2,
+      paddingBottom: theme.unit / 2,
+      outlineWidth: 0,
+    },
   }),
   flat: Platform.select({
     web: { borderWidth: 0, outlineWidth: 0 },
@@ -79,14 +100,15 @@ const useStyles = makeStyles((theme: Theme) => ({
     borderColor: theme.textColor.disabled,
     color: theme.textColor.secondary,
     ...theme.shadow(8),
-    backgroundColor: theme.canvas2Opaque,
+    backgroundColor: theme.canvas2,
   },
   focus: {
     borderColor: theme.textColor.disabled,
     color: theme.textColor.secondary,
     ...theme.shadow(8),
-    backgroundColor: theme.canvas2Opaque,
+    backgroundColor: theme.canvas2,
   },
+  fullWidth: { width: '100%' },
 }));
 
 export default TextField;

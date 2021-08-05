@@ -1,16 +1,27 @@
 import { countries } from 'countries-list';
 
-export const allCountryData = Object.entries(countries).map(([key, value]) => {
-  const { name, phone, emoji } = value;
-  return {
-    name, phone, emoji, key,
-  };
-});
+export type Country = {
+  name: string;
+  phone: string;
+  emoji: string;
+  key: string;
+};
+
+export const allCountryData: Country[] = Object.entries(countries).map(
+  ([key, value]) => {
+    const { name, phone, emoji } = value;
+    const country: Country = { name, phone, emoji, key };
+    return country;
+  },
+);
 
 export const whitelistedCountries = ['US', 'CA', 'MX'];
 
-export const countryData = whitelistedCountries.map((countryCode) => allCountryData.find((country) => country.key === countryCode));
+export const whiteListedCountryData = allCountryData.filter(country =>
+  whitelistedCountries.includes(country.key),
+);
 
-export const whiteListedCountryData = countryData;
+export const selectWhitelistedCountries = (whitelistedCountries: string[]) =>
+  allCountryData.filter(country => whitelistedCountries.includes(country.key));
 
-export default countryData;
+export default allCountryData;
