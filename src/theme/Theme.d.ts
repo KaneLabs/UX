@@ -1,5 +1,6 @@
 import { TextColor, ThemeTypographyType } from './Typography';
 import { ScreenThemeType } from './Screen';
+import { Window } from 'react-native';
 
 type Theme = {
   unit: number;
@@ -23,6 +24,7 @@ type Theme = {
   iconPadding: number;
   iconSize: number;
   NAV_HEIGHT: number;
+  window: Window;
 };
 
 export default Theme;

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { useColorScheme } from 'react-native';
+import { useColorScheme, useWindowDimensions } from 'react-native';
 import * as light from './light';
 import * as dark from './dark';
 import Theme from './Theme';
@@ -27,7 +27,8 @@ export type ThemeProvider<ThemeProviderProps> = (
 ) => React.ContextType<any>;
 
 export const ThemeProvider = (props: ThemeProviderProps) => {
-  const { children, initialScheme, theme = {} } = props;
+  const { children, initialScheme } = props;
+  if (!props.theme) console.error('No Theme provided, using default light');
   const colorScheme = useColorScheme();
   console.log(
     `Detected device color scheme: ${colorScheme}`,
@@ -35,26 +36,31 @@ export const ThemeProvider = (props: ThemeProviderProps) => {
   );
 
   const [themeMode, setThemeMode] = React.useState(
-    initialScheme || colorScheme,
+    initialScheme || colorScheme || 'dark',
   );
 
+  const window = useWindowDimensions();
+
   const toggleTheme = React.useCallback(
-    (): any =>
+    () =>
       setThemeMode((mode) =>
         mode === ThemeModes.light ? ThemeModes.dark : ThemeModes.light,
       ),
-    [themeMode],
+    [],
   );
 
-  const nextTheme = React.useMemo(() => {
-    const nextTheme =
-      themeMode === ThemeModes.light
-        ? makeTheme({ mode: ThemeModes.light, ...theme })
-        : makeTheme({ mode: ThemeModes.dark, ...theme });
-    return nextTheme;
-  }, [themeMode]);
+  const theme = React.useMemo(() => {
+    const initialTheme = props.theme ?? {};
 
-  const value = [nextTheme, toggleTheme] as ThemeContextType;
+    const theme =
+      themeMode === ThemeModes.light
+        ? makeTheme({ mode: ThemeModes.light, ...initialTheme })
+        : makeTheme({ mode: ThemeModes.dark, ...initialTheme });
+        theme.window = window;
+    return theme;
+  }, [themeMode, props.theme, window]);
+
+  const value = [theme, toggleTheme] as ThemeContextType;
   return (
     <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>
   );

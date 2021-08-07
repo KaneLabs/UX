@@ -1,5 +1,4 @@
 import { useMemo } from 'react';
-import { StyleSheet, StyleSheetProperties } from 'react-native';
 import useTheme from './useTheme';
 import Theme from './Theme';
 
@@ -15,7 +14,7 @@ const makeStyles = (themeFn: ThemeFunction) => {
     return styles;
   };
 
-  return () => StyleSheet.create(useStyles());
+  return useStyles;
 };
 
 export default makeStyles;

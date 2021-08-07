@@ -7,6 +7,7 @@ module.exports = {
     // 'prettier',
     // 'prettier/@typescript-eslint',
     // 'prettier/react',
+    "plugin:react-hooks/recommended",
     'plugin:jest/recommended',
   ],
 };

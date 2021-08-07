@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">82.35% </span>
+                <span class="strong">85.71% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>14/17</span>
+                <span class='fraction'>18/21</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">66.67% </span>
+                <span class="strong">61.54% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>6/9</span>
+                <span class='fraction'>8/13</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">87.5% </span>
+                <span class="strong">89.47% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>14/16</span>
+                <span class='fraction'>17/19</span>
             </div>
         
             
@@ -120,7 +120,14 @@
 <a name='L61'></a><a href='#L61'>61</a>
 <a name='L62'></a><a href='#L62'>62</a>
 <a name='L63'></a><a href='#L63'>63</a>
-<a name='L64'></a><a href='#L64'>64</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L64'></a><a href='#L64'>64</a>
+<a name='L65'></a><a href='#L65'>65</a>
+<a name='L66'></a><a href='#L66'>66</a>
+<a name='L67'></a><a href='#L67'>67</a>
+<a name='L68'></a><a href='#L68'>68</a>
+<a name='L69'></a><a href='#L69'>69</a>
+<a name='L70'></a><a href='#L70'>70</a>
+<a name='L71'></a><a href='#L71'>71</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -152,6 +159,7 @@
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -159,6 +167,8 @@
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -169,8 +179,12 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
@@ -184,7 +198,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import * as React from 'react';
-import { useColorScheme } from 'react-native';
+import { useColorScheme, useWindowDimensions } from 'react-native';
 import * as light from './light';
 import * as dark from './dark';
 import Theme from './Theme';
@@ -212,7 +226,8 @@ export type ThemeProvider&lt;ThemeProviderProps&gt; = (
 ) =&gt; React.ContextType&lt;any&gt;;
 &nbsp;
 export const ThemeProvider = (props: ThemeProviderProps) =&gt; {
-  const { children, initialScheme, theme = {} } = props;
+  const { children, initialScheme } = props;
+  <span class="missing-if-branch" title="else path not taken" >E</span>if (!props.theme) console.error('No Theme provided, using default light');
   const colorScheme = useColorScheme();
   console.log(
     `Detected device color scheme: ${colorScheme}`,
@@ -220,26 +235,32 @@ export const ThemeProvider = (props: ThemeProviderProps) =&gt; {
   );
 &nbsp;
   const [themeMode, setThemeMode] = React.useState(
-    initialScheme || colorScheme,
+    initialScheme || colorScheme || <span class="branch-2 cbranch-no" title="branch not covered" >'dark',</span>
   );
+&nbsp;
+  const window = useWindowDimensions();
 &nbsp;
   const toggleTheme = React.useCallback(
-<span class="fstat-no" title="function not covered" >    ()</span>: any =&gt;
-<span class="cstat-no" title="statement not covered" >      setThemeMode(<span class="fstat-no" title="function not covered" >mo</span>de =&gt;</span>
+<span class="fstat-no" title="function not covered" >    ()</span> =&gt;
+<span class="cstat-no" title="statement not covered" >      setThemeMode(<span class="fstat-no" title="function not covered" >(m</span>ode) =&gt;</span>
 <span class="cstat-no" title="statement not covered" >        mode === ThemeModes.light ? ThemeModes.dark : ThemeModes.light,</span>
       ),
-    [themeMode],
+    [],
   );
 &nbsp;
-  const nextTheme = React.useMemo(() =&gt; {
-    const nextTheme =
-      themeMode === ThemeModes.light
-        ? makeTheme({ mode: ThemeModes.light, ...theme })
-        : <span class="branch-1 cbranch-no" title="branch not covered" >makeTheme({ mode: ThemeModes.dark, ...theme });</span>
-    return nextTheme;
-  }, [themeMode]);
+  const theme = React.useMemo(() =&gt; {
+    const initialTheme = props.theme ?? {};
 &nbsp;
-  const value = [nextTheme, toggleTheme] as ThemeContextType;
+    const theme =
+      themeMode === ThemeModes.light
+        ? makeTheme({ mode: ThemeModes.light, ...initialTheme })
+        : <span class="branch-1 cbranch-no" title="branch not covered" >makeTheme({ mode: ThemeModes.dark, ...initialTheme });</span>
+        // console.log('Using theme ', theme)
+        // theme.window = window;
+    return theme;
+  }, [themeMode, props.theme]);
+&nbsp;
+  const value = [theme, toggleTheme] as ThemeContextType;
   return (
     &lt;ThemeContext.Provider value={value}&gt;{children}&lt;/ThemeContext.Provider&gt;
   );
@@ -253,7 +274,7 @@ export default ThemeProvider;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Wed Aug 04 2021 19:24:58 GMT-0600 (Mountain Daylight Time)
+                at Sat Aug 07 2021 14:27:12 GMT-0600 (Mountain Daylight Time)
             </div>
         </div>
         <script src="../prettify.js"></script>

@@ -43,7 +43,7 @@ const Chip: React.FC<ChipProps> = (props) => {
         Platform.OS === 'web' && { outlineWidth: 0 }, // needed for Web
         style,
       ]),
-    [],
+    [hover, focus, flat, hoverStyle, focusStyle, style],
   );
 
   return (
