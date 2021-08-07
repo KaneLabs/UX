@@ -1,14 +1,7 @@
-export function ListItem({
-  children,
-  onPress,
-  dense,
-  style,
-  ...rest
-}: {
-  [x: string]: any;
-  children: any;
-  onPress?: any;
-  dense?: boolean | undefined;
-  style?: any;
-}): JSX.Element;
+import React from 'react';
+import { TouchableOpacityProps } from 'react-native';
+export interface ListItemProps extends TouchableOpacityProps {
+    dense?: boolean;
+}
+declare const ListItem: React.FC<ListItemProps>;
 export default ListItem;

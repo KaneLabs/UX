@@ -1,3 +1,3 @@
-export const TIP_MODAL: import('graphql').DocumentNode;
-export const CLOSE_TIP_MODAL: import('graphql').DocumentNode;
-export const OPEN_TIP_MODAL: import('graphql').DocumentNode;
+export declare const TIP_MODAL: import("@apollo/client").DocumentNode;
+export declare const CLOSE_TIP_MODAL: import("@apollo/client").DocumentNode;
+export declare const OPEN_TIP_MODAL: import("@apollo/client").DocumentNode;

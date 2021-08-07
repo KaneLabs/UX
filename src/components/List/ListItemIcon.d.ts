@@ -1,1 +1,1 @@
-export function ListItemIcon(props: any): JSX.Element;
+export declare const ListItemIcon: (props: any) => JSX.Element;

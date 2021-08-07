@@ -1,2 +1,4 @@
-export function ListItemText(props: any): JSX.Element;
+import React from 'react';
+import { TextProps } from 'react-native';
+declare const ListItemText: React.FC<TextProps>;
 export default ListItemText;

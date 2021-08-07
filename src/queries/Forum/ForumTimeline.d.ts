@@ -1,1 +1,1 @@
-export const FORUM_TIMELINE: import('graphql').DocumentNode;
+export declare const FORUM_TIMELINE: import("@apollo/client").DocumentNode;

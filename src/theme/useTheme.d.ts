@@ -1,2 +1,3 @@
-declare const useTheme: () => any[];
+import { ThemeContextType } from './ThemeProvider';
+declare const useTheme: () => ThemeContextType;
 export default useTheme;

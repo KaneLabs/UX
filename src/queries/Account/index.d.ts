@@ -1,7 +1,7 @@
-export const HANDLE_IS_AVAILABLE: import('graphql').DocumentNode;
-export const UPDATE_ACCOUNT: import('graphql').DocumentNode;
-export const ACCOUNT: import('graphql').DocumentNode;
-export const GET_ACCOUNT: import('graphql').DocumentNode;
-export const SET_ACCOUNT: import('graphql').DocumentNode;
-export const GET_TOKEN: import('graphql').DocumentNode;
-export const LOGOUT: import('graphql').DocumentNode;
+export declare const HANDLE_IS_AVAILABLE: import("@apollo/client").DocumentNode;
+export declare const UPDATE_ACCOUNT: import("@apollo/client").DocumentNode;
+export declare const ACCOUNT: import("@apollo/client").DocumentNode;
+export declare const GET_ACCOUNT: import("@apollo/client").DocumentNode;
+export declare const SET_ACCOUNT: import("@apollo/client").DocumentNode;
+export declare const GET_TOKEN: import("@apollo/client").DocumentNode;
+export declare const LOGOUT: import("@apollo/client").DocumentNode;

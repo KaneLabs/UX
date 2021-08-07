@@ -1,2 +1,2 @@
-export function useNavDocked(): any;
+export declare const useNavDocked: () => any;
 export default useNavDocked;

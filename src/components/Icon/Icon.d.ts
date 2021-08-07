@@ -1,2 +1,2 @@
-export function Icon(props: any): JSX.Element;
+declare const Icon: (props: any) => JSX.Element;
 export default Icon;

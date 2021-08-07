@@ -1,2 +1,2 @@
-export function NavPlaceholder(): JSX.Element;
+export declare const NavPlaceholder: () => JSX.Element;
 export default NavPlaceholder;

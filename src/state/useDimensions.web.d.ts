@@ -1,10 +1,8 @@
-export const DimensionsContext: React.Context<null>;
-export function useDevice(): any;
-export function DimensionsProvider({
-  children,
-}: {
-  children: any;
-}): JSX.Element;
-export function useDimensions(): any;
-export default useDimensions;
 import React from 'react';
+export declare const DimensionsContext: React.Context<null>;
+export declare const useDevice: () => any;
+export declare const DimensionsProvider: ({ children }: {
+    children: any;
+}) => JSX.Element;
+export declare const useDimensions: () => null;
+export default useDimensions;

@@ -1,18 +1,13 @@
+import React from 'react';
+import { ViewStyle } from 'react-native';
+import { PaperProps } from 'eros-ui/components/Paper';
+export interface ChipProps extends PaperProps {
+    text?: string;
+    flat?: boolean;
+    style?: ViewStyle;
+    hoverStyle?: ViewStyle;
+    focusStyle?: ViewStyle;
+    onPress?: () => void;
+}
+declare const Chip: React.FC<ChipProps>;
 export default Chip;
-declare function Chip({
-  text,
-  flat,
-  style,
-  hoverStyle,
-  focusStyle,
-  children,
-  ...rest
-}: {
-  [x: string]: any;
-  text?: any;
-  flat?: boolean | undefined;
-  style?: any;
-  hoverStyle?: any;
-  focusStyle?: any;
-  children: any;
-}): JSX.Element;

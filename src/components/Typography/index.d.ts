@@ -1,4 +1,6 @@
 export { default } from './Typography';
+export { TypographyTypes } from './Typography';
+export type { TypographyProps } from './Typography';
 export { default as BodyText } from './BodyText';
 export { default as ButtonText } from './ButtonText';
 export { default as Caption } from './Caption';

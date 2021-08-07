@@ -1,6 +1,6 @@
-export const PERSONA: import('graphql').DocumentNode;
-export const FOLLOWING: import('graphql').DocumentNode;
-export const FOLLOW: import('graphql').DocumentNode;
-export const UNFOLLOW: import('graphql').DocumentNode;
-export const UPDATE_PERSONA_AVATAR: import('graphql').DocumentNode;
-export const UPDATE_PERSONA_BANNER: import('graphql').DocumentNode;
+export declare const PERSONA: import("@apollo/client").DocumentNode;
+export declare const FOLLOWING: import("@apollo/client").DocumentNode;
+export declare const FOLLOW: import("@apollo/client").DocumentNode;
+export declare const UNFOLLOW: import("@apollo/client").DocumentNode;
+export declare const UPDATE_PERSONA_AVATAR: import("@apollo/client").DocumentNode;
+export declare const UPDATE_PERSONA_BANNER: import("@apollo/client").DocumentNode;

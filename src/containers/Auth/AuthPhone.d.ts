@@ -1,3 +1,3 @@
-export const AUTH_PHONE: import('@apollo/client').DocumentNode;
+export declare const AUTH_PHONE: import("@apollo/client").DocumentNode;
+declare const AuthPhone: () => JSX.Element;
 export default AuthPhone;
-declare function AuthPhone(): JSX.Element;

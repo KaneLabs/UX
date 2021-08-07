@@ -1,1 +1,1 @@
-export const DEVICE: import('graphql').DocumentNode;
+export declare const DEVICE: import("@apollo/client").DocumentNode;

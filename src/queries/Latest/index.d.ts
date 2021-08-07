@@ -1,1 +1,1 @@
-export const LATEST: import('graphql').DocumentNode;
+export declare const LATEST: import("@apollo/client").DocumentNode;

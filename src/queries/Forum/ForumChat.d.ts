@@ -1,1 +1,1 @@
-export const FORUM_CHAT: import('graphql').DocumentNode;
+export declare const FORUM_CHAT: import("@apollo/client").DocumentNode;

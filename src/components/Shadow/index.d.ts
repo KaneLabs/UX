@@ -1,14 +1,5 @@
-export function shadow(elevation: any):
-  | {
-      shadowColor: string;
-      shadowOffset: {
-        width: number;
-        height: number;
-      };
-      shadowOpacity: number;
-      shadowRadius: number;
-    }
-  | {
-      elevation: any;
-    };
+import { ShadowStyleIOS } from 'react-native';
+export declare const shadow: (elevation: number) => ShadowStyleIOS | {
+    elevation: number;
+};
 export default shadow;

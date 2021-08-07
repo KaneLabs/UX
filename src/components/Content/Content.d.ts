@@ -1,8 +1,5 @@
-export function Content({
-  content,
-  mobile,
-}: {
-  content?: any[] | undefined;
-  mobile: any;
-}): JSX.Element;
+export declare const Content: ({ content, mobile }: {
+    content?: never[] | undefined;
+    mobile: any;
+}) => JSX.Element;
 export default Content;

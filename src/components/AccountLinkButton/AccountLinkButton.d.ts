@@ -1,2 +1,2 @@
+declare const AccountLinkButton: () => null;
 export default AccountLinkButton;
-declare function AccountLinkButton(props: any): null;

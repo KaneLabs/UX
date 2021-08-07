@@ -1,9 +1,5 @@
-export function Container({
-  style,
-  center,
-  ...rest
-}: {
-  [x: string]: any;
-  style?: any;
-  center?: any;
-}): JSX.Element;
+export declare const Container: ({ style, center, ...rest }: {
+    [x: string]: any;
+    style?: null | undefined;
+    center?: null | undefined;
+}) => JSX.Element;

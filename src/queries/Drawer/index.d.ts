@@ -1,4 +1,4 @@
-export const DRAWER: import('graphql').DocumentNode;
-export const TOGGLE_DRAWER: import('graphql').DocumentNode;
-export const CLOSE_DRAWER: import('graphql').DocumentNode;
-export const OPEN_DRAWER: import('graphql').DocumentNode;
+export declare const DRAWER: import("@apollo/client").DocumentNode;
+export declare const TOGGLE_DRAWER: import("@apollo/client").DocumentNode;
+export declare const CLOSE_DRAWER: import("@apollo/client").DocumentNode;
+export declare const OPEN_DRAWER: import("@apollo/client").DocumentNode;

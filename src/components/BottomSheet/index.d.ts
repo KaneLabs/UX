@@ -1,2 +1,2 @@
+declare const BottomSheet: () => JSX.Element;
 export default BottomSheet;
-declare function BottomSheet(): JSX.Element;
