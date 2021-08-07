@@ -59,6 +59,5 @@ buck-out/
 /ios/Pods/
 
 build
-lib
 dist
 coverage
