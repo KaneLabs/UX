@@ -28,12 +28,8 @@ export type ThemeProvider<ThemeProviderProps> = (
 
 export const ThemeProvider = (props: ThemeProviderProps) => {
   const { children, initialScheme } = props;
-  if (!props.theme) console.error('No Theme provided, using default light');
+  if (!props.theme) console.log('No Theme provided, using default');
   const colorScheme = useColorScheme();
-  console.log(
-    `Detected device color scheme: ${colorScheme}`,
-    `initial color scheme: ${initialScheme || colorScheme}`,
-  );
 
   const [themeMode, setThemeMode] = React.useState(
     initialScheme || colorScheme || 'dark',
@@ -51,14 +47,13 @@ export const ThemeProvider = (props: ThemeProviderProps) => {
 
   const theme = React.useMemo(() => {
     const initialTheme = props.theme ?? {};
-
     const theme =
       themeMode === ThemeModes.light
         ? makeTheme({ mode: ThemeModes.light, ...initialTheme })
         : makeTheme({ mode: ThemeModes.dark, ...initialTheme });
         theme.window = window;
     return theme;
-  }, [themeMode, props.theme, window]);
+  }, [themeMode, props.theme, window, colorScheme]);
 
   const value = [theme, toggleTheme] as ThemeContextType;
   return (
