@@ -1,27 +1,29 @@
 import { gql } from '@apollo/client';
 
 export const TIMELINE = gql`
-  query timeline($handle: String, $offset: Int!, $limit: Int!) {
+  query Timeline($handle: String, $offset: Int!, $limit: Int!) {
     Timeline(handle: $handle, offset: $offset, limit: $limit) {
       offset
       posts {
         id
         friendlyUrl
         title
-        content {
-          type
-          text
-          uri
-        }
-        persona {
+        author {
+          id
           display
           handle
+          description
           avatarUrl
         }
-        likes
-        liked
         createdAt
       }
     }
   }
 `;
+// content {
+//   type
+//   text
+//   uri
+// }
+// likes
+// liked

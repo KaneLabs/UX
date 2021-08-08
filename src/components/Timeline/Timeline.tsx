@@ -1,13 +1,38 @@
 import React from 'react';
-import { FlatList, Platform } from 'react-native';
+import { FlatList, Platform, useWindowDimensions } from 'react-native';
 import Post from 'eros-ui/components/Post';
 import { makeStyles, useTheme } from 'eros-ui/theme';
-import { useDimensions } from 'eros-ui/state';
 import { SET_NAV_DOCKED } from 'eros-ui/queries';
 import { useMutation } from '@apollo/react-hooks';
 
-export const Timeline = ({
-  persona,
+export interface Author {
+  id: string;
+  display: string;
+  handle: string;
+  description: string;
+}
+
+
+export interface Post {
+    id: string;
+    friendlyUrl: string;
+    title: string;
+    author: Author;
+    createdAt: Date;
+    updatedAt: Date;
+}
+
+export interface TimelineProps {
+  posts: Post[]
+  author?: Author;
+  handle?: string;
+  following?: boolean;
+  onLoadMore?: () => void;
+  subscribeToNewPosts?: () => void;
+}
+
+const Timeline: React.FC<TimelineProps> = ({
+  author,
   handle,
   posts,
   following,
@@ -15,9 +40,9 @@ export const Timeline = ({
   subscribeToNewPosts,
   ...rest
 }) => {
-  const { width, mobile } = useDimensions();
-  const [setNavDocked] = useMutation(SET_NAV_DOCKED);
-  const styles = makeStyles();
+  const { width } = useWindowDimensions();
+  // const [setNavDocked] = useMutation(SET_NAV_DOCKED);
+  const styles = useStyles();
   const [{ gutter, FEED_WIDTH }] = useTheme();
 
   const onScroll = (e) => {
@@ -29,7 +54,7 @@ export const Timeline = ({
 
   const onEndReached = async (e) => {
     console.log('END_REACHED e', e);
-    await onLoadMore();
+    onLoadMore && await onLoadMore();
   };
 
   const style = {
@@ -42,13 +67,11 @@ export const Timeline = ({
   return (
     <FlatList
       data={posts}
-      renderItem={({ item }) => (
+      renderItem={({ item: post }) => (
         <Post
-          {...item}
-          persona={persona}
+          {...post}
+          persona={post.author}
           style={style}
-          mobile={mobile}
-          width={width}
         />
       )}
       onScroll={onScroll}

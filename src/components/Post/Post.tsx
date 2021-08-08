@@ -1,5 +1,5 @@
 import React from 'react';
-import { Paper } from 'eros-ui/components';
+import Paper from 'eros-ui/components/Paper';
 import { makeStyles } from 'eros-ui/theme';
 import PostHeader from './PostHeader';
 import PostContent from './PostContent';
@@ -14,8 +14,8 @@ export const Post = React.forwardRef(
     return (
       <Paper ref={ref} {...rest} style={[styles.post, style]}>
         <PostHeader {...persona} createdAt={createdAt} mobile={mobile} />
-        <PostContent content={content} mobile={mobile} />
-        <PostButtons postId={id} mobile={mobile} />
+        {/* <PostContent content={content} mobile={mobile} />
+        <PostButtons postId={id} mobile={mobile} /> */}
       </Paper>
     );
   },

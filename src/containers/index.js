@@ -13,7 +13,7 @@ export * from './Persona';
 export * from './PhoneAuth';
 export * from './Search';
 export { default as SocialDrawer } from './SocialDrawer';
-export { default as Timeline } from './Timeline';
+export { default as Timeline } from '../components/Timeline';
 export { default as TipButton } from './TipButton';
 export { default as TipModal } from './TipModal';
 export * from './UpdateAccount';
