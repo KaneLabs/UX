@@ -20,8 +20,9 @@ export const makeFriendlyUrl = (text) => {
     .toLowerCase();
 };
 
-export const formatCreatedAt = (createdAt) =>
-  formatDistanceStrict(parseInt(createdAt, 10), new Date());
+export const formatCreatedAt = (createdAt) => {
+  return formatDistanceStrict(new Date(createdAt), new Date());
+};
 
 export const arrayifyStyle = (type) => {
   if (typeof type === 'object') {
