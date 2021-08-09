@@ -6,7 +6,7 @@ import Row from 'eros-ui/components/Layout/Row';
 
 import Typography from 'eros-ui/components/Typography';
 import { makeStyles } from 'eros-ui/theme';
-import { formatCreatedAt } from 'eros-ui/fns';
+import { formatDistanceStrict } from 'date-fns';
 
 
 interface PostAvatarButtonProps extends ViewProps {
@@ -50,7 +50,7 @@ export const PostHeaderHeadline: React.FC<PostHeaderHeadlineProps> = ({
         <Typography text={`@${handle}`} />
       </Row>
       <Typography
-        text={`${formatCreatedAt(createdAt)}`}
+        text={`${formatDistanceStrict(createdAt, new Date())}`}
         style={styles.postTime}
       />
     </Row>

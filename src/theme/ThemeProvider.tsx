@@ -53,7 +53,7 @@ export const ThemeProvider = (props: ThemeProviderProps) => {
         : makeTheme({ mode: ThemeModes.dark, ...initialTheme });
         theme.window = window;
     return theme;
-  }, [themeMode, props.theme, window, colorScheme]);
+  }, [themeMode, props.theme, window.width, window.height]);
 
   const value = [theme, toggleTheme] as ThemeContextType;
   return (

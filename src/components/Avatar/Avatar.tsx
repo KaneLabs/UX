@@ -18,7 +18,6 @@ export const Avatar = ({
     width: size,
     borderRadius: size,
   };
-  console.log('avatarUrl', avatarUrl);
   const styles = useStyles();
   const imageSource = source || { uri: avatarUrl || DEFAULT_AVATAR_URL };
   const avatarStyles = [sizeStyles, styles.avatarPaper, style];
