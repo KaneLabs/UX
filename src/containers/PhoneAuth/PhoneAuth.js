@@ -7,7 +7,7 @@ import {
 } from 'react-native';
 import { Title, View, KeyboardAwareContainer } from 'eros-ui/components';
 import { ACCOUNT, SET_ACCOUNT } from 'eros-ui/queries';
-import { useQuery, useMutation } from '@apollo/react-hooks';
+import { useQuery, useMutation } from '@apollo/client';
 import { useDimensions } from 'eros-ui/state';
 import { useTheme, makeStyles } from 'eros-ui/theme';
 import PhoneAuthSet from './PhoneAuthSet';

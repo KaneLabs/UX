@@ -11,7 +11,7 @@ import {
 } from 'eros-ui/theme';
 import { Avatar, Caption } from 'eros-ui/components';
 import { ACCOUNT } from 'eros-ui/queries';
-import { useQuery } from '@apollo/react-hooks';
+import { useQuery } from '@apollo/client';
 
 export const AccountAvatar = ({
   source = null,

@@ -16,6 +16,7 @@
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2DCD954D1E0B4F2C00145EB5 /* ErosTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* ErosTests.m */; };
+		3CE31B8826C7031C00316D18 /* ClassicalWave.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3CE31B8726C7031C00316D18 /* ClassicalWave.jpg */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		9EE16730572EAD17C7E52018 /* libPods-Eros-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CCCCB7EEE72AF850DF17EDE8 /* libPods-Eros-tvOSTests.a */; };
 		AD844379C10309E330449335 /* libPods-Eros.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 33FDAF3D343DDFD09676213E /* libPods-Eros.a */; };
@@ -54,6 +55,7 @@
 		2D02E47B1E0B4A5D006451C7 /* Eros-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Eros-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* Eros-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Eros-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		33FDAF3D343DDFD09676213E /* libPods-Eros.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Eros.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3CE31B8726C7031C00316D18 /* ClassicalWave.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = ClassicalWave.jpg; path = ../src/assets/ClassicalWave.jpg; sourceTree = "<group>"; };
 		458AD05AB67A40FB8D2CD32D /* libPods-Eros-ErosTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Eros-ErosTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = Eros/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9350D4EE76CC6E8FB8D6647A /* libPods-Eros-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Eros-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -128,6 +130,7 @@
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
+				3CE31B8726C7031C00316D18 /* ClassicalWave.jpg */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
@@ -341,6 +344,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
+				3CE31B8826C7031C00316D18 /* ClassicalWave.jpg in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

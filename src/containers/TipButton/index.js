@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button } from 'eros-ui/components';
-import { useMutation } from '@apollo/react-hooks';
+import { useMutation } from '@apollo/client';
 import { OPEN_TIP_MODAL } from 'eros-ui/queries';
 
 export default () => {

@@ -8,7 +8,7 @@ import {
   Typography,
 } from 'eros-ui/components';
 import { ME, AUTH_VERIFY_PHONE } from 'eros-ui/queries';
-import { useMutation } from '@apollo/react-hooks';
+import { useMutation } from '@apollo/client';
 
 const AuthVerifyPhone = ({ onSuccess }) => {
   const [phone, setPhone] = React.useState('');

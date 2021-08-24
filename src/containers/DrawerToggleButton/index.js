@@ -1,7 +1,7 @@
 import React from 'react';
 import { IconButton } from 'eros-ui/components';
 import { DRAWER } from 'eros-ui/queries';
-import { useQuery } from '@apollo/react-hooks';
+import { useQuery } from '@apollo/client';
 
 import { useTheme } from 'eros-ui/theme';
 

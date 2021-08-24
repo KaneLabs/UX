@@ -1,7 +1,7 @@
 import React from 'react';
 import { TouchableOpacity, View } from 'react-native';
 import { ACCOUNT } from 'eros-ui/queries';
-import { useQuery } from '@apollo/react-hooks';
+import { useQuery } from '@apollo/client';
 import { Avatar, Typography, Button } from 'eros-ui/components';
 import { makeStyles } from 'eros-ui/theme';
 import { useAccount } from 'eros-ui/state';

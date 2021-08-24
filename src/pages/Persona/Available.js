@@ -1,6 +1,6 @@
 import * as React from 'react';
 // import { StyleSheet } from 'react-native';
-// import { useQuery, useMutation } from '@apollo/react-hooks';
+// import { useQuery, useMutation } from '@apollo/client';
 import { PhoneAuth, Container } from 'eros-ui/components';
 // import { SET_HANDLE, SET_ACCOUNT } from 'eros-ui/queries';
 // import { NAV_HEIGHT } from 'eros-ui/theme';

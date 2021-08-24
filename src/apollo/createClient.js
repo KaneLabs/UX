@@ -13,7 +13,7 @@ import { createUploadLink } from 'apollo-upload-client'; // replace HttpLink to 
 import { GET_TOKEN } from 'eros-ui/queries';
 import { AsyncStorage } from 'react-native';
 import resolvers from './resolvers';
-import { API_URI, WS_API_URI } from '../constants';
+import { IP } from '../constants';
 
 const createErrorLink = () => {
   const errorLink = onError(
@@ -33,7 +33,7 @@ const createErrorLink = () => {
 const createHttpLink = ({ ssrMode = false }) => {
   const options = {
     ssrMode,
-    uri: 'http://172.19.131.127:5000/graphql',
+    uri: `http://${IP}:4000/graphql`,
     credentials: 'include', // eg. or credentials: 'omit', etc
     // fetch,
   };
@@ -47,7 +47,7 @@ const createWSLink = ({ ssrMode = false }) =>
   new WebSocketLink({
     ssrMode,
     // webSocketImpl: ssrMode ? ws : undefined,
-    uri: 'ws://172.19.131.127:5000/graphql',
+    uri: `ws://${IP}:4000/graphql`,
     options: {
       lazy: true,
       reconnect: true,

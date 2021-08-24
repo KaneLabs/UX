@@ -3,7 +3,7 @@ import { AccountButton, Menu, MenuItem, Button } from 'eros-ui/components';
 import Link from 'next/link';
 import { useAccount } from 'eros-ui/state';
 // import { makeStyles } from 'eros-ui/theme';
-import { useMutation } from '@apollo/react-hooks';
+import { useMutation } from '@apollo/client';
 import { LOGOUT } from 'eros-ui/queries';
 
 const AccountLinkMenuItem = (props) => {

@@ -12,7 +12,7 @@ import {
   Banner,
 } from 'eros-ui/components';
 
-import { useQuery, useMutation, useLazyQuery } from '@apollo/react-hooks';
+import { useQuery, useMutation, useLazyQuery } from '@apollo/client';
 import {
   UPDATE_ACCOUNT,
   ACCOUNT,

@@ -11,7 +11,7 @@ import {
   Row,
 } from 'eros-ui/components';
 
-import { useQuery, useMutation, useLazyQuery } from '@apollo/react-hooks';
+import { useQuery, useMutation, useLazyQuery } from '@apollo/client';
 import { UPDATE_ACCOUNT, ACCOUNT, HANDLE_IS_AVAILABLE } from 'eros-ui/queries';
 import { isValidHandle } from 'eros-ui/fns';
 import { makeStyles } from 'eros-ui/theme';

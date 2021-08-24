@@ -5,7 +5,7 @@ import {
   CLOSE_DRAWER,
   TOGGLE_COMPOSE_MODAL,
 } from 'eros-ui/queries';
-import { useMutation } from '@apollo/react-hooks';
+import { useMutation } from '@apollo/client';
 import { makeStyles } from 'eros-ui/theme';
 import { useDrawer } from 'eros-ui/state';
 import DrawerToggleButton from '../DrawerToggleButton';

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { SafeAreaView, ImageBackground, Platform } from 'react-native';
 import { ME, ACCOUNT, SET_ACCOUNT } from 'eros-ui/queries';
-import { useQuery, useMutation } from '@apollo/react-hooks';
+import { useQuery, useMutation } from '@apollo/client';
 import { useDimensions } from 'eros-ui/state';
 import { FEED_WIDTH, makeStyles } from 'eros-ui/theme';
 import KeyboardAwareContainer from '../../components/KeyboardAwareContainer';

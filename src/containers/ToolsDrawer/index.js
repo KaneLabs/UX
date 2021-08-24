@@ -6,7 +6,7 @@ import {
   TOGGLE_COMPOSE_MODAL,
   DRAWER,
 } from 'eros-ui/queries';
-import { useMutation, useQuery } from '@apollo/react-hooks';
+import { useMutation, useQuery } from '@apollo/client';
 import { makeStyles } from 'eros-ui/theme';
 import { useDrawer, useAccount } from 'eros-ui/state';
 import { DrawerLockButton } from 'eros-ui/components';

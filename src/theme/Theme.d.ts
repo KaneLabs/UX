@@ -1,6 +1,7 @@
 import { TextColor, ThemeTypographyType } from './Typography';
 import { ScreenThemeType } from './Screen';
 import { Window } from 'react-native';
+import { ShadowStyle } from 'eros-ui/components/Shadow';
 
 type Theme = {
   unit: number;
@@ -10,12 +11,14 @@ type Theme = {
   borderRadius: number;
   padding: number;
   textColor: TextColor;
-  shadow: (number) => any;
+  shadow: (number) => ShadowStyle;
   backgroundColor: string;
   canvas: string; // main paper color
+  canvas1: string // main paper color
+  canvas1Opaque: string; // main paper color with opacity
   canvas2: string; // secondary paper color
-  canvas3: string;
   canvas2Opaque: string; // secondary paper color with opacity
+  canvas3: string;
   primaryColor: string;
   secondaryColor: string;
   Typography: ThemeTypographyType;
@@ -24,7 +27,9 @@ type Theme = {
   iconPadding: number;
   iconSize: number;
   NAV_HEIGHT: number;
+  FEED_WIDTH: number;
   window: Window;
+  gutter: number;
 };
 
 export default Theme;

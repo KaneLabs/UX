@@ -1,6 +1,6 @@
 import React, { useEffect, useReducer } from 'react';
 import { View } from 'react-native';
-import { useMutation, useApolloClient } from '@apollo/react-hooks';
+import { useMutation, useApolloClient } from '@apollo/client';
 import { PHONE, SET_PHONE } from 'eros-ui/queries';
 import { makeStyles } from 'eros-ui/theme';
 import { AsYouType } from 'libphonenumber-js';

@@ -1,5 +1,5 @@
 import React from 'react';
-import { useQuery } from '@apollo/react-hooks';
+import { useQuery } from '@apollo/client';
 import { ACCOUNT } from 'eros-ui/queries';
 import { PersonaHeaderMain } from '../..';
 // import { textColor } from 'eros-ui/theme';

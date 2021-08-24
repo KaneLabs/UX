@@ -1,6 +1,6 @@
 import React from 'react';
 import { View } from 'react-native';
-import { useMutation } from '@apollo/react-hooks';
+import { useMutation } from '@apollo/client';
 import { TOGGLE_COMPOSE_MODAL } from 'eros-ui/queries';
 import ImageUploadButton from 'eros-ui/components/Buttons/ImageUploadButton';
 import OutlinedButton from 'eros-ui/components/Buttons/OutlinedButton';

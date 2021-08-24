@@ -1,7 +1,7 @@
 import React from 'react';
 import { IconButton, View, DrawerLockButton } from 'eros-ui/components';
 import { SOCIAL_DRAWER } from 'eros-ui/queries';
-import { useQuery, useMutation } from '@apollo/react-hooks';
+import { useQuery, useMutation } from '@apollo/client';
 import { makeStyles } from 'eros-ui/theme';
 import { useAccount } from 'eros-ui/state';
 import AccountButton from '../Account/AccountButton';

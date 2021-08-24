@@ -2,7 +2,7 @@ import * as React from 'react';
 import { useRouter } from 'next/router';
 import { Persona } from 'eros-ui/containers';
 import AvailablePersonaPage from 'eros-ui/pages/Persona/Available';
-import { useQuery } from '@apollo/react-hooks';
+import { useQuery } from '@apollo/client';
 import { PERSONA } from 'eros-ui/queries';
 
 export default () => {

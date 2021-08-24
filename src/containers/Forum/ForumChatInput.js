@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { View, Multiline, Button, ActivityIndicator } from 'eros-ui/components';
 import { CREATE_FORUM_CHAT_MESSAGE } from 'eros-ui/queries';
-import { useMutation } from '@apollo/react-hooks';
+import { useMutation } from '@apollo/client';
 import { makeStyles } from 'eros-ui/theme';
 
 export const ForumChatInputButtons = ({ onSend, loading = false }) => {

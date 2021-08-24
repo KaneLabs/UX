@@ -1,7 +1,7 @@
 import React from 'react';
 import { AsyncStorage } from 'react-native';
 import { Button } from 'eros-ui/components';
-import { useMutation } from '@apollo/react-hooks';
+import { useMutation } from '@apollo/client';
 import { LOGOUT } from 'eros-ui/queries';
 
 export const LogoutButton = () => {

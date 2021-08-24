@@ -10,7 +10,7 @@ import {
   ActivityIndicator,
 } from 'eros-ui/components';
 import { CREATE_FORUM } from 'eros-ui/queries';
-import { useMutation } from '@apollo/react-hooks';
+import { useMutation } from '@apollo/client';
 import { makeStyles } from 'eros-ui/theme';
 
 const INITIAL_STATE = {

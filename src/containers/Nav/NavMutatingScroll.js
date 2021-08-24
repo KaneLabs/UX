@@ -1,5 +1,5 @@
 import React from 'react';
-import { useMutation } from '@apollo/react-hooks';
+import { useMutation } from '@apollo/client';
 import { SET_NAV_DOCKED } from 'eros-ui/queries';
 import { Animated, StyleSheet } from 'react-native';
 import { makeStyles } from 'eros-ui/theme';

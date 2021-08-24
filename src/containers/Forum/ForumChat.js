@@ -13,7 +13,7 @@ import {
 } from 'eros-ui/components';
 import { StyleSheet } from 'react-native';
 import { DRAWER, FORUM_CHAT } from 'eros-ui/queries';
-import { useQuery, useSubscription } from '@apollo/react-hooks';
+import { useQuery, useSubscription } from '@apollo/client';
 // import ForumToolbar from './ForumToolbar';
 import { NAV_HEIGHT, makeStyles } from 'eros-ui/theme';
 import ForumMembersList from './ForumMembersList';

@@ -1,5 +1,5 @@
 import React, { createContext, useState, useContext, useEffect } from 'react';
-import { useQuery } from '@apollo/react-hooks';
+import { useQuery } from '@apollo/client';
 import { DEVICE } from 'eros-ui/queries';
 import { Dimensions } from 'react-native';
 import { DESKTOP_BREAKPOINT } from 'eros-ui/theme';

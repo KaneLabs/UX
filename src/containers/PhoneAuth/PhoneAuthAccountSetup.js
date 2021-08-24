@@ -2,7 +2,7 @@ import React from 'react';
 // import { StyleSheet } from 'react-native';
 import { UpdateAccount } from 'eros-ui/components';
 import { ACCOUNT } from 'eros-ui/queries';
-import { useQuery } from '@apollo/react-hooks';
+import { useQuery } from '@apollo/client';
 import { makeStyles } from 'eros-ui/theme';
 import AccountSetupHeadline from './AccountSetupHeadline';
 

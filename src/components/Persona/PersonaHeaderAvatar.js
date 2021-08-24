@@ -1,16 +1,17 @@
 import React from 'react';
-import { View, Avatar } from 'eros-ui/components';
+import { View } from 'react-native';
+import Avatar from 'eros-ui/components/Avatar';
 import { makeStyles, useTheme } from 'eros-ui/theme';
 
 export const PersonaHeaderAvatar = (props) => {
   const [{ AVATAR_SIZE, AVATAR_SIZE_DESKTOP }] = useTheme();
-  const { avatarUrl, avatarSize = AVATAR_SIZE, mobile = false } = props;
+  const { avatarUrl, avatarSize, mobile = false } = props;
   const styles = useStyles();
   return (
     <View style={[styles.container, mobile ? styles.mobile : styles.desktop]}>
       <Avatar
         avatarUrl={avatarUrl}
-        size={mobile ? AVATAR_SIZE : AVATAR_SIZE_DESKTOP}
+        size={avatarSize ?? mobile ? AVATAR_SIZE : AVATAR_SIZE_DESKTOP}
       />
     </View>
   );

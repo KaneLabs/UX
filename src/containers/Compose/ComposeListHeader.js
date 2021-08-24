@@ -6,7 +6,7 @@ import {
   OutlinedButton,
   ImageUploadButton,
 } from 'eros-ui/components';
-import { useQuery } from '@apollo/react-hooks';
+import { useQuery } from '@apollo/client';
 import { ACCOUNT } from 'eros-ui/queries';
 import { useTheme, makeStyles } from 'eros-ui/theme';
 import FilePreviews from './FilePreviews';

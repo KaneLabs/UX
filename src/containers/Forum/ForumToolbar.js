@@ -1,7 +1,7 @@
 import React from 'react';
 import { IconButton, View, AccountButton } from 'eros-ui/components';
 import { TOGGLE_DRAWER } from 'eros-ui/queries';
-import { useMutation } from '@apollo/react-hooks';
+import { useMutation } from '@apollo/client';
 import { unit, makeStyles } from 'eros-ui/theme';
 import { StyleSheet } from 'react-native';
 import { useRouter } from 'next/router';

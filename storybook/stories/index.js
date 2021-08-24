@@ -10,7 +10,12 @@ export { default as Paper } from 'eros-ui/components/Paper/Paper.stories';
 
 /* UX */
 export { default as AuthPhone } from 'eros-ui/containers/Auth/AuthPhone.stories';
+export { default as AuthPhoneVerify } from 'eros-ui/containers/Auth/AuthPhoneVerify.stories';
 
+export { default as PaymentMethodsList } from 'eros-ui/containers/Payments/PaymentMethodsList/PaymentMethodsList.stories';
+export { default as AddPaymentMethod } from 'eros-ui/containers/Payments/AddPaymentMethod/AddPaymentMethod.stories';
+
+/* Experimental */
 export { default as NeuButton } from 'eros-ui/components/Neu/NeuButton/NeuButton.stories';
 export { default as NeuView } from 'eros-ui/components/Neu/NeuView/NeuView.stories';
 export { default as NeuInput } from 'eros-ui/components/Neu/NeuInput.stories';

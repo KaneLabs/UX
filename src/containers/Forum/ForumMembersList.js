@@ -8,7 +8,7 @@ import {
   ListSubtitle,
 } from 'eros-ui/components';
 import { FORUM_MEMBERS } from 'eros-ui/queries';
-import { useQuery } from '@apollo/react-hooks';
+import { useQuery } from '@apollo/client';
 
 // <ListSubtitle text="Members" dense />
 export const ForumMembersList = ({ forumId, onPressMember }) => {

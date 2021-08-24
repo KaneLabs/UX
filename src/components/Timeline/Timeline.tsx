@@ -3,7 +3,7 @@ import { FlatList, Platform, useWindowDimensions } from 'react-native';
 import Post from 'eros-ui/components/Post';
 import { makeStyles, useTheme } from 'eros-ui/theme';
 import { SET_NAV_DOCKED } from 'eros-ui/queries';
-import { useMutation } from '@apollo/react-hooks';
+import { useMutation } from '@apollo/client';
 
 export interface Author {
   id: string;

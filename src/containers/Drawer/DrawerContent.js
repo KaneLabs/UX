@@ -1,5 +1,5 @@
 import React from 'react';
-import { useQuery } from '@apollo/react-hooks';
+import { useQuery } from '@apollo/client';
 import { ME } from 'eros-ui/queries';
 import DrawerHeader from './DrawerHeader';
 import DrawerList from './DrawerList';

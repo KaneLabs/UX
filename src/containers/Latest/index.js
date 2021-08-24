@@ -3,7 +3,7 @@ import { FlatList, RefreshControl, View } from 'react-native';
 import { Post } from 'eros-ui/components';
 import { useTheme, makeStyles } from 'eros-ui/theme';
 import { TIMELINE, NEW_POST, SET_NAV_DOCKED } from 'eros-ui/queries';
-import { useQuery, useMutation } from '@apollo/react-hooks';
+import { useQuery, useMutation } from '@apollo/client';
 import { useDimensions } from 'eros-ui/state';
 
 const TIMELINE_LIMIT = 5;

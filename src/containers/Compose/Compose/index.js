@@ -8,7 +8,7 @@ import {
 
 import { StyleSheet } from 'react-native';
 import { CREATE_POST, CREATE_PRESIGNED_URL } from 'eros-ui/queries';
-import { useMutation } from '@apollo/react-hooks';
+import { useMutation } from '@apollo/client';
 import { makeStyles } from 'eros-ui/theme';
 import { useDimensions, useCompose, ComposeActions } from 'eros-ui/state';
 import { convertFilesToBase64, signFile } from 'eros-ui/fns';

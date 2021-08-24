@@ -1,7 +1,7 @@
 import React from 'react';
 import { ActivityIndicator, Container, Forum } from 'eros-ui/components';
 import { FORUM } from 'eros-ui/queries';
-import { useQuery } from '@apollo/react-hooks';
+import { useQuery } from '@apollo/client';
 import NotFound from './ForumNotFound';
 
 export const ForumPage = ({ url }) => {

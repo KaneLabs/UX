@@ -3,7 +3,7 @@ import { View, StyleSheet } from 'react-native';
 import { Avatar } from 'eros-ui/components';
 import { AVATAR_SIZE, makeStyles } from 'eros-ui/theme';
 import { ACCOUNT } from 'eros-ui/queries';
-import { useQuery } from '@apollo/react-hooks';
+import { useQuery } from '@apollo/client';
 import Link from 'next/link';
 
 export const AccountAvatar = (props) => {

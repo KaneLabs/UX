@@ -3,6 +3,7 @@ import { View, AsyncStorage } from 'react-native';
 import Container from 'eros-ui/components/Container';
 import TextField from 'eros-ui/components/TextField';
 import Button from 'eros-ui/components/Button';
+import Typography from 'eros-ui/components/Typography';
 import Row from 'eros-ui/components/Layout/Row';
 // import Typography from 'eros-ui/components/Typography';
 import { RouteProp } from '@react-navigation/core';
@@ -79,6 +80,9 @@ const AuthPhone: React.FC<AuthPhoneProps> = ({ route }) => {
           margin: 40,
           marginVertical: 80,
         }}>
+                    {error?.graphQLErrors.map((GraphQLError => {
+            return <Typography text={GraphQLError.message} />
+          }))}
         <Row fullWidth style={{ padding: 20, paddingRight: 40 }}>
           <Button
             style={{ paddingHorizontal: 8 }}
@@ -86,6 +90,8 @@ const AuthPhone: React.FC<AuthPhoneProps> = ({ route }) => {
             onPress={() => navigation.navigate('CountryCode')}
           />
           <TextField
+            textContentType={'telephoneNumber'}
+            autoCompleteType={'tel'} // Android only
             keyboardType={'phone-pad'}
             style={{ width: '100%' }}
             ref={inputRef}

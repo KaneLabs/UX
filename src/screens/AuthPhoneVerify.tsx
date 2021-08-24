@@ -60,6 +60,7 @@ const AuthenticatePhone = ({ onSuccess }: AuthenticatePhoneProps) => {
       <View style={{ flex: 1, alignSelf: 'center', padding: 40 }}>
         <TextField
           ref={inputRef}
+          textContentType={'oneTimeCode'}
           keyboardType={'phone-pad'}
           value={code}
           onChangeText={setCode}

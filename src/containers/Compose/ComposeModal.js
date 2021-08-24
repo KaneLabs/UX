@@ -1,5 +1,5 @@
 import React, { useCallback, useState } from 'react';
-import { useMutation, useQuery } from '@apollo/react-hooks';
+import { useMutation, useQuery } from '@apollo/client';
 import { useCompose, ComposeActions } from 'eros-ui/state';
 import {
   COMPOSE_MODAL,

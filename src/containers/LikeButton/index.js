@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Platform } from 'react-native';
 import { IconButton } from 'eros-ui/components';
 import { useTheme } from 'eros-ui/theme';
-import { useMutation } from '@apollo/react-hooks';
+import { useMutation } from '@apollo/client';
 import { LIKE_POST, TIMELINE } from 'eros-ui/queries';
 
 export const LikeButton = ({ postId, likes = 0, liked = false }) => {

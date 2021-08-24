@@ -12,7 +12,7 @@ import { backgroundColor as lightBackground } from 'eros-ui/theme/light';
 import { backgroundColor as darkBackground } from 'eros-ui/theme/dark';
 // import createApolloClient from 'eros-ui/apollo/createClient';
 // import { ApolloClient } from 'apollo-client';
-// import { ApolloProvider, ApolloClient, InMemoryCache } from '@apollo/react-hooks';
+// import { ApolloProvider, ApolloClient, InMemoryCache } from '@apollo/client';
 // import { InMemoryCache } from 'apollo-cache-inmemory';
 // import { themes } from '@storybook/theming';
 import { create } from '@storybook/theming/create';

@@ -1,9 +1,8 @@
 import React, { useEffect } from 'react';
 import { FlatList, RefreshControl } from 'react-native';
-import { Post, Line } from 'eros-ui/components';
+import Post from 'eros-ui/components/Post';
+import Line from 'eros-ui/components/Line';
 import { useTheme } from 'eros-ui/theme';
-// import { TIMELINE, NEW_POST } from 'eros-ui/queries';
-// import { useQuery } from '@apollo/react-hooks';
 
 const TimelineList = ({
   posts,
@@ -16,10 +15,10 @@ const TimelineList = ({
   mobile = null,
   ...rest
 }) => {
-  useEffect(() => {
-    const [theme] = useTheme();
-    const { gutter, FEED_WIDTH, textColor } = theme;
+  const [theme] = useTheme();
+  const { gutter, FEED_WIDTH, textColor } = theme;
 
+  useEffect(() => {
     console.log('adding new timeline list');
     subscribeToNewPosts();
   }, [subscribeToNewPosts]);
@@ -58,7 +57,7 @@ const TimelineList = ({
       data={posts}
       // ListHeaderComponent={_renderHeader}
       // stickyHeaderIndices={[0]}
-      renderItem={({ item, key }) => (
+      renderItem={({ item }) => (
         <Post
           key={item.id}
           {...item}
@@ -67,7 +66,7 @@ const TimelineList = ({
           style={postStyle}
         />
       )}
-      ItemSeparatorComponent={<Line />}
+      ItemSeparatorComponent={Line}
       refreshControl={
         <RefreshControl
           refreshing={refreshing}

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { View, Image } from 'react-native';
-import { useQuery, useMutation } from '@apollo/react-hooks';
+import { useQuery, useMutation } from '@apollo/client';
 import { TIP_MODAL, CLOSE_TIP_MODAL } from '../../queries';
 import { Modal, Title, TextField, Button } from '../../components';
 import ClassicalWave from '../../assets/ClassicalWave.jpg';

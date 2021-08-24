@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { View } from 'react-native';
-import { useMutation } from '@apollo/react-hooks';
+import { useMutation } from '@apollo/client';
 import { SET_PHONE, VERIFY_PHONE } from 'eros-ui/queries';
 import { unit, makeStyles } from 'eros-ui/theme';
 

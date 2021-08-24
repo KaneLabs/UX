@@ -7,7 +7,7 @@ import {
   OutlinedButton,
 } from 'eros-ui/components';
 import { AUTH_SIGNUP } from 'eros-ui/queries';
-import { useMutation } from '@apollo/react-hooks';
+import { useMutation } from '@apollo/client';
 
 const AuthSignup = ({ onSuccess }) => {
   const [inviteCode, setInviteCode] = React.useState('');

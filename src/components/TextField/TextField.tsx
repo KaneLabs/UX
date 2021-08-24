@@ -9,7 +9,7 @@ import {
 
 import { useTheme, makeStyles, Theme, ThemeModes } from 'eros-ui/theme';
 
-interface TextFieldProps extends TextInputProps {
+export interface TextFieldProps extends TextInputProps {
   flat?: boolean;
   fullWidth?: boolean;
   hoverStyle?: ViewStyle;

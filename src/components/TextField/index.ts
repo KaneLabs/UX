@@ -1,2 +1,3 @@
-export { default, default as TextField } from './TextField';
+export { default } from './TextField';
+export type { TextFieldProps } from './TextField';
 export { default as Multiline } from './Multiline';

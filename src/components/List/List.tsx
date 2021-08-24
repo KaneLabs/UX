@@ -1,8 +1,12 @@
 import React from 'react';
-import { View } from 'react-native';
+import { View, ViewProps } from 'react-native';
 import { makeStyles } from 'eros-ui/theme';
 
-export const List = ({ dense = false, ...rest }) => {
+export interface ListProps extends ViewProps {
+  dense?: boolean;
+}
+
+export const List: React.FC<ListProps> = ({ dense = false, ...rest }) => {
   const styles = useStyles();
   return <View style={[dense ? styles.dense : styles.list]} {...rest} />;
 };
