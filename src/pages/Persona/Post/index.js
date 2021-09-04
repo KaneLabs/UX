@@ -9,9 +9,9 @@ import {
   Followers,
   PersonaButtons,
   Row,
-} from 'eros-ui/components';
-import { FEED_WIDTH } from 'eros-ui/theme';
-import { useDimensions, usePersona, usePost } from 'eros-ui/state';
+} from '@kanelabs/ux/components';
+import { FEED_WIDTH } from '@kanelabs/ux/theme';
+import { useDimensions, usePersona, usePost } from '@kanelabs/ux/state';
 
 export const PersonaPostPage = ({ handle, url }) => {
   const { mobile, width } = useDimensions();

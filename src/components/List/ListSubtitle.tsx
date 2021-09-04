@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { View, StyleProp, ViewStyle, StyleSheet } from 'react-native';
-import Typography from 'eros-ui/components/Typography';
-import { makeStyles, TypographyTypes, Theme } from 'eros-ui/theme';
+import Typography from '@kanelabs/ux/components/Typography';
+import { makeStyles, TypographyTypes, Theme } from '@kanelabs/ux/theme';
 
 export interface ListSubtitleProps {
   dense?: boolean;
@@ -23,7 +23,7 @@ const ListSubtitle: React.FC<ListSubtitleProps> = ({
   return (
     <View style={overrideableStyle} {...rest}>
       <Typography
-        type={TypographyTypes.subtitle1}
+        type={TypographyTypes.subtitle2}
         text={text}
         numberOfLines={1}
       />

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { makeStyles } from 'eros-ui/theme';
-import { CountryCodeMenu } from 'eros-ui/components';
+import { makeStyles } from '@kanelabs/ux/theme';
+import { CountryCodeMenu } from '@kanelabs/ux/components';
 
 const INITIAL_STATE = {
   phoneId: 0,

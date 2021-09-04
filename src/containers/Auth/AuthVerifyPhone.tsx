@@ -6,8 +6,8 @@ import {
   TextField,
   OutlinedButton,
   Typography,
-} from 'eros-ui/components';
-import { ME, AUTH_VERIFY_PHONE } from 'eros-ui/queries';
+} from '@kanelabs/ux/components';
+import { ME, AUTH_VERIFY_PHONE } from '@kanelabs/ux/queries';
 import { useMutation } from '@apollo/client';
 
 const AuthVerifyPhone = ({ onSuccess }) => {

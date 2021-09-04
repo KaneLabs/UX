@@ -10,7 +10,7 @@ import { getMainDefinition } from 'apollo-utilities';
 import { onError } from 'apollo-link-error';
 import { createUploadLink } from 'apollo-upload-client'; // replace HttpLink to allow FileUploads
 // import { gql } from '@apollo/client';
-import { GET_TOKEN } from 'eros-ui/queries';
+import { GET_TOKEN } from '@kanelabs/ux/queries';
 import { AsyncStorage } from 'react-native';
 import resolvers from './resolvers';
 import { IP } from '../constants';

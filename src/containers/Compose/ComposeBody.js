@@ -5,9 +5,9 @@ import {
   ContentBlockText,
   Video,
   Subtitle,
-} from 'eros-ui/components';
-import { makeStyles } from 'eros-ui/theme';
-import { ComposeActions as Actions } from 'eros-ui/state';
+} from '@kanelabs/ux/components';
+import { makeStyles } from '@kanelabs/ux/theme';
+import { ComposeActions as Actions } from '@kanelabs/ux/state';
 import ImagePreview from './ImagePreview';
 
 const VideoPreview = ({ files }) =>

@@ -1,8 +1,8 @@
 import React from 'react';
 import { useMutation } from '@apollo/client';
-import { SET_NAV_DOCKED } from 'eros-ui/queries';
+import { SET_NAV_DOCKED } from '@kanelabs/ux/queries';
 import { Animated, StyleSheet } from 'react-native';
-import { makeStyles } from 'eros-ui/theme';
+import { makeStyles } from '@kanelabs/ux/theme';
 
 export const NavMutatingScroll = ({ children, ...rest }) => {
   const [setNavDocked] = useMutation(SET_NAV_DOCKED);

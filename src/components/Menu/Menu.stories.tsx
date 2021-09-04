@@ -3,9 +3,9 @@ import { View } from 'react-native';
 
 import { State, Store } from '@sambego/storybook-state';
 import { Menu, MenuItem, Button, IconButton, Heading } from '../..';
-import Header from 'eros-ui-storybook/components/Header';
-import Container from 'eros-ui-storybook/components/Container';
-import { storiesOf } from 'eros-ui-storybook/helpers/storiesOf';
+import Header from '@kanelabs/ux-storybook/components/Header';
+import Container from '@kanelabs/ux-storybook/components/Container';
+import { storiesOf } from '@kanelabs/ux-storybook/helpers/storiesOf';
 
 const store = new Store({
   visibleOne: false,

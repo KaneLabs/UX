@@ -6,7 +6,7 @@ import {
   StyleProp,
   TextStyle,
 } from 'react-native';
-import { useTheme } from 'eros-ui/theme';
+import { useTheme } from '@kanelabs/ux/theme';
 
 export interface TypographyProps extends TextProps {
   text?: string;

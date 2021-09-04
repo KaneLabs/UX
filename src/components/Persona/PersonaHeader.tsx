@@ -3,10 +3,10 @@ import { View, Platform, useWindowDimensions } from 'react-native';
 import PersonaFollowers from './PersonaFollowers';
 import PersonaButtons from './PersonaButtons';
 import PersonaBanner from './PersonaBanner';
-import Row from 'eros-ui/components/Row';
+import Row from '@kanelabs/ux/components/Row';
 
-import { NAV_HEIGHT, makeStyles } from 'eros-ui/theme';
-// import { DRAWER } from 'eros-ui/queries';
+import { NAV_HEIGHT, makeStyles } from '@kanelabs/ux/theme';
+// import { DRAWER } from '@kanelabs/ux/queries';
 // import { useQuery } from '@apollo/client';
 // import PersonaDescription from './PersonaDescription';
 import PersonaHeaderMain from './PersonaHeaderMain';

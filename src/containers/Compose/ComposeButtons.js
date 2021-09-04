@@ -1,10 +1,10 @@
 import React from 'react';
 import { View } from 'react-native';
 import { useMutation } from '@apollo/client';
-import { TOGGLE_COMPOSE_MODAL } from 'eros-ui/queries';
-import ImageUploadButton from 'eros-ui/components/Buttons/ImageUploadButton';
-import OutlinedButton from 'eros-ui/components/Buttons/OutlinedButton';
-import { unit } from 'eros-ui/theme';
+import { TOGGLE_COMPOSE_MODAL } from '@kanelabs/ux/queries';
+import ImageUploadButton from '@kanelabs/ux/components/Buttons/ImageUploadButton';
+import OutlinedButton from '@kanelabs/ux/components/Buttons/OutlinedButton';
+import { unit } from '@kanelabs/ux/theme';
 
 const ComposeButtons = () => {
   const [toggleComposeModal] = useMutation(TOGGLE_COMPOSE_MODAL);

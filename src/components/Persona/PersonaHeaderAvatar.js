@@ -1,7 +1,7 @@
 import React from 'react';
 import { View } from 'react-native';
-import Avatar from 'eros-ui/components/Avatar';
-import { makeStyles, useTheme } from 'eros-ui/theme';
+import Avatar from '@kanelabs/ux/components/Avatar';
+import { makeStyles, useTheme } from '@kanelabs/ux/theme';
 
 export const PersonaHeaderAvatar = (props) => {
   const [{ AVATAR_SIZE, AVATAR_SIZE_DESKTOP }] = useTheme();

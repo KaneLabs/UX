@@ -1,6 +1,6 @@
 import React from 'react';
 import { Text } from 'react-native';
-import { useTheme, makeStyles } from 'eros-ui/theme';
+import { useTheme, makeStyles } from '@kanelabs/ux/theme';
 
 export const BodyText = ({
   text = null,

@@ -1,6 +1,6 @@
 import React from 'react';
 import { View } from 'react-native';
-import { gutter } from 'eros-ui/theme';
+import { gutter } from '@kanelabs/ux/theme';
 import ContentBlockText from './ContentBlockText';
 
 export const Content = ({ content = [], mobile }) => (

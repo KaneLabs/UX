@@ -1,5 +1,5 @@
 import React from 'react';
-import IconButton from 'eros-ui/components/IconButton';
+import IconButton from '@kanelabs/ux/components/IconButton';
 
 export const buildVideoFileSelector = () => {
   try {

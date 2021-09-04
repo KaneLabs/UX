@@ -1,7 +1,10 @@
-export type ScreenThemeType = {
-  padding: number;
-};
+import { ViewStyle } from 'react-native';
+export interface ScreenThemeType extends ViewStyle {
+  flex: number;
+}
 
 export const ScreenTheme: ScreenThemeType = {
-  padding: 40,
+  flex: 1,
 };
+
+export default ScreenTheme;

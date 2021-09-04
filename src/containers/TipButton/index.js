@@ -1,7 +1,7 @@
 import React from 'react';
-import { Button } from 'eros-ui/components';
+import { Button } from '@kanelabs/ux/components';
 import { useMutation } from '@apollo/client';
-import { OPEN_TIP_MODAL } from 'eros-ui/queries';
+import { OPEN_TIP_MODAL } from '@kanelabs/ux/queries';
 
 export default () => {
   const [openTipModal] = useMutation(OPEN_TIP_MODAL);

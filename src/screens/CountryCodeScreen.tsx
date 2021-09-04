@@ -1,10 +1,10 @@
 import * as React from 'react';
 import { ScrollView } from 'react-native';
-import Container from 'eros-ui/components/Container';
+import Container from '@kanelabs/ux/components/Container';
 import { useNavigation } from '@react-navigation/native';
-import CountryCodeList from 'eros-ui/components/CountryCodeMenu/CountryCodeList';
+import CountryCodeList from '@kanelabs/ux/components/CountryCodeMenu/CountryCodeList';
 
-import { Country } from 'eros-ui/components/CountryCodeMenu/country-data';
+import { Country } from '@kanelabs/ux/components/CountryCodeMenu/country-data';
 
 export type AuthenticatedUser = {
   token: string;

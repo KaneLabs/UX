@@ -10,12 +10,12 @@ import {
   View,
   IconButton,
   Subtitle,
-} from 'eros-ui/components';
+} from '@kanelabs/ux/components';
 import { StyleSheet } from 'react-native';
-import { DRAWER, FORUM_CHAT } from 'eros-ui/queries';
+import { DRAWER, FORUM_CHAT } from '@kanelabs/ux/queries';
 import { useQuery, useSubscription } from '@apollo/client';
 // import ForumToolbar from './ForumToolbar';
-import { NAV_HEIGHT, makeStyles } from 'eros-ui/theme';
+import { NAV_HEIGHT, makeStyles } from '@kanelabs/ux/theme';
 import ForumMembersList from './ForumMembersList';
 import ForumChatInput from './ForumChatInput';
 import ForumMember from './ForumMember';

@@ -6,9 +6,9 @@ import {
   List,
   ListItem,
   ListItemText,
-} from 'eros-ui/components';
+} from '@kanelabs/ux/components';
 import { StyleSheet } from 'react-native';
-import { makeStyles } from 'eros-ui/theme';
+import { makeStyles } from '@kanelabs/ux/theme';
 
 export const ForumMember = ({
   id,

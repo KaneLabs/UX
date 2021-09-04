@@ -1,5 +1,5 @@
 import React from 'react';
-import { closestAspectRatio } from 'eros-ui/fns';
+import { closestAspectRatio } from '@kanelabs/ux/fns';
 import IconButton from '../../IconButton';
 
 class ImageUploadButton extends React.Component {

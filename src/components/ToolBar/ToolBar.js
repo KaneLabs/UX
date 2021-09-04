@@ -1,6 +1,6 @@
 import React from 'react';
 import { View } from 'react-native';
-import { borderColor } from 'eros-ui/theme';
+import { borderColor } from '@kanelabs/ux/theme';
 
 const alignReducer = (align) => {
   switch (align) {

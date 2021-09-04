@@ -1,9 +1,9 @@
 import React from 'react';
-import { IconButton } from 'eros-ui/components';
-import { DRAWER } from 'eros-ui/queries';
+import { IconButton } from '@kanelabs/ux/components';
+import { DRAWER } from '@kanelabs/ux/queries';
 import { useQuery } from '@apollo/client';
 
-import { useTheme } from 'eros-ui/theme';
+import { useTheme } from '@kanelabs/ux/theme';
 
 export const DrawerToggleButton = () => {
   const {

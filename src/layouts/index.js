@@ -1,5 +1,5 @@
 import React from 'react';
-import useDimensions from 'eros-ui/state/useDimensions';
+import useDimensions from '@kanelabs/ux/state/useDimensions';
 import MobileLayout from './Mobile';
 import DesktopLayout from './Desktop';
 

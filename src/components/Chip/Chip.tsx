@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { Platform, ViewStyle, StyleSheet } from 'react-native';
 
-import { makeStyles, TypographyTypes, Theme } from 'eros-ui/theme';
-import Paper, { PaperProps } from 'eros-ui/components/Paper';
+import { makeStyles, TypographyTypes, Theme } from '@kanelabs/ux/theme';
+import Paper, { PaperProps } from '@kanelabs/ux/components/Paper';
 
-import Typography from 'eros-ui/components/Typography';
+import Typography from '@kanelabs/ux/components/Typography';
 
 const DEFAULT_CHIP_HEIGHT = 32;
 

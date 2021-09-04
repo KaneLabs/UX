@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { View, StyleSheet } from 'react-native';
-import { Avatar } from 'eros-ui/components';
-import { AVATAR_SIZE, makeStyles } from 'eros-ui/theme';
-import { ACCOUNT } from 'eros-ui/queries';
+import { Avatar } from '@kanelabs/ux/components';
+import { AVATAR_SIZE, makeStyles } from '@kanelabs/ux/theme';
+import { ACCOUNT } from '@kanelabs/ux/queries';
 import { useQuery } from '@apollo/client';
 import Link from 'next/link';
 

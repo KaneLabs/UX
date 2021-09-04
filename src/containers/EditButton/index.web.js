@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button } from 'eros-ui/components';
+import { Button } from '@kanelabs/ux/components';
 import { useRouter } from 'next/router';
 
 const EditButton = () => {

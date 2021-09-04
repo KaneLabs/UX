@@ -1,6 +1,6 @@
 import React, { useMemo, useState } from 'react';
 import { View, Image } from 'react-native';
-import { makeStyles, useTheme } from 'eros-ui/theme';
+import { makeStyles, useTheme } from '@kanelabs/ux/theme';
 
 export const PersonaAvatar = (props) => {
   const [{ DEFAULT_AVATAR_URL, PROFILE_AVATAR_SIZE }] = useTheme();

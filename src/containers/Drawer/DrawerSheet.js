@@ -6,9 +6,9 @@ import {
   borderColor,
   borderWidth,
   unit,
-} from 'eros-ui/theme';
+} from '@kanelabs/ux/theme';
 import { StyleSheet, Animated } from 'react-native';
-import { usePrevious } from 'eros-ui/state';
+import { usePrevious } from '@kanelabs/ux/state';
 
 export const DrawerSheet = ({
   open = false,

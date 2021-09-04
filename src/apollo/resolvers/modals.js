@@ -1,4 +1,9 @@
-import { COMPOSE_MODAL, TIP_MODAL, DRAWER, AUTH_MODAL } from 'eros-ui/queries';
+import {
+  COMPOSE_MODAL,
+  TIP_MODAL,
+  DRAWER,
+  AUTH_MODAL,
+} from '@kanelabs/ux/queries';
 
 const modals = {
   defaults: {

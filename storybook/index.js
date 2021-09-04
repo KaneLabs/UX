@@ -33,7 +33,7 @@ addParameters({
   //   showPanel: true,
   //   panelPosition: 'bottom',
   //   isToolshown: true,
-  //   name: 'Eros',
+  //   name: 'KaneLabsUX',
   //   theme: themes.dark,
   // },
   backgrounds: [

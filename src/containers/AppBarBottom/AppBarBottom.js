@@ -1,8 +1,8 @@
 import React from 'react';
 // import { StyleSheet } from 'react-native';
-import { TabBar, Tab } from 'eros-ui/components';
-import { makeStyles } from 'eros-ui/theme';
-import { useAccount } from 'eros-ui/state';
+import { TabBar, Tab } from '@kanelabs/ux/components';
+import { makeStyles } from '@kanelabs/ux/theme';
+import { useAccount } from '@kanelabs/ux/state';
 
 export const AppBarBottom = () => {
   const styles = useStyles();

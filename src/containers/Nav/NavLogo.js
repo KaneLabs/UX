@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
-import { ForaLogo } from 'eros-ui/components';
-import { makeStyles } from 'eros-ui/theme';
+import { ForaLogo } from '@kanelabs/ux/components';
+import { makeStyles } from '@kanelabs/ux/theme';
 
 export const NavLogo = () => {
   const styles = useStyles();

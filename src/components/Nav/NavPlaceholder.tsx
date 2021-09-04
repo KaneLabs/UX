@@ -1,6 +1,6 @@
 import React from 'react';
-import { View } from 'eros-ui/components';
-import { makeStyles } from 'eros-ui/theme';
+import { View } from '@kanelabs/ux/components';
+import { makeStyles } from '@kanelabs/ux/theme';
 
 export const NavPlaceholder = () => {
   const styles = useStyles();

@@ -3,9 +3,9 @@ import React, { useState } from 'react';
 import MapView, { PROVIDER_GOOGLE, Region } from 'react-native-maps';
 import Geolocation from '@react-native-community/geolocation';
 import Permissions, { PERMISSIONS, RESULTS } from 'react-native-permissions';
-import IconButton from 'eros-ui/components/IconButton';
+import IconButton from '@kanelabs/ux/components/IconButton';
 
-import { makeStyles, useTheme, ThemeModes } from 'eros-ui/theme';
+import { makeStyles, useTheme, ThemeModes } from '@kanelabs/ux/theme';
 // import companies from '../../../companies';
 
 import { GeoPosition } from 'react-native-geolocation-service';

@@ -1,6 +1,6 @@
 import { createContext } from 'react';
 import { useQuery } from '@apollo/client';
-import { DEVICE } from 'eros-ui/queries';
+import { DEVICE } from '@kanelabs/ux/queries';
 
 export const DimensionsContext = createContext(null);
 

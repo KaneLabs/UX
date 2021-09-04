@@ -3,9 +3,9 @@ import { useNavigation } from '@react-navigation/core';
 import { useQuery } from '@apollo/client';
 import { AsyncStorage } from 'react-native';
 import { DrawerActions } from '@react-navigation/routers';
-import { ME } from 'eros-ui/queries';
-import Button from 'eros-ui/components/Button';
-import { makeStyles, Theme } from 'eros-ui/theme';
+import { ME } from '@kanelabs/ux/queries';
+import Button from '@kanelabs/ux/components/Button';
+import { makeStyles, Theme } from '@kanelabs/ux/theme';
 
 const LogoutButton = () => {
   const navigation = useNavigation();

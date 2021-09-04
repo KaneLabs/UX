@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { View, ViewProps } from 'react-native';
-import { makeStyles, Theme } from 'eros-ui/theme';
+import { makeStyles, Theme } from '@kanelabs/ux/theme';
 
 const Divider: React.FC<ViewProps> = (props) => {
   const styles = useStyles();

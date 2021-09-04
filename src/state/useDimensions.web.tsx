@@ -1,8 +1,8 @@
 import React, { createContext, useState, useContext, useEffect } from 'react';
 import { useQuery } from '@apollo/client';
-import { DEVICE } from 'eros-ui/queries';
+import { DEVICE } from '@kanelabs/ux/queries';
 import { Dimensions } from 'react-native';
-import { DESKTOP_BREAKPOINT } from 'eros-ui/theme';
+import { DESKTOP_BREAKPOINT } from '@kanelabs/ux/theme';
 
 export const DimensionsContext = createContext(null);
 

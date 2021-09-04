@@ -8,8 +8,8 @@ module.exports = {
       {
         root: ['./src'],
         alias: {
-          'eros-ui': './src',
-          'eros-ui-storybook': './storybook',
+          '@kanelabs/ux': './src',
+          '@kanelabs/ux-storybook': './storybook',
         },
       },
     ],

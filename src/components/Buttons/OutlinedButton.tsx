@@ -1,7 +1,7 @@
 import React, { forwardRef } from 'react';
 import { View, TouchableHighlight, StyleSheet } from 'react-native';
 
-import { unit, makeStyles } from 'eros-ui/theme';
+import { unit, makeStyles } from '@kanelabs/ux/theme';
 import Icon from '../Icon';
 import ButtonText from '../Typography/ButtonText';
 

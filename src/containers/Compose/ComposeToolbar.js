@@ -5,8 +5,8 @@ import {
   VideoUploadButton,
   IconButton,
   Row,
-} from 'eros-ui/components';
-import { makeStyles } from 'eros-ui/theme';
+} from '@kanelabs/ux/components';
+import { makeStyles } from '@kanelabs/ux/theme';
 
 const ComposeToolbar = ({
   onFiles = () => null,

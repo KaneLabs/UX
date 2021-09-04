@@ -1,6 +1,8 @@
 import React from 'react';
-import Typography, { TypographyTypes } from 'eros-ui/components/Typography';
-import { makeStyles } from 'eros-ui/theme';
+import Typography, {
+  TypographyTypes,
+} from '@kanelabs/ux/components/Typography';
+import { makeStyles } from '@kanelabs/ux/theme';
 
 const PersonaSubtitle: React.FC<{ text: string }> = ({ text, ...rest }) => {
   const styles = useStyles();

@@ -4,10 +4,10 @@ module.exports = {
   plugins: ['@typescript-eslint', 'jest'],
   extends: [
     'plugin:@typescript-eslint/recommended',
-    // 'prettier',
-    // 'prettier/@typescript-eslint',
+    'prettier',
+    'prettier/@typescript-eslint',
     // 'prettier/react',
-    "plugin:react-hooks/recommended",
+    'plugin:react-hooks/recommended',
     'plugin:jest/recommended',
   ],
 };

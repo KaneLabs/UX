@@ -1,5 +1,5 @@
 import React from 'react';
-import { TipModal, SocialDrawer, ToolsDrawer } from 'eros-ui/components';
+import { TipModal, SocialDrawer, ToolsDrawer } from '@kanelabs/ux/components';
 
 export const DesktopLayout = ({ Component, pageProps }) => (
   <>

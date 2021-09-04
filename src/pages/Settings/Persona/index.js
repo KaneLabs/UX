@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, UpdateAccount } from 'eros-ui/components';
+import { Container, UpdateAccount } from '@kanelabs/ux/components';
 import { useRouter } from 'next/router';
 
 export default () => {

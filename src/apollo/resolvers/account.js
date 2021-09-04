@@ -1,6 +1,6 @@
 import { AsyncStorage, Platform } from 'react-native';
-import { ACCOUNT, SET_ACCOUNT, DRAWER } from 'eros-ui/queries';
-import { saveToken, removeToken } from 'eros-ui/fns';
+import { ACCOUNT, SET_ACCOUNT, DRAWER } from '@kanelabs/ux/queries';
+import { saveToken, removeToken } from '@kanelabs/ux/fns';
 
 export default {
   //  OVERRIDES DATA PASSED FROM SSR

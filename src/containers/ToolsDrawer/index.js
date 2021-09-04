@@ -1,15 +1,15 @@
 import React from 'react';
-import { IconButton, View, NavLogo } from 'eros-ui/components';
+import { IconButton, View, NavLogo } from '@kanelabs/ux/components';
 import {
   OPEN_DRAWER,
   CLOSE_DRAWER,
   TOGGLE_COMPOSE_MODAL,
   DRAWER,
-} from 'eros-ui/queries';
+} from '@kanelabs/ux/queries';
 import { useMutation, useQuery } from '@apollo/client';
-import { makeStyles } from 'eros-ui/theme';
-import { useDrawer, useAccount } from 'eros-ui/state';
-import { DrawerLockButton } from 'eros-ui/components';
+import { makeStyles } from '@kanelabs/ux/theme';
+import { useDrawer, useAccount } from '@kanelabs/ux/state';
+import { DrawerLockButton } from '@kanelabs/ux/components';
 import DrawerToggleButton from '../DrawerToggleButton';
 import ThemeToggleButton from '../ThemeToggleButton';
 

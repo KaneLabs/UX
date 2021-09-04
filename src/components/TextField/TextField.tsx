@@ -7,7 +7,7 @@ import {
   ViewStyle,
 } from 'react-native';
 
-import { useTheme, makeStyles, Theme, ThemeModes } from 'eros-ui/theme';
+import { useTheme, makeStyles, Theme, ThemeModes } from '@kanelabs/ux/theme';
 
 export interface TextFieldProps extends TextInputProps {
   flat?: boolean;

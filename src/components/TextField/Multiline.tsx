@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { TextInput, StyleProp } from 'react-native';
-// import { AccountAvatar } from 'eros-ui/components';
-import { makeStyles, Theme } from 'eros-ui/theme';
+// import { AccountAvatar } from '@kanelabs/ux/components';
+import { makeStyles, Theme } from '@kanelabs/ux/theme';
 
 const Multiline = ({
   mobile = false,

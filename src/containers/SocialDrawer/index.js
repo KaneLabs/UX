@@ -1,9 +1,9 @@
 import React from 'react';
-import { IconButton, View, DrawerLockButton } from 'eros-ui/components';
-import { SOCIAL_DRAWER } from 'eros-ui/queries';
+import { IconButton, View, DrawerLockButton } from '@kanelabs/ux/components';
+import { SOCIAL_DRAWER } from '@kanelabs/ux/queries';
 import { useQuery, useMutation } from '@apollo/client';
-import { makeStyles } from 'eros-ui/theme';
-import { useAccount } from 'eros-ui/state';
+import { makeStyles } from '@kanelabs/ux/theme';
+import { useAccount } from '@kanelabs/ux/state';
 import AccountButton from '../Account/AccountButton';
 
 const useStyles = makeStyles((theme) => ({

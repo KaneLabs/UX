@@ -1,7 +1,7 @@
 import * as React from 'react';
 // import { View } from 'react-native';
 import { useRouter } from 'next/router';
-import { Container, PhoneAuth } from 'eros-ui/components';
+import { Container, PhoneAuth } from '@kanelabs/ux/components';
 
 const AuthPage = () => {
   const router = useRouter();

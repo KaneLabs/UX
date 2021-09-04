@@ -6,7 +6,7 @@ import { Hoverable } from '../..';
 
 import Header from '../../storybook/components/Header';
 import Container from '../../storybook/components/Container';
-import { storiesOf } from 'eros-ui-storybook/helpers/storiesOf';
+import { storiesOf } from '@kanelabs/ux-storybook/helpers/storiesOf';
 
 const store = new Store({
   color: '#00BCD4',

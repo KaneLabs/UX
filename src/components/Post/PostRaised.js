@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { makeStyles } from 'eros-ui/theme';
-import { View, Line } from 'eros-ui/components';
+import { makeStyles } from '@kanelabs/ux/theme';
+import { View, Line } from '@kanelabs/ux/components';
 import PostButtons from './PostButtons';
 import PostContent from './PostContent';
 import PostHeader from './PostHeader';

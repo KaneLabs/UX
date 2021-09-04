@@ -1,5 +1,5 @@
 import React from 'react';
-import { gutter } from 'eros-ui/theme';
+import { gutter } from '@kanelabs/ux/theme';
 import { BodyText } from '../Typography';
 
 const ContentBlockText = ({ text, mobile = false }) => (

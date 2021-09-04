@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
-import { makeStyles } from 'eros-ui/theme';
+import { makeStyles } from '@kanelabs/ux/theme';
 
 export const Line = ({ style = null, ...rest }) => {
   const styles = useStyles();

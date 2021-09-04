@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import { AccountButton, Menu, MenuItem, Button } from 'eros-ui/components';
+import { AccountButton, Menu, MenuItem, Button } from '@kanelabs/ux/components';
 import Link from 'next/link';
-import { useAccount } from 'eros-ui/state';
-// import { makeStyles } from 'eros-ui/theme';
+import { useAccount } from '@kanelabs/ux/state';
+// import { makeStyles } from '@kanelabs/ux/theme';
 import { useMutation } from '@apollo/client';
-import { LOGOUT } from 'eros-ui/queries';
+import { LOGOUT } from '@kanelabs/ux/queries';
 
 const AccountLinkMenuItem = (props) => {
   const { onPress, handle } = props;

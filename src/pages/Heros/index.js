@@ -1,10 +1,10 @@
 import * as React from 'react';
 import dynamic from 'next/dynamic';
-import { NavMutatingScroll } from 'eros-ui/components';
-import AuthPhoneOrEmail from 'eros-ui/containers/Auth/AuthPhoneOrEmail';
+import { NavMutatingScroll } from '@kanelabs/ux/components';
+import AuthPhoneOrEmail from '@kanelabs/ux/containers/Auth/AuthPhoneOrEmail';
 import { useRouter } from 'next/router';
 
-import CreatorOwned from 'eros-ui/components/Heros/CreatorOwned';
+import CreatorOwned from '@kanelabs/ux/components/Heros/CreatorOwned';
 
 const FreeTrade = dynamic(() => import('ui/components/Heros/FreeTrade'), {
   ssr: true,

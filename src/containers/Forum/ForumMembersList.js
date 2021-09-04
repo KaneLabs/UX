@@ -6,8 +6,8 @@ import {
   ListItemText,
   ListItemMedia,
   ListSubtitle,
-} from 'eros-ui/components';
-import { FORUM_MEMBERS } from 'eros-ui/queries';
+} from '@kanelabs/ux/components';
+import { FORUM_MEMBERS } from '@kanelabs/ux/queries';
 import { useQuery } from '@apollo/client';
 
 // <ListSubtitle text="Members" dense />

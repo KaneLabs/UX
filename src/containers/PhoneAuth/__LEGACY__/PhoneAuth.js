@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
 import { View } from 'react-native';
 import { useMutation } from '@apollo/client';
-import { SET_PHONE, VERIFY_PHONE } from 'eros-ui/queries';
-import { unit, makeStyles } from 'eros-ui/theme';
+import { SET_PHONE, VERIFY_PHONE } from '@kanelabs/ux/queries';
+import { unit, makeStyles } from '@kanelabs/ux/theme';
 
 import {
   Button,
   TextField,
   Subtitle,
   CountryCodeMenu,
-} from 'eros-ui/components';
+} from '@kanelabs/ux/components';
 
 const INITIAL_STATE = {
   phoneId: 0,

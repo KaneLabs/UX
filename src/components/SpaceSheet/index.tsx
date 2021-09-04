@@ -6,7 +6,7 @@ import {
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 
-import { shadow as shadowStyles, makeStyles, Theme } from 'eros-ui/theme';
+import { shadow as shadowStyles, makeStyles, Theme } from '@kanelabs/ux/theme';
 
 const gradient = ['rgba(0,0,0,0.8)', 'rgba(0,0,0,0.2)'];
 

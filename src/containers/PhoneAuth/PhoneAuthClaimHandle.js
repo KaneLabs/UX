@@ -9,12 +9,16 @@ import {
   View,
   Title,
   Row,
-} from 'eros-ui/components';
+} from '@kanelabs/ux/components';
 
 import { useQuery, useMutation, useLazyQuery } from '@apollo/client';
-import { UPDATE_ACCOUNT, ACCOUNT, HANDLE_IS_AVAILABLE } from 'eros-ui/queries';
-import { isValidHandle } from 'eros-ui/fns';
-import { makeStyles } from 'eros-ui/theme';
+import {
+  UPDATE_ACCOUNT,
+  ACCOUNT,
+  HANDLE_IS_AVAILABLE,
+} from '@kanelabs/ux/queries';
+import { isValidHandle } from '@kanelabs/ux/fns';
+import { makeStyles } from '@kanelabs/ux/theme';
 
 export const PhoneAuthClaimHandle = ({ onSuccess }) => {
   const styles = useStyles();

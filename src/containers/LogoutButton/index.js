@@ -1,8 +1,8 @@
 import React from 'react';
 import { AsyncStorage } from 'react-native';
-import { Button } from 'eros-ui/components';
+import { Button } from '@kanelabs/ux/components';
 import { useMutation } from '@apollo/client';
-import { LOGOUT } from 'eros-ui/queries';
+import { LOGOUT } from '@kanelabs/ux/queries';
 
 export const LogoutButton = () => {
   const [logout] = useMutation(LOGOUT);

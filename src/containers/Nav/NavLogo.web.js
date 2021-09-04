@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
-import { ForaLogo } from 'eros-ui/components';
-import { NAV_HEIGHT } from 'eros-ui/theme';
+import { ForaLogo } from '@kanelabs/ux/components';
+import { NAV_HEIGHT } from '@kanelabs/ux/theme';
 
 export const NavLogo = () => (
   <Link passHref href="/">

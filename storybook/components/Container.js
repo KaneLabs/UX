@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { View, StyleSheet, ScrollView, Dimensions } from 'react-native';
-import ThemeProvider from 'eros-ui/theme/ThemeProvider';
-import { DimensionsProvider } from 'eros-ui/state/useDimensions';
+import ThemeProvider from '@kanelabs/ux/theme/ThemeProvider';
+import { DimensionsProvider } from '@kanelabs/ux/state/useDimensions';
 
 export default class Container extends Component {
   static propTypes = {

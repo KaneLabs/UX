@@ -1,8 +1,8 @@
 import React from 'react';
 // import { StyleSheet, ImageBackground } from 'react-native';
-import { View } from 'eros-ui/components';
-import { makeStyles } from 'eros-ui/theme';
-// import { useDimensions } from 'eros-ui/state';
+import { View } from '@kanelabs/ux/components';
+import { makeStyles } from '@kanelabs/ux/theme';
+// import { useDimensions } from '@kanelabs/ux/state';
 import ImagePreview from './ImagePreview';
 
 export const FilePreviews = ({

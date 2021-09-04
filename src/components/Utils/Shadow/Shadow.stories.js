@@ -5,7 +5,7 @@ import { shadow } from '../..';
 
 import Header from '../../storybook/components/Header';
 import Container from '../../storybook/components/Container';
-import { storiesOf } from 'eros-ui-storybook/helpers/storiesOf';
+import { storiesOf } from '@kanelabs/ux-storybook/helpers/storiesOf';
 
 const pageWidth =
   Platform.OS == 'web' ? window.innerWidth : Dimensions.get('window').width;

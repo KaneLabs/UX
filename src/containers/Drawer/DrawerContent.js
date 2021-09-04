@@ -1,6 +1,6 @@
 import React from 'react';
 import { useQuery } from '@apollo/client';
-import { ME } from 'eros-ui/queries';
+import { ME } from '@kanelabs/ux/queries';
 import DrawerHeader from './DrawerHeader';
 import DrawerList from './DrawerList';
 import DrawerFooter from './DrawerFooter';

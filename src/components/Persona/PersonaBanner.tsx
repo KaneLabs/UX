@@ -1,6 +1,6 @@
 import React from 'react';
 import { ImageBackground, Platform, ImageSourcePropType } from 'react-native';
-import { makeStyles } from 'eros-ui/theme';
+import { makeStyles } from '@kanelabs/ux/theme';
 
 const PersonaBanner: React.FC<{ source: ImageSourcePropType }> = ({ source, ...rest }) => {
   const styles = useStyles();

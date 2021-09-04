@@ -1,6 +1,6 @@
 import React from 'react';
 import { Image, StyleSheet, View } from 'react-native';
-import { FEED_WIDTH, unit, makeStyles } from 'eros-ui/theme';
+import { FEED_WIDTH, unit, makeStyles } from '@kanelabs/ux/theme';
 
 const gutter = unit * 2;
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Title, NavPlaceholder } from 'eros-ui/components';
+import { Container, Title, NavPlaceholder } from '@kanelabs/ux/components';
 import { StyleSheet } from 'react-native';
 import ForumChat from './ForumChat';
 

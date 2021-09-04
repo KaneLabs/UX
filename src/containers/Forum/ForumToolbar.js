@@ -1,8 +1,8 @@
 import React from 'react';
-import { IconButton, View, AccountButton } from 'eros-ui/components';
-import { TOGGLE_DRAWER } from 'eros-ui/queries';
+import { IconButton, View, AccountButton } from '@kanelabs/ux/components';
+import { TOGGLE_DRAWER } from '@kanelabs/ux/queries';
 import { useMutation } from '@apollo/client';
-import { unit, makeStyles } from 'eros-ui/theme';
+import { unit, makeStyles } from '@kanelabs/ux/theme';
 import { StyleSheet } from 'react-native';
 import { useRouter } from 'next/router';
 

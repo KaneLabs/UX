@@ -1,6 +1,6 @@
 import React, { useCallback, useState } from 'react';
 import { useMutation, useQuery } from '@apollo/client';
-import { useCompose, ComposeActions } from 'eros-ui/state';
+import { useCompose, ComposeActions } from '@kanelabs/ux/state';
 import {
   COMPOSE_MODAL,
   TOGGLE_COMPOSE_MODAL,

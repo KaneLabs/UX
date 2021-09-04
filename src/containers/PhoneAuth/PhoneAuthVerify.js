@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { View } from 'react-native';
 import { useMutation, useQuery } from '@apollo/client';
-import { PHONE, VERIFY_PHONE } from 'eros-ui/queries';
-import { makeStyles } from 'eros-ui/theme';
+import { PHONE, VERIFY_PHONE } from '@kanelabs/ux/queries';
+import { makeStyles } from '@kanelabs/ux/theme';
 
 import {
   OutlinedButton,
@@ -11,7 +11,7 @@ import {
   Subtitle,
   Container,
   ActivityIndicator,
-} from 'eros-ui/components';
+} from '@kanelabs/ux/components';
 
 const INITIAL_STATE = {
   phoneId: 0,

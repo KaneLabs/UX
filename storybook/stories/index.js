@@ -1,25 +1,25 @@
 export { default as Home } from './Home.stories';
 
 /* UI */
-export { default as ForaLogo } from 'eros-ui/components/ForaLogo/ForaLogo.stories';
-export { default as Typography } from 'eros-ui/components/Typography/Typography.stories';
-export { default as Hero } from 'eros-ui/components/Hero/Hero.stories';
-export { default as HeroSwiper } from 'eros-ui/components/HeroSwiper/HeroSwiper.stories';
-export { default as TextField } from 'eros-ui/components/TextField/TextField.stories';
-export { default as Paper } from 'eros-ui/components/Paper/Paper.stories';
+export { default as ForaLogo } from '@kanelabs/ux/components/ForaLogo/ForaLogo.stories';
+export { default as Typography } from '@kanelabs/ux/components/Typography/Typography.stories';
+export { default as Hero } from '@kanelabs/ux/components/Hero/Hero.stories';
+export { default as HeroSwiper } from '@kanelabs/ux/components/HeroSwiper/HeroSwiper.stories';
+export { default as TextField } from '@kanelabs/ux/components/TextField/TextField.stories';
+export { default as Paper } from '@kanelabs/ux/components/Paper/Paper.stories';
 
 /* UX */
-export { default as AuthPhone } from 'eros-ui/containers/Auth/AuthPhone.stories';
-export { default as AuthPhoneVerify } from 'eros-ui/containers/Auth/AuthPhoneVerify.stories';
+export { default as AuthPhone } from '@kanelabs/ux/containers/Auth/AuthPhone.stories';
+export { default as AuthPhoneVerify } from '@kanelabs/ux/containers/Auth/AuthPhoneVerify.stories';
 
-export { default as PaymentMethodsList } from 'eros-ui/containers/Payments/PaymentMethodsList/PaymentMethodsList.stories';
-export { default as AddPaymentMethod } from 'eros-ui/containers/Payments/AddPaymentMethod/AddPaymentMethod.stories';
+export { default as PaymentMethodsList } from '@kanelabs/ux/containers/Payments/PaymentMethodsList/PaymentMethodsList.stories';
+export { default as AddPaymentMethod } from '@kanelabs/ux/containers/Payments/AddPaymentMethod/AddPaymentMethod.stories';
 
 /* Experimental */
-export { default as NeuButton } from 'eros-ui/components/Neu/NeuButton/NeuButton.stories';
-export { default as NeuView } from 'eros-ui/components/Neu/NeuView/NeuView.stories';
-export { default as NeuInput } from 'eros-ui/components/Neu/NeuInput.stories';
-export { default as NeuSwitch } from 'eros-ui/components/Neu/NeuSwitch.stories';
+export { default as NeuButton } from '@kanelabs/ux/components/Neu/NeuButton/NeuButton.stories';
+export { default as NeuView } from '@kanelabs/ux/components/Neu/NeuView/NeuView.stories';
+export { default as NeuInput } from '@kanelabs/ux/components/Neu/NeuInput.stories';
+export { default as NeuSwitch } from '@kanelabs/ux/components/Neu/NeuSwitch.stories';
 
 /* Components */
 // export { default as Appbar } from '../../Bread/Components/Appbar/Appbar.stories';

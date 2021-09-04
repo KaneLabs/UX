@@ -87,6 +87,8 @@ export enum TypographyTypes {
   overline = 'overline',
 }
 
+export { default as Screen } from './Screen';
+
 export const Typography = {
   [TypographyTypes.h1]: {
     fontWeight: '200',

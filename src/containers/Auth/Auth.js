@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { SafeAreaView, ImageBackground, Platform } from 'react-native';
-import { ME, ACCOUNT, SET_ACCOUNT } from 'eros-ui/queries';
+import { ME, ACCOUNT, SET_ACCOUNT } from '@kanelabs/ux/queries';
 import { useQuery, useMutation } from '@apollo/client';
-import { useDimensions } from 'eros-ui/state';
-import { FEED_WIDTH, makeStyles } from 'eros-ui/theme';
+import { useDimensions } from '@kanelabs/ux/state';
+import { FEED_WIDTH, makeStyles } from '@kanelabs/ux/theme';
 import KeyboardAwareContainer from '../../components/KeyboardAwareContainer';
 import AuthPhoneOrEmail from './AuthPhoneOrEmail';
 import AuthSignup from './AuthSignup';

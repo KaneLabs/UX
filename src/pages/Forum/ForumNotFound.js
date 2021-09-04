@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Title } from 'eros-ui/components';
+import { Container, Title } from '@kanelabs/ux/components';
 import Link from 'next/link';
 
 export const ForumNotFound = ({ url }) => (

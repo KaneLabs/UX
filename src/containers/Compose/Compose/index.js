@@ -4,14 +4,14 @@ import {
   NavMutatingScroll,
   View,
   Container,
-} from 'eros-ui/components';
+} from '@kanelabs/ux/components';
 
 import { StyleSheet } from 'react-native';
-import { CREATE_POST, CREATE_PRESIGNED_URL } from 'eros-ui/queries';
+import { CREATE_POST, CREATE_PRESIGNED_URL } from '@kanelabs/ux/queries';
 import { useMutation } from '@apollo/client';
-import { makeStyles } from 'eros-ui/theme';
-import { useDimensions, useCompose, ComposeActions } from 'eros-ui/state';
-import { convertFilesToBase64, signFile } from 'eros-ui/fns';
+import { makeStyles } from '@kanelabs/ux/theme';
+import { useDimensions, useCompose, ComposeActions } from '@kanelabs/ux/state';
+import { convertFilesToBase64, signFile } from '@kanelabs/ux/fns';
 import ComposeToolbar from '../ComposeToolbar';
 import ComposeBody from '../ComposeBody';
 import ComposeTitle from '../ComposeTitle';

@@ -7,7 +7,7 @@ import {
   StyleSheet,
 } from 'react-native';
 
-import { makeStyles, Theme, TypographyTypes } from 'eros-ui/theme';
+import { makeStyles, Theme, TypographyTypes } from '@kanelabs/ux/theme';
 import Typography from '../Typography';
 
 export interface ButtonProps extends Omit<RNButtonProps, 'title' | 'onPress'> {
@@ -40,7 +40,7 @@ const Button = forwardRef<TouchableOpacity, ButtonProps>((props, ref) => {
   return (
     <TouchableOpacity
       ref={ref}
-      style={StyleSheet.compose(styles.default, style)}
+      style={StyleSheet.compose(styles.Button, style)}
       onPress={onPress}
       {...rest}>
       <View>
@@ -59,7 +59,7 @@ const Button = forwardRef<TouchableOpacity, ButtonProps>((props, ref) => {
 });
 
 const useStyles = makeStyles((theme: Theme) => ({
-  default: {
+  Button: {
     color: theme.Typography.button.color,
     paddingHorizontal: theme.unit * 2.5,
     paddingVertical: theme.unit,

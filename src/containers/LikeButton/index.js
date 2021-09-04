@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { Platform } from 'react-native';
-import { IconButton } from 'eros-ui/components';
-import { useTheme } from 'eros-ui/theme';
+import { IconButton } from '@kanelabs/ux/components';
+import { useTheme } from '@kanelabs/ux/theme';
 import { useMutation } from '@apollo/client';
-import { LIKE_POST, TIMELINE } from 'eros-ui/queries';
+import { LIKE_POST, TIMELINE } from '@kanelabs/ux/queries';
 
 export const LikeButton = ({ postId, likes = 0, liked = false }) => {
   const [like] = useMutation(LIKE_POST);

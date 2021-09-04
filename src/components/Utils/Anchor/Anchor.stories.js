@@ -5,7 +5,7 @@ import { Anchor, Button, Heading, IconButton } from '../..';
 
 import Header from '../../storybook/components/Header';
 import Container from '../../storybook/components/Container';
-import { storiesOf } from 'eros-ui-storybook/helpers/storiesOf';
+import { storiesOf } from '@kanelabs/ux-storybook/helpers/storiesOf';
 
 export default storiesOf('Utils|Anchor', module)
   .addParameters({ jest: ['Anchor'] })

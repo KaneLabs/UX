@@ -1,11 +1,11 @@
 import React from 'react';
 import { StyleSheet, TouchableOpacity, View, ViewProps } from 'react-native';
 
-import Avatar from 'eros-ui/components/Avatar';
-import Row from 'eros-ui/components/Layout/Row';
+import Avatar from '@kanelabs/ux/components/Avatar';
+import Row from '@kanelabs/ux/components/Layout/Row';
 
-import Typography from 'eros-ui/components/Typography';
-import { makeStyles } from 'eros-ui/theme';
+import Typography from '@kanelabs/ux/components/Typography';
+import { makeStyles } from '@kanelabs/ux/theme';
 import { formatDistanceStrict } from 'date-fns';
 
 

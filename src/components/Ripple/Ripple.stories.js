@@ -3,9 +3,9 @@ import { Text, View } from 'react-native';
 
 import { Ripple, Card, Avatar } from '../..';
 
-import Header from 'eros-ui-storybook/components/Header';
-import Container from 'eros-ui-storybook/components/Container';
-import { storiesOf } from 'eros-ui-storybook/helpers/storiesOf';
+import Header from '@kanelabs/ux-storybook/components/Header';
+import Container from '@kanelabs/ux-storybook/components/Container';
+import { storiesOf } from '@kanelabs/ux-storybook/helpers/storiesOf';
 
 export default storiesOf('Components|Ripple', module)
   .addParameters({ jest: ['Ripple'] })

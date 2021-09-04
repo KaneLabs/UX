@@ -8,10 +8,10 @@ import {
   TextField,
   OutlinedButton,
   ActivityIndicator,
-} from 'eros-ui/components';
-import { CREATE_FORUM } from 'eros-ui/queries';
+} from '@kanelabs/ux/components';
+import { CREATE_FORUM } from '@kanelabs/ux/queries';
 import { useMutation } from '@apollo/client';
-import { makeStyles } from 'eros-ui/theme';
+import { makeStyles } from '@kanelabs/ux/theme';
 
 const INITIAL_STATE = {
   url: '',

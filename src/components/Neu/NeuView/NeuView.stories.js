@@ -1,8 +1,8 @@
 import React from 'react';
 
 import { View } from 'react-native';
-import Container from 'eros-ui-storybook/components/Container';
-import { storiesOf } from 'eros-ui-storybook/helpers/storiesOf';
+import Container from '@kanelabs/ux-storybook/components/Container';
+import { storiesOf } from '@kanelabs/ux-storybook/helpers/storiesOf';
 import NeuView from '.';
 
 export default storiesOf('Experimental|Neumorphic', module)

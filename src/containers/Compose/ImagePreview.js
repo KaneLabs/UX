@@ -1,8 +1,8 @@
 import React from 'react';
 import { ImageBackground } from 'react-native';
-import IconButton from 'eros-ui/components/IconButton';
-import { useTheme, makeStyles } from 'eros-ui/theme';
-import { useDimensions } from 'eros-ui/state';
+import IconButton from '@kanelabs/ux/components/IconButton';
+import { useTheme, makeStyles } from '@kanelabs/ux/theme';
+import { useDimensions } from '@kanelabs/ux/state';
 
 const ImagePreview = ({
   uri,

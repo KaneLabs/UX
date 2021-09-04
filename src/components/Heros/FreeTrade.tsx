@@ -1,8 +1,8 @@
 import React from 'react';
-import { SplitHero, OutlinedButton } from 'eros-ui/components';
+import { SplitHero, OutlinedButton } from '@kanelabs/ux/components';
 import Link from 'next/link';
 
-import RomanForaImage from 'eros-ui/assets/Roman_Fora-1920x1080.jpg';
+import RomanForaImage from '@kanelabs/ux/assets/Roman_Fora-1920x1080.jpg';
 
 const JoinButtonLink = () => (
   <Link passHref href="/join">

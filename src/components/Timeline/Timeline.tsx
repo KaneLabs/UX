@@ -1,8 +1,8 @@
 import React from 'react';
 import { FlatList, Platform, useWindowDimensions } from 'react-native';
-import Post from 'eros-ui/components/Post';
-import { makeStyles, useTheme } from 'eros-ui/theme';
-import { SET_NAV_DOCKED } from 'eros-ui/queries';
+import Post from '@kanelabs/ux/components/Post';
+import { makeStyles, useTheme } from '@kanelabs/ux/theme';
+import { SET_NAV_DOCKED } from '@kanelabs/ux/queries';
 import { useMutation } from '@apollo/client';
 
 export interface Author {

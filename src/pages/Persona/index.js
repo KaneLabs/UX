@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { useRouter } from 'next/router';
-import { Persona } from 'eros-ui/containers';
-import AvailablePersonaPage from 'eros-ui/pages/Persona/Available';
+import { Persona } from '@kanelabs/ux/containers';
+import AvailablePersonaPage from '@kanelabs/ux/pages/Persona/Available';
 import { useQuery } from '@apollo/client';
-import { PERSONA } from 'eros-ui/queries';
+import { PERSONA } from '@kanelabs/ux/queries';
 
 export default () => {
   const router = useRouter();

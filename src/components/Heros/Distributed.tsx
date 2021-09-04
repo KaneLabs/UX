@@ -1,6 +1,6 @@
 import React from 'react';
-import { SplitHero } from 'eros-ui/components';
-import SaintGeorgeHero from 'eros-ui/assets/Saint_George_Tuscany-1920x1080.jpg';
+import { SplitHero } from '@kanelabs/ux/components';
+import SaintGeorgeHero from '@kanelabs/ux/assets/Saint_George_Tuscany-1920x1080.jpg';
 
 export const DistributedHero = ({ imageSide = 'left', ...rest }) => (
   <SplitHero

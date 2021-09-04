@@ -1,11 +1,11 @@
 import * as React from 'react';
 import { View } from 'react-native';
-import Line from 'eros-ui/components/Line';
-import PersonaHeader from 'eros-ui/components/Persona/PersonaHeader';
-import TimelineList from 'eros-ui/components/TimelineList';
+import Line from '@kanelabs/ux/components/Line';
+import PersonaHeader from '@kanelabs/ux/components/Persona/PersonaHeader';
+import TimelineList from '@kanelabs/ux/components/TimelineList';
 import { useQuery } from '@apollo/client';
-import { TIMELINE } from 'eros-ui/queries';
-import { FEED_WIDTH } from 'eros-ui/theme';
+import { TIMELINE } from '@kanelabs/ux/queries';
+import { FEED_WIDTH } from '@kanelabs/ux/theme';
 
 export const TIMELINE_LIMIT = 4;
 

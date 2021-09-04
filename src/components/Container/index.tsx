@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import { View, StyleSheet, ViewProps } from 'react-native';
-import { makeStyles } from 'eros-ui/theme';
+import { makeStyles } from '@kanelabs/ux/theme';
 
 const useStyles = makeStyles(() => ({
   container: {

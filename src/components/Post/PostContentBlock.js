@@ -1,7 +1,7 @@
 import React from 'react';
 import { Image } from 'react-native';
-import { BodyText, View, Video } from 'eros-ui/components';
-import { makeStyles, useTheme } from 'eros-ui/theme';
+import { BodyText, View, Video } from '@kanelabs/ux/components';
+import { makeStyles, useTheme } from '@kanelabs/ux/theme';
 
 const PostContentBlockImage = ({ uri, aspectRatio, width }) => {
   const [{ gutter, FEED_WIDTH }] = useTheme();

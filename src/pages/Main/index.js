@@ -1,12 +1,12 @@
 import * as React from 'react';
 import { View } from 'react-native';
-import { Container, Typography } from 'eros-ui/components';
-import { makeStyles, useTheme } from 'eros-ui/theme';
-import Latest from 'eros-ui/containers/Latest';
-import MasonryList from 'eros-ui/containers/MasonryList';
-import PictureInPicture from 'eros-ui/containers/PictureInPicture';
+import { Container, Typography } from '@kanelabs/ux/components';
+import { makeStyles, useTheme } from '@kanelabs/ux/theme';
+import Latest from '@kanelabs/ux/containers/Latest';
+import MasonryList from '@kanelabs/ux/containers/MasonryList';
+import PictureInPicture from '@kanelabs/ux/containers/PictureInPicture';
 
-import { useDimensions, useDrawer, useSocialDrawer } from 'eros-ui/state';
+import { useDimensions, useDrawer, useSocialDrawer } from '@kanelabs/ux/state';
 
 const useStyles = makeStyles((theme) => ({
   container: {

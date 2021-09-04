@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { RouteProp } from '@react-navigation/core';
-import { Country } from 'eros-ui/components/CountryCodeMenu/country-data';
+import { Country } from '@kanelabs/ux/components/CountryCodeMenu/country-data';
 export declare type AuthenticatedUser = {
     token: string;
 };

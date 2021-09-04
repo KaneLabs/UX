@@ -1,6 +1,6 @@
 import React from 'react';
-import { Multiline } from 'eros-ui/components';
-import { unit } from 'eros-ui/theme';
+import { Multiline } from '@kanelabs/ux/components';
+import { unit } from '@kanelabs/ux/theme';
 
 const ComposeTitle = ({ title, setTitle }) => (
   <Multiline

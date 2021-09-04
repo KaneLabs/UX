@@ -1,6 +1,6 @@
 import React from 'react';
 import { ViewStyle } from 'react-native';
-import { PaperProps } from 'eros-ui/components/Paper';
+import { PaperProps } from '@kanelabs/ux/components/Paper';
 export interface ChipProps extends PaperProps {
     text?: string;
     flat?: boolean;

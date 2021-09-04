@@ -6,8 +6,9 @@ import {
   TouchableWithoutFeedbackProps,
   StyleSheet,
 } from 'react-native';
-import { makeStyles, Theme } from 'eros-ui/theme';
-
+import { makeStyles, Theme } from '@kanelabs/ux/theme';
+import colorString from 'color-string';
+import Color from 'color';
 import { shadow as shadowStyles } from '../Shadow';
 
 declare module 'react-native' {
@@ -21,6 +22,7 @@ export interface PaperProps extends TouchableWithoutFeedbackProps {
   children?: ReactNode;
   style?: ViewStyle;
   shadow?: number;
+  active?: boolean;
   onPress?: () => void;
   onMouseEnter?: () => void;
   onMouseLeave?: () => void;
@@ -34,6 +36,7 @@ const Paper = forwardRef<TouchableWithoutFeedback, PaperProps>(
       style,
       shadow = 4,
       onPress,
+      active = false,
       fullWidth = false,
       ...rest
     } = props;
@@ -43,9 +46,10 @@ const Paper = forwardRef<TouchableWithoutFeedback, PaperProps>(
       <TouchableWithoutFeedback ref={ref} onPress={onPress} {...rest}>
         <View
           style={StyleSheet.flatten([
-            styles.paper,
+            styles.Paper,
             shadowStyles(shadow),
             fullWidth && { width: '100%' },
+            active && styles.PaperActive,
             style,
           ])}>
           {children}
@@ -55,14 +59,28 @@ const Paper = forwardRef<TouchableWithoutFeedback, PaperProps>(
   },
 );
 
-const useStyles = makeStyles((theme: Theme) => ({
-  paper: {
-    backgroundColor: theme.canvas,
-    borderWidth: theme.borderWidth,
-    borderColor: theme.borderColor,
-    borderRadius: theme.padding,
-    overflow: 'hidden',
-  },
-}));
+const useStyles = makeStyles((theme: Theme) => {
+  const fadedPrimary = Color(
+    colorString.to.rgb(colorString.get.rgb(theme.primaryColor)),
+  ).fade(0.5);
+  fadedPrimary.color.push(fadedPrimary.valpha);
+  const realfadedPrimary = colorString.to.rgb(fadedPrimary.color);
+  return {
+    Paper: {
+      backgroundColor: theme.canvas,
+      borderWidth: 1,
+      borderColor: theme.borderColor,
+      borderRadius: theme.padding,
+      overflow: 'hidden',
+    },
+    PaperActive: {
+      borderWidth: 1,
+      borderRadius: theme.padding,
+      overflow: 'hidden',
+      backgroundColor: realfadedPrimary,
+      borderColor: theme.primaryColor,
+    },
+  };
+});
 
 export default Paper;

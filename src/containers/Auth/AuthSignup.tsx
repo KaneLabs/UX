@@ -5,8 +5,8 @@ import {
   TextField,
   Title,
   OutlinedButton,
-} from 'eros-ui/components';
-import { AUTH_SIGNUP } from 'eros-ui/queries';
+} from '@kanelabs/ux/components';
+import { AUTH_SIGNUP } from '@kanelabs/ux/queries';
 import { useMutation } from '@apollo/client';
 
 const AuthSignup = ({ onSuccess }) => {

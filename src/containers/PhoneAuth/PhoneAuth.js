@@ -5,11 +5,11 @@ import {
   Platform,
   StyleSheet,
 } from 'react-native';
-import { Title, View, KeyboardAwareContainer } from 'eros-ui/components';
-import { ACCOUNT, SET_ACCOUNT } from 'eros-ui/queries';
+import { Title, View, KeyboardAwareContainer } from '@kanelabs/ux/components';
+import { ACCOUNT, SET_ACCOUNT } from '@kanelabs/ux/queries';
 import { useQuery, useMutation } from '@apollo/client';
-import { useDimensions } from 'eros-ui/state';
-import { useTheme, makeStyles } from 'eros-ui/theme';
+import { useDimensions } from '@kanelabs/ux/state';
+import { useTheme, makeStyles } from '@kanelabs/ux/theme';
 import PhoneAuthSet from './PhoneAuthSet';
 import PhoneAuthVerify from './PhoneAuthVerify';
 // import SetProfilePic from './SetProfilePic';

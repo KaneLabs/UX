@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Platform } from 'react-native';
-import { ListItem, ListItemIcon, ListItemText } from 'eros-ui/components';
+import { ListItem, ListItemIcon, ListItemText } from '@kanelabs/ux/components';
 
 const PersonaListItem = ({ onPress }) => (
   <ListItem onPress={onPress}>

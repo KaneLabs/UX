@@ -11,7 +11,7 @@ import {
   PanGestureHandler,
   PanGestureHandlerGestureEvent,
 } from 'react-native-gesture-handler';
-import { Theme, makeStyles } from 'eros-ui/theme';
+import { Theme, makeStyles } from '@kanelabs/ux/theme';
 
 type AnimatedGHContext = {
   startX: number;

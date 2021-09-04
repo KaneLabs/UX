@@ -1,7 +1,7 @@
 import React from 'react';
 import { Platform, View } from 'react-native';
-import { TextField } from 'eros-ui/components';
-import { makeStyles } from 'eros-ui/theme';
+import { TextField } from '@kanelabs/ux/components';
+import { makeStyles } from '@kanelabs/ux/theme';
 
 export const SearchInput = (props) => {
   const styles = useStyles();

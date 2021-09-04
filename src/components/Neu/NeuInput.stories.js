@@ -4,8 +4,8 @@ import { View, TextInput } from 'react-native';
 import NeuInput from './NeuInput';
 import NeuView from './NeuView';
 
-import Container from 'eros-ui-storybook/components/Container';
-import { storiesOf } from 'eros-ui-storybook/helpers/storiesOf';
+import Container from '@kanelabs/ux-storybook/components/Container';
+import { storiesOf } from '@kanelabs/ux-storybook/helpers/storiesOf';
 import ForaLogo from '../ForaLogo';
 
 const InputStory = () => {

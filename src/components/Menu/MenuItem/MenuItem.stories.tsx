@@ -1,14 +1,14 @@
 import React from 'react';
 import { Text } from 'react-native';
 
-import { MenuItem } from 'eros-ui/components/Menu';
-import Paper from 'eros-ui/components/Paper';
-import Divider from 'eros-ui/components/Divider';
-import Icon from 'eros-ui/components/Icon';
+import { MenuItem } from '@kanelabs/ux/components/Menu';
+import Paper from '@kanelabs/ux/components/Paper';
+import Divider from '@kanelabs/ux/components/Divider';
+import Icon from '@kanelabs/ux/components/Icon';
 
-import Header from 'eros-ui-storybook/components/Header';
-import Container from 'eros-ui-storybook/components/Container';
-import { storiesOf } from 'eros-ui-storybook/helpers/storiesOf';
+import Header from '@kanelabs/ux-storybook/components/Header';
+import Container from '@kanelabs/ux-storybook/components/Container';
+import { storiesOf } from '@kanelabs/ux-storybook/helpers/storiesOf';
 
 export default storiesOf('Components|Menu/MenuItem', module)
   .addParameters({ jest: ['MenuItem'] })

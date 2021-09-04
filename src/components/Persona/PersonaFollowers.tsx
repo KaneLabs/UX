@@ -1,6 +1,8 @@
 import React from 'react';
-import Row from 'eros-ui/components/Row';
-import Typography, { TypographyTypes } from 'eros-ui/components/Typography';
+import Row from '@kanelabs/ux/components/Row';
+import Typography, {
+  TypographyTypes,
+} from '@kanelabs/ux/components/Typography';
 
 const PersonaFollowers: React.FC<{ followers: number }> = ({ followers, ...props }) => (
   <Row {...props} center>

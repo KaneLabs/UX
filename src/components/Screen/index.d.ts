@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { ContainerProps } from 'eros-ui/components/Container';
+import { ContainerProps } from '@kanelabs/ux/components/Container';
 interface ScreenProps extends ContainerProps {
     padded?: boolean;
 }

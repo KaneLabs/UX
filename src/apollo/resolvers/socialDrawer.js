@@ -1,4 +1,4 @@
-import { SOCIAL_DRAWER } from 'eros-ui/queries';
+import { SOCIAL_DRAWER } from '@kanelabs/ux/queries';
 
 const modals = {
   defaults: {

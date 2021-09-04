@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Image, StyleSheet } from 'react-native';
-import { Typography, Button, Anchor } from 'eros-ui/components';
-import ClassicalWaveImage from 'eros-ui/assets/ClassicalWave.jpg';
+import { Typography, Button, Anchor } from '@kanelabs/ux/components';
+import ClassicalWaveImage from '@kanelabs/ux/assets/ClassicalWave.jpg';
 import { storiesOf } from '../helpers/storiesOf';
 
 import Container from '../components/Container';
@@ -56,8 +56,12 @@ export default storiesOf('Docs|Start Here', module).add('Home', () => (
     </View>
 
     <View style={styles.center}>
-      <Typography type="h1" gutterBottom>Eros</Typography>
-      <Typography type="h4" gutterBottom>Elite Experiences</Typography>
+      <Typography type="h1" gutterBottom>
+        KaneLabsUX
+      </Typography>
+      <Typography type="h4" gutterBottom>
+        Elite Experiences
+      </Typography>
       <Typography type="h5" style={styles.header}>
         Cross Platform
       </Typography>

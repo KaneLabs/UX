@@ -1,6 +1,6 @@
 import React from 'react';
-import { Row, LikeButton, View, BodyText } from 'eros-ui/components';
-import { makeStyles } from 'eros-ui/theme';
+import { Row, LikeButton, View, BodyText } from '@kanelabs/ux/components';
+import { makeStyles } from '@kanelabs/ux/theme';
 
 export const PostButtons = ({ postId, likes = 0, liked = false }) => {
   const styles = useStyles();

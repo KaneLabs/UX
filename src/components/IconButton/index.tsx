@@ -5,8 +5,8 @@ import {
   ViewStyle,
   StyleSheet,
 } from 'react-native';
-import Icon from 'eros-ui/components/Icon';
-import { useTheme, makeStyles, Theme } from 'eros-ui/theme';
+import Icon from '@kanelabs/ux/components/Icon';
+import { useTheme, makeStyles, Theme } from '@kanelabs/ux/theme';
 import shadow from '../Shadow';
 
 export interface IconButtonProps extends TouchableOpacityProps {

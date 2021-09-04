@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { TouchableOpacity } from 'react-native';
 import Swiper from 'react-native-web-swiper';
-import { unit } from 'eros-ui/theme';
+import { unit } from '@kanelabs/ux/theme';
 
 import CreatorOwned from '../Heros/CreatorOwned';
 import Distributed from '../Heros/Distributed';

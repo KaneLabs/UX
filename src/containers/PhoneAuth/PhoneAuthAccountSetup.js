@@ -1,9 +1,9 @@
 import React from 'react';
 // import { StyleSheet } from 'react-native';
-import { UpdateAccount } from 'eros-ui/components';
-import { ACCOUNT } from 'eros-ui/queries';
+import { UpdateAccount } from '@kanelabs/ux/components';
+import { ACCOUNT } from '@kanelabs/ux/queries';
 import { useQuery } from '@apollo/client';
-import { makeStyles } from 'eros-ui/theme';
+import { makeStyles } from '@kanelabs/ux/theme';
 import AccountSetupHeadline from './AccountSetupHeadline';
 
 export const PhoneAuthAccountSetup = ({ onSuccess }) => {

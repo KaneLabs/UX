@@ -1,7 +1,7 @@
 import React from 'react';
-import { SplitHero } from 'eros-ui/components';
+import { SplitHero } from '@kanelabs/ux/components';
 // import dynamic from 'next/dynamic';
-import DeathOfSocratesImage from 'eros-ui/assets/The_Death_of_Socrates-1920x1080.jpg';
+import DeathOfSocratesImage from '@kanelabs/ux/assets/The_Death_of_Socrates-1920x1080.jpg';
 
 export const FreeSpeechHero = ({ imageSide = 'left', ...rest }) => (
   <SplitHero

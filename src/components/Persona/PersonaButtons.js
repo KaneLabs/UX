@@ -1,7 +1,7 @@
 import React from 'react';
-import { Row, TipButton, FollowButton } from 'eros-ui/components';
-import { makeStyles } from 'eros-ui/theme';
-import EditButton from 'eros-ui/containers/EditButton';
+import { Row, TipButton, FollowButton } from '@kanelabs/ux/components';
+import { makeStyles } from '@kanelabs/ux/theme';
+import EditButton from '@kanelabs/ux/containers/EditButton';
 
 export const PersonaButtons = ({ handle, following, isMe = false }) => {
   const styles = useStyles();

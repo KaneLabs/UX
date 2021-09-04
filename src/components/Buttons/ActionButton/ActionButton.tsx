@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, TouchableOpacity } from 'react-native';
 
-import { useTheme, makeStyles } from 'eros-ui/theme';
+import { useTheme, makeStyles } from '@kanelabs/ux/theme';
 import ButtonText from '../../Typography/ButtonText';
 
 export const ActionButton = (props) => {

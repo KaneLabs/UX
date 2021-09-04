@@ -1,9 +1,9 @@
 import React from 'react';
 import { ScrollView, View } from 'react-native';
-import { Backdrop } from 'eros-ui/components';
-import { makeStyles, useTheme } from 'eros-ui/theme';
+import { Backdrop } from '@kanelabs/ux/components';
+import { makeStyles, useTheme } from '@kanelabs/ux/theme';
 
-import { useDimensions } from 'eros-ui/state';
+import { useDimensions } from '@kanelabs/ux/state';
 
 export const Modal = (props) => {
   const {

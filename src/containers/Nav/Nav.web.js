@@ -7,11 +7,11 @@ import {
   shadow,
   AccountLinkButton,
   JoinLinkButton,
-} from 'eros-ui/components';
+} from '@kanelabs/ux/components';
 
 import { useRouter } from 'next/router';
-import { useNav, useAccount } from 'eros-ui/state';
-import { makeStyles } from 'eros-ui/theme';
+import { useNav, useAccount } from '@kanelabs/ux/state';
+import { makeStyles } from '@kanelabs/ux/theme';
 import AccountMenuButton from '../AccountMenuButton';
 
 const hideOnPaths = ['/join'];

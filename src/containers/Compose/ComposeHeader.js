@@ -1,8 +1,8 @@
 import React from 'react';
 import { useQuery } from '@apollo/client';
-import { ACCOUNT } from 'eros-ui/queries';
+import { ACCOUNT } from '@kanelabs/ux/queries';
 import { PersonaHeaderMain } from '../..';
-// import { textColor } from 'eros-ui/theme';
+// import { textColor } from '@kanelabs/ux/theme';
 
 const ComposeHeader = ({ title = null, mobile = false }) => {
   const { data: accountData } = useQuery(ACCOUNT);

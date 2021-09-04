@@ -1,6 +1,6 @@
 import React from 'react';
 import { useRouter } from 'next/router';
-import Compose from 'eros-ui/containers/Compose/Compose';
+import Compose from '@kanelabs/ux/containers/Compose/Compose';
 
 export default () => {
   const router = useRouter();

@@ -7,9 +7,9 @@ import {
   ScrollView,
   View,
 } from 'react-native';
-import { Typography } from 'eros-ui/components';
-import { useTheme, makeStyles, shadow } from 'eros-ui/theme';
-import { useDrawer, useSocialDrawer } from 'eros-ui/state';
+import { Typography } from '@kanelabs/ux/components';
+import { useTheme, makeStyles, shadow } from '@kanelabs/ux/theme';
+import { useDrawer, useSocialDrawer } from '@kanelabs/ux/state';
 
 import Search from '../Search';
 

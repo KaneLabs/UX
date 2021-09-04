@@ -1,6 +1,6 @@
 import * as React from 'react';
-import ThemeProvider from 'eros-ui/theme/ThemeProvider';
-import useTheme from 'eros-ui/theme/useTheme';
+import ThemeProvider from '@kanelabs/ux/theme/ThemeProvider';
+import useTheme from '@kanelabs/ux/theme/useTheme';
 import { addons } from '@storybook/addons';
 // import { MockedProvider } from '@apollo/client/testing';
 

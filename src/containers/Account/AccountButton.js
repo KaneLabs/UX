@@ -1,10 +1,10 @@
 import React from 'react';
 import { TouchableOpacity, View } from 'react-native';
-import { ACCOUNT } from 'eros-ui/queries';
+import { ACCOUNT } from '@kanelabs/ux/queries';
 import { useQuery } from '@apollo/client';
-import { Avatar, Typography, Button } from 'eros-ui/components';
-import { makeStyles } from 'eros-ui/theme';
-import { useAccount } from 'eros-ui/state';
+import { Avatar, Typography, Button } from '@kanelabs/ux/components';
+import { makeStyles } from '@kanelabs/ux/theme';
+import { useAccount } from '@kanelabs/ux/state';
 
 export const AccountButton = ({ size = 32, style = null, ...rest }) => {
   const account = useAccount();

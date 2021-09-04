@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { ViewProps, View } from 'react-native';
-import { makeStyles, Theme } from 'eros-ui/theme';
-// import { View } from 'eros-ui/components';
+import { makeStyles, Theme } from '@kanelabs/ux/theme';
+// import { View } from '@kanelabs/ux/components';
 // import { useRouter } from 'next/router';
 import PostHeader from './PostHeader';
 // import PostContent from './PostContent';

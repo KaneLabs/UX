@@ -1,7 +1,7 @@
 import React from 'react';
 import { Dimensions, View } from 'react-native';
 
-import { NAV_HEIGHT, appBackgroundColor } from 'eros-ui/theme';
+import { NAV_HEIGHT, appBackgroundColor } from '@kanelabs/ux/theme';
 
 const { height, width } = Dimensions.get('window');
 

@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { FlatList, RefreshControl, View } from 'react-native';
-import { Post } from 'eros-ui/components';
-import { useTheme, makeStyles } from 'eros-ui/theme';
-import { TIMELINE, NEW_POST, SET_NAV_DOCKED } from 'eros-ui/queries';
+import { Post } from '@kanelabs/ux/components';
+import { useTheme, makeStyles } from '@kanelabs/ux/theme';
+import { TIMELINE, NEW_POST, SET_NAV_DOCKED } from '@kanelabs/ux/queries';
 import { useQuery, useMutation } from '@apollo/client';
-import { useDimensions } from 'eros-ui/state';
+import { useDimensions } from '@kanelabs/ux/state';
 
 const TIMELINE_LIMIT = 5;
 

@@ -7,11 +7,11 @@ import {
   IconButton,
   Title,
   shadow,
-} from 'eros-ui/components';
+} from '@kanelabs/ux/components';
 // import Link from 'next/link';
 // import { useRouter } from 'next/router';
-import { useNav, useAccount } from 'eros-ui/state';
-import { makeStyles } from 'eros-ui/theme';
+import { useNav, useAccount } from '@kanelabs/ux/state';
+import { makeStyles } from '@kanelabs/ux/theme';
 
 const useStyles = makeStyles((theme) => ({
   core: {

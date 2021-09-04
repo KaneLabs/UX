@@ -1,7 +1,7 @@
 import React from 'react';
 import { View } from 'react-native';
-import { Title, BodyText } from 'eros-ui/components';
-import { makeStyles } from 'eros-ui/theme';
+import { Title, BodyText } from '@kanelabs/ux/components';
+import { makeStyles } from '@kanelabs/ux/theme';
 
 export const AccountSetupHeadline = ({ last12 }) => (
   <View style={styles.headline} testID="AccountSetupHeadline">

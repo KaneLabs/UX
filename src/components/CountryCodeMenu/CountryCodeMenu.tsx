@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { View, TouchableWithoutFeedback } from 'react-native';
-import { makeStyles, Theme } from 'eros-ui/theme';
+import { makeStyles, Theme } from '@kanelabs/ux/theme';
 import Menu from '../Menu';
 import Typography from '../Typography';
 import countries, { Country } from './country-data';

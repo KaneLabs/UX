@@ -1,14 +1,12 @@
 import * as React from 'react';
-import Screen from 'eros-ui/components/Screen';
-import AddPaymentMethod from 'eros-ui/containers/Payments/AddPaymentMethod';
+import Screen from '@kanelabs/ux/components/Screen';
+import AddPaymentMethod from '@kanelabs/ux/containers/Payments/AddPaymentMethod';
 import { SafeAreaView } from 'react-native';
 
 const AddPaymentMethodScreen: React.FC = () => {
   return (
-    <Screen>
-      <SafeAreaView style={{ flex: 1 }}>
-        <AddPaymentMethod />
-      </SafeAreaView>
+    <Screen safe padNav padded>
+      <AddPaymentMethod hideTitle />
     </Screen>
   );
 };

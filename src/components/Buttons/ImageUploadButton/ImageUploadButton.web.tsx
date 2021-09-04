@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useCallback } from 'react';
-import { buildFileSelector } from 'eros-ui/fns';
+import { buildFileSelector } from '@kanelabs/ux/fns';
 import IconButton from '../../IconButton';
 
 const ImageUploadButton = ({

@@ -1,5 +1,5 @@
 import React from 'react';
-import { TabBar, Tab } from 'eros-ui/components';
+import { TabBar, Tab } from '@kanelabs/ux/components';
 // view-day icon for feed on Material
 // cash-register icon is pretty cool
 const PersonaTabBar = () => (

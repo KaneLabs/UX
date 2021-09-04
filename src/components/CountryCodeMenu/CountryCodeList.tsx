@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { makeStyles, Theme } from 'eros-ui/theme';
+import { makeStyles, Theme } from '@kanelabs/ux/theme';
 import List, { ListItem, ListItemText } from '../List';
 import countries, { Country, selectWhitelistedCountries } from './country-data';
 

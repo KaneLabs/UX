@@ -3,8 +3,8 @@ import { View } from 'react-native';
 
 import Chip from './Chip';
 
-import Container from 'eros-ui-storybook/components/Container';
-import { storiesOf } from 'eros-ui-storybook/helpers/storiesOf';
+import Container from '@kanelabs/ux-storybook/components/Container';
+import { storiesOf } from '@kanelabs/ux-storybook/helpers/storiesOf';
 
 export default storiesOf('Components|Chip', module)
   .addParameters({ jest: ['Chip'] })

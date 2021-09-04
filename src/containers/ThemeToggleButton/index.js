@@ -1,6 +1,6 @@
 import React from 'react';
-import { IconButton } from 'eros-ui/components';
-import { useTheme } from 'eros-ui/theme';
+import { IconButton } from '@kanelabs/ux/components';
+import { useTheme } from '@kanelabs/ux/theme';
 
 const ThemeToggleButton = () => {
   const [theme, toggleTheme] = useTheme();

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { View } from 'react-native';
-import { makeStyles } from 'eros-ui/theme';
+import { makeStyles } from '@kanelabs/ux/theme';
 import PersonaHeaderAvatar from './PersonaHeaderAvatar';
 import PersonaDescription from './PersonaDescription';
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Platform } from 'react-native';
-import { Avatar, Title, Caption, Row } from 'eros-ui/components';
+import { Avatar, Title, Caption, Row } from '@kanelabs/ux/components';
 
 export const DrawerHeader = ({ avatarUrl, display, handle }) => (
   <View style={{ paddingHorizontal: 8, paddingVertical: 8 }}>

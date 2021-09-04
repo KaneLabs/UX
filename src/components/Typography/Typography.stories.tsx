@@ -3,10 +3,10 @@ import { View } from 'react-native';
 import { withKnobs, text } from '@storybook/addon-knobs';
 
 import Typography from './Typography';
-import { TypographyTypes } from 'eros-ui/theme';
+import { TypographyTypes } from '@kanelabs/ux/theme';
 
-import Container from 'eros-ui-storybook/components/Container';
-import { storiesOf } from 'eros-ui-storybook/helpers/storiesOf';
+import Container from '@kanelabs/ux-storybook/components/Container';
+import { storiesOf } from '@kanelabs/ux-storybook/helpers/storiesOf';
 
 const TypographyStories = () => {
   const Text = text('Text', 'The spectacle before us was indeed sublime.');

@@ -1,6 +1,6 @@
 import React from 'react';
-import Paper from 'eros-ui/components/Paper';
-import { makeStyles } from 'eros-ui/theme';
+import Paper from '@kanelabs/ux/components/Paper';
+import { makeStyles } from '@kanelabs/ux/theme';
 import PostHeader from './PostHeader';
 import PostContent from './PostContent';
 import PostButtons from './PostButtons';

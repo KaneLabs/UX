@@ -1,9 +1,9 @@
 {
-  "name": "eros-ui",
+  "name": "@kanelabs/ux",
   "version": "0.0.18",
   "private": false,
   "main": "lib",
-  "homepage": "https://eros.kanelabs.com",
+  "homepage": "https://ux.kanelabs.com",
   "license": "SEE LICENSE IN LICENSE.md",
   "author": {
     "name": "Kane Labs",
@@ -12,16 +12,19 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/kanelabs/eros-ui.git"
+    "url": "git://github.com/kanelabs/ux.git"
   },
   "scripts": {
-    "dev:all": "yarn write:ip && concurrently \"yarn start\" \"yarn storybook\" \"yarn ios\"",
-    "dev:ios": "yarn ios",
-    "dev:android": "yarn android",
-    "dev:web": "yarn write:ip && concurrently \"yarn start\" \"yarn web\"",
-    "android": "npx react-native run-android",
-    "ios": "npx react-native run-ios --simulator=\"iPhone SE (2nd generation)\"",
+    "dev": "yarn dev:all",
+    "dev:all": "yarn write:ip && npx concurrently \"yarn start\" \"yarn start:web\" \"yarn start:ios\" \"yarn start:android\"",
+    "dev:ios": "yarn start:ios",
+    "dev:android": "yarn start:android",
+    "dev:native": "yarn write:ip && npx concurrently \"yarn start\" \"yarn start:ios\" \"yarn start:android\"",
+    "dev:web": "yarn write:ip && npx concurrently \"yarn start\" \"yarn start:web\"",
+    "start:android": "npx react-native run-android",
+    "start:ios": "npx react-native run-ios --simulator=\"iPhone SE (2nd generation)\"",
     "start": "yarn write:ip && react-native start",
+    "start:web": "yarn write:ip && start-storybook start -p 7007",
     "write:ip": "echo export default \"'\"$(ifconfig en0 | awk '$1 == \"inet\" {print $2}')\"'\"\";\" > ./src/constants/ip.ts",
     "install:pod": "cd ios && pod install && cd ../",
     "reset": "yarn clean && yarn && yarn build && yarn dev",
@@ -33,9 +36,7 @@
     "test:integration": "echo \"No Integration Tests\"",
     "test:e2e": "echo \"No E2E Tests\"",
     "lint": "eslint src",
-    "web": "yarn storybook",
-    "storybook": "yarn write:ip && start-storybook start -p 7007",
-    "storybook:build": "build-storybook",
+    "build:storybook": "build-storybook",
     "clean": "watchman watch-del-all && rm -rf node_modules && rm -rf dist && rm -rf lib",
     "tsc": "tsc",
     "compile": "yarn build:babel",
@@ -77,6 +78,8 @@
     "@storybook/react": "^5.3",
     "@storybook/react-native": "^5.3",
     "@storybook/theming": "^5.3",
+    "@types/color": "^3.0.2",
+    "@types/color-string": "^1.5.0",
     "@types/enzyme": "^3.10.9",
     "@types/jest": "^26.0.24",
     "@types/react": "^17.0.13",
@@ -121,6 +124,7 @@
     "lodash": "^4.17.21",
     "metro-react-native-babel-preset": "^0.64.0",
     "next": "^10.0.3",
+    "prettier": "^2.3.2",
     "prop-types": "^15.7.2",
     "react": "~16.13.1",
     "react-art": "^16.13",
@@ -208,5 +212,10 @@
     "react-native-web": "*",
     "react-native-web-swiper": "^2.2.1"
   },
-  "gitHead": "8a7ced120e0edc0765c1374b6f59a64c7a08774f"
+  "gitHead": "8a7ced120e0edc0765c1374b6f59a64c7a08774f",
+  "dependencies": {
+    "color": "^4.0.1",
+    "color-convert": "^2.0.1",
+    "color-string": "^1.6.0"
+  }
 }

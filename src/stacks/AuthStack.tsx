@@ -1,10 +1,10 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
-import AuthPhone from 'eros-ui/screens/AuthPhone';
-import AuthPhoneVerify from 'eros-ui/screens/AuthPhoneVerify';
-import CountryCodeScreen from 'eros-ui/screens/CountryCodeScreen';
+import AuthPhone from '@kanelabs/ux/screens/AuthPhone';
+import AuthPhoneVerify from '@kanelabs/ux/screens/AuthPhoneVerify';
+import CountryCodeScreen from '@kanelabs/ux/screens/CountryCodeScreen';
 
-import { useTheme } from 'eros-ui/theme';
+import { useTheme } from '@kanelabs/ux/theme';
 
 const Auth = createStackNavigator();
 

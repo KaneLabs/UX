@@ -8,9 +8,9 @@ import {
   unit,
   borderRadius,
   borderColor,
-} from 'eros-ui/theme';
-import { Avatar, Caption } from 'eros-ui/components';
-import { ACCOUNT } from 'eros-ui/queries';
+} from '@kanelabs/ux/theme';
+import { Avatar, Caption } from '@kanelabs/ux/components';
+import { ACCOUNT } from '@kanelabs/ux/queries';
 import { useQuery } from '@apollo/client';
 
 export const AccountAvatar = ({

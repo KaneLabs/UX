@@ -11,8 +11,8 @@ import {
   useQuery,
   useApolloClient,
 } from '@apollo/client';
-import { storiesOf } from 'eros-ui-storybook/helpers/storiesOf';
-import createApolloClient from 'eros-ui/apollo/createClient';
+import { storiesOf } from '@kanelabs/ux-storybook/helpers/storiesOf';
+import createApolloClient from '@kanelabs/ux/apollo/createClient';
 
 const withApolloClient = (story, context) => {
   return (

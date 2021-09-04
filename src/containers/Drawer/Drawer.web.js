@@ -1,5 +1,5 @@
 import React from 'react';
-import { useAccount } from 'eros-ui/state';
+import { useAccount } from '@kanelabs/ux/state';
 import DrawerToolbar from './DrawerToolbar';
 
 export const Drawer = ({ mobile = false }) => {

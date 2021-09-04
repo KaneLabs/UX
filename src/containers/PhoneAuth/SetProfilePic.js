@@ -10,7 +10,7 @@ import {
   Caption,
   ImageUploadButton,
   Banner,
-} from 'eros-ui/components';
+} from '@kanelabs/ux/components';
 
 import { useQuery, useMutation, useLazyQuery } from '@apollo/client';
 import {
@@ -19,15 +19,15 @@ import {
   HANDLE_IS_AVAILABLE,
   UPDATE_PERSONA_AVATAR,
   UPDATE_PERSONA_BANNER,
-} from 'eros-ui/queries';
-import { isValidHandle } from 'eros-ui/fns';
+} from '@kanelabs/ux/queries';
+import { isValidHandle } from '@kanelabs/ux/fns';
 import {
   makeStyles,
   FEED_WIDTH,
   unit,
   canvasOpaque,
   canvas3Opaque,
-} from 'eros-ui/theme';
+} from '@kanelabs/ux/theme';
 
 const initialState = {
   display: '',

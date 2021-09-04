@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { View, StyleSheet } from 'react-native';
-import { Typography } from 'eros-ui/components';
+import { Typography } from '@kanelabs/ux/components';
 
 export default class Header extends Component {
   static propTypes = {

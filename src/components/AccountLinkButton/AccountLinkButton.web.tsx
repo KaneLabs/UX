@@ -1,5 +1,5 @@
 import React from 'react';
-import { AccountButton } from 'eros-ui/containers';
+import { AccountButton } from '@kanelabs/ux/containers';
 import Link from 'next/link';
 
 interface AccountLinkButtonProps {

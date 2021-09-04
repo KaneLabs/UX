@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, ImageBackground } from 'react-native';
-import { useDimensions } from 'eros-ui/state';
-import { makeStyles } from 'eros-ui/theme';
+import { useDimensions } from '@kanelabs/ux/state';
+import { makeStyles } from '@kanelabs/ux/theme';
 import { Title, Subtitle } from '../Typography';
 
 export const SplitHero = ({

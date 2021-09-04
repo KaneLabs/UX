@@ -1,6 +1,6 @@
 import React from 'react';
-import { Nav, Drawer, ComposeModal } from 'eros-ui/components';
-import AppBarBottom from 'eros-ui/containers/AppBarBottom';
+import { Nav, Drawer, ComposeModal } from '@kanelabs/ux/components';
+import AppBarBottom from '@kanelabs/ux/containers/AppBarBottom';
 
 export const MobileLayout = ({ Component, pageProps }) => (
   <>

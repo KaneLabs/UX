@@ -1,6 +1,6 @@
 import React from 'react';
 import IonIcon from 'react-native-vector-icons/Ionicons';
-import { arrayifyStyle } from 'eros-ui/fns';
+import { arrayifyStyle } from '@kanelabs/ux/fns';
 
 export const BackButton = ({ style = {}, size = 32, ...rest }) => {
   const iconStyles = [styles.default, ...arrayifyStyle(style)];

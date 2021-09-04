@@ -1,6 +1,6 @@
 import React from 'react';
 import { ImageBackground, Platform } from 'react-native';
-import makeStyles from 'eros-ui/theme/makeStyles';
+import makeStyles from '@kanelabs/ux/theme/makeStyles';
 
 export const Hero = ({ children = null, style = {}, ...rest }) => {
   const styles = useStyles();

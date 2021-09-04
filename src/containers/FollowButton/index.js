@@ -1,7 +1,7 @@
 import React from 'react';
-import { Button } from 'eros-ui/components';
+import { Button } from '@kanelabs/ux/components';
 import { useMutation } from '@apollo/client';
-import { FOLLOW, UNFOLLOW, PERSONA } from 'eros-ui/queries';
+import { FOLLOW, UNFOLLOW, PERSONA } from '@kanelabs/ux/queries';
 
 export const FollowButton = ({ handle, following }) => {
   const [follow] = useMutation(FOLLOW, {

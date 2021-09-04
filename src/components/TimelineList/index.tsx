@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import { FlatList, RefreshControl } from 'react-native';
-import Post from 'eros-ui/components/Post';
-import Line from 'eros-ui/components/Line';
-import { useTheme } from 'eros-ui/theme';
+import Post from '@kanelabs/ux/components/Post';
+import Line from '@kanelabs/ux/components/Line';
+import { useTheme } from '@kanelabs/ux/theme';
 
 const TimelineList = ({
   posts,

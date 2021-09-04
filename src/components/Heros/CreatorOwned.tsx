@@ -1,6 +1,6 @@
 import React from 'react';
-import { SplitHero } from 'eros-ui/components';
-import IncoronazioneDellaVergine from 'eros-ui/assets/Incoronazione_della_Vergine-1080x1080.jpg';
+import { SplitHero } from '@kanelabs/ux/components';
+import IncoronazioneDellaVergine from '@kanelabs/ux/assets/Incoronazione_della_Vergine-1080x1080.jpg';
 
 export const CreatorOwnedHero = ({ imageSide = 'left', ...rest }) => (
   <SplitHero

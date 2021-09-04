@@ -1,6 +1,6 @@
 import React from 'react';
-import { ActivityIndicator, Container, Forum } from 'eros-ui/components';
-import { FORUM } from 'eros-ui/queries';
+import { ActivityIndicator, Container, Forum } from '@kanelabs/ux/components';
+import { FORUM } from '@kanelabs/ux/queries';
 import { useQuery } from '@apollo/client';
 import NotFound from './ForumNotFound';
 

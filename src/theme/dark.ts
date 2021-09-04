@@ -75,6 +75,8 @@ export const iconSize = Platform.OS === 'web' ? 24 : 24;
 export const iconPadding = Platform.OS === 'web' ? 12 : 12;
 export const iconColor = textColor.secondary;
 
+export { default as Screen } from './Screen';
+
 export const Typography = {
   h1: {
     fontWeight: '200',

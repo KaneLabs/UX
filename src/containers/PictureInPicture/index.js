@@ -1,6 +1,6 @@
 import React from 'react';
-import { useDrawer, useTheme } from 'eros-ui/components';
-import { Video, VideoSource } from 'eros-ui/components';
+import { useDrawer, useTheme } from '@kanelabs/ux/components';
+import { Video, VideoSource } from '@kanelabs/ux/components';
 
 const PictureInPicture = () => {
   const { open } = useDrawer();

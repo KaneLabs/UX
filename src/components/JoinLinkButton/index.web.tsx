@@ -1,6 +1,6 @@
 import React from 'react';
-import { Button } from 'eros-ui/components';
-import { makeStyles } from 'eros-ui/theme';
+import { Button } from '@kanelabs/ux/components';
+import { makeStyles } from '@kanelabs/ux/theme';
 import Link from 'next/link';
 
 const useStyles = makeStyles((theme) => ({ button: { minWidth: 48 } }));

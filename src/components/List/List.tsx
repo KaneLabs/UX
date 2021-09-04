@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, ViewProps } from 'react-native';
-import { makeStyles } from 'eros-ui/theme';
+import { makeStyles } from '@kanelabs/ux/theme';
 
 export interface ListProps extends ViewProps {
   dense?: boolean;

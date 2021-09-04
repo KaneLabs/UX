@@ -5,10 +5,10 @@ import {
   Multiline,
   OutlinedButton,
   ImageUploadButton,
-} from 'eros-ui/components';
+} from '@kanelabs/ux/components';
 import { useQuery } from '@apollo/client';
-import { ACCOUNT } from 'eros-ui/queries';
-import { useTheme, makeStyles } from 'eros-ui/theme';
+import { ACCOUNT } from '@kanelabs/ux/queries';
+import { useTheme, makeStyles } from '@kanelabs/ux/theme';
 import FilePreviews from './FilePreviews';
 
 const ComposeListHeader = (props) => {

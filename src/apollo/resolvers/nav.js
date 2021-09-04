@@ -1,4 +1,4 @@
-import { NAV } from 'eros-ui/queries';
+import { NAV } from '@kanelabs/ux/queries';
 
 export default {
   defaults: {

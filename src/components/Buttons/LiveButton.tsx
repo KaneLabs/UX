@@ -1,5 +1,5 @@
 import React from 'react';
-import { secondaryColorOpaque } from 'eros-ui/theme';
+import { secondaryColorOpaque } from '@kanelabs/ux/theme';
 import Button from './Button';
 
 export const LiveButton = ({ onPress, ...rest }) => (

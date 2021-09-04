@@ -1,13 +1,13 @@
 import React from 'react';
 import { View } from 'react-native';
-import { storiesOf } from 'eros-ui-storybook/helpers/storiesOf';
+import { storiesOf } from '@kanelabs/ux-storybook/helpers/storiesOf';
 
 import Container from '../Container';
 import Paper from './Paper';
 import Typography from '../Typography';
 import TextField from '../TextField';
-import Header from 'eros-ui-storybook/components/Header';
-// import Container from 'eros-ui-storybook/components/Container';
+import Header from '@kanelabs/ux-storybook/components/Header';
+// import Container from '@kanelabs/ux-storybook/components/Container';
 
 /* eslint-disable no-console */
 

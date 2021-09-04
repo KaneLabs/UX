@@ -1,9 +1,9 @@
 import React from 'react';
 // import { StyleSheet } from 'react-native';
-import { TabBar, Tab } from 'eros-ui/components';
-import { makeStyles } from 'eros-ui/theme';
+import { TabBar, Tab } from '@kanelabs/ux/components';
+import { makeStyles } from '@kanelabs/ux/theme';
 import { useRouter } from 'next/router';
-import { useAccount } from 'eros-ui/state';
+import { useAccount } from '@kanelabs/ux/state';
 
 const AppBarBottom = () => {
   const router = useRouter();

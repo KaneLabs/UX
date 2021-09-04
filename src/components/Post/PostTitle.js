@@ -1,6 +1,6 @@
 import React from 'react';
-import { Title } from 'eros-ui/components';
-import { makeStyles } from 'eros-ui/theme';
+import { Title } from '@kanelabs/ux/components';
+import { makeStyles } from '@kanelabs/ux/theme';
 
 const nullifyIfEmptyString = (string) => {
   if (typeof string === 'string' && string.length === 0) {

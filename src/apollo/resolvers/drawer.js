@@ -1,4 +1,4 @@
-import { DRAWER } from 'eros-ui/queries';
+import { DRAWER } from '@kanelabs/ux/queries';
 
 const modals = {
   defaults: {

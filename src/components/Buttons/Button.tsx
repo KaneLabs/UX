@@ -1,7 +1,7 @@
 import React, { forwardRef } from 'react';
 import { View, TouchableOpacity } from 'react-native';
 
-import { makeStyles } from 'eros-ui/theme';
+import { makeStyles } from '@kanelabs/ux/theme';
 import ButtonText from '../Typography/ButtonText';
 
 export const Button = forwardRef(

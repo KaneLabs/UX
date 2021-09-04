@@ -1,7 +1,7 @@
 import React from 'react';
 import { TouchableOpacity } from 'react-native';
-import { Avatar } from 'eros-ui/components';
-import { ACCOUNT } from 'eros-ui/queries';
+import { Avatar } from '@kanelabs/ux/components';
+import { ACCOUNT } from '@kanelabs/ux/queries';
 import { useQuery } from '@apollo/client';
 
 export const AccountAvatarContainer = (props) => {

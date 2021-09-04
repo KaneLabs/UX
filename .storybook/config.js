@@ -8,9 +8,9 @@ import {
 import { withTests } from '@storybook/addon-jest';
 import { withKnobs } from '@storybook/addon-knobs';
 import { withA11y } from '@storybook/addon-a11y';
-import { backgroundColor as lightBackground } from 'eros-ui/theme/light';
-import { backgroundColor as darkBackground } from 'eros-ui/theme/dark';
-// import createApolloClient from 'eros-ui/apollo/createClient';
+import { backgroundColor as lightBackground } from '@kanelabs/ux/theme/light';
+import { backgroundColor as darkBackground } from '@kanelabs/ux/theme/dark';
+// import createApolloClient from '@kanelabs/ux/apollo/createClient';
 // import { ApolloClient } from 'apollo-client';
 // import { ApolloProvider, ApolloClient, InMemoryCache } from '@apollo/client';
 // import { InMemoryCache } from 'apollo-cache-inmemory';
@@ -58,7 +58,7 @@ addParameters({
     showPanel: true,
     panelPosition: 'bottom',
     isToolshown: true,
-    name: 'Eros',
+    name: 'KaneLabsUX',
   },
   backgrounds: [
     { name: 'light', value: lightBackground, default: true },

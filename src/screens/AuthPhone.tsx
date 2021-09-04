@@ -1,19 +1,19 @@
 import * as React from 'react';
 import { View, AsyncStorage } from 'react-native';
-import Container from 'eros-ui/components/Container';
-import TextField from 'eros-ui/components/TextField';
-import Button from 'eros-ui/components/Button';
-import Typography from 'eros-ui/components/Typography';
-import Row from 'eros-ui/components/Layout/Row';
-// import Typography from 'eros-ui/components/Typography';
+import Container from '@kanelabs/ux/components/Container';
+import TextField from '@kanelabs/ux/components/TextField';
+import Button from '@kanelabs/ux/components/Button';
+import Typography from '@kanelabs/ux/components/Typography';
+import Row from '@kanelabs/ux/components/Layout/Row';
+// import Typography from '@kanelabs/ux/components/Typography';
 import { RouteProp } from '@react-navigation/core';
 
-import { AUTH_PHONE, ME } from 'eros-ui/queries/Auth';
+import { AUTH_PHONE, ME } from '@kanelabs/ux/queries/Auth';
 import { useMutation, useQuery } from '@apollo/client';
 import { useFocusEffect, useNavigation } from '@react-navigation/native';
 import countries, {
   Country,
-} from 'eros-ui/components/CountryCodeMenu/country-data';
+} from '@kanelabs/ux/components/CountryCodeMenu/country-data';
 import { TextInput } from 'react-native';
 export type AuthenticatedUser = {
   token: string;

@@ -1,8 +1,13 @@
 import React, { useState } from 'react';
 import { View } from 'react-native';
 import { useMutation, useApolloClient, useQuery } from '@apollo/client';
-import { PHONE, SET_PHONE, ME, AUTH_PHONE_OR_EMAIL } from 'eros-ui/queries';
-import { makeStyles } from 'eros-ui/theme';
+import {
+  PHONE,
+  SET_PHONE,
+  ME,
+  AUTH_PHONE_OR_EMAIL,
+} from '@kanelabs/ux/queries';
+import { makeStyles } from '@kanelabs/ux/theme';
 import { AsYouType } from 'libphonenumber-js';
 
 import {
@@ -11,7 +16,7 @@ import {
   Subtitle,
   ActivityIndicator,
   Row,
-} from 'eros-ui/components';
+} from '@kanelabs/ux/components';
 
 // const PHONE_STATE = {
 //   phoneId: 0,

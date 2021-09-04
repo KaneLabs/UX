@@ -1,5 +1,5 @@
 import React from 'react';
-import { SplitHero, OutlinedButton } from 'eros-ui/components';
+import { SplitHero, OutlinedButton } from '@kanelabs/ux/components';
 import Link from 'next/link';
 
 const JoinButtonLink = () => (

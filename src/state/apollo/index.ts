@@ -1,5 +1,12 @@
 import { useQuery } from '@apollo/client';
-import { ME, DRAWER, SOCIAL_DRAWER, NAV, PERSONA, POST } from 'eros-ui/queries';
+import {
+  ME,
+  DRAWER,
+  SOCIAL_DRAWER,
+  NAV,
+  PERSONA,
+  POST,
+} from '@kanelabs/ux/queries';
 
 export const useAccount = () => {
   const { data } = useQuery(ME);

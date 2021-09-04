@@ -1,8 +1,13 @@
 import React, { useState } from 'react';
-import { View, Multiline, Button, ActivityIndicator } from 'eros-ui/components';
-import { CREATE_FORUM_CHAT_MESSAGE } from 'eros-ui/queries';
+import {
+  View,
+  Multiline,
+  Button,
+  ActivityIndicator,
+} from '@kanelabs/ux/components';
+import { CREATE_FORUM_CHAT_MESSAGE } from '@kanelabs/ux/queries';
 import { useMutation } from '@apollo/client';
-import { makeStyles } from 'eros-ui/theme';
+import { makeStyles } from '@kanelabs/ux/theme';
 
 export const ForumChatInputButtons = ({ onSend, loading = false }) => {
   const styles = useStyles();
