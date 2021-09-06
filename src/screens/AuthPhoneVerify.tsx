@@ -2,6 +2,9 @@ import * as React from 'react';
 import { View, AsyncStorage, TextInput } from 'react-native';
 import Container from '@kanelabs/ux/components/Container';
 import TextField from '@kanelabs/ux/components/TextField';
+import Screen from '@kanelabs/ui/Screen';
+import Typography from '@kanelabs/ui/Typography';
+
 import Button from '@kanelabs/ux/components/Button';
 import { AUTH_PHONE_VERIFY, ME } from '@kanelabs/ux/queries/Auth';
 import { useMutation, useQuery } from '@apollo/client';
@@ -20,7 +23,7 @@ const AuthenticatePhone = ({ onSuccess }: AuthenticatePhoneProps) => {
   const [code, setCode] = React.useState('');
   const inputRef = React.useRef<TextInput>(null);
 
-  const { refetch, data, client } = useQuery(ME);
+  const { refetch, data, error, loading, client } = useQuery(ME);
   const [verifyCode, verifyCodeData] = useMutation(AUTH_PHONE_VERIFY);
 
   useFocusEffect(
@@ -42,7 +45,6 @@ const AuthenticatePhone = ({ onSuccess }: AuthenticatePhoneProps) => {
     const input = { phone, code };
     const response = await verifyCode({ variables: { input } });
     const token = response?.data?.AuthPhoneVerify?.token;
-    console.log({ token });
     if (token) {
       await AsyncStorage.setItem('token', token);
       await client.resetStore();
@@ -52,23 +54,35 @@ const AuthenticatePhone = ({ onSuccess }: AuthenticatePhoneProps) => {
   }, [code, verifyCode, onSuccess, navigation, refetch]);
 
   return (
-    <Container
-      center
-      style={{
-        marginVertical: 80,
-      }}>
-      <View style={{ flex: 1, alignSelf: 'center', padding: 40 }}>
-        <TextField
-          ref={inputRef}
-          textContentType={'oneTimeCode'}
-          keyboardType={'phone-pad'}
-          value={code}
-          onChangeText={setCode}
-          placeholder={'Enter Code'}
-        />
-        <Button onPress={submitCode} text="Submit" />
+    <Screen safe padNav>
+      {error?.graphQLErrors.map(({ message, extensions }) => {
+        console.log({ extensions });
+        if (extensions?.code === 'UNAUTHENTICATED') {
+          return null;
+        }
+        if (message) return <Typography text={message} />;
+      })}
+      <View
+        style={{
+          flex: 1,
+          alignSelf: 'center',
+          width: '100%',
+        }}>
+        <Container>
+          <TextField
+            focusStyle={{ backgroundColor: 'rgba(0,0,0,0)' }}
+            style={{ marginVertical: 48, marginHorizontal: 24, height: 44 }}
+            ref={inputRef}
+            textContentType={'oneTimeCode'}
+            keyboardType={'phone-pad'}
+            value={code}
+            onChangeText={setCode}
+            placeholder={'Enter Code'}
+          />
+          <Button onPress={submitCode} text="Submit" />
+        </Container>
       </View>
-    </Container>
+    </Screen>
   );
 };
 

@@ -1,6 +1,7 @@
 import { Platform } from 'react-native';
 
 export { default as shadow } from '../components/Shadow';
+import { TypographyTypes } from './Typography';
 
 export const primary = {
   main: '#cfb87c',
@@ -57,7 +58,7 @@ export const borderWidth = 1;
 export const unit = 8;
 export const gutter = 16;
 export const padding = 12;
-export const NAV_HEIGHT = 48;
+export const NAV_HEIGHT = 56;
 export const AVATAR_SIZE = 40;
 export const TOOLBAR_WIDTH_OPEN = 192;
 export const TOOLBAR_WIDTH_CLOSED = 64;
@@ -78,90 +79,90 @@ export const iconColor = textColor.secondary;
 export { default as Screen } from './Screen';
 
 export const Typography = {
-  h1: {
+  [TypographyTypes.h1]: {
     fontWeight: '200',
     fontSize: 96,
     lineHeight: 116,
     letterSpacing: -1.5,
     color: textColor.primary,
   },
-  h2: {
+  [TypographyTypes.h2]: {
     fontWeight: '200',
     fontSize: 60,
     lineHeight: 72,
     letterSpacing: -0.5,
     color: textColor.primary,
   },
-  h3: {
+  [TypographyTypes.h3]: {
     fontWeight: '300',
     fontSize: 40,
     lineHeight: 48,
     letterSpacing: 0,
     color: textColor.primary,
   },
-  h4: {
+  [TypographyTypes.h4]: {
     fontWeight: '300',
     fontSize: 28,
     lineHeight: 34,
     letterSpacing: 0.25,
     color: textColor.primary,
   },
-  h5: {
+  [TypographyTypes.h5]: {
     fontWeight: '300',
     fontSize: 24,
     lineHeight: 29,
     letterSpacing: 0,
     color: textColor.primary,
   },
-  h6: {
+  [TypographyTypes.h6]: {
     fontWeight: '500',
     fontSize: 20,
     lineHeight: 24,
     letterSpacing: 0.15,
     color: textColor.primary,
   },
-  subtitle1: {
+  [TypographyTypes.subtitle1]: {
     fontSize: 16,
     lineHeight: 20,
     fontWeight: '300',
     letterSpacing: 0.15,
     color: textColor.primary,
   },
-  subtitle2: {
+  [TypographyTypes.subtitle2]: {
     fontSize: 14,
     lineHeight: 17,
     fontWeight: '500',
     letterSpacing: 0.1,
     color: textColor.primary,
   },
-  body1: {
+  [TypographyTypes.body1]: {
     fontSize: 16,
     lineHeight: 19,
     fontWeight: '300',
     letterSpacing: 0.5,
     color: textColor.primary,
   },
-  body2: {
+  [TypographyTypes.body2]: {
     fontSize: 14,
     lineHeight: 17,
     fontWeight: '300',
     letterSpacing: 0.25,
     color: textColor.primary,
   },
-  button: {
+  [TypographyTypes.button]: {
     color: textColor.primary,
     fontSize: 16,
     lineHeight: 18,
     fontWeight: '700',
     letterSpacing: 1.25,
   },
-  caption: {
+  [TypographyTypes.caption]: {
     color: textColor.secondary,
     fontSize: 12,
     lineHeight: 12,
     letterSpacing: 0.4,
   },
-  overline: {
+  [TypographyTypes.overline]: {
     color: textColor.primary,
     fontSize: 10,
     fontWeight: '300',

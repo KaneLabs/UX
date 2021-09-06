@@ -8,7 +8,7 @@ export interface CardHeaderProps {
   subtitle?: string;
   center?: boolean;
   children: React.ReactChild;
-  style: ViewStyle;
+  style?: ViewStyle;
 }
 
 const CardHeader: React.FC<CardHeaderProps> = ({

@@ -49,22 +49,17 @@ const useStyles = makeStyles((theme: Theme) => {
   ).fade(0.7);
   fadedPrimary.color.push(fadedPrimary.valpha);
   const realfadedPrimary = colorString.to.rgb(fadedPrimary.color);
-  return {
+  return {  
     core: {
       width: '100%',
       flexDirection: 'row',
       alignItems: 'center',
-      backgroundColor: 'rgba(255,255,255,0)',
     },
     listItem: {
-      height: theme.unit * 6,
-      paddingVertical: theme.unit,
-      paddingHorizontal: theme.unit * 1.5,
+      height: 48 || theme.padding * 3.75, // 48
     },
     listItemDense: {
-      height: theme.unit * 4.5,
-      paddingVertical: theme.unit,
-      paddingHorizontal: theme.unit,
+      height: theme.padding * 3,
     },
     focused: {
       backgroundColor: realfadedPrimary,

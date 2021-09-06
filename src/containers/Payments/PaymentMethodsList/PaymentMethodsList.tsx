@@ -2,6 +2,7 @@ import * as React from 'react';
 import List, {
   ListItem,
   ListItemText,
+  ListHeader,
   ListSubtitle,
   ListItemIcon,
 } from '@kanelabs/ux/components/List';
@@ -32,8 +33,10 @@ const PaymentMethodsList: React.FC<PaymentMethodsListProps> = ({
   // const userHasNoCards = !loading && !error && data?.StripeCards.length === 0;
   return (
     <List>
-      <ListSubtitle text={'Payment Methods'} />
-      {loading && <ListSubtitle text="loading..." />}
+      <ListHeader>
+        <ListSubtitle text={'Payment Methods'} />
+        {loading && <ListSubtitle text="loading..." />}
+      </ListHeader>
       {error?.graphQLErrors.map(GraphQLError => {
         return <ListSubtitle text={GraphQLError.message} />;
       })}

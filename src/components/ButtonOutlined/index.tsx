@@ -39,7 +39,7 @@ const ButtonOutlined = forwardRef<TouchableOpacity, ButtonProps>(
 
     const buttonStyle = (() => {
       if (primary) return styles.ButtonOutlinedPrimary;
-      if (secondary) return styles.ButtonOutlinedPrimary;
+      if (secondary) return styles.ButtonOutlinedSecondary;
       return styles.ButtonOutlined;
     })();
 

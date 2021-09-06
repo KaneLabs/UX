@@ -1,23 +1,20 @@
 import React, { FC } from 'react';
 import { Image, ImageStyle, StyleSheet } from 'react-native';
 import makeStyles from '../../theme/makeStyles';
+import { Theme } from '../../theme';
 import ForaLogoTyrion from '../../assets/fora-logo-tyrion-96x96.png';
 
-type theme = {
-  unit: number;
-};
-
-interface ForaLogoStyles {
+export interface ForaLogoStyles {
   logo: LogoStyles;
 }
 
-interface LogoStyles {
+export interface LogoStyles {
   height: number;
   width: number;
 }
 
 const useStyles = makeStyles(
-  (theme: theme): ForaLogoStyles => ({
+  (theme: Theme): ForaLogoStyles => ({
     logo: {
       height: theme.unit * 3,
       width: theme.unit * 3,
@@ -25,7 +22,7 @@ const useStyles = makeStyles(
   }),
 );
 
-interface ForaLogoProps {
+export interface ForaLogoProps {
   style?: ImageStyle;
 }
 

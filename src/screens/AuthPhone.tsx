@@ -4,9 +4,12 @@ import Container from '@kanelabs/ux/components/Container';
 import TextField from '@kanelabs/ux/components/TextField';
 import Button from '@kanelabs/ux/components/Button';
 import Typography from '@kanelabs/ux/components/Typography';
-import Row from '@kanelabs/ux/components/Layout/Row';
+import Paper from '@kanelabs/ui/Paper';
+import Row from '@kanelabs/ui/Layout/Row';
+
 // import Typography from '@kanelabs/ux/components/Typography';
 import { RouteProp } from '@react-navigation/core';
+import Screen from '@kanelabs/ui/Screen';
 
 import { AUTH_PHONE, ME } from '@kanelabs/ux/queries/Auth';
 import { useMutation, useQuery } from '@apollo/client';
@@ -25,6 +28,64 @@ export interface AuthPhoneProps {
 }
 
 console.log({ AUTH_PHONE, ME });
+
+const PhoneInput: React.FC<{
+  onPhone?: (phone: string) => void;
+  selectedCountry?: Country;
+}> = ({ onPhone, selectedCountry }) => {
+  const navigation = useNavigation();
+  const [phone, setPhone] = React.useState('');
+  const inputRef = React.useRef<TextInput>(null);
+  // const [selectedCountry, setSelectedCountry] = React.useState<
+  //   Country | undefined
+  // >(selectedCountry || countries.find((country: Country) => country?.key === 'US'));
+
+  React.useEffect(() => {
+    const countryCode =
+      selectedCountry?.phone ||
+      countries.find((country: Country) => country?.key === 'US');
+
+    const phoneString = `+${countryCode}${phone}`;
+    onPhone && onPhone(phoneString);
+  }, [selectedCountry, phone]);
+
+  return (
+    <Row
+      style={{
+        height: 44,
+        width: '100%',
+        paddingHorizontal: 24,
+      }}>
+      <Paper
+        style={{
+          flex: 1,
+          width: '100%',
+          flexDirection: 'row',
+          alignItems: 'center',
+        }}>
+        <Button
+          style={{ paddingHorizontal: 8 }}
+          text={`+${selectedCountry?.phone} ${selectedCountry?.emoji} `}
+          onPress={() => navigation.navigate('CountryCode')}
+        />
+        <Container>
+          <TextField
+            style={{ flex: 1 }}
+            flat
+            focusStyle={{ backgroundColor: 'rgba(0,0,0,0)' }}
+            textContentType={'telephoneNumber'}
+            autoCompleteType={'tel'} // Android only
+            keyboardType={'phone-pad'}
+            ref={inputRef}
+            value={phone}
+            onChangeText={setPhone}
+            placeholder={'Enter Phone'}
+          />
+        </Container>
+      </Paper>
+    </Row>
+  );
+};
 
 const AuthPhone: React.FC<AuthPhoneProps> = ({ route }) => {
   const navigation = useNavigation();
@@ -59,50 +120,36 @@ const AuthPhone: React.FC<AuthPhoneProps> = ({ route }) => {
   );
 
   const submitPhone = React.useCallback(async () => {
-    const phoneString = `+${selectedCountry?.phone}${phone}`;
-    console.log({ phoneString });
     const response = await authPhone({
-      variables: { input: { phone: phoneString } },
+      variables: { input: { phone } },
     });
+    console.log('submitPhoneResponse', response);
     const success = response?.data?.AuthPhone === 'We sent you a code.';
     if (success) {
-      await AsyncStorage.setItem('phone', phoneString);
+      await AsyncStorage.setItem('phone', phone);
       navigation.navigate('AuthPhoneVerify');
     }
   }, [authPhone, phone]);
 
+  const isValid = () => phone.length >= 10;
   return (
-    <Container center>
-      <View
-        style={{
-          flex: 1,
-          alignSelf: 'center',
-          margin: 40,
-          marginVertical: 80,
-        }}>
-                    {error?.graphQLErrors.map((GraphQLError => {
-            return <Typography text={GraphQLError.message} />
-          }))}
-        <Row fullWidth style={{ padding: 20, paddingRight: 40 }}>
-          <Button
-            style={{ paddingHorizontal: 8 }}
-            text={`+${selectedCountry?.phone} ${selectedCountry?.emoji} `}
-            onPress={() => navigation.navigate('CountryCode')}
-          />
-          <TextField
-            textContentType={'telephoneNumber'}
-            autoCompleteType={'tel'} // Android only
-            keyboardType={'phone-pad'}
-            style={{ width: '100%' }}
-            ref={inputRef}
-            value={phone}
-            onChangeText={setPhone}
-            placeholder={'Enter Phone'}
-          />
-        </Row>
-        <Button disabled={loading} onPress={submitPhone} text="Submit" />
+    <Screen safe padNav>
+      {error?.graphQLErrors.map(({ message, extensions }) => {
+        console.log({ extensions });
+        if (extensions?.code === 'UNAUTHENTICATED') {
+          return null;
+        }
+        if (message) return <Typography text={message} />;
+      })}
+      <View style={{ marginVertical: 48 }}>
+        <PhoneInput selectedCountry={selectedCountry} onPhone={setPhone} />
       </View>
-    </Container>
+      <Button
+        disabled={loading || !isValid()}
+        onPress={submitPhone}
+        text="Submit"
+      />
+    </Screen>
   );
 };
 

@@ -9,6 +9,7 @@ module.exports = {
         root: ['./src'],
         alias: {
           '@kanelabs/ux': './src',
+          '@kanelabs/ui': './src/components',
           '@kanelabs/ux-storybook': './storybook',
         },
       },

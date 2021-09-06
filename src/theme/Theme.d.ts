@@ -28,7 +28,7 @@ type Theme = {
   iconSize: number;
   NAV_HEIGHT: number;
   FEED_WIDTH: number;
-  window: Window;
+  window?: typeof Window;
   gutter: number;
   AVATAR_SIZE: number;
 };

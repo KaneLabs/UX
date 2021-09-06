@@ -1,7 +1,7 @@
 import { StyleSheet, Platform } from 'react-native';
 
 export { default as shadow } from '../components/Shadow';
-
+import { TypographyTypes } from './Typography';
 export const mode = 'light';
 
 export const background = 'rgba(240,240,240,1)';
@@ -24,7 +24,7 @@ export const borderColor = 'rgba(0,0,0,0.12)';
 export const unit = 8;
 export const gutter = 16;
 export const padding = 12;
-export const NAV_HEIGHT = 48;
+export const NAV_HEIGHT = 56;
 export const AVATAR_SIZE = 40;
 export const TOOLBAR_WIDTH_OPEN = 192;
 export const TOOLBAR_WIDTH_CLOSED = 64;
@@ -70,22 +70,6 @@ export const iconColor = textColor.secondary;
 export const borderColorHover = textColor.primary;
 export const borderRadius = 3;
 export const borderWidth = StyleSheet.hairlineWidth;
-
-export enum TypographyTypes {
-  h1 = 'h1',
-  h2 = 'h2',
-  h3 = 'h3',
-  h4 = 'h4',
-  h5 = 'h5',
-  h6 = 'h6',
-  subtitle1 = 'subtitle1',
-  subtitle2 = 'subtitle2',
-  body1 = 'body1',
-  body2 = 'body2',
-  button = 'button',
-  caption = 'caption',
-  overline = 'overline',
-}
 
 export { default as Screen } from './Screen';
 

@@ -33,11 +33,11 @@ const ListSubtitle: React.FC<ListSubtitleProps> = ({
 
 const useStyles = makeStyles((theme: Theme) => ({
   listSubtitle: {
-    paddingHorizontal: theme.unit * 1.5,
-    paddingVertical: theme.unit * 1.5,
+    paddingHorizontal: theme.padding * 2,
+    paddingVertical: theme.padding,
   },
   dense: {
-    paddingHorizontal: theme.unit,
+    paddingHorizontal: theme.padding * 1.5,
     paddingVertical: theme.unit,
   },
 }));

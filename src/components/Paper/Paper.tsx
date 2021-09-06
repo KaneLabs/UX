@@ -59,12 +59,23 @@ const Paper = forwardRef<TouchableWithoutFeedback, PaperProps>(
   },
 );
 
+const rgbifyPrimaryColor = (primaryColor: string) => {
+  const rgbArray = colorString.get.rgb(primaryColor);
+  console.log({ rgbArray });
+  const rgbString = colorString.to.rgb(rgbArray);
+  console.log({ rgbString });
+
+  return rgbString;
+};
+
 const useStyles = makeStyles((theme: Theme) => {
-  const fadedPrimary = Color(
-    colorString.to.rgb(colorString.get.rgb(theme.primaryColor)),
-  ).fade(0.5);
-  fadedPrimary.color.push(fadedPrimary.valpha);
-  const realfadedPrimary = colorString.to.rgb(fadedPrimary.color);
+  const primaryRGB = rgbifyPrimaryColor(theme.primaryColor);
+
+  const fadedPrimaryColor = Color(primaryRGB).fade(0.5);
+  console.log({ fadedPrimaryColor });
+  const { color: rgbArray, valpha } = fadedPrimaryColor;
+  const realfadedPrimary = colorString.to.rgb([...rgbArray, valpha]);
+
   return {
     Paper: {
       backgroundColor: theme.canvas,
