@@ -15,7 +15,13 @@ export interface IconProps extends ViewProps {
   size?: number;
 }
 
-const Icon: React.FC<IconProps> = ({ family, color, name, size, ...rest }) => {
+export const Icon: React.FC<IconProps> = ({
+  family,
+  color,
+  name,
+  size,
+  ...rest
+}) => {
   const [theme] = useTheme();
   const Icon = React.useMemo(() => {
     switch (family) {

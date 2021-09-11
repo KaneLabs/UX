@@ -10,6 +10,7 @@ import Row from '@kanelabs/ui/Layout/Row';
 // import Typography from '@kanelabs/ux/components/Typography';
 import { RouteProp } from '@react-navigation/core';
 import Screen from '@kanelabs/ui/Screen';
+import PhoneInput from '@kanelabs/ui/Inputs/PhoneInput';
 
 import { AUTH_PHONE, ME } from '@kanelabs/ux/queries/Auth';
 import { useMutation, useQuery } from '@apollo/client';
@@ -17,6 +18,7 @@ import { useFocusEffect, useNavigation } from '@react-navigation/native';
 import countries, {
   Country,
 } from '@kanelabs/ux/components/CountryCodeMenu/country-data';
+
 import { TextInput } from 'react-native';
 export type AuthenticatedUser = {
   token: string;
@@ -26,66 +28,6 @@ export interface AuthPhoneProps {
   onSuccess: (arg0: AuthenticatedUser) => void;
   route: RouteProp<{ params?: { country: Country } }, 'params'>;
 }
-
-console.log({ AUTH_PHONE, ME });
-
-const PhoneInput: React.FC<{
-  onPhone?: (phone: string) => void;
-  selectedCountry?: Country;
-}> = ({ onPhone, selectedCountry }) => {
-  const navigation = useNavigation();
-  const [phone, setPhone] = React.useState('');
-  const inputRef = React.useRef<TextInput>(null);
-  // const [selectedCountry, setSelectedCountry] = React.useState<
-  //   Country | undefined
-  // >(selectedCountry || countries.find((country: Country) => country?.key === 'US'));
-
-  React.useEffect(() => {
-    const countryCode =
-      selectedCountry?.phone ||
-      countries.find((country: Country) => country?.key === 'US');
-
-    const phoneString = `+${countryCode}${phone}`;
-    onPhone && onPhone(phoneString);
-  }, [selectedCountry, phone]);
-
-  return (
-    <Row
-      style={{
-        height: 44,
-        width: '100%',
-        paddingHorizontal: 24,
-      }}>
-      <Paper
-        style={{
-          flex: 1,
-          width: '100%',
-          flexDirection: 'row',
-          alignItems: 'center',
-        }}>
-        <Button
-          style={{ paddingHorizontal: 8 }}
-          text={`+${selectedCountry?.phone} ${selectedCountry?.emoji} `}
-          onPress={() => navigation.navigate('CountryCode')}
-        />
-        <Container>
-          <TextField
-            style={{ flex: 1 }}
-            flat
-            focusStyle={{ backgroundColor: 'rgba(0,0,0,0)' }}
-            textContentType={'telephoneNumber'}
-            autoCompleteType={'tel'} // Android only
-            keyboardType={'phone-pad'}
-            ref={inputRef}
-            value={phone}
-            onChangeText={setPhone}
-            placeholder={'Enter Phone'}
-          />
-        </Container>
-      </Paper>
-    </Row>
-  );
-};
 
 const AuthPhone: React.FC<AuthPhoneProps> = ({ route }) => {
   const navigation = useNavigation();

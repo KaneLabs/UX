@@ -19,10 +19,16 @@ const PaymentMethodsNavigator: React.FC<PaymentMethodsNavigatorProps> = () => {
         cardStyle: { backgroundColor: theme.backgroundColor },
       }}>
       <PaymentMethods.Screen
+        options={{
+          title: 'Payment Methods',
+        }}
         name="PaymentMethodsScreen"
         component={PaymentMethodsScreen}
       />
       <PaymentMethods.Screen
+        options={{
+          title: 'Add Payment Method',
+        }}
         name="AddPaymentMethodScreen"
         component={AddPaymentMethodScreen}
       />

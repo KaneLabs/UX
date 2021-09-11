@@ -12,7 +12,7 @@ import { useFocusEffect } from '@react-navigation/native';
 
 import ScreenNames from './ScreenNames';
 
-const PaymentMethodsScreen: React.FC = () => {
+const PaymentMethodScreen: React.FC = () => {
   const navigation = useNavigation();
   const { data, error, loading, refetch, called } = useQuery(STRIPE_CARDS, {
     fetchPolicy: 'cache-and-network',
@@ -38,4 +38,4 @@ const PaymentMethodsScreen: React.FC = () => {
   );
 };
 
-export default PaymentMethodsScreen;
+export default PaymentMethodScreen;

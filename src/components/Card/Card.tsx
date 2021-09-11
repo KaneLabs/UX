@@ -6,8 +6,6 @@ interface CardProps extends PaperProps {
     active?: boolean;
 }
 
-const Card: React.FC<CardProps> = ({ ...props }, ref) => (
-  <Paper {...props} />
-);
+const Card: React.FC<CardProps> = (props, ref) => <Paper {...props} />;
 
 export default Card;

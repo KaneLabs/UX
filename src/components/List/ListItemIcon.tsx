@@ -11,13 +11,16 @@ const ListItemIcon = props => {
     iconStyle = {},
     iconProps = {},
     style = {},
+    children,
     ...rest
   } = props;
   const styles = useStyles();
 
   return (
     <View style={[styles.ListItemIcon, style]} {...rest}>
-      <Icon name={name} size={20} style={iconStyle} {...iconProps} />
+      {children || (
+        <Icon name={name} size={20} style={iconStyle} {...iconProps} />
+      )}
     </View>
   );
 };

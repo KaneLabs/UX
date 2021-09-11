@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { ScrollView } from 'react-native';
-import Container from '@kanelabs/ux/components/Container';
+import Screen from '@kanelabs/ux/components/Screen';
 import { useNavigation } from '@react-navigation/native';
 import CountryCodeList from '@kanelabs/ux/components/CountryCodeMenu/CountryCodeList';
 
@@ -20,11 +20,11 @@ const CountryCodeScreen = ({ onSuccess }: CountryCodeScreenProps) => {
     navigation.navigate('AuthPhone', { country });
 
   return (
-    <Container center>
+    <Screen safe padNav>
       <ScrollView contentContainerStyle={{ maxWidth: '100%' }}>
         <CountryCodeList onCountryPress={onPress} />
       </ScrollView>
-    </Container>
+    </Screen>
   );
 };
 

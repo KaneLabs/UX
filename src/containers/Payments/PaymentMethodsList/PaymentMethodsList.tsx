@@ -7,8 +7,14 @@ import List, {
   ListItemIcon,
 } from '@kanelabs/ux/components/List';
 
+import PaymentMethodsList from '@kanelabs/ui/Payments/PaymentMethodsList';
+
+import CardListItem from '@kanelabs/ui/Payments/CardListItem';
+
 import { useQuery } from '@apollo/client';
 import { STRIPE_CARDS } from '@kanelabs/ux/queries/Pay';
+
+import { useFocusEffect } from '@react-navigation/native';
 
 export type Card = {
   id: string;
@@ -17,59 +23,48 @@ export type Card = {
   expMonth: number;
   expYear: number;
   funding: string;
+  default: boolean;
 };
-export interface PaymentMethodsListProps {
+export interface PaymentMethodsListContainerProps {
   onPress?: (arg0: Card) => void;
   onAddCardPress?: () => void;
   selectedCardId?: string;
+  onCardsLoaded?: (cards: Card[]) => void;
+  onDefaultLoaded?: (card: Card) => void;
 }
 
-const PaymentMethodsList: React.FC<PaymentMethodsListProps> = ({
-  onPress,
-  onAddCardPress,
-  selectedCardId,
-}) => {
-  const { data, error, loading } = useQuery(STRIPE_CARDS);
-  // const userHasNoCards = !loading && !error && data?.StripeCards.length === 0;
-  return (
-    <List>
-      <ListHeader>
-        <ListSubtitle text={'Payment Methods'} />
-        {loading && <ListSubtitle text="loading..." />}
-      </ListHeader>
-      {error?.graphQLErrors.map(GraphQLError => {
-        return <ListSubtitle text={GraphQLError.message} />;
-      })}
+const PaymentMethodsListContainer: React.FC<PaymentMethodsListContainerProps> =
+  ({ onPress, selectedCardId, onCardsLoaded, onDefaultLoaded }) => {
+    const { data, error, loading, refetch, called } = useQuery(STRIPE_CARDS, {
+      notifyOnNetworkStatusChange: true,
+      fetchPolicy: 'cache-and-network',
+    });
 
-      {data?.StripeCards.map((card: Card) => {
-        console.log({ card });
-        return (
-          <ListItem
-            focused={selectedCardId === card.id}
-            onPress={() => onPress && onPress(card)}
-            key={card.id}>
-            {card.brand === 'Visa' && (
-              <ListItemIcon
-                iconProps={{ family: 'FontAwesome' }}
-                name={'cc-visa'}
-              />
-            )}
-            {card.brand !== 'Visa' && (
-              <ListItemIcon
-                iconProps={{ family: 'FontAwesome' }}
-                name={'credit-card'}
-              />
-            )}
-            <ListItemText text={card.last4} />
-          </ListItem>
-        );
-      })}
+    React.useEffect(() => {
+      refetch();
+    }, []);
 
-      <ListItem onPress={onAddCardPress} key={'ADD_CARD'}>
-        <ListItemText text="ADD CARD" />
-      </ListItem>
-    </List>
-  );
-};
+    React.useEffect(() => {
+      if (data?.StripeCards) {
+        const selectDefaultCard = (cards: Card[]) =>
+          cards.find(card => card.default);
+        const defaultCard = selectDefaultCard(data?.StripeCards);
+        if (defaultCard) {
+          onDefaultLoaded && onDefaultLoaded(defaultCard);
+        }
+        onCardsLoaded && onCardsLoaded(data.StripeCards);
+      }
+    }, [data]);
 
-export default PaymentMethodsList;
+    return (
+      <PaymentMethodsList
+        cards={data?.StripeCards ?? []}
+        loading={loading}
+        error={error}
+        onPress={onPress}
+        focusedCardId={selectedCardId}
+      />
+    );
+  };
+
+export default PaymentMethodsListContainer;
