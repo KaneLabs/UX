@@ -75,7 +75,7 @@ const useStyles = makeStyles((theme: Theme) => {
   console.log({ fadedPrimaryColor });
   const { color: rgbArray, valpha } = fadedPrimaryColor;
   const realfadedPrimary = colorString.to.rgb([...rgbArray, valpha]);
-
+  console.log({ realfadedPrimary });
   return {
     Paper: {
       backgroundColor: theme.canvas,

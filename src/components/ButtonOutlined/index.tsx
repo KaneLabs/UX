@@ -9,6 +9,8 @@ import {
 
 import { makeStyles, Theme, TypographyTypes } from '@kanelabs/ux/theme';
 import Typography from '../Typography';
+import Loading from '@kanelabs/ui/Loading';
+import Row from '@kanelabs/ui/Row';
 
 export interface ButtonProps extends Omit<RNButtonProps, 'title' | 'onPress'> {
   text?: string;
@@ -19,6 +21,8 @@ export interface ButtonProps extends Omit<RNButtonProps, 'title' | 'onPress'> {
   style?: ViewStyle;
   fontStyle?: ViewStyle;
   title?: string;
+  loading?: boolean;
+  disabled?: boolean;
   onPress?: () => void;
 }
 
@@ -33,6 +37,8 @@ const ButtonOutlined = forwardRef<TouchableOpacity, ButtonProps>(
       secondary,
       outlined,
       onPress,
+      disabled,
+      loading,
       ...rest
     }: ButtonProps = props;
     const styles = useStyles();
@@ -47,13 +53,17 @@ const ButtonOutlined = forwardRef<TouchableOpacity, ButtonProps>(
       if (primary) return styles.ButtonTextPrimary;
       if (secondary) return styles.ButtonTextSecondary;
     })();
+
+    const isDisabled = disabled || loading;
     return (
       <TouchableOpacity
         ref={ref}
         style={StyleSheet.compose(buttonStyle, style)}
         onPress={onPress}
+        disabled={isDisabled}
         {...rest}>
-        <View>
+        <Row>
+          {loading && <Loading animating={loading} />}
           {text ? (
             <Typography
               type={TypographyTypes.button}
@@ -63,7 +73,7 @@ const ButtonOutlined = forwardRef<TouchableOpacity, ButtonProps>(
           ) : (
             children
           )}
-        </View>
+        </Row>
       </TouchableOpacity>
     );
   },

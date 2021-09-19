@@ -10,47 +10,41 @@ import { useNavigation } from '@react-navigation/native';
 import countries, {
   Country,
 } from '@kanelabs/ux/components/CountryCodeMenu/country-data';
-import { TextInput } from 'react-native';
+import { TextInput, TextInputProps } from 'react-native';
+import { makeStyles } from '@kanelabs/ux/theme';
+
 export type AuthenticatedUser = {
   token: string;
 };
 
-export interface PhoneInputProps {
+export interface PhoneInputProps extends TextInputProps {
   onPhone?: (phone: string) => void;
   selectedCountry?: Country;
 }
 
-const PhoneInput: React.FC<PhoneInputProps> = ({
-  onPhone,
-  selectedCountry,
-}) => {
-  const navigation = useNavigation();
-  const [phone, setPhone] = React.useState('');
-  const inputRef = React.useRef<TextInput>(null);
+const PhoneInput = React.forwardRef<TextInput, PhoneInputProps>(
+  ({ onPhone, selectedCountry, ...rest }, ref) => {
+    const navigation = useNavigation();
+    const [phone, setPhone] = React.useState('');
+    const [focused, setFocused] = React.useState(false);
+    const styles = useStyles();
 
-  React.useEffect(() => {
-    const countryCode =
-      selectedCountry?.phone ||
-      countries.find((country: Country) => country?.key === 'US');
+    console.log({ focused });
 
-    const phoneString = `+${countryCode}${phone}`;
-    onPhone && onPhone(phoneString);
-  }, [selectedCountry, phone]);
+    React.useEffect(() => {
+      const countryCode =
+        selectedCountry?.phone ||
+        countries.find((country: Country) => country?.key === 'US');
 
-  return (
-    <Row
-      style={{
-        height: 44,
-        width: '100%',
-        paddingHorizontal: 24,
-      }}>
+      const phoneString = `+${countryCode}${phone}`;
+      onPhone && onPhone(phoneString);
+    }, [selectedCountry, phone]);
+
+    return (
       <Paper
-        style={{
-          flex: 1,
-          width: '100%',
-          flexDirection: 'row',
-          alignItems: 'center',
-        }}>
+        style={
+          focused ? styles.PhoneInputPaperFocused : styles.PhoneInputPaper
+        }>
         <Button
           style={{ paddingHorizontal: 8 }}
           text={`+${selectedCountry?.phone} ${selectedCountry?.emoji} `}
@@ -58,21 +52,44 @@ const PhoneInput: React.FC<PhoneInputProps> = ({
         />
         <Container>
           <TextField
+            ref={ref}
             style={{ flex: 1 }}
             flat
-            focusStyle={{ backgroundColor: 'rgba(0,0,0,0)' }}
+            onFocus={() => setFocused(true)}
+            onBlur={() => setFocused(false)}
+            returnKeyType={'done'}
             textContentType={'telephoneNumber'}
             autoCompleteType={'tel'} // Android only
             keyboardType={'phone-pad'}
-            ref={inputRef}
             value={phone}
             onChangeText={setPhone}
             placeholder={'Enter Phone'}
+            {...rest}
           />
         </Container>
       </Paper>
-    </Row>
-  );
-};
+    );
+  },
+);
+
+const useStyles = makeStyles(theme => ({
+  PhoneInputPaper: {
+    height: 40,
+    width: '100%',
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: 'rgba(0,0,0,0)',
+    borderWidth: theme.borderWidth,
+  },
+  PhoneInputPaperFocused: {
+    height: 40,
+    width: '100%',
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: theme.mode === 'dark' ? theme.canvas2 : theme.canvas1,
+    borderWidth: 0,
+    ...theme.shadow(12),
+  },
+}));
 
 export default PhoneInput;

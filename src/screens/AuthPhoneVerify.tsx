@@ -3,6 +3,10 @@ import { View, AsyncStorage, TextInput } from 'react-native';
 import Container from '@kanelabs/ux/components/Container';
 import TextField from '@kanelabs/ux/components/TextField';
 import Screen from '@kanelabs/ui/Screen';
+import ScreenHeader from '@kanelabs/ui/Screen/ScreenHeader';
+import ScreenBody from '@kanelabs/ui/Screen/ScreenBody';
+import ScreenActions from '@kanelabs/ui/Screen/ScreenActions';
+
 import Typography from '@kanelabs/ui/Typography';
 
 import Button from '@kanelabs/ux/components/Button';
@@ -53,35 +57,46 @@ const AuthenticatePhone = ({ onSuccess }: AuthenticatePhoneProps) => {
     }
   }, [code, verifyCode, onSuccess, navigation, refetch]);
 
+  const _onChangeText = (text: string) => {
+    return setCode(text);
+  };
+
+  React.useEffect(() => {
+    if (code.length === 6) {
+      submitCode();
+    }
+  }, [code, submitCode]);
+
   return (
     <Screen safe padNav>
-      {error?.graphQLErrors.map(({ message, extensions }) => {
-        console.log({ extensions });
-        if (extensions?.code === 'UNAUTHENTICATED') {
-          return null;
-        }
-        if (message) return <Typography text={message} />;
-      })}
-      <View
-        style={{
-          flex: 1,
-          alignSelf: 'center',
-          width: '100%',
-        }}>
-        <Container>
-          <TextField
-            focusStyle={{ backgroundColor: 'rgba(0,0,0,0)' }}
-            style={{ marginVertical: 48, marginHorizontal: 24, height: 44 }}
-            ref={inputRef}
-            textContentType={'oneTimeCode'}
-            keyboardType={'phone-pad'}
-            value={code}
-            onChangeText={setCode}
-            placeholder={'Enter Code'}
-          />
-          <Button onPress={submitCode} text="Submit" />
-        </Container>
-      </View>
+      <ScreenHeader>
+        {error?.graphQLErrors.map(({ message, extensions }) => {
+          console.log({ extensions });
+          if (extensions?.code === 'UNAUTHENTICATED') {
+            return null;
+          }
+          if (message) return <Typography text={message} gutter />;
+        })}
+      </ScreenHeader>
+      <ScreenBody>
+        <TextField
+          ref={inputRef}
+          textContentType={'oneTimeCode'}
+          keyboardType={'phone-pad'}
+          returnKeyType={'done'}
+          value={code}
+          onChangeText={_onChangeText}
+          placeholder={'Enter Code'}
+        />
+      </ScreenBody>
+      <ScreenActions>
+        <Button
+          loading={loading}
+          disabled={loading}
+          onPress={submitCode}
+          text="Submit"
+        />
+      </ScreenActions>
     </Screen>
   );
 };

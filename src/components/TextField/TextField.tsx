@@ -5,6 +5,8 @@ import {
   Platform,
   TextInputProps,
   ViewStyle,
+  NativeSyntheticEvent,
+  TextInputFocusEventData,
 } from 'react-native';
 
 import { useTheme, makeStyles, Theme, ThemeModes } from '@kanelabs/ux/theme';
@@ -25,6 +27,8 @@ const TextField = React.forwardRef<TextInput, TextFieldProps>((props, ref) => {
     fullWidth = false,
     hoverStyle,
     focusStyle,
+    onFocus,
+    onBlur,
     ...rest
   }: TextFieldProps = props;
   const [theme] = useTheme();
@@ -46,17 +50,27 @@ const TextField = React.forwardRef<TextInput, TextFieldProps>((props, ref) => {
     [hover, focus, hoverStyle, focusStyle, fullWidth, style],
   );
 
+  const _onFocus = (event: NativeSyntheticEvent<TextInputFocusEventData>) => {
+    setFocus(true);
+    onFocus && onFocus(event);
+  };
+
+  const _onBlur = (event: NativeSyntheticEvent<TextInputFocusEventData>) => {
+    setFocus(false);
+    onBlur && onBlur(event);
+  };
+
   const keyboardAppearance = theme.mode === ThemeModes.light ? 'light' : 'dark';
+  const placeholderTextColor =
+    focus || hover ? theme.textColor.primary : theme.textColor.secondary;
   return (
     <TextInput
       ref={ref}
       style={textFieldStyle}
-      onFocus={() => setFocus(true)}
-      onBlur={() => setFocus(false)}
+      onFocus={_onFocus}
+      onBlur={_onBlur}
       keyboardAppearance={keyboardAppearance}
-      placeholderTextColor={
-        focus || hover ? theme.textColor.primary : theme.textColor.secondary
-      }
+      placeholderTextColor={placeholderTextColor}
       {...rest}
     />
   );
@@ -65,6 +79,7 @@ const TextField = React.forwardRef<TextInput, TextFieldProps>((props, ref) => {
 const useStyles = makeStyles((theme: Theme) => ({
   default: Platform.select({
     default: {
+      height: 36,
       fontSize: 16,
       lineHeight: 19,
       borderRadius: theme.unit,
@@ -78,6 +93,7 @@ const useStyles = makeStyles((theme: Theme) => ({
       paddingBottom: theme.unit / 2,
     },
     web: {
+      height: 36,
       fontSize: 16,
       lineHeight: 19,
       borderRadius: theme.unit,
@@ -93,20 +109,29 @@ const useStyles = makeStyles((theme: Theme) => ({
     },
   }),
   flat: Platform.select({
-    web: { borderWidth: 0, outlineWidth: 0 },
-    default: { borderWidth: 0 },
+    web: {
+      backgroundColor: 'rgba(0,0,0,0)',
+      borderWidth: 0,
+      outlineWidth: 0,
+      shadowOpacity: 0,
+    },
+    default: {
+      backgroundColor: 'rgba(0,0,0,0)',
+      borderWidth: 0,
+      shadowOpacity: 0,
+    },
   }),
   hover: {
     borderColor: theme.textColor.disabled,
     color: theme.textColor.secondary,
     ...theme.shadow(8),
-    backgroundColor: theme.canvas2,
+    backgroundColor: theme.canvas1,
   },
   focus: {
-    borderColor: theme.textColor.disabled,
-    color: theme.textColor.secondary,
+    borderWidth: 0,
+    color: theme.textColor.primary,
     ...theme.shadow(8),
-    backgroundColor: theme.canvas2,
+    backgroundColor: theme.canvas1,
   },
   fullWidth: { width: '100%' },
 }));

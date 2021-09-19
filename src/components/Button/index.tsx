@@ -8,6 +8,9 @@ import {
 } from 'react-native';
 
 import { makeStyles, Theme, TypographyTypes } from '@kanelabs/ux/theme';
+import Loading from '@kanelabs/ui/Loading';
+import Row from '@kanelabs/ui/Row';
+
 import Typography from '../Typography';
 
 export interface ButtonProps extends Omit<RNButtonProps, 'title' | 'onPress'> {
@@ -18,6 +21,8 @@ export interface ButtonProps extends Omit<RNButtonProps, 'title' | 'onPress'> {
   style?: ViewStyle;
   fontStyle?: ViewStyle;
   title?: string;
+  loading?: boolean;
+  disabled?: boolean;
   onPress?: () => void;
 }
 
@@ -30,6 +35,8 @@ const Button = forwardRef<TouchableOpacity, ButtonProps>((props, ref) => {
     primary,
     secondary,
     onPress,
+    loading,
+    disabled,
     ...rest
   }: ButtonProps = props;
   const styles = useStyles();
@@ -37,13 +44,17 @@ const Button = forwardRef<TouchableOpacity, ButtonProps>((props, ref) => {
     if (primary) return styles.primary;
     if (secondary) return styles.secondary;
   })();
+
+  const isDisabled = disabled || loading;
   return (
     <TouchableOpacity
       ref={ref}
       style={StyleSheet.compose(styles.Button, style)}
       onPress={onPress}
+      disabled={isDisabled}
       {...rest}>
-      <View>
+      <Row>
+        {loading && <Loading animating={loading} />}
         {text ? (
           <Typography
             type={TypographyTypes.button}
@@ -53,7 +64,7 @@ const Button = forwardRef<TouchableOpacity, ButtonProps>((props, ref) => {
         ) : (
           children
         )}
-      </View>
+      </Row>
     </TouchableOpacity>
   );
 });

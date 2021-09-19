@@ -1,15 +1,17 @@
 import * as React from 'react';
 import { View, AsyncStorage } from 'react-native';
-import Container from '@kanelabs/ux/components/Container';
-import TextField from '@kanelabs/ux/components/TextField';
 import Button from '@kanelabs/ux/components/Button';
 import Typography from '@kanelabs/ux/components/Typography';
-import Paper from '@kanelabs/ui/Paper';
-import Row from '@kanelabs/ui/Layout/Row';
+import Loading from '@kanelabs/ui/Loading';
 
 // import Typography from '@kanelabs/ux/components/Typography';
 import { RouteProp } from '@react-navigation/core';
 import Screen from '@kanelabs/ui/Screen';
+import ScreenHeader from '@kanelabs/ui/Screen/ScreenHeader';
+import ScreenBody from '@kanelabs/ui/Screen/ScreenBody';
+
+import ScreenActions from '@kanelabs/ui/Screen/ScreenActions';
+
 import PhoneInput from '@kanelabs/ui/Inputs/PhoneInput';
 
 import { AUTH_PHONE, ME } from '@kanelabs/ux/queries/Auth';
@@ -76,21 +78,31 @@ const AuthPhone: React.FC<AuthPhoneProps> = ({ route }) => {
   const isValid = () => phone.length >= 10;
   return (
     <Screen safe padNav>
-      {error?.graphQLErrors.map(({ message, extensions }) => {
-        console.log({ extensions });
-        if (extensions?.code === 'UNAUTHENTICATED') {
-          return null;
-        }
-        if (message) return <Typography text={message} />;
-      })}
-      <View style={{ marginVertical: 48 }}>
-        <PhoneInput selectedCountry={selectedCountry} onPhone={setPhone} />
-      </View>
-      <Button
-        disabled={loading || !isValid()}
-        onPress={submitPhone}
-        text="Submit"
-      />
+      <ScreenHeader>
+        {error?.graphQLErrors.map(({ message, extensions }) => {
+          console.log({ extensions });
+          if (extensions?.code === 'UNAUTHENTICATED') {
+            return null;
+          }
+          if (message) return <Typography text={message} />;
+        })}
+      </ScreenHeader>
+      <ScreenBody>
+        <PhoneInput
+          ref={inputRef}
+          selectedCountry={selectedCountry}
+          onPhone={setPhone}
+          onEndEditing={submitPhone}
+        />
+      </ScreenBody>
+      <ScreenActions>
+        <Button
+          loading={loading}
+          disabled={loading || !isValid()}
+          onPress={submitPhone}
+          text="Submit"
+        />
+      </ScreenActions>
     </Screen>
   );
 };

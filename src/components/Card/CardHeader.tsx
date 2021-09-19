@@ -7,7 +7,7 @@ export interface CardHeaderProps {
   title?: string;
   subtitle?: string;
   center?: boolean;
-  children: React.ReactChild;
+  children?: React.ReactChild;
   style?: ViewStyle;
 }
 
@@ -27,7 +27,7 @@ const CardHeader: React.FC<CardHeaderProps> = ({
       {...props}>
       {title && <Typography type={TypographyTypes.h6} text={title} gutter />}
       {subtitle && (
-        <Typography type={TypographyTypes.subtitle1} text={subtitle} />
+        <Typography type={TypographyTypes.subtitle1} text={subtitle} gutter />
       )}
       {children}
     </View>
