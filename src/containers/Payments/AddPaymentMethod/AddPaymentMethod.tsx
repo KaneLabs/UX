@@ -46,6 +46,18 @@ const AddPaymentMethod: React.FC<{ hideTitle?: boolean }> = ({
     createStripeCardToken({ variables: { input } });
   };
 
+  React.useEffect(() => {
+    if (expMonth.length === 2) {
+      yearRef.current?.focus()
+    }
+  }, [expMonth])
+ 
+  React.useEffect(() => {
+    if (expYear.length === 4) {
+      cvcRef.current?.focus()
+    }
+  }, [expYear])
+  
   return (
     <Container style={{ padding: 24 }}>
       {!hideTitle && (
@@ -79,7 +91,7 @@ const AddPaymentMethod: React.FC<{ hideTitle?: boolean }> = ({
             returnKeyType="next"
             onSubmitEditing={() => yearRef?.current?.focus()}
             style={{ marginBottom: 16, marginRight: 16 }}
-            placeholder={'MO'}
+            placeholder={'MM'}
             value={expMonth}
             onChangeText={setExpMonth}
           />
@@ -90,7 +102,7 @@ const AddPaymentMethod: React.FC<{ hideTitle?: boolean }> = ({
             returnKeyType="next"
             onSubmitEditing={() => cvcRef?.current?.focus()}
             style={styles.MarginBottom}
-            placeholder={'YEAR'}
+            placeholder={'YYYY'}
             value={expYear}
             onChangeText={setExpYear}
           />

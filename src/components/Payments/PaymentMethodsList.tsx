@@ -29,7 +29,7 @@ const PaymentMethodsList: React.FC<PaymentMethodsListProps> = ({
   error,
 }) => {
   return (
-    <List>
+    <List dense>
       <ListHeader>
         {loading && <ListSubtitle text="loading..." />}
         {error?.graphQLErrors.map(GraphQLError => {
